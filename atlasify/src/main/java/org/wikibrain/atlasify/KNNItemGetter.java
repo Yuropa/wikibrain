@@ -17,9 +17,9 @@ import org.wikibrain.core.dao.LocalPageDao;
 import org.wikibrain.core.dao.UniversalPageDao;
 import org.wikibrain.core.jooq.tables.LocalPage;
 import org.wikibrain.core.lang.Language;
-import org.wikibrain.spatial.core.dao.SpatialContainmentDao;
-import org.wikibrain.spatial.core.dao.SpatialDataDao;
-import org.wikibrain.spatial.core.dao.SpatialNeighborDao;
+import org.wikibrain.spatial.dao.SpatialContainmentDao;
+import org.wikibrain.spatial.dao.SpatialDataDao;
+import org.wikibrain.spatial.dao.SpatialNeighborDao;
 import org.wikibrain.sr.SRMetric;
 import org.wikibrain.sr.SRResultList;
 

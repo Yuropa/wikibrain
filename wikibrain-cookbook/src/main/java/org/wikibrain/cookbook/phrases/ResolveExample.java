@@ -29,7 +29,7 @@ public class ResolveExample {
         LocalPageDao pd = configurator.get(LocalPageDao.class);
 
         // get the most common phrases in simple
-        LinkedHashMap<LocalId, Float> resolution = pa.resolve(Language.EN, "Georgia", 100);
+        LinkedHashMap<LocalId, Float> resolution = pa.resolve(Language.SIMPLE, "Apple", 100);
 
         // show the closest pages
         System.out.println("resolution of apple");
