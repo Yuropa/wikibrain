@@ -22,6 +22,7 @@ import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.model.LocalLink;
 import org.wikibrain.core.model.LocalPage;
 import org.wikibrain.core.model.NameSpace;
+import org.wikibrain.core.model.RawImage;
 import org.wikibrain.sr.SRMetric;
 import org.wikibrain.sr.SRResult;
 import org.wikibrain.sr.SRResultList;
@@ -87,6 +88,8 @@ public class WikiBrainServer extends AbstractHandler {
                 doArticlesInCategory(req);
             } else if (target.equals("/categoriesForArticle")) {
                 doCategoriesForArticle(req);
+            } else if (target.equals("/images")) {
+                doImages(req);
             }
         } catch (WikiBrainWebException e) {
             req.writeError(e);
@@ -108,6 +111,54 @@ public class WikiBrainServer extends AbstractHandler {
 
     private SRMetric getSr(Language lang) throws ConfigurationException {
         return env.getConfigurator().get(SRMetric.class, "simple-ensemble", "language", lang.getLangCode());
+    }
+
+    private void doImages(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
+        Language lang = req.getLanguage();
+        String type = req.getParamOrDie("method");
+        String text = req.getParamOrDie("text");
+
+        List<LocalPage> pages = new ArrayList<LocalPage>();
+        LocalPageDao lpDao = env.getConfigurator().get(LocalPageDao.class);
+
+        if (type.equals("esa")) {
+            SRMetric sr = env.getConfigurator().get(SRMetric.class,"ESA", "language", lang.getLangCode());
+            SRResultList mostSimilar = sr.mostSimilar(text, 100);
+            for (int i = 0; i < mostSimilar.numDocs(); i++) {
+                int id = mostSimilar.getId(i);
+                pages.add(lpDao.getById(lang, id));
+            }
+        } else if (type.equals("ensemble")) {
+            SRMetric sr = env.getConfigurator().get(SRMetric.class,"ensemble", "language", lang.getLangCode());
+            SRResultList mostSimilar = sr.mostSimilar(text, 100);
+            for (int i = 0; i < mostSimilar.numDocs(); i++) {
+                int id = mostSimilar.getId(i);
+                pages.add(lpDao.getById(lang, id));
+            }
+        } else {
+            Wikifier wf = env.getConfigurator().get(Wikifier.class, "websail", "language", lang.getLangCode());
+            for (LocalLink ll :  wf.wikify(text)) {
+                pages.add(lpDao.getById(ll.getLanguage(), ll.getLocalId()));
+            }
+        }
+
+        RawImageDao riDao = env.getConfigurator().get(RawImageDao.class);
+        List jsonConcepts = new ArrayList();
+        for (LocalPage lp : pages) {
+            List imageURLS = new ArrayList();
+            for (RawImage i : riDao.getImages(lp.getLanguage(), lp.getLocalId())) {
+                if (i.getImageLocation() != null && i.getImageLocation().length() > 0)
+                    imageURLS.add(i.getImageLocation());
+            }
+
+            Map obj = new HashMap();
+            obj.put("title", lp.getTitle().getCanonicalTitle());
+            obj.put("articleId", lp.getLocalId());
+            obj.put("lang", lp.getLanguage().getLangCode());
+            obj.put("images", imageURLS);
+            jsonConcepts.add(obj);
+        }
+        req.writeJsonResponse("text", text, "articles", jsonConcepts);
     }
 
     private void doSimilarity(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
@@ -334,7 +385,7 @@ public class WikiBrainServer extends AbstractHandler {
 
         Env env = new EnvBuilder(cmd).build();
 
-        int port = Integer.valueOf(cmd.getOptionValue("p", "8000"));
+        int port = Integer.valueOf(cmd.getOptionValue("p", "9000"));
         int queueSize = Integer.valueOf(cmd.getOptionValue("q", "100"));
         Server server = new Server(new QueuedThreadPool(queueSize, 20));
         server.setHandler(new WikiBrainServer(env));

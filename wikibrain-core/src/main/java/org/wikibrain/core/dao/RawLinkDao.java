@@ -10,7 +10,4 @@ import org.wikibrain.core.model.RawLink;
  */
 public interface RawLinkDao extends Dao<RawLink> {
     public Iterable<RawLink> getLinks(Language language, int localId) throws DaoException;
-
-    public Iterable<RawLink> getImageLinks(Language language, int localId) throws DaoException;
-
 }

@@ -82,10 +82,6 @@ public class RawLinkSqlDao implements RawLinkDao {
         return result;
     }
 
-    public Iterable<RawLink> getImageLinks(Language language, int localId) throws DaoException {
-        return getLinks(language, localId);
-    }
-
     // TODO: Implement these to interact with the SQL database
     public void clear() throws DaoException {}
 
