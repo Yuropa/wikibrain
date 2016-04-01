@@ -87,7 +87,7 @@ public class RawImageSqlDao implements RawImageDao {
                     }
                 }
 
-                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image);
+                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image, l.getContext());
                 result.add(i);
             }
         }

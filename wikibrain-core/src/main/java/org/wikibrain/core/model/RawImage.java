@@ -11,13 +11,15 @@ public class RawImage {
     private final String name;
     private final String pageLocation;
     private final String imageLocation;
+    private final String caption;
 
-    public RawImage(Language language, int sourceId, String name, String pageLocation, String imageLocation) {
+    public RawImage(Language language, int sourceId, String name, String pageLocation, String imageLocation, String caption) {
         this.language = language;
         this.sourceId = sourceId;
         this.name = name;
         this.pageLocation = pageLocation;
         this.imageLocation = imageLocation;
+        this.caption = caption;
     }
 
     public Language getLanguage() {
@@ -34,6 +36,8 @@ public class RawImage {
 
     public String getImageLocation() { return imageLocation; }
 
+    public String getCaption() { return caption; }
+
     @Override
     public String toString() {
         return "RawLink{" +
@@ -42,6 +46,7 @@ public class RawImage {
                 ", name=" + name +
                 ", pageLocation=" + pageLocation +
                 ", imageLocation=" + imageLocation +
+                ", caption=" + caption +
                 '}';
     }
 }

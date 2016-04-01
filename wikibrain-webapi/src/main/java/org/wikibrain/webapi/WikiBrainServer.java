@@ -147,8 +147,12 @@ public class WikiBrainServer extends AbstractHandler {
         for (LocalPage lp : pages) {
             List imageURLS = new ArrayList();
             for (RawImage i : riDao.getImages(lp.getLanguage(), lp.getLocalId())) {
-                if (i.getImageLocation() != null && i.getImageLocation().length() > 0)
-                    imageURLS.add(i.getImageLocation());
+                if (i.getImageLocation() != null && i.getImageLocation().length() > 0) {
+                    Map image = new HashMap();
+                    image.put("url", i.getImageLocation());
+                    image.put("caption", i.getCaption());
+                    imageURLS.add(image);
+                }
             }
 
             Map obj = new HashMap();

@@ -12,16 +12,18 @@ public class RawLink {
     private final String anchorText;
     private final int position;
     private final String target;
+    private final String context;
     private final RawLinkType type;
 
     public enum RawLinkType {EXTERNAL, INTERNAL, AUDIO, VIDEO, IMAGE, UNKNOWN};
 
-    public RawLink(Language language, int sourceId, String anchorText, int position, String target, RawLinkType type) {
+    public RawLink(Language language, int sourceId, String anchorText, int position, String target, String context, RawLinkType type) {
         this.language = language;
         this.sourceId = sourceId;
         this.anchorText = anchorText;
         this.position = position;
         this.target = target;
+        this.context = context;
         this.type = type;
     }
 
@@ -50,6 +52,8 @@ public class RawLink {
         return target;
     }
 
+    public String getContext() { return context; }
+
     @Override
     public String toString() {
         return "RawLink{" +
@@ -58,6 +62,7 @@ public class RawLink {
                 ", sourceId=" + sourceId +
                 ", location=" + position +
                 ", type=" + type +
+                ", context=" + context +
                 ", destination=" + target +
                 '}';
     }

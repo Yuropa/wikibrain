@@ -71,7 +71,7 @@ public class RawLinkSqlDao implements RawLinkDao {
                         break;
                 }
 
-                RawLink rl = new RawLink(page.getLanguage(), localId, l.getText(), l.getPos().getStart(), l.getTarget(), type);
+                RawLink rl = new RawLink(page.getLanguage(), localId, l.getText(), l.getPos().getStart(), l.getTarget(), l.getHomeElement().getText(), type);
                 result.add(rl);
             }
 
