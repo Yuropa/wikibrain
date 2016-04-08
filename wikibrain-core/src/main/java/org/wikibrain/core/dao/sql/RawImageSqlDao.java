@@ -38,9 +38,11 @@ public class RawImageSqlDao implements RawImageDao {
     private static final Logger LOG = LoggerFactory.getLogger(RawLinkSqlDao.class);
 
     private final RawLinkDao rawLinkDao;
+    private MediaWikiParser parser;
 
-    public RawImageSqlDao(RawLinkDao rawLinkDao) throws DaoException {
+    public RawImageSqlDao(RawLinkDao rawLinkDao, MediaWikiParser parser) throws DaoException {
         this.rawLinkDao = rawLinkDao;
+        this.parser = parser;
     }
 
     private boolean targetToImage(String s) {
@@ -87,7 +89,52 @@ public class RawImageSqlDao implements RawImageDao {
                     }
                 }
 
-                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image, l.getContext());
+                // Get caption
+                String context = l.getContext();
+                String[] components = context.split("\\|");
+
+                String captionText = "";
+
+                // Try to parse the image WikiText
+                // https://en.wikipedia.org/wiki/Wikipedia:Extended_image_syntax
+                for (int i = 0; i < components.length; i++) {
+                    String s = components[i];
+                    s = s.trim();
+
+                    if (i == 0) {
+                        // This is the file name
+                        if (s.startsWith("File:")) {
+                            int fileExtension = context.lastIndexOf(".");
+                            s = s.substring("File:".length(), fileExtension);
+                        }
+
+                        captionText = s;
+                    } else if (s.startsWith("alt=")) {
+                        s = s.substring("alt=".length());
+                        captionText = s;
+                    } else if (s.equals("thumb") || s.equals("thumbnail") || s.equals("frame") || s.equals("framed")
+                            || s.equals("frameless") || s.startsWith("thumb=") || s.startsWith("thumbnail=")) {
+                        // type attribute
+                        continue;
+                    } else if (s.equals("border")) {
+                        // border attribute
+                        continue;
+                    } else if (s.equals("right") || s.equals("left") || s.equals("center") || s.equals("none")) {
+                        // location attriubte
+                        continue;
+                    } else if (s.startsWith("link=")) {
+                        // link attribute
+                        continue;
+                    } else if (s.equals("upright") || s.startsWith("upright=") || s.endsWith("px")) {
+                        // size attribute
+                        continue;
+                    } else if (i == components.length - 1) {
+                        // This is where the caption would be located
+                        captionText = s;
+                    }
+                }
+
+                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image, captionText);
                 result.add(i);
             }
         }
@@ -142,9 +189,13 @@ public class RawImageSqlDao implements RawImageDao {
             if (!config.getString("type").equals("sql")) {
                 return null;
             }
-            try {
+            try {MediaWikiParserFactory pf = new MediaWikiParserFactory();
+                pf.setCalculateSrcSpans(true);
+                // pf.setCategoryIdentifers(langInfo.getCategoryNames());
+
+                MediaWikiParser parser = pf.createParser();
                 RawLinkDao rawLinkDao = getConfigurator().get(RawLinkDao.class);
-                return new RawImageSqlDao(rawLinkDao);
+                return new RawImageSqlDao(rawLinkDao, parser);
             } catch (DaoException e) {
                 throw new ConfigurationException(e);
             }
