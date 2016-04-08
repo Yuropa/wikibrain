@@ -12,8 +12,9 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
-import java.util.Base64;
 import org.apache.batik.transcoder.*;
+
+import org.apache.commons.codec.binary.Base64;
 
 /**
  * Created by Josh on 3/30/16.
@@ -134,9 +135,9 @@ public class RawImage {
         }
 
         ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
-        OutputStream base64Stream = Base64.getEncoder().wrap(byteStream);
-        ImageIO.write(image, "png", base64Stream);
-        return byteStream.toString("UTF-8");
+        ImageIO.write(image, "png", byteStream);
+        byte[] bytes = Base64.encodeBase64(byteStream.toByteArray());
+        return new String(bytes);
     }
 
     @Override
