@@ -104,6 +104,15 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         scriptString += "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + script.getAbsolutePath() + "\">\n";
     }
 
+    private class LinksComparator implements Comparator<LocalLink> {
+        public Map<LocalLink, Double> values;
+
+        @Override
+        public int compare(LocalLink o1, LocalLink o2) {
+            return values.get(o2).compareTo(values.get(o1));
+        }
+    }
+
     private List<Geometry> locations(String text) throws DaoException {
         List<Geometry> result = new ArrayList<Geometry>();
 
@@ -118,12 +127,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
 
         List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());
-        links.sort(new Comparator<LocalLink>() {
-            @Override
-            public int compare(LocalLink o1, LocalLink o2) {
-                return values.get(o2).compareTo(values.get(o1));
-            }
-        });
+        LinksComparator comparator = new LinksComparator();
+        comparator.values = values;
+        links.sort(comparator);
 
         /*for (LocalLink ll : links) {
             Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "state");
