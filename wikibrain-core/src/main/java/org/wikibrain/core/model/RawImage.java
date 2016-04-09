@@ -14,6 +14,8 @@ import java.io.*;
 import java.net.URL;
 import org.apache.batik.transcoder.*;
 
+import org.apache.commons.codec.binary.Base64;
+
 /**
  * Created by Josh on 3/30/16.
  */
