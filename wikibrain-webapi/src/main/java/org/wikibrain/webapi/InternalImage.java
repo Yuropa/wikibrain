@@ -6,7 +6,7 @@ import org.wikibrain.core.model.RawImage;
 /**
  * Created by Josh on 4/6/16.
  */
-public class InternalImage extends RawImage {
+public class InternalImage extends RawImage implements Comparable<InternalImage> {
     final private String method;
     final private double score;
     final private String title;
@@ -34,5 +34,10 @@ public class InternalImage extends RawImage {
 
     String generateDebugString() {
         return method + " (" + score + ") : " + debugString;
+    }
+
+    @Override
+    public int compareTo(InternalImage o) {
+        return ((Double)score).compareTo(o.getScore());
     }
 }

@@ -111,12 +111,7 @@ public class CompariFactServer extends AbstractHandler {
         }
 
         // Sort the images based on the score (We will need to add some kind of ranking here instead)
-        images.sort(new Comparator<InternalImage>() {
-            @Override
-            public int compare(InternalImage o1, InternalImage o2) {
-                return ((Double)o2.getScore()).compareTo(o1.getScore());
-            }
-        });
+        Collections.sort(images, Collections.reverseOrder());
 
         List jsonConcepts = new ArrayList();
         int count = 0;

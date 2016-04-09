@@ -1,34 +1,21 @@
 package org.wikibrain.webapi;
 
 import com.vividsolutions.jts.geom.Envelope;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.dao.DaoException;
 import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.model.LocalLink;
-import org.wikibrain.spatial.dao.SpatialDataDao;
 import org.wikibrain.sr.wikify.Wikifier;
 import com.vividsolutions.jts.geom.Geometry;
 
 import javax.imageio.ImageIO;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.sql.Ref;
 import java.util.*;
-import java.util.regex.Matcher;
 
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
