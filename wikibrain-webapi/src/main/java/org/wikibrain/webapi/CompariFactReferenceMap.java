@@ -109,7 +109,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         @Override
         public int compare(LocalLink o1, LocalLink o2) {
-            return values.get(o2).compareTo(values.get(o1));
+            return values.get(o1).compareTo(values.get(o2));
         }
     }
 
@@ -129,7 +129,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());
         LinksComparator comparator = new LinksComparator();
         comparator.values = values;
-        links.sort(comparator);
+        Collections.sort(links, Collections.reverseOrder(comparator));
 
         /*for (LocalLink ll : links) {
             Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "state");
