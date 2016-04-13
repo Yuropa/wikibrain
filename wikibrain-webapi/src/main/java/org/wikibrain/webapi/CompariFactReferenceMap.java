@@ -142,13 +142,15 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         comparator.values = values;
         Collections.sort(links, Collections.reverseOrder(comparator));
 
+        for (String refSys : spatialDataDao.getAllRefSysNames()) {
+            for (String layer: spatialDataDao.getAllLayerNames(refSys)) {
+                System.out.println(refSys + " : " + layer);
+            }
+        }
+
         if (spatialDataDao != null) {
             for (LocalLink ll : links) {
-                Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "state");
-
-                if (geometry == null) {
-                    geometry = spatialDataDao.getGeometry(ll.getLocalId(), "country");
-                }
+                Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "wikidata");
 
                 if (geometry == null) {
                     continue;
