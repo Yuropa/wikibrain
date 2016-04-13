@@ -29,7 +29,6 @@ import java.util.Map;
  * Created by Josh on 4/6/16.
  */
 public class CompariFactWikipediaImages implements CompariFactDataSource {
-    private static final Logger LOG = LoggerFactory.getLogger(CompariFactWikipediaImages.class);
     final private RawImageDao riDao;
     final private LocalPageDao lpDao;
     final private Map<String, SRMetric> srMetrics;
@@ -62,7 +61,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             images.get(images.size() - 1).debugString = debugString;
         }
 
-        LOG.debug("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
+        System.out.println("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
 
         return images;
     }
@@ -109,8 +108,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {
         List<InternalImage> result = new ArrayList<InternalImage>();
-        LOG.debug("Generating Wikipedia Images");
-        LOG.debug("Using method " + method);
+        System.out.println("Generating Wikipedia Images");
+        System.out.println("Using method " + method);
 
         if (method.equals("esa") || method.equals("ensemble")) {
             result = srImages(text, 50, method);
@@ -144,7 +143,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             }
         }
 
-        LOG.debug("Generated " + result.size() + " Wikipedia Images");
+        System.out.println("Generated " + result.size() + " Wikipedia Images");
 
         return result;
     }

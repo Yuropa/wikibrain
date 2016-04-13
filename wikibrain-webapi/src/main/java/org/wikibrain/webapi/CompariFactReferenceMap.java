@@ -29,7 +29,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by Josh on 4/7/16.
  */
 public class CompariFactReferenceMap implements CompariFactDataSource {
-    private static final Logger LOG = LoggerFactory.getLogger(CompariFactReferenceMap.class);
     private enum MapStyle {
         STREETS, SATELLITE, LIGHT, DARK, EMERALD;
 
@@ -126,7 +125,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     private List<Geometry> locations(String text) throws DaoException {
         List<Geometry> result = new ArrayList<Geometry>();
 
-        LOG.debug("Found noun phrases: ");
+        System.out.println("Found noun phrases: ");
         final Map<LocalLink, Double> values = new HashMap<LocalLink, Double>();
         for (LocalLink ll : wikifier.wikify(text)) {
             Double value = 1.0 - (double) ll.getLocation() / (double) text.length();
@@ -135,7 +134,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             }
 
             values.put(ll, value);
-            LOG.debug("\tN: " + ll.getAnchorText());
+            System.out.println("\tN: " + ll.getAnchorText());
         }
 
         List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());
@@ -155,7 +154,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                     continue;
                 }
 
-                LOG.debug("\tL: " + ll.getAnchorText());
+                System.out.println("\tL: " + ll.getAnchorText());
                 result.add(geometry);
             }
         }
@@ -271,7 +270,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {
         List<InternalImage> result = new ArrayList<InternalImage>();
-        LOG.debug("Generating Reference map images");
+        System.out.println("Generating Reference map images");
 
         try {
             List<Geometry> locations = locations(text);
@@ -292,7 +291,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             throw new DaoException("Unable to generate reference map");
         }
 
-        LOG.debug("Generated " + result.size() + " reference map images");
+        System.out.println("Generated " + result.size() + " reference map images");
 
         return result;
     }
