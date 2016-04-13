@@ -13,9 +13,11 @@ import org.wikibrain.sr.wikify.Wikifier;
 import com.vividsolutions.jts.geom.Geometry;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
+import java.util.List;
 
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -157,6 +159,19 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         public BufferedImage generateImage() throws IOException {
             return image;
         }
+
+        @Override
+        public BufferedImage generateImage(int width) throws IOException {
+            int height = (int)((float)image.getHeight() * (float)width / (float)image.getWidth());
+            Image temp = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
+
+            Graphics2D g2d = result.createGraphics();
+            g2d.drawImage(temp, 0, 0, null);
+            g2d.dispose();
+
+            return result;
+        }
     }
 
     public ReferenceImage generateReferenceMap(MapStyle style, List<Geometry> geometries) throws IOException {
@@ -230,7 +245,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         tempHTMLFile.delete();
         scrFile.delete();
 
-        return new ReferenceImage(Language.EE, -1, "", "", imageLocation, caption, "ref-map", score, title, image);
+        return new ReferenceImage(Language.EN, -1, "", "", imageLocation, caption, "ref-map", score, title, image);
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {

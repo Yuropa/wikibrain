@@ -114,12 +114,11 @@ public class CompariFactServer extends AbstractHandler {
         Collections.sort(images, Collections.reverseOrder());
 
         List jsonConcepts = new ArrayList();
-        int count = 0;
         for (InternalImage i : images) {
             try {
                 List imageURLS = new ArrayList();
                 Map image = new HashMap();
-                image.put("data", i.generateBase64String());
+                image.put("data", i.generateBase64String(200));
                 image.put("caption", i.getCaption());
                 imageURLS.add(image);
 
@@ -129,14 +128,10 @@ public class CompariFactServer extends AbstractHandler {
                 obj.put("lang", i.getLanguage().getLangCode());
                 obj.put("images", imageURLS);
                 jsonConcepts.add(obj);
-                count++;
             } catch (Exception e) {
                 // Unable to generate image file, so we'll skip it
                 continue;
             }
-
-            if (count > 20)
-                break;
         }
         req.writeJsonResponse("text", text, "articles", jsonConcepts);
     }

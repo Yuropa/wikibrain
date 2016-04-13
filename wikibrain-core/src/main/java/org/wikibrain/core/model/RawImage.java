@@ -9,9 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.wikibrain.core.lang.Language;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
+import java.net.URLEncoder;
+
 import org.apache.batik.transcoder.*;
 
 import org.apache.commons.codec.binary.Base64;
@@ -27,6 +30,7 @@ public class RawImage {
     private final String pageLocation;
     private final String imageLocation;
     private final String caption;
+    private static int DEFAULT_IMAGE_WIDTH = -1;
 
     public RawImage(Language language, int sourceId, String name, String pageLocation, String imageLocation, String caption) {
         this.language = language;
@@ -54,16 +58,34 @@ public class RawImage {
     public String getCaption() { return caption; }
 
     // This will probably require downloading a file, so use sparingly
-    public BufferedImage generateImage() throws IOException {
+    public BufferedImage generateImage(int width) throws IOException {
         int extensionIndex = imageLocation.lastIndexOf(".");
         if (extensionIndex < 0) {
             LOG.warn("Image does not have a valid extension");
             return null;
         }
+
         String extension = imageLocation.substring(extensionIndex + 1).toLowerCase().trim();
 
         // Get the input stream
-        InputStream input = new URL(getImageLocation()).openStream();
+        String location = getImageLocation();
+        if (width > 0) {
+            int index = location.lastIndexOf("/");
+            String fileName = "";
+
+            if (index >= 0) {
+                fileName = location.substring(index + 1);
+            }
+
+            location += "/" + width + "px-" + fileName;
+
+            if (extension.equals("svg")) {
+                extension = "png";
+                location += ".png";
+            }
+        }
+
+        InputStream input = new URL(location).openStream();
 
         // Check if ImageIO can handle the extension
         if (ImageIO.getImageReadersBySuffix(extension).hasNext()) {
@@ -75,6 +97,9 @@ public class RawImage {
         }
 
         return null;
+    }
+    public BufferedImage generateImage() throws IOException {
+        return generateImage(DEFAULT_IMAGE_WIDTH);
     }
 
     private BufferedImage rasterizeSVGFile(String string) throws IOException {
@@ -128,8 +153,25 @@ public class RawImage {
     }
 
     // Creates a PNG Base64 String to display on a webpage
-    public String generateBase64String() throws IOException {
-        BufferedImage image = generateImage();
+    public String generateBase64String(int width) throws IOException {
+        BufferedImage image;
+        try {
+            image = generateImage(width);
+        } catch (FileNotFoundException e) {
+            image = generateImage();
+
+            // Resize the image manually
+            int height = (int)((float)image.getHeight() * (float)width / (float)image.getWidth());
+            Image temp = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
+
+            Graphics2D g2d = result.createGraphics();
+            g2d.drawImage(temp, 0, 0, null);
+            g2d.dispose();
+
+            image = result;
+        }
+
         if (image == null) {
             return null;
         }
@@ -138,6 +180,9 @@ public class RawImage {
         ImageIO.write(image, "png", byteStream);
         byte[] bytes = Base64.encodeBase64(byteStream.toByteArray());
         return new String(bytes);
+    }
+    public String generateBase64String() throws IOException {
+        return generateBase64String(DEFAULT_IMAGE_WIDTH);
     }
 
     @Override
