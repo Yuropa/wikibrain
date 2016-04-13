@@ -270,9 +270,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {
+        List<InternalImage> result = new ArrayList<InternalImage>();
         LOG.debug("Generating Reference map images");
 
-        List<InternalImage> result = new ArrayList<InternalImage>();
         try {
             List<Geometry> locations = locations(text);
             int topNLocations[] = {1, 3, -1};

@@ -1,6 +1,8 @@
 package org.wikibrain.webapi;
 
 import cern.jet.random.StudentT;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.Configuration;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
@@ -27,6 +29,7 @@ import java.util.Map;
  * Created by Josh on 4/6/16.
  */
 public class CompariFactWikipediaImages implements CompariFactDataSource {
+    private static final Logger LOG = LoggerFactory.getLogger(CompariFactWikipediaImages.class);
     final private RawImageDao riDao;
     final private LocalPageDao lpDao;
     final private Map<String, SRMetric> srMetrics;
@@ -50,13 +53,16 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     private List<InternalImage> createImageFromId(Language lang, int localId, String method, double score, String debugString) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
+        LocalPage lp = lpDao.getById(lang, localId);
+
         for (RawImage image : riDao.getImages(lang, localId)) {
-            LocalPage lp = lpDao.getById(lang, localId);
             images.add(new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
                     image.getPageLocation(), image.getImageLocation(), image.getCaption(), method, score,
                     lp.getTitle().getCanonicalTitle()));
             images.get(images.size() - 1).debugString = debugString;
         }
+
+        LOG.debug("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
 
         return images;
     }
@@ -103,6 +109,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {
         List<InternalImage> result = new ArrayList<InternalImage>();
+        LOG.debug("Generating Wikipedia Images");
+        LOG.debug("Using method " + method);
 
         if (method.equals("esa") || method.equals("ensemble")) {
             result = srImages(text, 50, method);
@@ -135,6 +143,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 }
             }
         }
+
+        LOG.debug("Generated " + result.size() + " Wikipedia Images");
 
         return result;
     }
