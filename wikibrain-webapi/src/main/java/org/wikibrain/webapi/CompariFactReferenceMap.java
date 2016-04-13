@@ -135,7 +135,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             }
 
             values.put(ll, value);
-            LOG.debug("\t" + ll.getAnchorText());
+            LOG.debug("\tN: " + ll.getAnchorText());
         }
 
         List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());
@@ -151,6 +151,11 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                     geometry = spatialDataDao.getGeometry(ll.getLocalId(), "country");
                 }
 
+                if (geometry == null) {
+                    continue;
+                }
+
+                LOG.debug("\tL: " + ll.getAnchorText());
                 result.add(geometry);
             }
         }
@@ -265,6 +270,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {
+        LOG.debug("Generating Reference map images");
+
         List<InternalImage> result = new ArrayList<InternalImage>();
         try {
             List<Geometry> locations = locations(text);
@@ -284,6 +291,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         } catch (IOException e) {
             throw new DaoException("Unable to generate reference map");
         }
+
+        LOG.debug("Generated " + result.size() + " reference map images");
 
         return result;
     }
