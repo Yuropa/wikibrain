@@ -284,6 +284,10 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 if (i > 0) {
                     subsetLocations = subsetLocations.subList(0, i);
                 }
+                
+                if (subsetLocations.size() == 0) {
+                    continue;
+                }
 
                 result.add(generateReferenceMap(MapStyle.SATELLITE, subsetLocations));
                 result.add(generateReferenceMap(MapStyle.STREETS, subsetLocations));
