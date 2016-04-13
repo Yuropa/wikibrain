@@ -200,15 +200,19 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             latCenter = 0;
             Geometry bounds = null;
 
-            for (Geometry g : geometries) {
-                longCenter += g.getCentroid().getX();
-                latCenter += g.getCentroid().getY();
+            try {
+                for (Geometry g : geometries) {
+                    longCenter += g.getCentroid().getX();
+                    latCenter += g.getCentroid().getY();
 
-                if (bounds == null) {
-                    bounds = g.getBoundary();
-                } else  {
-                    bounds = bounds.union(g.getBoundary());
+                    if (bounds == null) {
+                        bounds = g.getBoundary();
+                    } else {
+                        bounds = bounds.union(g.getBoundary());
+                    }
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
             longCenter /= geometries.size();
