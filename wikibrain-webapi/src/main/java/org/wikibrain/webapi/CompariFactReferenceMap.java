@@ -3,12 +3,15 @@ package org.wikibrain.webapi;
 import com.vividsolutions.jts.geom.Envelope;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.dao.DaoException;
 import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.model.LocalLink;
+import org.wikibrain.spatial.dao.SpatialDataDao;
 import org.wikibrain.sr.wikify.Wikifier;
 import com.vividsolutions.jts.geom.Geometry;
 
@@ -26,6 +29,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by Josh on 4/7/16.
  */
 public class CompariFactReferenceMap implements CompariFactDataSource {
+    private static final Logger LOG = LoggerFactory.getLogger(CompariFactReferenceMap.class);
     private enum MapStyle {
         STREETS, SATELLITE, LIGHT, DARK, EMERALD;
 
@@ -48,7 +52,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    // final private SpatialDataDao spatialDataDao;
+    final private SpatialDataDao spatialDataDao;
     final private Wikifier wikifier;
     final private Process xvfbCommand;
     final private FirefoxDriver driver;
@@ -60,7 +64,11 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         scriptString = "";
 
-        // spatialDataDao = conf.get(SpatialDataDao.class);
+        if (lang.equals(Language.EN)) {
+            spatialDataDao = conf.get(SpatialDataDao.class);
+        } else {
+            spatialDataDao = null;
+        }
         wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
 
         // Load XVFB for the WebDriver
@@ -118,6 +126,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     private List<Geometry> locations(String text) throws DaoException {
         List<Geometry> result = new ArrayList<Geometry>();
 
+        LOG.debug("Found noun phrases: ");
         final Map<LocalLink, Double> values = new HashMap<LocalLink, Double>();
         for (LocalLink ll : wikifier.wikify(text)) {
             Double value = 1.0 - (double) ll.getLocation() / (double) text.length();
@@ -126,6 +135,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             }
 
             values.put(ll, value);
+            LOG.debug("\t" + ll.getAnchorText());
         }
 
         List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());
@@ -133,15 +143,17 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         comparator.values = values;
         Collections.sort(links, Collections.reverseOrder(comparator));
 
-        /*for (LocalLink ll : links) {
-            Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "state");
+        if (spatialDataDao != null) {
+            for (LocalLink ll : links) {
+                Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "state");
 
-            if (geometry == null) {
-                geometry = spatialDataDao.getGeometry(ll.getLocalId(), "country");
+                if (geometry == null) {
+                    geometry = spatialDataDao.getGeometry(ll.getLocalId(), "country");
+                }
+
+                result.add(geometry);
             }
-
-            result.add(geometry);
-        }*/
+        }
 
         return result;
     }

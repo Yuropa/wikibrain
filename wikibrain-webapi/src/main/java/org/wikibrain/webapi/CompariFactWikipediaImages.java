@@ -16,6 +16,7 @@ import org.wikibrain.sr.SRMetric;
 import org.wikibrain.sr.SRResult;
 import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
+import org.wikibrain.utils.ParallelForEach;
 
 import java.util.ArrayList;
 import java.util.HashMap;

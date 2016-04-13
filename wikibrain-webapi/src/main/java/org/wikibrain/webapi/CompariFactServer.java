@@ -22,12 +22,15 @@ import org.wikibrain.core.model.RawImage;
 import org.wikibrain.sr.SRMetric;
 import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
+import org.wikibrain.utils.ParallelForEach;
+import org.wikibrain.utils.Procedure;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Shilad Sen
@@ -113,12 +116,25 @@ public class CompariFactServer extends AbstractHandler {
         // Sort the images based on the score (We will need to add some kind of ranking here instead)
         Collections.sort(images, Collections.reverseOrder());
 
+        // Generate all the images
+        final Map<InternalImage, String> generatedImages = new ConcurrentHashMap<InternalImage, String>();
+        ParallelForEach.loop(images, new Procedure<InternalImage>() {
+            @Override
+            public void call(InternalImage arg) throws Exception {
+                try {
+                    generatedImages.put(arg, arg.generateBase64String(400));
+                } catch (Exception e) {
+                    // Skip the image
+                }
+            }
+        });
+
         List jsonConcepts = new ArrayList();
         for (InternalImage i : images) {
             try {
                 List imageURLS = new ArrayList();
                 Map image = new HashMap();
-                image.put("data", i.generateBase64String(200));
+                image.put("data", generatedImages.get(i));
                 image.put("caption", i.getCaption());
                 imageURLS.add(image);
 
