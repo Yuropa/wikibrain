@@ -1,8 +1,8 @@
 function generateMap(annotations, mapStyle, center, zoom) {
     var container = $('#visualization-container');
     
-    mapStyle = mapStyle.replace('mapbox.', '');
-    container.append("<div class='map-container'><div class='fill " + mapStyle + "'></div></div>");
+    var mapClass = mapStyle.replace('mapbox.', '');
+    container.append("<div class='map-container'><div class='fill " + mapClass + "'></div></div>");
     container = container.find('.fill');
     
     var width = container.width();

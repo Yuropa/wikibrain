@@ -57,7 +57,7 @@ path {
 .annotationTitle {
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 3.0rem;
+    font-size: 2.0rem;
     line-height: 1.0;
     color: black;
 }
@@ -72,7 +72,7 @@ path {
 
 .annotationConnectors line {
     stroke: #555;
-    stroke-width: 3px;
+    stroke-width: 2px;
 }
 
 .noTextAnnotation.annotationContainer {
