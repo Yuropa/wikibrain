@@ -1,10 +1,12 @@
 package org.wikibrain.webapi;
 
-import com.vividsolutions.jts.geom.Envelope;
+import com.vividsolutions.jts.geom.*;
+import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.geom.Polygon;
+import org.json.JSONObject;
+import org.json.JSONArray;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.cmd.Env;
@@ -16,7 +18,6 @@ import org.wikibrain.core.model.LocalPage;
 import org.wikibrain.spatial.constants.Layers;
 import org.wikibrain.spatial.dao.SpatialDataDao;
 import org.wikibrain.sr.wikify.Wikifier;
-import com.vividsolutions.jts.geom.Geometry;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -127,8 +128,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    private List<Geometry> locations(String text) throws DaoException {
-        List<Geometry> result = new ArrayList<Geometry>();
+    private List<NamedGeometry> locations(String text) throws DaoException {
+        List<NamedGeometry> result = new ArrayList<NamedGeometry>();
 
         System.out.println("Found noun phrases: ");
         final Map<LocalLink, Double> values = new HashMap<LocalLink, Double>();
@@ -147,12 +148,6 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         comparator.values = values;
         Collections.sort(links, Collections.reverseOrder(comparator));
 
-        for (String refSys : spatialDataDao.getAllRefSysNames()) {
-            for (String layer: spatialDataDao.getAllLayerNames(refSys)) {
-                System.out.println(refSys + " : " + layer);
-            }
-        }
-
         if (spatialDataDao != null) {
             for (LocalLink ll : links) {
                 LocalPage lp = lpDao.getById(ll.getLanguage(), ll.getLocalId());
@@ -164,8 +159,17 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 }
 
                 System.out.println("\tL: " + ll.getAnchorText());
-                result.add(geometry);
+                result.add(new NamedGeometry(geometry, lp.getTitle().getCanonicalTitle()));
             }
+        } else {
+            Coordinate coordinates[] = {new Coordinate(-97.5, 49.5),
+                                        new Coordinate(-89.00, 49.5),
+                                        new Coordinate(-89.00, 43.0),
+                                        new Coordinate(-97.5, 43.0),
+                                        new Coordinate(-97.5, 49.5)};
+            Geometry geo = new Polygon(new LinearRing(coordinates, new PrecisionModel(), 0), new PrecisionModel(), 0);
+                    // new Point(new Coordinate(-90.4, 29.5), new PrecisionModel(), 0);
+            result.add(new NamedGeometry(geo, "Minnesota"));
         }
 
         return result;
@@ -199,13 +203,25 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    public ReferenceImage generateReferenceMap(MapStyle style, List<Geometry> geometries) throws IOException {
+    class NamedGeometry {
+        public Geometry geometry;
+        public String name;
+
+        public NamedGeometry(Geometry geometry, String name) {
+            this.geometry = geometry;
+            this.name = name;
+        }
+    }
+
+    public ReferenceImage generateReferenceMap(MapStyle style, List<NamedGeometry> geometries) throws IOException {
         // Determine Map size and scale attributes
         int width = 1000;
         int height = 750;
         double zoom = width;
         double longCenter = -96.0;
         double latCenter = 38.3;
+
+        JSONArray annotations = new JSONArray();
 
         if (geometries.size() > 0) {
             // Calculate a new center and extent
@@ -214,7 +230,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             Geometry bounds = null;
 
             try {
-                for (Geometry g : geometries) {
+                for (int i = 0; i < geometries.size(); i++) {
+                    Geometry g = geometries.get(i).geometry;
                     longCenter += g.getCentroid().getX();
                     latCenter += g.getCentroid().getY();
 
@@ -223,6 +240,17 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                     } else {
                         bounds = bounds.union(g.getBoundary());
                     }
+
+                    JSONObject coordinates = new JSONObject();
+                    coordinates.put("lng", g.getCentroid().getX());
+                    coordinates.put("lat", g.getCentroid().getY());
+
+                    JSONObject json = new JSONObject();
+                    json.put("location", coordinates.toString());
+                    json.put("url", "");
+                    json.put("text", "");
+                    json.put("title", geometries.get(i).name);
+                    annotations.put(json);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -232,7 +260,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             latCenter /= geometries.size();
             Envelope envelope = bounds.getEnvelopeInternal();
             if (envelope.getWidth() > 0.01 && envelope.getHeight() > 0.01) {
-                zoom = Math.min(width / envelope.getWidth(), height / envelope.getHeight());
+                zoom = Math.min(width * 62 / envelope.getWidth(), height * 31.0 / envelope.getHeight());
             }
         }
 
@@ -247,7 +275,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                         "<div id='visualization-container'>\n" +
                         "</div>\n" +
                         "<script>\n" +
-                            "generateMap([], '" + style.toString() + "', [" + longCenter + ", " + latCenter + "], " + zoom + ");\n" +
+                            "generateMap(" + annotations.toString() + ", '" + style.toString() + "', [" + longCenter + ", " + latCenter + "], " + zoom + ");\n" +
                         "</script>\n" +
                     "</body>\n" +
                 "</html>\n";
@@ -284,12 +312,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         System.out.println("Generating Reference map images");
 
         try {
-            List<Geometry> locations = locations(text);
+            List<NamedGeometry> locations = locations(text);
             int topNLocations[] = {1, 3, -1};
             for (int i : topNLocations) {
                 if (i >= locations.size()) continue;
 
-                List<Geometry> subsetLocations = locations;
+                List<NamedGeometry> subsetLocations = locations;
                 if (i > 0) {
                     subsetLocations = subsetLocations.subList(0, i);
                 }
@@ -301,6 +329,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 result.add(generateReferenceMap(MapStyle.SATELLITE, subsetLocations));
                 result.add(generateReferenceMap(MapStyle.STREETS, subsetLocations));
                 result.add(generateReferenceMap(MapStyle.EMERALD, subsetLocations));
+                result.add(generateReferenceMap(MapStyle.LIGHT, subsetLocations));
+                result.add(generateReferenceMap(MapStyle.DARK, subsetLocations));
             }
         } catch (IOException e) {
             throw new DaoException("Unable to generate reference map");

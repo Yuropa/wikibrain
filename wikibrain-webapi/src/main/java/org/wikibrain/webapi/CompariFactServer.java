@@ -56,6 +56,8 @@ public class CompariFactServer extends AbstractHandler {
         this.sources = new ArrayList<CompariFactDataSource>();
         // sources.add(new CompariFactWikipediaImages(env));
         sources.add(new CompariFactReferenceMap(env));
+
+        sources.get(0).generateimages("Minneapolis", "");
     }
 
     @Override

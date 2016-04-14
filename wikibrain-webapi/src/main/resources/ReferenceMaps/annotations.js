@@ -71,7 +71,6 @@ function displayAnnotations(graph, graph_size, graphAnnotations) {
             left: ((labels[i].x) + "px"),
             top:  ((labels[i].y) + "px")
         });
-        setMoveableAnnotation(annotation);
     }
     
     updateConnections();
