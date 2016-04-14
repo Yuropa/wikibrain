@@ -161,15 +161,6 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 System.out.println("\tL: " + ll.getAnchorText());
                 result.add(new NamedGeometry(geometry, lp.getTitle().getCanonicalTitle()));
             }
-        } else {
-            Coordinate coordinates[] = {new Coordinate(-97.5, 49.5),
-                                        new Coordinate(-89.00, 49.5),
-                                        new Coordinate(-89.00, 43.0),
-                                        new Coordinate(-97.5, 43.0),
-                                        new Coordinate(-97.5, 49.5)};
-            Geometry geo = new Polygon(new LinearRing(coordinates, new PrecisionModel(), 0), new PrecisionModel(), 0);
-                    // new Point(new Coordinate(-90.4, 29.5), new PrecisionModel(), 0);
-            result.add(new NamedGeometry(geo, "Minnesota"));
         }
 
         return result;
