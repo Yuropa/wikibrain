@@ -231,7 +231,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             longCenter /= geometries.size();
             latCenter /= geometries.size();
             Envelope envelope = bounds.getEnvelopeInternal();
-            zoom = Math.min(width / envelope.getWidth(), height / envelope.getHeight());
+            if (envelope.getWidth() > 0.01 && envelope.getHeight() > 0.01) {
+                zoom = Math.min(width / envelope.getWidth(), height / envelope.getHeight());
+            }
         }
 
         String htmlString =

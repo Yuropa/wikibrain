@@ -49,12 +49,12 @@ public class CompariFactServer extends AbstractHandler {
         for (Language l : env.getLanguages()) {
             LOG.info("warming up components for language: " + l);
             env.getConfigurator().get(Wikifier.class, "websail", "language", l.getLangCode());
-            env.getConfigurator().get(SRMetric.class,"ESA", "language", l.getLangCode());
-            env.getConfigurator().get(SRMetric.class,"ensemble", "language", l.getLangCode());
+            // env.getConfigurator().get(SRMetric.class,"ESA", "language", l.getLangCode());
+            // env.getConfigurator().get(SRMetric.class,"ensemble", "language", l.getLangCode());
         }
 
         this.sources = new ArrayList<CompariFactDataSource>();
-        sources.add(new CompariFactWikipediaImages(env));
+        // sources.add(new CompariFactWikipediaImages(env));
         sources.add(new CompariFactReferenceMap(env));
     }
 
