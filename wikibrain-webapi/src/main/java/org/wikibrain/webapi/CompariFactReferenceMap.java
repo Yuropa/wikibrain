@@ -9,8 +9,11 @@ import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.dao.DaoException;
+import org.wikibrain.core.dao.LocalPageDao;
 import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.model.LocalLink;
+import org.wikibrain.core.model.LocalPage;
+import org.wikibrain.spatial.constants.Layers;
 import org.wikibrain.spatial.dao.SpatialDataDao;
 import org.wikibrain.sr.wikify.Wikifier;
 import com.vividsolutions.jts.geom.Geometry;
@@ -53,6 +56,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
     final private SpatialDataDao spatialDataDao;
     final private Wikifier wikifier;
+    final private LocalPageDao lpDao;
     final private Process xvfbCommand;
     final private FirefoxDriver driver;
     private String scriptString;
@@ -69,6 +73,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             spatialDataDao = null;
         }
         wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
+        lpDao = conf.get(LocalPageDao.class);
 
         // Load XVFB for the WebDriver
         int      DISPLAY_NUMBER  = 99;
@@ -150,7 +155,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         if (spatialDataDao != null) {
             for (LocalLink ll : links) {
-                Geometry geometry = spatialDataDao.getGeometry(ll.getLocalId(), "wikidata");
+                LocalPage lp = lpDao.getById(ll.getLanguage(), ll.getLocalId());
+
+                Geometry geometry = spatialDataDao.getGeometry(lp.getTitle().getCanonicalTitle(), lp.getLanguage(), Layers.WIKIDATA);
 
                 if (geometry == null) {
                     continue;
@@ -284,7 +291,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 if (i > 0) {
                     subsetLocations = subsetLocations.subList(0, i);
                 }
-                
+
                 if (subsetLocations.size() == 0) {
                     continue;
                 }
