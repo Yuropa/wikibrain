@@ -7,11 +7,13 @@ import org.wikibrain.core.lang.Language;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.GZIPOutputStream;
 
 /**
  * @author Shilad Sen
@@ -82,11 +84,15 @@ public class WikiBrainWebRequest {
         return "";    // TODO: this should return a unique token describing the user.
     }
 
+    public void writeJsonResponse(Object ...keysAndValues) {
+        writeJsonResponse(false, keysAndValues);
+    }
+
     /**
      * Writes a new json response whose results hashmap contains one key and one value.
      * @param keysAndValues key1, value1, key2, value2, ...
      */
-    public void writeJsonResponse(Object ...keysAndValues) {
+    public void writeJsonResponse(boolean compress, Object ...keysAndValues) {
         if (keysAndValues.length % 2 != 0) {
             throw new IllegalArgumentException();
         }
@@ -97,10 +103,14 @@ public class WikiBrainWebRequest {
             }
             obj.put(keysAndValues[i], keysAndValues[i + 1]);
         }
-        writeJsonResponse(obj);
+        writeJsonResponse(compress, obj);
     }
 
-    public void writeJsonResponse(Map object) {
+    void writeJsonResponse(Map object) {
+        writeJsonResponse(false, object);
+    }
+
+    public void writeJsonResponse(boolean compress, Map object) {
         if (!object.containsKey("success")) {
             object.put("success", true);
         }
@@ -118,11 +128,30 @@ public class WikiBrainWebRequest {
         httpServletResponse.setContentType("application/json;charset=utf-8");
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
         try {
-            httpServletResponse.getWriter().println(JSONObject.toJSONString(object));
+            String jsonString = JSONObject.toJSONString(object);
+
+            if (compress) {
+                jsonString = compress(jsonString);
+            }
+
+            httpServletResponse.getWriter().println(jsonString);
         } catch (IOException e) {
             throw new WikiBrainWebException(e);
         }
         request.setHandled(true);
+    }
+
+    private String compress(String s) throws IOException {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        GZIPOutputStream gzip = new GZIPOutputStream(out);
+        gzip.write(s.getBytes());
+        gzip.close();
+        String outStr = out.toString("UTF-8");
+        return outStr;
     }
 
     public void writeError(Exception e) {

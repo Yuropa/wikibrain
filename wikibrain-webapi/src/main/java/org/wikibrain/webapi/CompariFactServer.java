@@ -150,8 +150,10 @@ public class CompariFactServer extends AbstractHandler {
                 continue;
             }
         }
-        req.writeJsonResponse("text", text, "articles", jsonConcepts);
+        req.writeJsonResponse(true, "text", text, "articles", jsonConcepts);
     }
+
+
 
     public static void main(String args[]) throws Exception {
         Options options = new Options();
