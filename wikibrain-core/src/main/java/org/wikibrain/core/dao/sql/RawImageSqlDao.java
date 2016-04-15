@@ -21,7 +21,6 @@ import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.lang.LanguageSet;
 import org.wikibrain.core.model.RawImage;
 import org.wikibrain.core.model.RawLink;
-import org.wikibrain.core.model.RawPage;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -131,6 +130,37 @@ public class RawImageSqlDao implements RawImageDao {
                     } else if (i == components.length - 1) {
                         // This is where the caption would be located
                         captionText = s;
+                    }
+                }
+
+                // Remove any remaining templates from the caption Text
+                int index;
+                String templateBeginning = "TEMPLATE";
+
+                while ((index = captionText.indexOf(templateBeginning)) >= 0) {
+                    int start = index, end = -1;
+                    index += templateBeginning.length();
+
+                    int openIndex = captionText.indexOf("[", index);
+                    if (openIndex < 0)
+                        break;
+
+                    int brackets = 1;
+                    for (int i = openIndex + 1; i < captionText.length(); i++) {
+                        if (captionText.charAt(i) == '[') {
+                            brackets++;
+                        } else if (captionText.charAt(i) == ']') {
+                            brackets--;
+                        }
+
+                        if (brackets == 0) {
+                            end = i + 1;
+                            break;
+                        }
+                    }
+
+                    if (end > 0) {
+                        captionText = captionText.substring(0, start) + captionText.substring(end);
                     }
                 }
 

@@ -24,6 +24,7 @@ import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
+import org.wikibrain.utils.WpThreadUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -118,7 +119,7 @@ public class CompariFactServer extends AbstractHandler {
 
         // Generate all the images
         final Map<InternalImage, String> generatedImages = new ConcurrentHashMap<InternalImage, String>();
-        ParallelForEach.loop(images, new Procedure<InternalImage>() {
+        ParallelForEach.loop(images, WpThreadUtils.getMaxThreads() * 4, new Procedure<InternalImage>() {
             @Override
             public void call(InternalImage arg) throws Exception {
                 try {
@@ -127,7 +128,7 @@ public class CompariFactServer extends AbstractHandler {
                     // Skip the image
                 }
             }
-        });
+        }, 4);
 
         List jsonConcepts = new ArrayList();
         for (InternalImage i : images) {

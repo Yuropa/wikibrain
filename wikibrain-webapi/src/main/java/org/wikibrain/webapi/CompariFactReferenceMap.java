@@ -128,6 +128,21 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
+    private Geometry getGeometry(SpatialDataDao spatialDao, String title, Language lang) throws DaoException{
+        Geometry result = spatialDao.getGeometry(title, lang, Layers.STATE);
+        if (result != null) {
+            return result;
+        }
+
+        result = spatialDao.getGeometry(title, lang, Layers.COUNTRY);
+        if (result != null){
+            return result;
+        }
+
+        result = spatialDao.getGeometry(title, lang, Layers.WIKIDATA);
+        return result;
+    }
+
     private List<NamedGeometry> locations(String text) throws DaoException {
         List<NamedGeometry> result = new ArrayList<NamedGeometry>();
 
@@ -152,7 +167,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             for (LocalLink ll : links) {
                 LocalPage lp = lpDao.getById(ll.getLanguage(), ll.getLocalId());
 
-                Geometry geometry = spatialDataDao.getGeometry(lp.getTitle().getCanonicalTitle(), lp.getLanguage(), Layers.WIKIDATA);
+                Geometry geometry = getGeometry(spatialDataDao, lp.getTitle().getCanonicalTitle(), lp.getLanguage());
 
                 if (geometry == null) {
                     continue;

@@ -58,6 +58,9 @@ public class RawImage {
     public String getCaption() { return caption; }
 
     // This will probably require downloading a file, so use sparingly
+    // Set width to -1 to indicate to use the original size of the image
+    // We might not be able to download an image of a particular size automatically
+    // In this case, you will need to resize it yourself (after you download the original image)
     public BufferedImage generateImage(int width) throws IOException {
         int extensionIndex = imageLocation.lastIndexOf(".");
         if (extensionIndex < 0) {
@@ -77,12 +80,17 @@ public class RawImage {
                 fileName = location.substring(index + 1);
             }
 
+            // Append the size path component
             location += "/" + width + "px-" + fileName;
 
+            // SVG Thumbnails get rendered as PNGs
             if (extension.equals("svg")) {
                 extension = "png";
                 location += ".png";
             }
+
+            // Switch to thumbanil url
+            location = location.replace("/commons/", "/commons/thumb/");
         }
 
         InputStream input = new URL(location).openStream();
