@@ -150,7 +150,7 @@ public class CompariFactServer extends AbstractHandler {
                 continue;
             }
         }
-        req.writeJsonResponse(true, "text", text, "articles", jsonConcepts);
+        req.writeJsonResponseCompressed(true, "text", text, "articles", jsonConcepts);
     }
 
 

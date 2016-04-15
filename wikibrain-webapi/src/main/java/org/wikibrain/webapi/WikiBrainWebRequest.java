@@ -85,14 +85,14 @@ public class WikiBrainWebRequest {
     }
 
     public void writeJsonResponse(Object ...keysAndValues) {
-        writeJsonResponse(false, keysAndValues);
+        writeJsonResponseCompressed(false, keysAndValues);
     }
 
     /**
      * Writes a new json response whose results hashmap contains one key and one value.
      * @param keysAndValues key1, value1, key2, value2, ...
      */
-    public void writeJsonResponse(boolean compress, Object ...keysAndValues) {
+    public void writeJsonResponseCompressed(boolean compress, Object ...keysAndValues) {
         if (keysAndValues.length % 2 != 0) {
             throw new IllegalArgumentException();
         }
@@ -107,10 +107,10 @@ public class WikiBrainWebRequest {
     }
 
     void writeJsonResponse(Map object) {
-        writeJsonResponse(false, object);
+        writeJsonResponseCompressed(false, object);
     }
 
-    public void writeJsonResponse(boolean compress, Map object) {
+    public void writeJsonResponseCompressed(boolean compress, Map object) {
         if (!object.containsKey("success")) {
             object.put("success", true);
         }
