@@ -103,7 +103,7 @@ public class WikiBrainWebRequest {
             }
             obj.put(keysAndValues[i], keysAndValues[i + 1]);
         }
-        writeJsonResponse(compress, obj);
+        writeJsonResponseCompressed(compress, obj);
     }
 
     void writeJsonResponse(Map object) {
