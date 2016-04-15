@@ -84,15 +84,11 @@ public class WikiBrainWebRequest {
         return "";    // TODO: this should return a unique token describing the user.
     }
 
-    public void writeJsonResponse(Object ...keysAndValues) {
-        writeJsonResponseCompressed(false, keysAndValues);
-    }
-
     /**
      * Writes a new json response whose results hashmap contains one key and one value.
      * @param keysAndValues key1, value1, key2, value2, ...
      */
-    public void writeJsonResponseCompressed(boolean compress, Object ...keysAndValues) {
+    public void writeJsonResponse(Object ...keysAndValues) {
         if (keysAndValues.length % 2 != 0) {
             throw new IllegalArgumentException();
         }
@@ -103,14 +99,9 @@ public class WikiBrainWebRequest {
             }
             obj.put(keysAndValues[i], keysAndValues[i + 1]);
         }
-        writeJsonResponseCompressed(compress, obj);
+        writeJsonResponse(obj);
     }
-
-    void writeJsonResponse(Map object) {
-        writeJsonResponseCompressed(false, object);
-    }
-
-    public void writeJsonResponseCompressed(boolean compress, Map object) {
+    public void writeJsonResponse(Map object) {
         if (!object.containsKey("success")) {
             object.put("success", true);
         }
@@ -128,13 +119,7 @@ public class WikiBrainWebRequest {
         httpServletResponse.setContentType("application/json;charset=utf-8");
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
         try {
-            String jsonString = JSONObject.toJSONString(object);
-
-            if (compress) {
-                jsonString = compress(jsonString);
-            }
-
-            httpServletResponse.getWriter().println(jsonString);
+            httpServletResponse.getWriter().println(JSONObject.toJSONString(object));
         } catch (IOException e) {
             throw new WikiBrainWebException(e);
         }
