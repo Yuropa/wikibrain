@@ -95,7 +95,6 @@ public class RawImageSqlDao implements RawImageDao {
                         JsonArray metadata = properties.getAsJsonArray("commonmetadata");
                         boolean hasMake = false;
                         boolean hasModel = false;
-                        boolean hasSoftware = false;
                         for (int i = 0; i < metadata.size(); i++) {
                             JsonObject data = metadata.get(i).getAsJsonObject();
 
@@ -103,12 +102,10 @@ public class RawImageSqlDao implements RawImageDao {
                                 hasMake = true;
                             } else if (data.get("name").getAsString().equals("Model")) {
                                 hasModel = true;
-                            } else if (data.get("name").getAsString().equals("Software")) {
-                                hasSoftware = true;
                             }
                         }
 
-                        isPhotograph = hasMake & hasModel & !hasSoftware;
+                        isPhotograph = hasMake & hasModel;
                     } catch (Exception e) {
                     } finally {
                         if (in != null)
