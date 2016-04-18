@@ -29,6 +29,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -63,138 +64,150 @@ public class RawImageSqlDao implements RawImageDao {
     public Iterable<RawImage> getImages(Language language, int localId) throws DaoException {
         ArrayList<RawImage> result = new ArrayList<RawImage>();
 
+        String titles = "";
+        Map<String, RawLink> titleLinkMap = new HashMap<String, RawLink>();
         for (RawLink l : rawLinkDao.getLinks(language, localId)) {
             if (l.getType() == RawLink.RawLinkType.IMAGE || (l.getType() == RawLink.RawLinkType.UNKNOWN && targetToImage(l.getTarget()))) {
                 // Found an image
                 String name = l.getTarget();
-                String page = name;
-                String image = "";
 
-                int width = 0;
-                int height = 0;
-                boolean isPhotograph = false;
                 if (targetToImage(name)) {
-                    // Remove the prefix
                     name = trimTargetName(name);
-                    page = "https://commons.wikimedia.org/wiki/File:" + name;
 
-                    String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=File:" + name + "&prop=imageinfo&format=json&iiprop=commonmetadata|url|timestamp|user|size";
-
-                    InputStream in = null;
-                    try {
-                        in = new URL(download).openStream();
-                        JsonObject json = new JsonParser().parse(IOUtils.toString(in)).getAsJsonObject();
-                        JsonObject pages = json.getAsJsonObject("query").getAsJsonObject("pages");
-                        String pageKey = pages.entrySet().iterator().next().getKey();
-
-                        JsonObject properties = pages.getAsJsonObject(pageKey).getAsJsonArray("imageinfo").get(0).getAsJsonObject();
-                        image = properties.get("url").getAsString();
-                        width = properties.get("width").getAsInt();
-                        height = properties.get("height").getAsInt();
-
-                        JsonArray metadata = properties.getAsJsonArray("commonmetadata");
-                        boolean hasMake = false;
-                        boolean hasModel = false;
-                        for (int i = 0; i < metadata.size(); i++) {
-                            JsonObject data = metadata.get(i).getAsJsonObject();
-
-                            if (data.get("name").getAsString().equals("Make")) {
-                                hasMake = true;
-                            } else if (data.get("name").getAsString().equals("Model")) {
-                                hasModel = true;
-                            }
-                        }
-
-                        isPhotograph = hasMake & hasModel;
-                    } catch (Exception e) {
-                    } finally {
-                        if (in != null)
-                            IOUtils.closeQuietly(in);
+                    if (titles.length() > 0) {
+                        titles += "|";
                     }
+                    titles += "File:" + name;
+                    titleLinkMap.put(name, l);
                 }
-
-                // Get caption
-                String context = l.getContext();
-                String[] components = context.split("\\|");
-
-                String captionText = "";
-
-                // Try to parse the image WikiText
-                // https://en.wikipedia.org/wiki/Wikipedia:Extended_image_syntax
-                for (int i = 0; i < components.length; i++) {
-                    String s = components[i];
-                    s = s.trim();
-
-                    if (i == 0) {
-                        // This is the file name
-                        if (s.startsWith("File:")) {
-                            int fileExtension = context.lastIndexOf(".");
-                            s = s.substring("File:".length(), fileExtension);
-                        }
-
-                        captionText = s;
-                    } else if (s.startsWith("alt=")) {
-                        s = s.substring("alt=".length());
-                        captionText = s;
-                    } else if (s.equals("thumb") || s.equals("thumbnail") || s.equals("frame") || s.equals("framed")
-                            || s.equals("frameless") || s.startsWith("thumb=") || s.startsWith("thumbnail=")) {
-                        // type attribute
-                        continue;
-                    } else if (s.equals("border")) {
-                        // border attribute
-                        continue;
-                    } else if (s.equals("right") || s.equals("left") || s.equals("center") || s.equals("none")) {
-                        // location attriubte
-                        continue;
-                    } else if (s.startsWith("link=")) {
-                        // link attribute
-                        continue;
-                    } else if (s.equals("upright") || s.startsWith("upright=") || s.endsWith("px")) {
-                        // size attribute
-                        continue;
-                    } else if (i == components.length - 1) {
-                        // This is where the caption would be located
-                        captionText = s;
-                    }
-                }
-
-                // Remove any remaining templates from the caption Text
-                int index;
-                String templateBeginning = "TEMPLATE";
-
-                while ((index = captionText.indexOf(templateBeginning)) >= 0) {
-                    int start = index, end = -1;
-                    index += templateBeginning.length();
-
-                    int openIndex = captionText.indexOf("[", index);
-                    if (openIndex < 0)
-                        break;
-
-                    int brackets = 1;
-                    for (int i = openIndex + 1; i < captionText.length(); i++) {
-                        if (captionText.charAt(i) == '[') {
-                            brackets++;
-                        } else if (captionText.charAt(i) == ']') {
-                            brackets--;
-                        }
-
-                        if (brackets == 0) {
-                            end = i + 1;
-                            break;
-                        }
-                    }
-
-                    if (end > 0) {
-                        captionText = captionText.substring(0, start) + captionText.substring(end);
-                    }
-                }
-
-                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image, captionText, isPhotograph, width, height);
-                result.add(i);
             }
         }
 
+        InputStream in = null;
+        try {
+            String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo&format=json&iiprop=commonmetadata|url|timestamp|user|size";
+
+            in = new URL(download).openStream();
+            JsonObject json = new JsonParser().parse(IOUtils.toString(in)).getAsJsonObject();
+            JsonObject pages = json.getAsJsonObject("query").getAsJsonObject("pages");
+
+            for (Map.Entry<String, JsonElement> entry : pages.entrySet()) {
+                JsonObject page = entry.getValue().getAsJsonObject();
+                String name = page.get("title").getAsString();
+                RawLink l = titleLinkMap.get(name);
+
+                String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
+
+                JsonObject properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
+                String image = properties.get("url").getAsString();
+                int width = properties.get("width").getAsInt();
+                int height = properties.get("height").getAsInt();
+
+                JsonArray metadata = properties.getAsJsonArray("commonmetadata");
+                boolean hasMake = false;
+                boolean hasModel = false;
+                for (int i = 0; i < metadata.size(); i++) {
+                    JsonObject data = metadata.get(i).getAsJsonObject();
+
+                    if (data.get("name").getAsString().equals("Make")) {
+                        hasMake = true;
+                    } else if (data.get("name").getAsString().equals("Model")) {
+                        hasModel = true;
+                    }
+                }
+
+                boolean isPhotograph = hasMake & hasModel;
+
+                // Get caption
+                String context = l.getContext();
+                String captionText = generateCaptionFromWikiText(context);
+
+                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, pageLocation, image, captionText, isPhotograph, width, height);
+                result.add(i);
+            }
+        } catch (Exception e) {
+        } finally {
+            IOUtils.closeQuietly(in);
+        }
+
         return result;
+    }
+
+    private String generateCaptionFromWikiText(String context) {
+        String[] components = context.split("\\|");
+
+        String captionText = "";
+
+        // Try to parse the image WikiText
+        // https://en.wikipedia.org/wiki/Wikipedia:Extended_image_syntax
+        for (int i = 0; i < components.length; i++) {
+            String s = components[i];
+            s = s.trim();
+
+            if (i == 0) {
+                // This is the file name
+                if (s.startsWith("File:")) {
+                    int fileExtension = context.lastIndexOf(".");
+                    s = s.substring("File:".length(), fileExtension);
+                }
+
+                captionText = s;
+            } else if (s.startsWith("alt=")) {
+                s = s.substring("alt=".length());
+                captionText = s;
+            } else if (s.equals("thumb") || s.equals("thumbnail") || s.equals("frame") || s.equals("framed")
+                    || s.equals("frameless") || s.startsWith("thumb=") || s.startsWith("thumbnail=")) {
+                // type attribute
+                continue;
+            } else if (s.equals("border")) {
+                // border attribute
+                continue;
+            } else if (s.equals("right") || s.equals("left") || s.equals("center") || s.equals("none")) {
+                // location attriubte
+                continue;
+            } else if (s.startsWith("link=")) {
+                // link attribute
+                continue;
+            } else if (s.equals("upright") || s.startsWith("upright=") || s.endsWith("px")) {
+                // size attribute
+                continue;
+            } else if (i == components.length - 1) {
+                // This is where the caption would be located
+                captionText = s;
+            }
+        }
+
+        // Remove any remaining templates from the caption Text
+        int index;
+        String templateBeginning = "TEMPLATE";
+
+        while ((index = captionText.indexOf(templateBeginning)) >= 0) {
+            int start = index, end = -1;
+            index += templateBeginning.length();
+
+            int openIndex = captionText.indexOf("[", index);
+            if (openIndex < 0)
+                break;
+
+            int brackets = 1;
+            for (int i = openIndex + 1; i < captionText.length(); i++) {
+                if (captionText.charAt(i) == '[') {
+                    brackets++;
+                } else if (captionText.charAt(i) == ']') {
+                    brackets--;
+                }
+
+                if (brackets == 0) {
+                    end = i + 1;
+                    break;
+                }
+            }
+
+            if (end > 0) {
+                captionText = captionText.substring(0, start) + captionText.substring(end);
+            }
+        }
+        return captionText;
     }
 
     // TODO: Implement these to interact with the SQL database

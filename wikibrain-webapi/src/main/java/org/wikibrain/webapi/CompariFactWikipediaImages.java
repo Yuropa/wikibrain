@@ -1,6 +1,7 @@
 package org.wikibrain.webapi;
 
 import cern.jet.random.StudentT;
+import edu.emory.mathcs.backport.java.util.Collections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.Configuration;
@@ -19,6 +20,8 @@ import org.wikibrain.sr.SRResult;
 import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
 import org.wikibrain.utils.ParallelForEach;
+import org.wikibrain.utils.Procedure;
+import org.wikibrain.utils.WpThreadUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,16 +70,20 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return images;
     }
 
-    private List<InternalImage> srImages(String text, int count, String method) throws DaoException {
-        List<InternalImage> result = new ArrayList<InternalImage>();
+    private List<InternalImage> srImages(String text, int count, final String method) throws DaoException {
+        final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
 
-        SRMetric sr = srMetrics.get(method);
-        SRResultList mostSimilar = sr.mostSimilar(text, count);
-        for (int i = 0; i < mostSimilar.numDocs(); i++) {
-            int id = mostSimilar.getId(i);
-            double score = mostSimilar.getScoreForId(id);
-            result.addAll(createImageFromId(sr.getLanguage(), id, method, score));
-        }
+        final SRMetric sr = srMetrics.get(method);
+        final SRResultList mostSimilar = sr.mostSimilar(text, count);
+
+        ParallelForEach.range(0, mostSimilar.numDocs(), WpThreadUtils.getMaxThreads() * 4, new Procedure<Integer>() {
+            @Override
+            public void call(Integer i) throws Exception {
+                int id = mostSimilar.getId(i);
+                double score = mostSimilar.getScoreForId(id);
+                result.addAll(createImageFromId(sr.getLanguage(), id, method, score));
+            }
+        });
 
         return result;
     }
@@ -107,41 +114,46 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return result;
     }
 
-    public List<InternalImage> generateimages(String text, String method) throws DaoException {
-        List<InternalImage> result = new ArrayList<InternalImage>();
+    public List<InternalImage> generateimages(String text, final String method) throws DaoException {
+        final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
         System.out.println("Generating Wikipedia Images");
         System.out.println("Using method " + method);
 
         if (method.equals("esa") || method.equals("ensemble")) {
-            result = srImages(text, 50, method);
+            return srImages(text, 50, method);
         } else if (method.startsWith("wikify")) {
             int index = method.lastIndexOf("-");
-            String srMethod = null;
+            final String srMethod;
             if (index >= 0) {
                 srMethod = method.substring(index + 1);
+            } else {
+                srMethod = null;
             }
 
-            for (ScoredLink scoredLink : wikifyText(text)) {
-                LocalLink ll = scoredLink.link;
-                double score = scoredLink.score;
+            ParallelForEach.loop(wikifyText(text), WpThreadUtils.getMaxThreads() * 4, new Procedure<ScoredLink>() {
+                @Override
+                public void call(ScoredLink scoredLink) throws Exception {
+                    LocalLink ll = scoredLink.link;
+                    double score = scoredLink.score;
 
-                result.addAll(createImageFromId(ll.getLanguage(), ll.getLocalId(), "wikify", score, ll.getAnchorText()));
+                    result.addAll(createImageFromId(ll.getLanguage(), ll.getLocalId(), "wikify", score, ll.getAnchorText()));
 
-                if (srMethod == null) {
-                    continue;
+                    if (srMethod == null) {
+                        return;
+                    }
+
+                    int numberOfImages = (int)(50.0 * score);
+                    String title = lpDao.getById(ll.getLanguage(), ll.getLocalId()).getTitle().getCanonicalTitle();
+                    for (InternalImage image : srImages(title, numberOfImages, srMethod)) {
+                        // Change the method from the SR method to the wikify-sr method
+                        InternalImage newImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
+                                image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
+                                image.getWidth(), image.getHeight(), method, image.getScore(), image.getTitle());
+                        newImage.debugString = ll.getAnchorText();
+                        result.add(newImage);
+                    }
                 }
-
-                int numberOfImages = (int)(50.0 * score);
-                String title = lpDao.getById(ll.getLanguage(), ll.getLocalId()).getTitle().getCanonicalTitle();
-                for (InternalImage image : srImages(title, numberOfImages, srMethod)) {
-                    // Change the method from the SR method to the wikify-sr method
-                    InternalImage newImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
-                            image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
-                            image.getWidth(), image.getHeight(), method, image.getScore(), image.getTitle());
-                    newImage.debugString = ll.getAnchorText();
-                    result.add(newImage);
-                }
-            }
+            });
         }
 
         System.out.println("Generated " + result.size() + " Wikipedia Images");
