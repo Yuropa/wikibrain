@@ -211,13 +211,13 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         score = 1.0;
         // Image location is needed to ensure that the files can be differentiated later
         // Not that the location will no longer be valid
-        String imageLocation = scrFile.getCanonicalPath();
+        // String imageLocation = scrFile.getCanonicalPath();
 
         // Clean up files (we don't want our temp files hanging around too long)
         tempHTMLFile.delete();
         scrFile.delete();
 
-        return new ReferenceImage(Language.EN, -1, "", "", imageLocation, caption, "ref-map", false, width, height, score, title, image);
+        return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {

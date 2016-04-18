@@ -220,7 +220,11 @@ public class RawImage {
 
     @Override
     public int hashCode() {
-        return language.hashCode() ^ sourceId ^ imageLocation.hashCode();
+        if (imageLocation != null) {
+            return language.hashCode() ^ sourceId;
+        } else {
+            return language.hashCode() ^ sourceId ^ imageLocation.hashCode();
+        }
     }
 
     @Override
@@ -228,7 +232,7 @@ public class RawImage {
         if (obj instanceof RawImage) {
             RawImage r = (RawImage)obj;
             return r.language == language && r.sourceId == sourceId && r.name == name && r.pageLocation == pageLocation
-                    && r.imageLocation == imageLocation && r.caption == caption;
+                    && r.caption == caption && (r.imageLocation == null || imageLocation == null || r.imageLocation == imageLocation);
         }
 
         return super.equals(obj);
