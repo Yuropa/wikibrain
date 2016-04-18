@@ -3,10 +3,14 @@ package org.wikibrain.webapi;
 import EDU.oswego.cs.dl.util.concurrent.FJTask;
 import com.google.common.collect.Lists;
 import com.vividsolutions.jts.geom.*;
+import org.eclipse.jetty.util.ConcurrentHashSet;
+import org.jooq.util.derby.sys.Sys;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.dao.DaoException;
@@ -18,16 +22,19 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.Semaphore;
 
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
+import org.wikibrain.utils.WpThreadUtils;
 
 /**
  * Created by Josh on 4/7/16.
  */
 public class CompariFactReferenceMap implements CompariFactDataSource {
+    private static final Logger LOG = LoggerFactory.getLogger(CompariFactReferenceMap.class);
     private enum MapStyle {
         STREETS, SATELLITE, LIGHT, DARK, EMERALD;
 
@@ -60,9 +67,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
+    final private int MAX_FIREFOX_INSTANCE = WpThreadUtils.getMaxThreads();
+    final private Semaphore availableFirefox = new Semaphore(MAX_FIREFOX_INSTANCE, true);
+
     final private LocationExtractor locationExtractor;
     final private Process xvfbCommand;
-    final private FirefoxDriver driver;
+    final private Set<FirefoxDriver> drivers = new ConcurrentHashSet<FirefoxDriver>();
     private String scriptString;
 
     CompariFactReferenceMap(Env env) throws ConfigurationException {
@@ -74,11 +84,24 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         String   XVFB            = "Xvfb";
         String   XVFB_COMMAND    = XVFB + " :" + DISPLAY_NUMBER;
 
+        int screenWidth = 1280;
+        int screenHeight = 1024;
+        int screenBitDepth = 8;
+
+        for (int i = 0; i < MAX_FIREFOX_INSTANCE; i++) {
+            XVFB_COMMAND += " -screen " + i + " " + screenWidth + "x" + screenHeight + "x" + screenBitDepth + " ";
+        }
+
         try {
             xvfbCommand = Runtime.getRuntime().exec(XVFB_COMMAND);
-            FirefoxBinary firefox = new FirefoxBinary();
-            firefox.setEnvironmentProperty("DISPLAY", ":" + DISPLAY_NUMBER);
-            driver = new FirefoxDriver(firefox, null);
+
+            for (int i = 0; i < MAX_FIREFOX_INSTANCE; i++) {
+                FirefoxBinary firefox = new FirefoxBinary();
+                firefox.setEnvironmentProperty("DISPLAY", ":" + DISPLAY_NUMBER + "." + i);
+                drivers.add(new FirefoxDriver(firefox, null));
+            }
+
+            LOG.info("Created " + MAX_FIREFOX_INSTANCE + " firefox instances for reference map rendering");
 
             loadCSSFile("index.css");
             loadJavaScriptFile("jquery.js");
@@ -91,6 +114,18 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         } catch (Exception  e) {
             throw new ConfigurationException("Unable to load required javascript engine");
         }
+    }
+
+    private FirefoxDriver getDriver() throws InterruptedException {
+        availableFirefox.acquire();
+        FirefoxDriver driver = drivers.iterator().next();
+        drivers.remove(driver);
+        return driver;
+    }
+
+    private void releaseDirver(FirefoxDriver driver) {
+        drivers.add(driver);
+        availableFirefox.release();
     }
 
     @Override
@@ -211,11 +246,21 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         writer.write(htmlString);
         writer.close();
 
-        driver.manage().window().setSize(new Dimension(width, height));
-        driver.get("file://" + tempHTMLFile.getAbsolutePath());
+        File scrFile = null;
+        try {
 
-        // Get the image
-        File scrFile = driver.getScreenshotAs(OutputType.FILE);
+            FirefoxDriver driver = getDriver();
+            driver.manage().window().setSize(new Dimension(width, height));
+            driver.get("file://" + tempHTMLFile.getAbsolutePath());
+
+            // Get the image
+            scrFile = driver.getScreenshotAs(OutputType.FILE);
+            releaseDirver(driver);
+            driver = null;
+        } catch (InterruptedException e) {
+            throw new IOException("Unable to get web driver");
+        }
+
         BufferedImage image = ImageIO.read(scrFile);
 
         // Get Metadata
@@ -262,7 +307,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     }
 
     public void close() {
-        driver.quit();
+        for (FirefoxDriver driver : drivers) {
+            driver.close();
+        }
         xvfbCommand.destroy();
     }
 }
