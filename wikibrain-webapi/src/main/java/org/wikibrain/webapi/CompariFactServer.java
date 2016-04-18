@@ -106,7 +106,13 @@ public class CompariFactServer extends AbstractHandler {
         for (int i = 0; i < images.size(); i++) {
             RawImage image = images.get(i);
 
-            if (imageLocations.contains(image.getImageLocation())) {
+            String location = image.getImageLocation();
+            if (location == null) {
+                // This is a reference map
+                continue;
+            }
+            
+            if (imageLocations.contains(location)) {
                 images.remove(i);
                 i--;
             } else {

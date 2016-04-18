@@ -29,6 +29,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
 import org.wikibrain.utils.WpThreadUtils;
+import sun.rmi.runtime.Log;
 
 /**
  * Created by Josh on 4/7/16.
@@ -94,6 +95,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         try {
             xvfbCommand = Runtime.getRuntime().exec(XVFB_COMMAND);
+
+            LOG.info("Warming up firefox");
 
             for (int i = 0; i < MAX_FIREFOX_INSTANCE; i++) {
                 FirefoxBinary firefox = new FirefoxBinary();
