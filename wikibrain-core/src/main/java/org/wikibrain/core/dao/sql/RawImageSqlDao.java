@@ -72,15 +72,20 @@ public class RawImageSqlDao implements RawImageDao {
                 String name = l.getTarget();
 
                 if (targetToImage(name)) {
-                    name = trimTargetName(name);
+                    name = "File:" + trimTargetName(name);
 
                     if (titles.length() > 0) {
                         titles += "|";
                     }
-                    titles += "File:" + name;
+                    titles += name;
                     titleLinkMap.put(name, l);
                 }
             }
+        }
+
+        // If we didn't find any images, bail early
+        if (titles.length() == 0) {
+            return result;
         }
 
         InputStream in = null;
@@ -88,12 +93,13 @@ public class RawImageSqlDao implements RawImageDao {
             String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo&format=json&iiprop=commonmetadata|url|timestamp|user|size";
 
             in = new URL(download).openStream();
-            JsonObject json = new JsonParser().parse(IOUtils.toString(in)).getAsJsonObject();
+            String jsonString = IOUtils.toString(in);
+            JsonObject json = new JsonParser().parse(jsonString).getAsJsonObject();
             JsonObject pages = json.getAsJsonObject("query").getAsJsonObject("pages");
 
             for (Map.Entry<String, JsonElement> entry : pages.entrySet()) {
                 JsonObject page = entry.getValue().getAsJsonObject();
-                String name = page.get("title").getAsString();
+                String name = page.get("title").getAsString().replace(" ", "_");
                 RawLink l = titleLinkMap.get(name);
 
                 String pageLocation = "https://commons.wikimedia.org/wiki/" + name;

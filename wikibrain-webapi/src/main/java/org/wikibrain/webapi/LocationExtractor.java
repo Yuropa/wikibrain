@@ -103,7 +103,6 @@ public class LocationExtractor {
             }
 
             values.put(ll, value);
-            System.out.println("\tN: " + ll.getAnchorText());
         }
 
         List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());

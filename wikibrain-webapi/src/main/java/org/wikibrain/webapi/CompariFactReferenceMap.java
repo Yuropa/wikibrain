@@ -1,5 +1,7 @@
 package org.wikibrain.webapi;
 
+import EDU.oswego.cs.dl.util.concurrent.FJTask;
+import com.google.common.collect.Lists;
 import com.vividsolutions.jts.geom.*;
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -19,6 +21,8 @@ import java.util.List;
 
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.wikibrain.utils.ParallelForEach;
+import org.wikibrain.utils.Procedure;
 
 /**
  * Created by Josh on 4/7/16.
@@ -27,6 +31,16 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     private enum MapStyle {
         STREETS, SATELLITE, LIGHT, DARK, EMERALD;
 
+        static public List<MapStyle> supportedStyles() {
+            List<MapStyle> styles = new ArrayList<MapStyle>();
+            styles.add(STREETS);
+            styles.add(SATELLITE);
+            styles.add(LIGHT);
+            styles.add(DARK);
+            styles.add(EMERALD);
+            return styles;
+        }
+        
         @Override
         public String toString() {
             switch (this) {
@@ -209,8 +223,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         String caption = "Reference Map";
         double score = 0.8 + Math.random() * 0.2;
         score = 1.0;
-        // Image location is needed to ensure that the files can be differentiated later
-        // Not that the location will no longer be valid
+
+        // Note that the location will no longer be valid
         // String imageLocation = scrFile.getCanonicalPath();
 
         // Clean up files (we don't want our temp files hanging around too long)
@@ -220,27 +234,27 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
     }
 
-    public List<InternalImage> generateimages(String text, String method) throws DaoException {
-        List<InternalImage> result = new ArrayList<InternalImage>();
+    public List<InternalImage> generateimages(final String text, String method) throws DaoException {
+        final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
         System.out.println("Generating Reference map images");
 
-        try {
-            for (LocationExtractor.ExtractionType type : locationExtractor.supportedExtractionTypes()) {
-                List<LocationExtractor.NamedGeometry> locations = locationExtractor.extractLocations(text, type);
+        ParallelForEach.loop(locationExtractor.supportedExtractionTypes(), new Procedure<LocationExtractor.ExtractionType>() {
+            @Override
+            public void call(LocationExtractor.ExtractionType type) throws Exception {
+                final List<LocationExtractor.NamedGeometry> locations = locationExtractor.extractLocations(text, type);
 
                 if (locations.size() == 0) {
-                    continue;
+                    return;
                 }
 
-                result.add(generateReferenceMap(MapStyle.SATELLITE, locations));
-                result.add(generateReferenceMap(MapStyle.STREETS,   locations));
-                result.add(generateReferenceMap(MapStyle.EMERALD,   locations));
-                result.add(generateReferenceMap(MapStyle.LIGHT,     locations));
-                result.add(generateReferenceMap(MapStyle.DARK,      locations));
+                ParallelForEach.loop(MapStyle.supportedStyles(), new Procedure<MapStyle>() {
+                    @Override
+                    public void call(MapStyle style) throws Exception {
+                        result.add(generateReferenceMap(style, locations));
+                    }
+                });
             }
-        } catch (IOException e) {
-            throw new DaoException("Unable to generate reference map");
-        }
+        });
 
         System.out.println("Generated " + result.size() + " reference map images");
 
