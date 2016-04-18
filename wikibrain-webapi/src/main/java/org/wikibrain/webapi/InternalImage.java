@@ -13,8 +13,8 @@ public class InternalImage extends RawImage implements Comparable<InternalImage>
     String debugString = "";
 
     InternalImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
-                  String caption, String method, double score, String title) {
-        super(language, sourceId, name, pageLocation, imageLocation, caption);
+                  String caption, boolean isPhotograph, int width, int height, String method, double score, String title) {
+        super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height);
         this.method = method;
         this.score = score;
         this.title = title;

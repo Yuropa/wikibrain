@@ -1,23 +1,14 @@
 package org.wikibrain.webapi;
 
 import com.vividsolutions.jts.geom.*;
-import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.geom.Polygon;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.wikibrain.conf.ConfigurationException;
-import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.dao.DaoException;
-import org.wikibrain.core.dao.LocalPageDao;
 import org.wikibrain.core.lang.Language;
-import org.wikibrain.core.model.LocalLink;
-import org.wikibrain.core.model.LocalPage;
-import org.wikibrain.spatial.constants.Layers;
-import org.wikibrain.spatial.dao.SpatialDataDao;
-import org.wikibrain.sr.wikify.Wikifier;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -55,26 +46,14 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    final private SpatialDataDao spatialDataDao;
-    final private Wikifier wikifier;
-    final private LocalPageDao lpDao;
+    final private LocationExtractor locationExtractor;
     final private Process xvfbCommand;
     final private FirefoxDriver driver;
     private String scriptString;
 
     CompariFactReferenceMap(Env env) throws ConfigurationException {
-        Configurator conf = env.getConfigurator();
-        Language lang = env.getDefaultLanguage();
-
+        locationExtractor = new LocationExtractor(env);
         scriptString = "";
-
-        if (lang.equals(Language.EN)) {
-            spatialDataDao = conf.get(SpatialDataDao.class);
-        } else {
-            spatialDataDao = null;
-        }
-        wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
-        lpDao = conf.get(LocalPageDao.class);
 
         // Load XVFB for the WebDriver
         int      DISPLAY_NUMBER  = 99;
@@ -119,74 +98,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         scriptString += "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + script.getAbsolutePath() + "\">\n";
     }
 
-    private class LinksComparator implements Comparator<LocalLink> {
-        public Map<LocalLink, Double> values;
-
-        @Override
-        public int compare(LocalLink o1, LocalLink o2) {
-            return values.get(o1).compareTo(values.get(o2));
-        }
-    }
-
-    private Geometry getGeometry(SpatialDataDao spatialDao, String title, Language lang) throws DaoException{
-        Geometry result = spatialDao.getGeometry(title, lang, Layers.STATE);
-        if (result != null) {
-            return result;
-        }
-
-        result = spatialDao.getGeometry(title, lang, Layers.COUNTRY);
-        if (result != null){
-            return result;
-        }
-
-        result = spatialDao.getGeometry(title, lang, Layers.WIKIDATA);
-        return result;
-    }
-
-    private List<NamedGeometry> locations(String text) throws DaoException {
-        List<NamedGeometry> result = new ArrayList<NamedGeometry>();
-
-        System.out.println("Found noun phrases: ");
-        final Map<LocalLink, Double> values = new HashMap<LocalLink, Double>();
-        for (LocalLink ll : wikifier.wikify(text)) {
-            Double value = 1.0 - (double) ll.getLocation() / (double) text.length();
-            if (values.containsKey(ll)) {
-                value += values.get(ll);
-            }
-
-            values.put(ll, value);
-            System.out.println("\tN: " + ll.getAnchorText());
-        }
-
-        List<LocalLink> links = new ArrayList<LocalLink>(values.keySet());
-        LinksComparator comparator = new LinksComparator();
-        comparator.values = values;
-        Collections.sort(links, Collections.reverseOrder(comparator));
-
-        if (spatialDataDao != null) {
-            for (LocalLink ll : links) {
-                LocalPage lp = lpDao.getById(ll.getLanguage(), ll.getLocalId());
-
-                Geometry geometry = getGeometry(spatialDataDao, lp.getTitle().getCanonicalTitle(), lp.getLanguage());
-
-                if (geometry == null) {
-                    continue;
-                }
-
-                System.out.println("\tL: " + ll.getAnchorText());
-                result.add(new NamedGeometry(geometry, lp.getTitle().getCanonicalTitle()));
-            }
-        }
-
-        return result;
-    }
-
     class ReferenceImage extends InternalImage {
         final public BufferedImage image;
 
         ReferenceImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
-                      String caption, String method, double score, String title, BufferedImage image) {
-            super(language, sourceId, name, pageLocation, imageLocation, caption, method, score, title);
+                      String caption, String method, boolean isPhotograph, int width, int height, double score, String title, BufferedImage image) {
+            super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height, method, score, title);
             this.image = image;
         }
 
@@ -209,17 +126,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    class NamedGeometry {
-        public Geometry geometry;
-        public String name;
-
-        public NamedGeometry(Geometry geometry, String name) {
-            this.geometry = geometry;
-            this.name = name;
-        }
-    }
-
-    public ReferenceImage generateReferenceMap(MapStyle style, List<NamedGeometry> geometries) throws IOException {
+    public ReferenceImage generateReferenceMap(MapStyle style, List<LocationExtractor.NamedGeometry> geometries) throws IOException {
         // Determine Map size and scale attributes
         int width = 1000;
         int height = 750;
@@ -310,7 +217,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         tempHTMLFile.delete();
         scrFile.delete();
 
-        return new ReferenceImage(Language.EN, -1, "", "", imageLocation, caption, "ref-map", score, title, image);
+        return new ReferenceImage(Language.EN, -1, "", "", imageLocation, caption, "ref-map", false, width, height, score, title, image);
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {
@@ -318,25 +225,18 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         System.out.println("Generating Reference map images");
 
         try {
-            List<NamedGeometry> locations = locations(text);
-            int topNLocations[] = {1, 3, -1};
-            for (int i : topNLocations) {
-                if (i >= locations.size()) continue;
+            for (LocationExtractor.ExtractionType type : locationExtractor.supportedExtractionTypes()) {
+                List<LocationExtractor.NamedGeometry> locations = locationExtractor.extractLocations(text, type);
 
-                List<NamedGeometry> subsetLocations = locations;
-                if (i > 0) {
-                    subsetLocations = subsetLocations.subList(0, i);
-                }
-
-                if (subsetLocations.size() == 0) {
+                if (locations.size() == 0) {
                     continue;
                 }
 
-                result.add(generateReferenceMap(MapStyle.SATELLITE, subsetLocations));
-                result.add(generateReferenceMap(MapStyle.STREETS, subsetLocations));
-                result.add(generateReferenceMap(MapStyle.EMERALD, subsetLocations));
-                result.add(generateReferenceMap(MapStyle.LIGHT, subsetLocations));
-                result.add(generateReferenceMap(MapStyle.DARK, subsetLocations));
+                result.add(generateReferenceMap(MapStyle.SATELLITE, locations));
+                result.add(generateReferenceMap(MapStyle.STREETS,   locations));
+                result.add(generateReferenceMap(MapStyle.EMERALD,   locations));
+                result.add(generateReferenceMap(MapStyle.LIGHT,     locations));
+                result.add(generateReferenceMap(MapStyle.DARK,      locations));
             }
         } catch (IOException e) {
             throw new DaoException("Unable to generate reference map");

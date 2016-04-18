@@ -55,10 +55,11 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         LocalPage lp = lpDao.getById(lang, localId);
 
         for (RawImage image : riDao.getImages(lang, localId)) {
+
             images.add(new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
-                    image.getPageLocation(), image.getImageLocation(), image.getCaption(), method, score,
-                    lp.getTitle().getCanonicalTitle()));
-            images.get(images.size() - 1).debugString = debugString;
+                    image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
+                    image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle()));
+            images.get(images.size() - 1).debugString = debugString + "   (isPhoto=" + image.isPhotograph() + ")";
         }
 
         System.out.println("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
@@ -135,8 +136,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 for (InternalImage image : srImages(title, numberOfImages, srMethod)) {
                     // Change the method from the SR method to the wikify-sr method
                     InternalImage newImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
-                            image.getPageLocation(), image.getImageLocation(), image.getCaption(), method,
-                            image.getScore(), image.getTitle());
+                            image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
+                            image.getWidth(), image.getHeight(), method, image.getScore(), image.getTitle());
                     newImage.debugString = ll.getAnchorText();
                     result.add(newImage);
                 }

@@ -118,6 +118,7 @@ public class CompariFactServer extends AbstractHandler {
         Collections.sort(images, Collections.reverseOrder());
 
         // Generate all the images
+        /*
         final Map<InternalImage, String> generatedImages = new ConcurrentHashMap<InternalImage, String>();
         ParallelForEach.loop(images, WpThreadUtils.getMaxThreads() * 4, new Procedure<InternalImage>() {
             @Override
@@ -129,13 +130,22 @@ public class CompariFactServer extends AbstractHandler {
                 }
             }
         }, 4);
+        */
 
         List jsonConcepts = new ArrayList();
         for (InternalImage i : images) {
             try {
                 List imageURLS = new ArrayList();
                 Map image = new HashMap();
-                image.put("data", generatedImages.get(i));
+
+                String imageURL = i.getImageLocation();
+                if (imageURL != null && imageURL.length() > 0) {
+                    image.put("url", imageURL);
+                } else {
+                    image.put("data", i.generateBase64String());
+                }
+                // image.put("data", generatedImages.get(i));
+
                 image.put("caption", i.getCaption());
                 imageURLS.add(image);
 

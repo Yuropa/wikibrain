@@ -1,6 +1,8 @@
 package org.wikibrain.core.dao.sql;
 
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.typesafe.config.Config;
@@ -67,12 +69,16 @@ public class RawImageSqlDao implements RawImageDao {
                 String name = l.getTarget();
                 String page = name;
                 String image = "";
+
+                int width = 0;
+                int height = 0;
+                boolean isPhotograph = false;
                 if (targetToImage(name)) {
                     // Remove the prefix
                     name = trimTargetName(name);
                     page = "https://commons.wikimedia.org/wiki/File:" + name;
 
-                    String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=File:" + name + "&prop=imageinfo&format=json&iiprop=url";
+                    String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=File:" + name + "&prop=imageinfo&format=json&iiprop=commonmetadata|url|timestamp|user|size";
 
                     InputStream in = null;
                     try {
@@ -80,7 +86,29 @@ public class RawImageSqlDao implements RawImageDao {
                         JsonObject json = new JsonParser().parse(IOUtils.toString(in)).getAsJsonObject();
                         JsonObject pages = json.getAsJsonObject("query").getAsJsonObject("pages");
                         String pageKey = pages.entrySet().iterator().next().getKey();
-                        image = pages.getAsJsonObject(pageKey).getAsJsonArray("imageinfo").get(0).getAsJsonObject().get("url").getAsString();
+
+                        JsonObject properties = pages.getAsJsonObject(pageKey).getAsJsonArray("imageinfo").get(0).getAsJsonObject();
+                        image = properties.get("url").getAsString();
+                        width = properties.get("width").getAsInt();
+                        height = properties.get("height").getAsInt();
+
+                        JsonArray metadata = properties.getAsJsonArray("commonmetadata");
+                        boolean hasMake = false;
+                        boolean hasModel = false;
+                        boolean hasSoftware = false;
+                        for (int i = 0; i < metadata.size(); i++) {
+                            JsonObject data = metadata.get(i).getAsJsonObject();
+
+                            if (data.get("name").getAsString().equals("Make")) {
+                                hasMake = true;
+                            } else if (data.get("name").getAsString().equals("Model")) {
+                                hasModel = true;
+                            } else if (data.get("name").getAsString().equals("Software")) {
+                                hasSoftware = true;
+                            }
+                        }
+
+                        isPhotograph = hasMake & hasModel & !hasSoftware;
                     } catch (Exception e) {
                     } finally {
                         if (in != null)
@@ -164,7 +192,7 @@ public class RawImageSqlDao implements RawImageDao {
                     }
                 }
 
-                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image, captionText);
+                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, page, image, captionText, isPhotograph, width, height);
                 result.add(i);
             }
         }

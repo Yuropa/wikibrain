@@ -30,15 +30,22 @@ public class RawImage {
     private final String pageLocation;
     private final String imageLocation;
     private final String caption;
+    private final boolean isPhotograph;
+    private final int width;
+    private final int height;
     private static int DEFAULT_IMAGE_WIDTH = -1;
 
-    public RawImage(Language language, int sourceId, String name, String pageLocation, String imageLocation, String caption) {
+    public RawImage(Language language, int sourceId, String name, String pageLocation, String imageLocation, String caption,
+                    boolean isPhotograph, int width, int height) {
         this.language = language;
         this.sourceId = sourceId;
         this.name = name;
         this.pageLocation = pageLocation;
         this.imageLocation = imageLocation;
         this.caption = caption;
+        this.isPhotograph = isPhotograph;
+        this.width = width;
+        this.height = height;
     }
 
     public Language getLanguage() {
@@ -56,6 +63,12 @@ public class RawImage {
     public String getImageLocation() { return imageLocation; }
 
     public String getCaption() { return caption; }
+
+    public boolean isPhotograph() { return isPhotograph; }
+
+    public int getWidth() { return width; }
+
+    public int getHeight() { return height; }
 
     // This will probably require downloading a file, so use sparingly
     // Set width to -1 to indicate to use the original size of the image
@@ -202,7 +215,7 @@ public class RawImage {
                 ", pageLocation=" + pageLocation +
                 ", imageLocation=" + imageLocation +
                 ", caption=" + caption +
-                '}';
+                "}";
     }
 
     @Override
