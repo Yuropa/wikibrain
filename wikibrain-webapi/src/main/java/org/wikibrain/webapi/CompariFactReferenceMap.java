@@ -295,6 +295,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                     return;
                 }
 
+                String locationsString = "Extracted locations:\n";
+                for (LocationExtractor.NamedGeometry loc : locations) {
+                    locationsString += "\t" + loc.name + "\n";
+                }
+                LOG.info(locationsString);
+
                 ParallelForEach.loop(MapStyle.supportedStyles(), new Procedure<MapStyle>() {
                     @Override
                     public void call(MapStyle style) throws Exception {

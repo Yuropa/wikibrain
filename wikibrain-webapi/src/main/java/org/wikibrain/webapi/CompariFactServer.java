@@ -111,7 +111,7 @@ public class CompariFactServer extends AbstractHandler {
                 // This is a reference map
                 continue;
             }
-            
+
             if (imageLocations.contains(location)) {
                 images.remove(i);
                 i--;
