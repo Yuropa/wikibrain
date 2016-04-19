@@ -98,51 +98,56 @@ public class RawImageSqlDao implements RawImageDao {
             JsonObject pages = json.getAsJsonObject("query").getAsJsonObject("pages");
 
             for (Map.Entry<String, JsonElement> entry : pages.entrySet()) {
-                JsonObject page = entry.getValue().getAsJsonObject();
-                String name = page.get("title").getAsString().replace(" ", "_");
-                RawLink l = titleLinkMap.get(name);
+                try {
+                    JsonObject page = entry.getValue().getAsJsonObject();
+                    String name = page.get("title").getAsString().replace(" ", "_");
+                    RawLink l = titleLinkMap.get(name);
 
-                String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
+                    String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
 
-                JsonObject properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
-                String image = properties.get("url").getAsString();
-                int width = properties.get("width").getAsInt();
-                int height = properties.get("height").getAsInt();
+                    JsonObject properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
+                    String image = properties.get("url").getAsString();
+                    int width = properties.get("width").getAsInt();
+                    int height = properties.get("height").getAsInt();
 
-                JsonArray metadata = properties.getAsJsonArray("commonmetadata");
-                boolean hasMake = false;
-                boolean hasModel = false;
-                for (int i = 0; i < metadata.size(); i++) {
-                    JsonObject data = metadata.get(i).getAsJsonObject();
+                    JsonArray metadata = properties.getAsJsonArray("commonmetadata");
+                    boolean hasMake = false;
+                    boolean hasModel = false;
+                    for (int i = 0; i < metadata.size(); i++) {
+                        JsonObject data = metadata.get(i).getAsJsonObject();
 
-                    if (data.get("name").getAsString().equals("Make")) {
-                        hasMake = true;
-                    } else if (data.get("name").getAsString().equals("Model")) {
-                        hasModel = true;
+                        if (data.get("name").getAsString().equals("Make")) {
+                            hasMake = true;
+                        } else if (data.get("name").getAsString().equals("Model")) {
+                            hasModel = true;
+                        }
                     }
-                }
 
-                boolean categoriesIndicatePhoto = false;
-                JsonArray categories = page.getAsJsonArray("categories");
-                for (int i = 0; i < categories.size(); i++) {
-                    JsonObject category = categories.get(i).getAsJsonObject();
-                    String title = category.get("title").getAsString().toLowerCase();
+                    boolean categoriesIndicatePhoto = false;
+                    JsonArray categories = page.getAsJsonArray("categories");
+                    for (int i = 0; i < categories.size(); i++) {
+                        JsonObject category = categories.get(i).getAsJsonObject();
+                        String title = category.get("title").getAsString().toLowerCase();
 
-                    if (title.contains("picture") || title.contains("image") || title.contains("portrait")) {
-                        categoriesIndicatePhoto = true;
-                        break;
+                        if (title.contains("image") || title.contains("picture") || title.contains("photo") || title.contains("portrait")) {
+                            categoriesIndicatePhoto = true;
+                            break;
+                        }
                     }
+
+                    boolean hasLargeAmountOfMetadata = metadata.size() >= 5;
+                    boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto;
+
+                    // Get caption
+                    String context = l.getContext();
+                    String captionText = generateCaptionFromWikiText(context);
+
+                    RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, pageLocation, image, captionText, isPhotograph, width, height);
+                    result.add(i);
+                } catch (Exception e) {
+                    LOG.debug(e.getLocalizedMessage());
+                    LOG.debug(e.getStackTrace()[0].toString());
                 }
-
-                boolean hasLargeAmountOfMetadata = metadata.size() >= 5;
-                boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto;
-
-                // Get caption
-                String context = l.getContext();
-                String captionText = generateCaptionFromWikiText(context);
-
-                RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, pageLocation, image, captionText, isPhotograph, width, height);
-                result.add(i);
             }
         } catch (Exception e) {
         } finally {
