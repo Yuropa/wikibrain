@@ -37,7 +37,7 @@ public class LocationExtractor {
         public boolean equals(Object obj) {
             if (obj instanceof NamedGeometry) {
                 NamedGeometry ng = (NamedGeometry)obj;
-                return ng.name == name;
+                return ng.name.equals(name);
             }
 
             return super.equals(obj);

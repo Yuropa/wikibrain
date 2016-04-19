@@ -30,6 +30,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -92,7 +93,7 @@ public class CompariFactServer extends AbstractHandler {
     private void doImages(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
         Language lang = req.getLanguage();
         String type = req.getParamOrDie("method");
-        String text = req.getParamOrDie("text");
+        String text = URLDecoder.decode(req.getParamOrDie("text"));
 
         LOG.info("Generating images using method " + type + " for text: " + text);
 

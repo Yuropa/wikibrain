@@ -231,8 +231,8 @@ public class RawImage {
     public boolean equals(Object obj) {
         if (obj instanceof RawImage) {
             RawImage r = (RawImage)obj;
-            return r.language == language && r.sourceId == sourceId && r.name == name && r.pageLocation == pageLocation
-                    && r.caption == caption && (r.imageLocation == null || imageLocation == null || r.imageLocation == imageLocation);
+            return r.language == language && r.sourceId == sourceId && r.name.equals(name) && r.pageLocation.equals(pageLocation)
+                    && r.caption.equals(caption) && (r.imageLocation == null || imageLocation == null || r.imageLocation.equals(imageLocation));
         }
 
         return super.equals(obj);
