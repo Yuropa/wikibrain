@@ -286,24 +286,36 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
     }
 
-    public List<InternalImage> generateimages(final String text, String method) throws DaoException {
+    public List<InternalImage> generateimages(String text, String method) throws DaoException {
         final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
         System.out.println("Generating Reference map images");
 
-        ParallelForEach.loop(locationExtractor.supportedExtractionTypes(), new Procedure<LocationExtractor.ExtractionType>() {
+        // Generate all geometric combinations and remove duplicates
+        Set<Set<LocationExtractor.NamedGeometry>> extractedGeometries = new HashSet<Set<LocationExtractor.NamedGeometry>>();
+        for (LocationExtractor.ExtractionType type : locationExtractor.supportedExtractionTypes()) {
+            List<LocationExtractor.NamedGeometry> locations = locationExtractor.extractLocations(text, type);
+
+            if (locations.size() == 0) {
+                continue;
+            }
+
+            extractedGeometries.add(new HashSet<LocationExtractor.NamedGeometry>(locations));
+        }
+
+        // Print the extracted groups
+        for (Set<LocationExtractor.NamedGeometry> set : extractedGeometries) {
+            String locationsString = "Extracted locations:\n";
+            for (LocationExtractor.NamedGeometry loc : set) {
+                locationsString += "\t" + loc.name + "\n";
+            }
+            LOG.info(locationsString);
+        }
+
+        // Generate the Reference Maps
+        ParallelForEach.loop(extractedGeometries, new Procedure<Set<LocationExtractor.NamedGeometry>>() {
             @Override
-            public void call(LocationExtractor.ExtractionType type) throws Exception {
-                final List<LocationExtractor.NamedGeometry> locations = locationExtractor.extractLocations(text, type);
-
-                if (locations.size() == 0) {
-                    return;
-                }
-
-                String locationsString = "Extracted locations:\n";
-                for (LocationExtractor.NamedGeometry loc : locations) {
-                    locationsString += "\t" + loc.name + "\n";
-                }
-                LOG.info(locationsString);
+            public void call(Set<LocationExtractor.NamedGeometry> locationSet) throws Exception {
+                final List<LocationExtractor.NamedGeometry> locations = new ArrayList<LocationExtractor.NamedGeometry>(locationSet);
 
                 ParallelForEach.loop(MapStyle.supportedStyles(), new Procedure<MapStyle>() {
                     @Override

@@ -174,7 +174,7 @@ public class LocationExtractor {
                 return firstParagraphRankedLinks(text);
         }
 
-        return new ArrayList<NamedGeometry>();
+        return Collections.emptyList();
     }
 
     public List<ExtractionType> supportedExtractionTypes() {
