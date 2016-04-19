@@ -166,6 +166,10 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         @Override
         public BufferedImage generateImage(int width) throws IOException {
+            if (width < 0) {
+                return image;
+            }
+
             int height = (int)((float)image.getHeight() * (float)width / (float)image.getWidth());
             Image temp = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
