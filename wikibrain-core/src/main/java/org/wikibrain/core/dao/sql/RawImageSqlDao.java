@@ -90,7 +90,7 @@ public class RawImageSqlDao implements RawImageDao {
 
         InputStream in = null;
         try {
-            String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo&format=json&iiprop=commonmetadata|url|timestamp|user|size";
+            String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo|categories&format=json&iiprop=commonmetadata|url|timestamp|user|size";
 
             in = new URL(download).openStream();
             String jsonString = IOUtils.toString(in);
@@ -122,7 +122,20 @@ public class RawImageSqlDao implements RawImageDao {
                     }
                 }
 
-                boolean isPhotograph = hasMake & hasModel;
+                boolean categoriesIndicatePhoto = false;
+                JsonArray categories = page.getAsJsonArray("categories");
+                for (int i = 0; i < categories.size(); i++) {
+                    JsonObject category = categories.get(i).getAsJsonObject();
+                    String title = category.get("title").getAsString().toLowerCase();
+
+                    if (title.contains("picture") || title.contains("portrait")) {
+                        categoriesIndicatePhoto = true;
+                        break;
+                    }
+                }
+
+                boolean hasLargeAmountOfMetadata = metadata.size() >= 5;
+                boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto;
 
                 // Get caption
                 String context = l.getContext();
