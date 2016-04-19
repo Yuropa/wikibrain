@@ -94,6 +94,8 @@ public class CompariFactServer extends AbstractHandler {
         String type = req.getParamOrDie("method");
         String text = req.getParamOrDie("text");
 
+        LOG.info("Generating images using method " + type + " for text: " + text);
+
         ArrayList<InternalImage> images = new ArrayList<InternalImage>();
 
         for (CompariFactDataSource source : sources) {

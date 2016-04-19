@@ -61,6 +61,8 @@ public class RawImageSqlDao implements RawImageDao {
         return s;
     }
 
+
+
     public Iterable<RawImage> getImages(Language language, int localId) throws DaoException {
         ArrayList<RawImage> result = new ArrayList<RawImage>();
 
