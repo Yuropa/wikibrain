@@ -1,11 +1,7 @@
 package org.wikibrain.webapi;
 
-import EDU.oswego.cs.dl.util.concurrent.FJTask;
-import com.google.common.collect.Lists;
-import com.google.gson.JsonArray;
 import com.vividsolutions.jts.geom.*;
 import org.eclipse.jetty.util.ConcurrentHashSet;
-import org.jooq.util.derby.sys.Sys;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.openqa.selenium.Dimension;
@@ -15,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.dao.DaoException;
+import org.wikibrain.core.dao.LocalPageDao;
 import org.wikibrain.core.lang.Language;
 
 import javax.imageio.ImageIO;
@@ -27,10 +24,10 @@ import java.util.concurrent.Semaphore;
 
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.wikibrain.spatial.dao.SpatialDataDao;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
-import org.wikibrain.utils.WpThreadUtils;
-import sun.rmi.runtime.Log;
+import org.wikibrain.wikidata.WikidataDao;
 
 /**
  * Created by Josh on 4/7/16.
@@ -38,12 +35,16 @@ import sun.rmi.runtime.Log;
 public class CompariFactReferenceMap implements CompariFactDataSource {
     private static final Logger LOG = LoggerFactory.getLogger(CompariFactReferenceMap.class);
     private enum MapStyle {
-        STREETS, SATELLITE, WATER;
+        RELIEF, SATELLITE, LABELS, BOUNDARIES, ROADS, LAND_USAGE, WATER;
 
         static public List<MapStyle> supportedStyles() {
             List<MapStyle> styles = new ArrayList<MapStyle>();
-            styles.add(STREETS);
+            styles.add(RELIEF);
             styles.add(SATELLITE);
+            styles.add(LABELS);
+            styles.add(BOUNDARIES);
+            styles.add(ROADS);
+            // styles.add(LAND_USAGE); // disable for now
             styles.add(WATER);
             return styles;
         }
@@ -51,10 +52,18 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         @Override
         public String toString() {
             switch (this) {
-                case STREETS:
-                    return "streets";
+                case RELIEF:
+                    return "relief";
                 case SATELLITE:
-                    return "satellite";
+                    return "terrain";
+                case LABELS:
+                    return "labels";
+                case BOUNDARIES:
+                    return "boundaries";
+                case ROADS:
+                    return "roads";
+                case LAND_USAGE:
+                    return "land-usage";
                 case WATER:
                     return "water";
             }
@@ -184,16 +193,16 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             jsonObject.put("ne-lat", northEastLat);
             jsonObject.put("ne-lng", northEastLng);
 
-            JSONArray annotations = new JSONArray();
-            for (int i = 0; i < annotations.length(); i++) {
+            JSONArray anns = new JSONArray();
+            for (int i = 0; i < annotations.size(); i++) {
                 JSONObject annotation = new JSONObject();
                 annotation.put("lat", annotationsLat.get(i));
                 annotation.put("lng", annotationsLng.get(i));
                 annotation.put("title", annotations.get(i));
-                annotations.put(annotation);
+                anns.put(annotation);
             }
 
-            jsonObject.put("annotations", annotations);
+            jsonObject.put("annotations", anns);
 
             JSONArray styles = new JSONArray();
             for (MapStyle s : style) {
@@ -251,10 +260,6 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    private double mapValue(double x, double min, double max, double oMin, double oMax) {
-        return (x - min) * (oMax - oMin) / (max - min) + oMin;
-    }
-
     public ReferenceImage generateReferenceMap(MapStyle style, List<LocationExtractor.NamedGeometry> geometries) throws IOException {
         // Determine Map size and scale attributes
         int width = 1000;
@@ -270,11 +275,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             try {
                 for (int i = 0; i < geometries.size(); i++) {
                     Geometry g = geometries.get(i).geometry;
+                    Geometry boundary = locationExtractor.containingBounds(geometries.get(i));
 
                     if (bounds == null) {
-                        bounds = g.getBoundary();
+                        bounds = boundary;
                     } else {
-                        bounds = bounds.union(g.getBoundary());
+                        bounds = bounds.union(boundary);
                     }
 
                     JSONObject coordinates = new JSONObject();
@@ -295,10 +301,18 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             }
 
             Envelope envelope = bounds.getEnvelopeInternal();
-            mapConstruction.northEastLat = envelope.getMaxY();
-            mapConstruction.northEastLng = envelope.getMaxX();
-            mapConstruction.southWestLat = envelope.getMinY();
-            mapConstruction.southWestLng = envelope.getMinX();
+            if (envelope.getArea() > 0.01) {
+                mapConstruction.northEastLat = envelope.getMaxY();
+                mapConstruction.northEastLng = envelope.getMaxX();
+                mapConstruction.southWestLat = envelope.getMinY();
+                mapConstruction.southWestLng = envelope.getMinX();
+            } else {
+                // Set to world bounds
+                mapConstruction.northEastLat = 85;
+                mapConstruction.northEastLng = 180;
+                mapConstruction.southWestLat = -85;
+                mapConstruction.southWestLng = -180;
+            }
         }
 
         // Get Metadata

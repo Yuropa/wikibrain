@@ -12,6 +12,8 @@ import org.wikibrain.core.model.LocalPage;
 import org.wikibrain.spatial.constants.Layers;
 import org.wikibrain.spatial.dao.SpatialDataDao;
 import org.wikibrain.sr.wikify.Wikifier;
+import org.wikibrain.wikidata.LocalWikidataStatement;
+import org.wikibrain.wikidata.WikidataDao;
 
 import java.util.*;
 
@@ -61,13 +63,15 @@ public class LocationExtractor {
         FIRST_PARAGRAPH
     }
 
+    final private Language lang;
     final private SpatialDataDao spatialDataDao;
     final private Wikifier wikifier;
+    final private WikidataDao wikidata;
     final private LocalPageDao lpDao;
 
     LocationExtractor(Env env) throws ConfigurationException {
         Configurator conf = env.getConfigurator();
-        Language lang = env.getDefaultLanguage();
+        lang = env.getDefaultLanguage();
 
         if (lang.equals(Language.EN)) {
             spatialDataDao = conf.get(SpatialDataDao.class);
@@ -76,6 +80,7 @@ public class LocationExtractor {
         }
         wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
         lpDao = conf.get(LocalPageDao.class);
+        wikidata = conf.get(WikidataDao.class);
     }
 
 
@@ -175,6 +180,40 @@ public class LocationExtractor {
         }
 
         return Collections.emptyList();
+    }
+
+    private Geometry administrativeDistrictGeometry(String title) throws DaoException {
+        LocalPage page = lpDao.getByTitle(lang, title);
+
+        final int LocatedInAdministrativeDistrict = 131;
+        for (List<LocalWikidataStatement> statements : wikidata.getLocalStatements(page).values()) {
+            for (LocalWikidataStatement statement : statements) {
+                if (statement.getStatement().getProperty().getId() == LocatedInAdministrativeDistrict) {
+                    String location = statement.getStatement().getValue().getStringValue();
+                    Geometry g = getGeometry(spatialDataDao, location, lang);
+                    if (g.getArea() > 0.01) {
+                        return g;
+                    } else {
+                        return administrativeDistrictGeometry(location);
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public Geometry containingBounds(NamedGeometry geometry) throws DaoException {
+        if (geometry.geometry.getArea() > 0.01) {
+            return geometry.geometry;
+        }
+
+        Geometry g = administrativeDistrictGeometry(geometry.name);
+        if (g != null) {
+            return g;
+        } else {
+            return geometry.geometry;
+        }
     }
 
     public List<ExtractionType> supportedExtractionTypes() {
