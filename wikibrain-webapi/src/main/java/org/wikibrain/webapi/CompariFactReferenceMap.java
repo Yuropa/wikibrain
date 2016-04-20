@@ -2,6 +2,7 @@ package org.wikibrain.webapi;
 
 import EDU.oswego.cs.dl.util.concurrent.FJTask;
 import com.google.common.collect.Lists;
+import com.google.gson.JsonArray;
 import com.vividsolutions.jts.geom.*;
 import org.eclipse.jetty.util.ConcurrentHashSet;
 import org.jooq.util.derby.sys.Sys;
@@ -145,18 +146,20 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
     }
 
     public class MapConstructionData {
-        public double lat;
-        public double lng;
-        public int zoom;
+        public double southWestLat;
+        public double southWestLng;
+        public double northEastLat;
+        public double northEastLng;
         final public List<String> annotations;
         final public List<Double> annotationsLat;
         final public List<Double> annotationsLng;
         final public List<MapStyle> style;
 
-        MapConstructionData(double lat, double lng, int zoom) {
-            this.lat = lat;
-            this.lng = lng;
-            this.zoom = zoom;
+        MapConstructionData(double southWestLat, double southWestLng, double northEastLat, double northEastLng) {
+            this.southWestLat = southWestLat;
+            this.southWestLng = southWestLng;
+            this.northEastLat = northEastLat;
+            this.northEastLng = northEastLng;
 
             style = new ArrayList<MapStyle>();
             annotations = new ArrayList<String>();
@@ -176,9 +179,27 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         String toJSON() {
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("lat", lat);
-            jsonObject.put("lng", lng);
-            jsonObject.put("zoom", zoom);
+            jsonObject.put("sw-lat", southWestLat);
+            jsonObject.put("sw-lng", southWestLng);
+            jsonObject.put("ne-lat", northEastLat);
+            jsonObject.put("ne-lng", northEastLng);
+
+            JSONArray annotations = new JSONArray();
+            for (int i = 0; i < annotations.length(); i++) {
+                JSONObject annotation = new JSONObject();
+                annotation.put("lat", annotationsLat.get(i));
+                annotation.put("lng", annotationsLng.get(i));
+                annotation.put("title", annotations.get(i));
+                annotations.put(annotation);
+            }
+
+            jsonObject.put("annotations", annotations);
+
+            JSONArray styles = new JSONArray();
+            for (MapStyle s : style) {
+                styles.put(s.toString());
+            }
+            jsonObject.put("styles", styles);
 
             return jsonObject.toString();
         }
@@ -238,24 +259,17 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         // Determine Map size and scale attributes
         int width = 1000;
         int height = 750;
-        double zoom = width;
-        double longCenter = -96.0;
-        double latCenter = 38.3;
 
         JSONArray annotations = new JSONArray();
-        MapConstructionData mapConstruction = new MapConstructionData(latCenter, longCenter, (int)zoom);
+        MapConstructionData mapConstruction = new MapConstructionData(-85.0, 180.0, 85.0, -180.0);
 
         if (geometries.size() > 0) {
             // Calculate a new center and extent
-            longCenter = 0;
-            latCenter = 0;
             Geometry bounds = null;
 
             try {
                 for (int i = 0; i < geometries.size(); i++) {
                     Geometry g = geometries.get(i).geometry;
-                    longCenter += g.getCentroid().getX();
-                    latCenter += g.getCentroid().getY();
 
                     if (bounds == null) {
                         bounds = g.getBoundary();
@@ -280,17 +294,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 e.printStackTrace();
             }
 
-            longCenter /= geometries.size();
-            latCenter /= geometries.size();
             Envelope envelope = bounds.getEnvelopeInternal();
-            if (envelope.getWidth() > 0.01 && envelope.getHeight() > 0.01) {
-                zoom = Math.max(width * 62 / envelope.getWidth(), height * 31.0 / envelope.getHeight());
-            }
+            mapConstruction.northEastLat = envelope.getMaxY();
+            mapConstruction.northEastLng = envelope.getMaxX();
+            mapConstruction.southWestLat = envelope.getMinY();
+            mapConstruction.northEastLng = envelope.getMaxX();
         }
-
-        mapConstruction.lat = latCenter;
-        mapConstruction.lng = longCenter;
-        mapConstruction.zoom = (int)mapValue(zoom, 1.0, 180.0, 1.0, 17.0);
 
         // Get Metadata
         String title = "Map";
@@ -310,6 +319,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         if (GENERATE_JSON) {
             return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, mapConstruction);
         } else {
+            String bounds = "[[" + mapConstruction.southWestLat + "," + mapConstruction.southWestLng + "],[" +
+                    mapConstruction.northEastLat + "," + mapConstruction.northEastLng + "]]";
             String htmlString =
                     "<!DOCTYPE html>\n" +
                             "<html>\n" +
@@ -321,7 +332,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                             "<div id='visualization-container'>\n" +
                             "</div>\n" +
                             "<script>\n" +
-                            "generateMap(" + annotations.toString() + ", '" + style.toString() + "', [" + longCenter + ", " + latCenter + "], " + zoom + ");\n" +
+                            "generateMap(" + annotations.toString() + ", '" + style.toString() + "', " + bounds + ");\n" +
                             "</script>\n" +
                             "</body>\n" +
                             "</html>\n";

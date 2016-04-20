@@ -153,8 +153,8 @@ public class CompariFactServer extends AbstractHandler {
                 if (imageURL != null && imageURL.length() > 0) {
                     image.put("url", imageURL);
                 } else {
-                    if (image instanceof CompariFactReferenceMap.ReferenceImage && !((CompariFactReferenceMap.ReferenceImage)image).hasImage) {
-                        image.put("refMap", ((CompariFactReferenceMap.ReferenceImage)image).mapJSON);
+                    if (i instanceof CompariFactReferenceMap.ReferenceImage && !((CompariFactReferenceMap.ReferenceImage)i).hasImage) {
+                        image.put("refMap", ((CompariFactReferenceMap.ReferenceImage)i).mapJSON);
                     } else {
                         image.put("data", i.generateBase64String());
                     }
