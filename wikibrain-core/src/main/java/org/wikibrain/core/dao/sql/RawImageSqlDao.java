@@ -105,8 +105,6 @@ public class RawImageSqlDao implements RawImageDao {
         try {
             String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo|categories&format=json&iiprop=commonmetadata|url|timestamp|user|size";
 
-
-
             URL url = new URL(download);
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
             connection.setRequestMethod("GET");
@@ -176,7 +174,9 @@ public class RawImageSqlDao implements RawImageDao {
                 }
             }
         } catch (MalformedURLException e) {
+            LOG.debug(e.getLocalizedMessage());
         } catch (IOException e) {
+            LOG.debug(e.getLocalizedMessage());
             if (response == 414) {
                 // The URL was too long, divide and conquer
                 int length = localIds.size() / 2;
