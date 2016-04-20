@@ -300,8 +300,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 e.printStackTrace();
             }
 
-            Envelope envelope = bounds.getEnvelopeInternal();
-            if (envelope.getArea() > 0.01) {
+            if (bounds != null && bounds.getEnvelopeInternal().getArea() > 0.01) {
+                Envelope envelope = bounds.getEnvelopeInternal();
                 mapConstruction.northEastLat = envelope.getMaxY();
                 mapConstruction.northEastLng = envelope.getMaxX();
                 mapConstruction.southWestLat = envelope.getMinY();
