@@ -42,10 +42,10 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         static public List<MapStyle> supportedStyles() {
             List<MapStyle> styles = new ArrayList<MapStyle>();
             styles.add(STREETS);
-            styles.add(SATELLITE);
-            styles.add(LIGHT);
-            styles.add(DARK);
-            styles.add(EMERALD);
+            // styles.add(SATELLITE);
+            // styles.add(LIGHT);
+            // styles.add(DARK);
+            // styles.add(EMERALD);
             return styles;
         }
         

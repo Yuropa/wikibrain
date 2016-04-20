@@ -116,10 +116,12 @@ public class CompariFactServer extends AbstractHandler {
             }
 
             if (imageLocations.contains(location)) {
+                LOG.debug("Removing duplicate image: " + images.get(i).toString());
                 images.remove(i);
                 i--;
             } else {
                 imageLocations.add(image.getImageLocation());
+                LOG.debug("Retaining image: " + images.get(i).toString());
             }
         }
 
