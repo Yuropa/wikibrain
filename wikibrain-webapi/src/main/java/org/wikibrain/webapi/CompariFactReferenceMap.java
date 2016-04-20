@@ -298,7 +298,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             mapConstruction.northEastLat = envelope.getMaxY();
             mapConstruction.northEastLng = envelope.getMaxX();
             mapConstruction.southWestLat = envelope.getMinY();
-            mapConstruction.northEastLng = envelope.getMaxX();
+            mapConstruction.southWestLng = envelope.getMinX();
         }
 
         // Get Metadata
