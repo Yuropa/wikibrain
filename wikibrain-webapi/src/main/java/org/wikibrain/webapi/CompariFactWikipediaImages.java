@@ -114,6 +114,10 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     private List<InternalImage> srImages(String text, int count, final String method) throws DaoException {
         List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
 
+        if (count <= 0) {
+            return result;
+        }
+
         SRMetric sr = srMetrics.get(method);
         SRResultList mostSimilar = sr.mostSimilar(text, count);
         List<Integer> ids = new ArrayList<Integer>();
@@ -194,7 +198,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 // Perform ESA if necessary
                 int numberOfImages = (int)(50.0 * score);
                 String title = lpDao.getById(lang, id).getTitle().getCanonicalTitle();
-                
+
                 for (InternalImage image : srImages(title, numberOfImages, srMethod)) {
                     image.debugString = debugString + "  " + image.debugString;
                 }

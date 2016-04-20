@@ -24,8 +24,10 @@ import org.wikibrain.core.lang.LanguageSet;
 import org.wikibrain.core.model.RawImage;
 import org.wikibrain.core.model.RawLink;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -98,11 +100,18 @@ public class RawImageSqlDao implements RawImageDao {
             return result;
         }
 
+        int response = 0;
         InputStream in = null;
         try {
             String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo|categories&format=json&iiprop=commonmetadata|url|timestamp|user|size";
 
-            in = new URL(download).openStream();
+
+
+            URL url = new URL(download);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("GET");
+            response = connection.getResponseCode();
+            in = new BufferedInputStream(connection.getInputStream());
             String jsonString = IOUtils.toString(in);
             JsonObject json = new JsonParser().parse(jsonString).getAsJsonObject();
             JsonObject pages = json.getAsJsonObject("query").getAsJsonObject("pages");
@@ -166,7 +175,16 @@ public class RawImageSqlDao implements RawImageDao {
                     LOG.debug(e.getStackTrace()[0].toString());
                 }
             }
-        } catch (Exception e) {
+        } catch (MalformedURLException e) {
+        } catch (IOException e) {
+            if (response == 414) {
+                // The URL was too long, divide and conquer
+                int length = localIds.size() / 2;
+                if (length >= 1) {
+                    result.putAll(getImages(language, localIds.subList(0, length)));
+                    result.putAll(getImages(language, localIds.subList(length, localIds.size())));
+                }
+            }
         } finally {
             IOUtils.closeQuietly(in);
         }
