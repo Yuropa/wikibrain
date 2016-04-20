@@ -37,15 +37,13 @@ import sun.rmi.runtime.Log;
 public class CompariFactReferenceMap implements CompariFactDataSource {
     private static final Logger LOG = LoggerFactory.getLogger(CompariFactReferenceMap.class);
     private enum MapStyle {
-        STREETS, SATELLITE, LIGHT, DARK, EMERALD;
+        STREETS, SATELLITE, WATER;
 
         static public List<MapStyle> supportedStyles() {
             List<MapStyle> styles = new ArrayList<MapStyle>();
             styles.add(STREETS);
-            // styles.add(SATELLITE);
-            // styles.add(LIGHT);
-            // styles.add(DARK);
-            // styles.add(EMERALD);
+            styles.add(SATELLITE);
+            styles.add(WATER);
             return styles;
         }
         
@@ -53,22 +51,19 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         public String toString() {
             switch (this) {
                 case STREETS:
-                    return "mapbox.streets";
+                    return "streets";
                 case SATELLITE:
-                    return "mapbox.satellite";
-                case LIGHT:
-                    return "mapbox.light";
-                case DARK:
-                    return "mapbox.dark";
-                case EMERALD:
-                    return "mapbox.emerald";
+                    return "satellite";
+                case WATER:
+                    return "water";
             }
 
             return "";
         }
     }
 
-    final private int MAX_FIREFOX_INSTANCE = WpThreadUtils.getMaxThreads();
+    final private boolean GENERATE_JSON = true;
+    final private int MAX_FIREFOX_INSTANCE = 0; // = WpThreadUtils.getMaxThreads();
     final private Semaphore availableFirefox = new Semaphore(MAX_FIREFOX_INSTANCE, true);
 
     final private LocationExtractor locationExtractor;
@@ -106,13 +101,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
             LOG.info("Created " + MAX_FIREFOX_INSTANCE + " firefox instances for reference map rendering");
 
-            loadCSSFile("index.css");
+            loadCSSFile("style.css");
+            loadCSSFile("mapbox.css");
+            loadJavaScriptFile("api.tiles.mapbox.min.js");
             loadJavaScriptFile("jquery.js");
             loadJavaScriptFile("d3.min.js");
-            loadJavaScriptFile("d3.geo.tile.min.js");
             loadJavaScriptFile("topojson.js");
-            loadJavaScriptFile("labeler.js");
-            loadJavaScriptFile("annotations.js");
             loadJavaScriptFile("refMap.js");
         } catch (Exception  e) {
             throw new ConfigurationException("Unable to load required javascript engine");
@@ -150,13 +144,67 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         scriptString += "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + script.getAbsolutePath() + "\">\n";
     }
 
-    class ReferenceImage extends InternalImage {
+    public class MapConstructionData {
+        public double lat;
+        public double lng;
+        public int zoom;
+        final public List<String> annotations;
+        final public List<Double> annotationsLat;
+        final public List<Double> annotationsLng;
+        final public List<MapStyle> style;
+
+        MapConstructionData(double lat, double lng, int zoom) {
+            this.lat = lat;
+            this.lng = lng;
+            this.zoom = zoom;
+
+            style = new ArrayList<MapStyle>();
+            annotations = new ArrayList<String>();
+            annotationsLat = new ArrayList<Double>();
+            annotationsLng = new ArrayList<Double>();
+        }
+
+        void addStyle(MapStyle style) {
+            this.style.add(style);
+        }
+
+        void addAnnotation(double lat, double lng, String title) {
+            annotationsLat.add(lat);
+            annotationsLng.add(lng);
+            annotations.add(title);
+        }
+
+        String toJSON() {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("lat", lat);
+            jsonObject.put("lng", lng);
+            jsonObject.put("zoom", zoom);
+
+            return jsonObject.toString();
+        }
+    }
+
+    public class ReferenceImage extends InternalImage {
         final public BufferedImage image;
+        final public boolean hasImage;
+        final public String mapJSON;
 
         ReferenceImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
                       String caption, String method, boolean isPhotograph, int width, int height, double score, String title, BufferedImage image) {
             super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height, method, score, title);
             this.image = image;
+            hasImage = true;
+            mapJSON = null;
+        }
+
+        ReferenceImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
+                       String caption, String method, boolean isPhotograph, int width, int height, double score, String title,
+                       MapConstructionData data) {
+            super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height, method, score, title);
+            this.image = null;
+            hasImage = false;
+
+            mapJSON = data.toJSON();
         }
 
         @Override
@@ -182,6 +230,10 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
+    private double mapValue(double x, double min, double max, double oMin, double oMax) {
+        return (x - min) * (oMax - oMin) / (max - min) + oMin;
+    }
+
     public ReferenceImage generateReferenceMap(MapStyle style, List<LocationExtractor.NamedGeometry> geometries) throws IOException {
         // Determine Map size and scale attributes
         int width = 1000;
@@ -191,6 +243,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         double latCenter = 38.3;
 
         JSONArray annotations = new JSONArray();
+        MapConstructionData mapConstruction = new MapConstructionData(latCenter, longCenter, (int)zoom);
 
         if (geometries.size() > 0) {
             // Calculate a new center and extent
@@ -220,6 +273,8 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                     json.put("text", "");
                     json.put("title", geometries.get(i).name);
                     annotations.put(json);
+
+                    mapConstruction.addAnnotation(g.getCentroid().getY(), g.getCentroid().getX(), geometries.get(i).name);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -233,42 +288,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             }
         }
 
-        String htmlString =
-                "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                    "<head>\n" +
-                        "<meta charset=\"UTF-8\">\n" +
-                        scriptString +
-                    "</head>\n" +
-                    "<body>\n" +
-                        "<div id='visualization-container'>\n" +
-                        "</div>\n" +
-                        "<script>\n" +
-                            "generateMap(" + annotations.toString() + ", '" + style.toString() + "', [" + longCenter + ", " + latCenter + "], " + zoom + ");\n" +
-                        "</script>\n" +
-                    "</body>\n" +
-                "</html>\n";
-        File tempHTMLFile = File.createTempFile("ref-map", ".html");
-        BufferedWriter writer = new BufferedWriter(new FileWriter(tempHTMLFile));
-        writer.write(htmlString);
-        writer.close();
-
-        File scrFile = null;
-        try {
-
-            FirefoxDriver driver = getDriver();
-            driver.manage().window().setSize(new Dimension(width, height));
-            driver.get("file://" + tempHTMLFile.getAbsolutePath());
-
-            // Get the image
-            scrFile = driver.getScreenshotAs(OutputType.FILE);
-            releaseDirver(driver);
-            driver = null;
-        } catch (InterruptedException e) {
-            throw new IOException("Unable to get web driver");
-        }
-
-        BufferedImage image = ImageIO.read(scrFile);
+        mapConstruction.lat = latCenter;
+        mapConstruction.lng = longCenter;
+        mapConstruction.zoom = (int)mapValue(zoom, 1.0, 180.0, 1.0, 17.0);
 
         // Get Metadata
         String title = "Map";
@@ -277,23 +299,63 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             if (i != 0) {
                 caption += ", ";
             }
-            if (i == geometries.size() - 1) {
+            if (i == geometries.size() - 1 && geometries.size() > 1) {
                 caption += "and ";
             }
 
-            caption += geometries.get(i);
+            caption += geometries.get(i).name;
         }
-        double score = 0.8 + Math.random() * 0.2;
-        score = 1.0;
+        double score = 1.0; // 0.8 + Math.random() * 0.2;
 
-        // Note that the location will no longer be valid
-        // String imageLocation = scrFile.getCanonicalPath();
+        if (GENERATE_JSON) {
+            return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, mapConstruction);
+        } else {
+            String htmlString =
+                    "<!DOCTYPE html>\n" +
+                            "<html>\n" +
+                            "<head>\n" +
+                            "<meta charset=\"UTF-8\">\n" +
+                            scriptString +
+                            "</head>\n" +
+                            "<body>\n" +
+                            "<div id='visualization-container'>\n" +
+                            "</div>\n" +
+                            "<script>\n" +
+                            "generateMap(" + annotations.toString() + ", '" + style.toString() + "', [" + longCenter + ", " + latCenter + "], " + zoom + ");\n" +
+                            "</script>\n" +
+                            "</body>\n" +
+                            "</html>\n";
+            File tempHTMLFile = File.createTempFile("ref-map", ".html");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempHTMLFile));
+            writer.write(htmlString);
+            writer.close();
 
-        // Clean up files (we don't want our temp files hanging around too long)
-        tempHTMLFile.delete();
-        scrFile.delete();
+            File scrFile;
+            try {
 
-        return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
+                FirefoxDriver driver = getDriver();
+                driver.manage().window().setSize(new Dimension(width, height));
+                driver.get("file://" + tempHTMLFile.getAbsolutePath());
+
+                // Get the image
+                scrFile = driver.getScreenshotAs(OutputType.FILE);
+                releaseDirver(driver);
+                driver = null;
+            } catch (InterruptedException e) {
+                throw new IOException("Unable to get web driver");
+            }
+
+            BufferedImage image = ImageIO.read(scrFile);
+
+            // Note that the location will no longer be valid
+            // String imageLocation = scrFile.getCanonicalPath();
+
+            // Clean up files (we don't want our temp files hanging around too long)
+            tempHTMLFile.delete();
+            scrFile.delete();
+
+            return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
+        }
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {

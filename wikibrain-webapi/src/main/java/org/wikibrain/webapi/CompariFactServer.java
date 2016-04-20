@@ -153,7 +153,11 @@ public class CompariFactServer extends AbstractHandler {
                 if (imageURL != null && imageURL.length() > 0) {
                     image.put("url", imageURL);
                 } else {
-                    image.put("data", i.generateBase64String());
+                    if (image instanceof CompariFactReferenceMap.ReferenceImage && !((CompariFactReferenceMap.ReferenceImage)image).hasImage) {
+                        image.put("refMap", ((CompariFactReferenceMap.ReferenceImage)image).mapJSON);
+                    } else {
+                        image.put("data", i.generateBase64String());
+                    }
                 }
                 // image.put("data", generatedImages.get(i));
 
