@@ -30,6 +30,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -62,25 +63,32 @@ public class RawImageSqlDao implements RawImageDao {
     }
 
 
-
     public Iterable<RawImage> getImages(Language language, int localId) throws DaoException {
-        ArrayList<RawImage> result = new ArrayList<RawImage>();
+        List<Integer> ids = new ArrayList<Integer>();
+        ids.add(localId);
+        return getImages(language, ids).get(localId);
+    }
+
+    public Map<Integer, List<RawImage>> getImages(Language language, List<Integer> localIds) throws DaoException {
+        Map<Integer, List<RawImage>> result = new HashMap<Integer, List<RawImage>>();
 
         String titles = "";
         Map<String, RawLink> titleLinkMap = new HashMap<String, RawLink>();
-        for (RawLink l : rawLinkDao.getLinks(language, localId)) {
-            if (l.getType() == RawLink.RawLinkType.IMAGE || (l.getType() == RawLink.RawLinkType.UNKNOWN && targetToImage(l.getTarget()))) {
-                // Found an image
-                String name = l.getTarget();
+        for (Integer localId : localIds) {
+            for (RawLink l : rawLinkDao.getLinks(language, localId)) {
+                if (l.getType() == RawLink.RawLinkType.IMAGE || (l.getType() == RawLink.RawLinkType.UNKNOWN && targetToImage(l.getTarget()))) {
+                    // Found an image
+                    String name = l.getTarget();
 
-                if (targetToImage(name)) {
-                    name = "File:" + trimTargetName(name);
+                    if (targetToImage(name)) {
+                        name = "File:" + trimTargetName(name);
 
-                    if (titles.length() > 0) {
-                        titles += "|";
+                        if (titles.length() > 0) {
+                            titles += "|";
+                        }
+                        titles += name;
+                        titleLinkMap.put(name, l);
                     }
-                    titles += name;
-                    titleLinkMap.put(name, l);
                 }
             }
         }
@@ -146,7 +154,13 @@ public class RawImageSqlDao implements RawImageDao {
                     String captionText = generateCaptionFromWikiText(context);
 
                     RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, pageLocation, image, captionText, isPhotograph, width, height);
-                    result.add(i);
+                    int localId = l.getSourceId();
+
+                    if (!result.containsKey(localId)) {
+                        result.put(localId, new ArrayList<RawImage>());
+                    }
+
+                    result.get(localId).add(i);
                 } catch (Exception e) {
                     LOG.debug(e.getLocalizedMessage());
                     LOG.debug(e.getStackTrace()[0].toString());
