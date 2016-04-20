@@ -229,7 +229,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             latCenter /= geometries.size();
             Envelope envelope = bounds.getEnvelopeInternal();
             if (envelope.getWidth() > 0.01 && envelope.getHeight() > 0.01) {
-                zoom = Math.min(width * 62 / envelope.getWidth(), height * 31.0 / envelope.getHeight());
+                zoom = Math.max(width * 62 / envelope.getWidth(), height * 31.0 / envelope.getHeight());
             }
         }
 
@@ -272,7 +272,17 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         // Get Metadata
         String title = "Map";
-        String caption = "Reference Map";
+        String caption = "Map of ";
+        for (int i = 0; i < geometries.size(); i++) {
+            if (i != 0) {
+                caption += ", ";
+            }
+            if (i == geometries.size() - 1) {
+                caption += "and ";
+            }
+
+            caption += geometries.get(i);
+        }
         double score = 0.8 + Math.random() * 0.2;
         score = 1.0;
 
