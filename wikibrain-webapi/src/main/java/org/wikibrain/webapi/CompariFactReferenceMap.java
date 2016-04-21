@@ -86,7 +86,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
     CompariFactReferenceMap(Env env) throws ConfigurationException {
         locationExtractor = new LocationExtractor(env);
-        srMetric = env.getConfigurator().get(SRMetric.class, "ESA", "language", env.getDefaultLanguage().getLangCode());
+        srMetric = env.getConfigurator().get(SRMetric.class, "word2vec", "language", env.getDefaultLanguage().getLangCode());
         scriptString = "";
 
         // Load XVFB for the WebDriver
