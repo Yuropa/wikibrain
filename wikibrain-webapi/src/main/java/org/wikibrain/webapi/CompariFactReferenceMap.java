@@ -426,9 +426,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         final List<MapStyle> styles = new ArrayList<MapStyle>();
         for (MapStyle style : MapStyle.supportedStyles()) {
             double srScore = srMetric.similarity(style.toString(), text, false).getScore();
-            LOG.debug("Layer " + style.toString() + " has sr score of " + srScore);
+            LOG.info("Layer " + style.toString() + " has sr score of " + srScore);
             if (srScore > MIN_STYLE_SR) {
-                LOG.debug("Retaining Layer " + style.toString());
+                LOG.info("Retaining Layer " + style.toString());
                 styles.add(style);
             }
         }
