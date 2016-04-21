@@ -320,7 +320,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
 
         // Process style information
-        String styleString = "[";
+        String styleString = "";
         for (int i = 0; i < styles.size(); i++) {
             if (i != 0) {
                 styleString += ", ";
@@ -328,7 +328,6 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             styleString += styles.get(i).toString();
             mapConstruction.addStyle(styles.get(i));
         }
-        styleString += "]";
 
         // Get Metadata
         String title = "Map";
@@ -361,7 +360,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                             "<div id='visualization-container'>\n" +
                             "</div>\n" +
                             "<script>\n" +
-                            "generateMap(" + annotations.toString() + ", '" + styleString + "', " + bounds + ");\n" +
+                            "generateMap(" + annotations.toString() + ", '[" + styleString + "]', " + bounds + ");\n" +
                             "</script>\n" +
                             "</body>\n" +
                             "</html>\n";
