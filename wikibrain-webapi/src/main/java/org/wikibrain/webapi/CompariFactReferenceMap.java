@@ -86,7 +86,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
     CompariFactReferenceMap(Env env) throws ConfigurationException {
         locationExtractor = new LocationExtractor(env);
-        srMetric = env.getConfigurator().get(SRMetric.class, "milnewitten", "language", env.getDefaultLanguage().getLangCode());
+        srMetric = env.getConfigurator().get(SRMetric.class, "ESA", "language", env.getDefaultLanguage().getLangCode());
         scriptString = "";
 
         // Load XVFB for the WebDriver
@@ -425,7 +425,10 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         // Use SR to find the styles to use
         final List<MapStyle> styles = new ArrayList<MapStyle>();
         for (MapStyle style : MapStyle.supportedStyles()) {
-            if (srMetric.similarity(style.toString(), text, false).getScore() > MIN_STYLE_SR) {
+            double srScore = srMetric.similarity(style.toString(), text, false).getScore();
+            LOG.debug("Layer " + style.toString() + " has sr score of " + srScore);
+            if (srScore > MIN_STYLE_SR) {
+                LOG.debug("Retaining Layer " + style.toString());
                 styles.add(style);
             }
         }
