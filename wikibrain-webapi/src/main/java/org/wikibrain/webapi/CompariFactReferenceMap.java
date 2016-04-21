@@ -73,7 +73,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    final private double MIN_STYLE_SR = 0.5;
+    final private double MIN_STYLE_SR = 0.35;
     final private boolean GENERATE_JSON = true;
     final private int MAX_FIREFOX_INSTANCE = 0; // = WpThreadUtils.getMaxThreads();
     final private Semaphore availableFirefox = new Semaphore(MAX_FIREFOX_INSTANCE, true);
@@ -86,7 +86,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
     CompariFactReferenceMap(Env env) throws ConfigurationException {
         locationExtractor = new LocationExtractor(env);
-        srMetric = env.getConfigurator().get(SRMetric.class, "word2vec", "language", env.getDefaultLanguage().getLangCode());
+        srMetric = env.getConfigurator().get(SRMetric.class, "milnewitten", "language", env.getDefaultLanguage().getLangCode());
         scriptString = "";
 
         // Load XVFB for the WebDriver
