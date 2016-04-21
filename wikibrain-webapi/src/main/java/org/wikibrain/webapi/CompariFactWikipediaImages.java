@@ -1,7 +1,9 @@
 package org.wikibrain.webapi;
 
 import cern.jet.random.StudentT;
+import com.mchange.v2.lang.ThreadUtils;
 import edu.emory.mathcs.backport.java.util.Collections;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.Configuration;
@@ -32,6 +34,7 @@ import java.util.Map;
  * Created by Josh on 4/6/16.
  */
 public class CompariFactWikipediaImages implements CompariFactDataSource {
+    public static final Logger LOG = LoggerFactory.getLogger(CompariFactWikipediaImages.class);
     final private RawImageDao riDao;
     final private LocalPageDao lpDao;
     final private Map<String, SRMetric> srMetrics;
@@ -78,9 +81,14 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         ParallelForEach.range(0, mostSimilar.numDocs(), WpThreadUtils.getMaxThreads() * 4, new Procedure<Integer>() {
             @Override
             public void call(Integer i) throws Exception {
-                int id = mostSimilar.getId(i);
-                double score = mostSimilar.getScoreForId(id);
-                result.addAll(createImageFromId(sr.getLanguage(), id, method, score));
+                try {
+                    int id = mostSimilar.getId(i);
+                    double score = mostSimilar.getScoreForId(id);
+                    result.addAll(createImageFromId(sr.getLanguage(), id, method, score));
+                } catch (Exception e) {
+                    LOG.error(e.getLocalizedMessage());
+                    LOG.error(ExceptionUtils.getFullStackTrace(e));
+                }
             }
         });
 
@@ -152,9 +160,9 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                             newImage.debugString = ll.getAnchorText();
                             result.add(newImage);
                         }
-                    } catch (Exception e) {
-                        System.out.println(e.getLocalizedMessage());
-                        e.printStackTrace();
+                    }  catch (Exception e) {
+                        LOG.error(e.getLocalizedMessage());
+                        LOG.error(ExceptionUtils.getFullStackTrace(e));
                     }
                 }
             });
