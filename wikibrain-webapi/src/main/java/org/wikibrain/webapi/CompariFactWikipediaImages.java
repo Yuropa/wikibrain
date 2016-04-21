@@ -132,24 +132,29 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             ParallelForEach.loop(wikifyText(text), WpThreadUtils.getMaxThreads() * 4, new Procedure<ScoredLink>() {
                 @Override
                 public void call(ScoredLink scoredLink) throws Exception {
-                    LocalLink ll = scoredLink.link;
-                    double score = scoredLink.score;
+                    try {
+                        LocalLink ll = scoredLink.link;
+                        double score = scoredLink.score;
 
-                    result.addAll(createImageFromId(ll.getLanguage(), ll.getLocalId(), "wikify", score, ll.getAnchorText()));
+                        result.addAll(createImageFromId(ll.getLanguage(), ll.getLocalId(), "wikify", score, ll.getAnchorText()));
 
-                    if (srMethod == null) {
-                        return;
-                    }
+                        if (srMethod == null) {
+                            return;
+                        }
 
-                    int numberOfImages = (int)(50.0 * score);
-                    String title = lpDao.getById(ll.getLanguage(), ll.getLocalId()).getTitle().getCanonicalTitle();
-                    for (InternalImage image : srImages(title, numberOfImages, srMethod)) {
-                        // Change the method from the SR method to the wikify-sr method
-                        InternalImage newImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
-                                image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
-                                image.getWidth(), image.getHeight(), method, image.getScore(), image.getTitle());
-                        newImage.debugString = ll.getAnchorText();
-                        result.add(newImage);
+                        int numberOfImages = (int) (50.0 * score);
+                        String title = lpDao.getById(ll.getLanguage(), ll.getLocalId()).getTitle().getCanonicalTitle();
+                        for (InternalImage image : srImages(title, numberOfImages, srMethod)) {
+                            // Change the method from the SR method to the wikify-sr method
+                            InternalImage newImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
+                                    image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
+                                    image.getWidth(), image.getHeight(), method, image.getScore(), image.getTitle());
+                            newImage.debugString = ll.getAnchorText();
+                            result.add(newImage);
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e.getLocalizedMessage());
+                        e.printStackTrace();
                     }
                 }
             });
