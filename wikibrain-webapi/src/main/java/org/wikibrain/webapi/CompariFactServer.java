@@ -149,6 +149,11 @@ public class CompariFactServer extends AbstractHandler {
                 List imageURLS = new ArrayList();
                 Map image = new HashMap();
 
+                // Skip the photos
+                if (i.isPhotograph()) {
+                    continue;
+                }
+
                 String imageURL = i.getImageLocation();
                 if (imageURL != null && imageURL.length() > 0) {
                     image.put("url", imageURL);
@@ -165,7 +170,7 @@ public class CompariFactServer extends AbstractHandler {
                 imageURLS.add(image);
 
                 Map obj = new HashMap();
-                obj.put("title", i.getTitle() + "      " + i.generateDebugString());
+                obj.put("title", i.getTitle());
                 obj.put("articleId", i.getSourceId());
                 obj.put("lang", i.getLanguage().getLangCode());
                 obj.put("images", imageURLS);

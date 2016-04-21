@@ -64,7 +64,6 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             images.add(new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
                     image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
                     image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle()));
-            images.get(images.size() - 1).debugString = debugString + "   (isPhoto=" + image.isPhotograph() + ")";
         }
 
         System.out.println("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
@@ -74,6 +73,11 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
     private List<InternalImage> srImages(String text, int count, final String method) throws DaoException {
         final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
+
+        if (count <= 0) {
+            // No need to search
+            return result;
+        }
 
         final SRMetric sr = srMetrics.get(method);
         final SRResultList mostSimilar = sr.mostSimilar(text, count);
