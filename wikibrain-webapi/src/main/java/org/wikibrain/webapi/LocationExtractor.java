@@ -196,7 +196,7 @@ public class LocationExtractor {
                     String location = statement.getStatement().getValue().getStringValue();
                     Geometry g = getGeometry(spatialDataDao, location, lang);
                     if (g != null && g.getArea() > 0.01) {
-                        return g;
+                        return g.getBoundary();
                     } else {
                         return administrativeDistrictGeometry(location);
                     }

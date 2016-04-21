@@ -68,7 +68,12 @@ public class RawImageSqlDao implements RawImageDao {
     public Iterable<RawImage> getImages(Language language, int localId) throws DaoException {
         List<Integer> ids = new ArrayList<Integer>();
         ids.add(localId);
-        return getImages(language, ids).get(localId);
+        Map<Integer, List<RawImage>> allImages = getImages(language, ids);
+        if (allImages.containsKey(localId)) {
+            return allImages.get(localId);
+        }
+
+        return new ArrayList<RawImage>();
     }
 
     public Map<Integer, List<RawImage>> getImages(Language language, List<Integer> localIds) throws DaoException {
