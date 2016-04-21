@@ -312,10 +312,10 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                 mapConstruction.southWestLng = envelope.getMinX();
             } else {
                 // Set to world bounds
-                mapConstruction.northEastLat = 85;
-                mapConstruction.northEastLng = 180;
-                mapConstruction.southWestLat = -85;
-                mapConstruction.southWestLng = -180;
+                mapConstruction.northEastLat = 72;
+                mapConstruction.northEastLng = 160;
+                mapConstruction.southWestLat = -72;
+                mapConstruction.southWestLng = -160;
             }
         }
 
