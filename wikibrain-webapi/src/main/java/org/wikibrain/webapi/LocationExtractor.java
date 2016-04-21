@@ -185,6 +185,10 @@ public class LocationExtractor {
     private Geometry administrativeDistrictGeometry(String title) throws DaoException {
         LocalPage page = lpDao.getByTitle(lang, title);
 
+        if (page == null) {
+            return null;
+        }
+
         final int LocatedInAdministrativeDistrict = 131;
         for (List<LocalWikidataStatement> statements : wikidata.getLocalStatements(page).values()) {
             for (LocalWikidataStatement statement : statements) {

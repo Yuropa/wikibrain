@@ -58,7 +58,6 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         LocalPage lp = lpDao.getById(lang, localId);
 
         for (RawImage image : riDao.getImages(lang, localId)) {
-
             images.add(new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
                     image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
                     image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle()));

@@ -25,6 +25,7 @@ import java.util.concurrent.Semaphore;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.wikibrain.spatial.dao.SpatialDataDao;
+import org.wikibrain.sr.SRMetric;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
 import org.wikibrain.wikidata.WikidataDao;
@@ -72,10 +73,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
+    final private double MIN_STYLE_SR = 0.5;
     final private boolean GENERATE_JSON = true;
     final private int MAX_FIREFOX_INSTANCE = 0; // = WpThreadUtils.getMaxThreads();
     final private Semaphore availableFirefox = new Semaphore(MAX_FIREFOX_INSTANCE, true);
 
+    final private SRMetric srMetric;
     final private LocationExtractor locationExtractor;
     final private Process xvfbCommand;
     final private Set<FirefoxDriver> drivers = new ConcurrentHashSet<FirefoxDriver>();
@@ -83,6 +86,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
     CompariFactReferenceMap(Env env) throws ConfigurationException {
         locationExtractor = new LocationExtractor(env);
+        srMetric = env.getConfigurator().get(SRMetric.class, "milnewitten", "lang", env.getDefaultLanguage().getLangCode());
         scriptString = "";
 
         // Load XVFB for the WebDriver
@@ -260,7 +264,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
     }
 
-    public ReferenceImage generateReferenceMap(MapStyle style, List<LocationExtractor.NamedGeometry> geometries) throws IOException {
+    public ReferenceImage generateReferenceMap(List<MapStyle> styles, List<LocationExtractor.NamedGeometry> geometries) throws IOException {
         // Determine Map size and scale attributes
         int width = 1000;
         int height = 750;
@@ -408,18 +412,20 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             LOG.info(locationsString);
         }
 
+        // Use SR to find the styles to use
+        final List<MapStyle> styles = new ArrayList<MapStyle>();
+        for (MapStyle style : MapStyle.supportedStyles()) {
+            if (srMetric.similarity(style.toString(), text, false).getScore() > MIN_STYLE_SR) {
+                styles.add(style);
+            }
+        }
+
         // Generate the Reference Maps
         ParallelForEach.loop(extractedGeometries, new Procedure<Set<LocationExtractor.NamedGeometry>>() {
             @Override
             public void call(Set<LocationExtractor.NamedGeometry> locationSet) throws Exception {
-                final List<LocationExtractor.NamedGeometry> locations = new ArrayList<LocationExtractor.NamedGeometry>(locationSet);
-
-                ParallelForEach.loop(MapStyle.supportedStyles(), new Procedure<MapStyle>() {
-                    @Override
-                    public void call(MapStyle style) throws Exception {
-                        result.add(generateReferenceMap(style, locations));
-                    }
-                });
+                List<LocationExtractor.NamedGeometry> locations = new ArrayList<LocationExtractor.NamedGeometry>(locationSet);
+                result.add(generateReferenceMap(styles, locations));
             }
         });
 
