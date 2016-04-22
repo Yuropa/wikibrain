@@ -165,8 +165,11 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                             result.add(newImage);
                         }
                     } catch (Exception e) {
+                        System.out.println("\n\n\nBegin Error");
+                        e.printStackTrace();
                         LOG.error(e.getLocalizedMessage());
                         LOG.error(ExceptionUtils.getFullStackTrace(e));
+                        System.out.println("End Error\n\n");
                     }
                 }
             });
