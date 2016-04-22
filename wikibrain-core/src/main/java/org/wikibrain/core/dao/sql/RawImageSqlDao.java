@@ -176,6 +176,7 @@ public class RawImageSqlDao implements RawImageDao {
 
                     result.get(localId).add(i);
                 } catch (Exception e) {
+                    System.out.println("\n\n\nError downloading files: " + download);
                     LOG.debug(e.getLocalizedMessage());
                     e.printStackTrace();
                 }
