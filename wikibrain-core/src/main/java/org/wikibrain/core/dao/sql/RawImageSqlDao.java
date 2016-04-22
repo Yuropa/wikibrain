@@ -94,7 +94,7 @@ public class RawImageSqlDao implements RawImageDao {
                             titles += "|";
                         }
                         titles += name;
-                        titleLinkMap.put(name, l);
+                        titleLinkMap.put(name.toLowerCase(), l);
                     }
                 }
             }
@@ -123,7 +123,7 @@ public class RawImageSqlDao implements RawImageDao {
                 try {
                     JsonObject page = entry.getValue().getAsJsonObject();
                     String name = page.get("title").getAsString().replace(" ", "_");
-                    RawLink l = titleLinkMap.get(name);
+                    RawLink l = titleLinkMap.get(name.toLowerCase());
                     if (l == null) {
                         String debugString = "Unable to find link for " + name + "\n";
 
@@ -133,6 +133,7 @@ public class RawImageSqlDao implements RawImageDao {
 
                         debugString += "\n\n";
                         System.out.println(debugString);
+                        continue;
                     }
 
                     String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
