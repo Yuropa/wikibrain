@@ -53,9 +53,6 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     }
 
     private List<InternalImage> createImageFromId(Language lang, int localId, String method, double score) throws DaoException {
-        return createImageFromId(lang, localId, method, score, "");
-    }
-    private List<InternalImage> createImageFromId(Language lang, int localId, String method, double score, String debugString) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
         LocalPage lp = lpDao.getById(lang, localId);
@@ -148,7 +145,10 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                         LocalLink ll = scoredLink.link;
                         double score = scoredLink.score;
 
-                        result.addAll(createImageFromId(ll.getLanguage(), ll.getLocalId(), "wikify", score, ll.getAnchorText()));
+                        for (InternalImage image : createImageFromId(ll.getLanguage(), ll.getLocalId(), "wikify", score)) {
+                            image.addDebugData("wikify resolve", ll.getAnchorText());
+                            result.add(image);
+                        }
 
                         if (srMethod == null) {
                             return;
@@ -161,10 +161,10 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                             InternalImage newImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
                                     image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
                                     image.getWidth(), image.getHeight(), method, image.getScore(), image.getTitle());
-                            newImage.debugString = ll.getAnchorText();
+                            newImage.addDebugData("wikify resolve", ll.getAnchorText());
                             result.add(newImage);
                         }
-                    }  catch (Exception e) {
+                    } catch (Exception e) {
                         LOG.error(e.getLocalizedMessage());
                         LOG.error(ExceptionUtils.getFullStackTrace(e));
                     }

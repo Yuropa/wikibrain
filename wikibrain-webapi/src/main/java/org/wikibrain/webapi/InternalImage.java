@@ -1,5 +1,6 @@
 package org.wikibrain.webapi;
 
+import org.json.JSONObject;
 import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.model.RawImage;
 
@@ -10,7 +11,7 @@ public class InternalImage extends RawImage implements Comparable<InternalImage>
     final private String method;
     final private double score;
     final private String title;
-    String debugString = "";
+    private JSONObject json;
 
     InternalImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
                   String caption, boolean isPhotograph, int width, int height, String method, double score, String title) {
@@ -18,6 +19,12 @@ public class InternalImage extends RawImage implements Comparable<InternalImage>
         this.method = method;
         this.score = score;
         this.title = title;
+        json = new JSONObject();
+
+        addDebugData("method", method);
+        addDebugData("score", Double.toString(score));
+        addDebugData("title", title);
+        addDebugData("caption", caption);
     }
 
     String getMethod() {
@@ -32,8 +39,12 @@ public class InternalImage extends RawImage implements Comparable<InternalImage>
         return title;
     }
 
+    void addDebugData(String key, String value) {
+        json.put(key, value);
+    }
+
     String generateDebugString() {
-        return method + " (" + score + ") : " + debugString;
+        return json.toString();
     }
 
     @Override

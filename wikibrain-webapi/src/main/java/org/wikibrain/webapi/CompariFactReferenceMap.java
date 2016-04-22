@@ -272,6 +272,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         JSONArray annotations = new JSONArray();
         MapConstructionData mapConstruction = new MapConstructionData(-85.0, 180.0, 85.0, -180.0);
 
+        String locationString = "";
         if (geometries.size() > 0) {
             // Calculate a new center and extent
             Geometry bounds = null;
@@ -299,6 +300,11 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
                     annotations.put(json);
 
                     mapConstruction.addAnnotation(g.getCentroid().getY(), g.getCentroid().getX(), geometries.get(i).name);
+
+                    if (i != 0) {
+                        locationString += ",";
+                    }
+                    locationString += geometries.get(i).name;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -344,8 +350,9 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         }
         double score = 1.0; // 0.8 + Math.random() * 0.2;
 
+        ReferenceImage refImage;
         if (GENERATE_JSON) {
-            return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, mapConstruction);
+            refImage = new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, mapConstruction);
         } else {
             String bounds = "[[" + mapConstruction.southWestLat + "," + mapConstruction.southWestLng + "],[" +
                     mapConstruction.northEastLat + "," + mapConstruction.northEastLng + "]]";
@@ -393,8 +400,12 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             tempHTMLFile.delete();
             scrFile.delete();
 
-            return new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
+            refImage = new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
         }
+
+        refImage.addDebugData("style", "[" + styleString + "]");
+        refImage.addDebugData("locations", "[" + locationString + "]");
+        return refImage;
     }
 
     public List<InternalImage> generateimages(String text, String method) throws DaoException {

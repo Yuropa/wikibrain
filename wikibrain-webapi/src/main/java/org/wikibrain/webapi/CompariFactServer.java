@@ -167,6 +167,7 @@ public class CompariFactServer extends AbstractHandler {
                 // image.put("data", generatedImages.get(i));
 
                 image.put("caption", i.getCaption());
+                image.put("debug", i.generateDebugString());
                 imageURLS.add(image);
 
                 Map obj = new HashMap();
