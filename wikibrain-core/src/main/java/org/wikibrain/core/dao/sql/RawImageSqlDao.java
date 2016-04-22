@@ -147,14 +147,16 @@ public class RawImageSqlDao implements RawImageDao {
 
                     boolean categoriesIndicatePhoto = false;
                     JsonArray categories = page.getAsJsonArray("categories");
-                    for (int i = 0; i < categories.size(); i++) {
-                        JsonObject category = categories.get(i).getAsJsonObject();
-                        String title = category.get("title").getAsString().toLowerCase();
+                    if (categories != null) {
+                        for (int i = 0; i < categories.size(); i++) {
+                            JsonObject category = categories.get(i).getAsJsonObject();
+                            String title = category.get("title").getAsString().toLowerCase();
 
-                        if (title.contains("image") || (title.contains("picture") && !title.contains("featured"))
-                                || title.contains("photo") || title.contains("portrait")) {
-                            categoriesIndicatePhoto = true;
-                            break;
+                            if (title.contains("image") || (title.contains("picture") && !title.contains("featured"))
+                                    || title.contains("photo") || title.contains("portrait")) {
+                                categoriesIndicatePhoto = true;
+                                break;
+                            }
                         }
                     }
 
