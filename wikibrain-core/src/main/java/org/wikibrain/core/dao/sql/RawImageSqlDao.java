@@ -124,6 +124,16 @@ public class RawImageSqlDao implements RawImageDao {
                     JsonObject page = entry.getValue().getAsJsonObject();
                     String name = page.get("title").getAsString().replace(" ", "_");
                     RawLink l = titleLinkMap.get(name);
+                    if (l == null) {
+                        String debugString = "Unable to find link for " + name + "\n";
+
+                        for (String title : titleLinkMap.keySet()) {
+                            debugString += "\t" + title + "\n";
+                        }
+
+                        debugString += "\n\n";
+                        System.out.println(debugString);
+                    }
 
                     String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
 
