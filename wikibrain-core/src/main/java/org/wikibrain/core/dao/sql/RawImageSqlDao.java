@@ -138,6 +138,12 @@ public class RawImageSqlDao implements RawImageDao {
 
                     String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
 
+                    if (page.has("imageinfo")) {
+                        // Error loading this page
+                        LOG.warn("Unable to load data for image " + name);
+                        continue;
+                    }
+
                     JsonObject properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
                     String image = properties.get("url").getAsString();
                     int width = properties.get("width").getAsInt();
