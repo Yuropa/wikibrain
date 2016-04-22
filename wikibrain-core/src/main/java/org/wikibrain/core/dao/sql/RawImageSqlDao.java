@@ -175,7 +175,7 @@ public class RawImageSqlDao implements RawImageDao {
                     result.get(localId).add(i);
                 } catch (Exception e) {
                     LOG.debug(e.getLocalizedMessage());
-                    LOG.debug(e.getStackTrace()[0].toString());
+                    e.printStackTrace();
                 }
             }
         } catch (MalformedURLException e) {
