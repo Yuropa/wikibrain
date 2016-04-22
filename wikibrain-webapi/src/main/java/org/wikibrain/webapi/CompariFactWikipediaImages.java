@@ -170,6 +170,10 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     }
                 }
             });
+        } else if (method.equals("all")) {
+            // This is a combination os ESA and Wikify-ESA
+            result.addAll(generateimages(text, "esa"));
+            result.addAll(generateimages(text, "wikify-esa"));
         }
 
         System.out.println("Generated " + result.size() + " Wikipedia Images");
