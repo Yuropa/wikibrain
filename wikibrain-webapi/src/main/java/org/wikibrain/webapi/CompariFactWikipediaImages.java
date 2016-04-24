@@ -107,17 +107,30 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
     private List<ScoredLink> wikifyText(String text) throws DaoException{
         Map<LocalLink, Double> values = new HashMap<LocalLink, Double>();
+        Map<LocalLink, Integer> counts = new HashMap<LocalLink, Integer>();
         for (LocalLink ll : wikifier.wikify(text)) {
             Double value = 1.0 - (double) ll.getLocation() / (double) text.length();
+            int count = 1;
+
             if (values.containsKey(ll)) {
                 value += values.get(ll);
             }
 
+            if (counts.containsKey(ll)) {
+                count += counts.get(ll);
+            }
+
             values.put(ll, value);
+            counts.put(ll, count);
         }
 
         List<ScoredLink> result = new ArrayList<ScoredLink>();
         for (LocalLink l : values.keySet()) {
+            if (counts.get(l) <= 1) {
+                // Link should be mentioned more than once
+                continue;
+            }
+
             ScoredLink link = new ScoredLink(l.getLanguage(), l.getLocalId(), values.get(l));
             link.anchorText = l.getAnchorText();
             result.add(link);
