@@ -86,7 +86,9 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             int id = mostSimilar.getId(i);
             double score = mostSimilar.getScoreForId(id);
 
-            result.add(new ScoredLink(sr.getLanguage(), id, score));
+            ScoredLink link = new ScoredLink(sr.getLanguage(), id, score);
+            link.debugText = method + " (" + score + ")";
+            result.add(link);
         }
 
         return result;
@@ -103,6 +105,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         public int localId;
         public double score;
         public String anchorText = "";
+        public String debugText = "";
     }
 
     private List<ScoredLink> wikifyText(String text) throws DaoException{
@@ -126,13 +129,14 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
         List<ScoredLink> result = new ArrayList<ScoredLink>();
         for (LocalLink l : values.keySet()) {
-            if (counts.get(l) <= 1) {
+            /*if (counts.get(l) <= 1) {
                 // Link should be mentioned more than once
                 continue;
-            }
+            }*/
 
             ScoredLink link = new ScoredLink(l.getLanguage(), l.getLocalId(), values.get(l));
             link.anchorText = l.getAnchorText();
+            link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(l) + ", " + values.get(l) + ")";
             result.add(link);
         }
         return result;
@@ -143,7 +147,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return getLinksForMethod(text, method, MAX_SR_LINKS);
     }
 
-    public List<ScoredLink> getLinksForMethod(String text, String method, final int srLinksCount) throws DaoException {
+    public List<ScoredLink> getLinksForMethod(String text, final String method, final int srLinksCount) throws DaoException {
         final Set<ScoredLink> foundLinks = new ConcurrentHashSet<ScoredLink>();
 
         if (method.equals("esa") || method.equals("ensemble")) {
@@ -169,7 +173,9 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     public void call(ScoredLink link) throws Exception {
                         LocalPage page = lpDao.getById(link.lang, link.localId);
                         int numberOfImages = (int) (srLinksCount * link.score);
-                        foundLinks.addAll(getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages));
+                        for (ScoredLink l : getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages)) {
+                            l.debugText = srMethod + " from (" + link.debugText + ") " + l.debugText;
+                        }
                     }
                 });
             }
@@ -192,7 +198,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         System.out.println("Found possible pages:");
         for (ScoredLink l : links) {
             LocalPage lp = lpDao.getById(l.lang, l.localId);
-            System.out.println("\t" + lp.getTitle().getCanonicalTitle());
+            System.out.println("\t" + lp.getTitle().getCanonicalTitle() + " : " + l.debugText);
         }
 
         ParallelForEach.loop(links, new Procedure<ScoredLink>() {
