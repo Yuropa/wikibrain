@@ -153,6 +153,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 continue;
             }
 
+            link.score = values.get(link);
             link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(link) + ", " + values.get(link) + ")";
             result.add(link);
         }
@@ -190,7 +191,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     public void call(ScoredLink link) throws Exception {
                         LocalPage page = lpDao.getById(link.lang, link.localId);
                         int numberOfImages = (int) (srLinksCount * link.score);
-                        
+
                         System.out.println("Getting " + numberOfImages + " esa image for term " + page.getTitle().getCanonicalTitle());
                         for (ScoredLink l : getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages)) {
                             l.debugText = srMethod + " from (" + link.debugText + ") " + l.debugText;
