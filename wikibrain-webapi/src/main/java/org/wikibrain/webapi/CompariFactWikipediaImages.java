@@ -29,6 +29,8 @@ import org.wikibrain.utils.Procedure;
 import org.wikibrain.utils.WpThreadUtils;
 
 import java.util.*;
+import java.util.function.ToDoubleFunction;
+import java.util.stream.DoubleStream;
 
 /**
  * Created by Josh on 4/6/16.
@@ -146,6 +148,13 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             counts.put(scoredLink, count);
         }
 
+        double totalScore = values.values().stream().mapToDouble(new ToDoubleFunction<Double>() {
+            @Override
+            public double applyAsDouble(Double value) {
+                return value;
+            }
+        }).sum();
+
         List<ScoredLink> result = new ArrayList<ScoredLink>();
         for (ScoredLink link : values.keySet()) {
             if (counts.get(link) <= 1 && values.get(link) < 0.3) {
@@ -153,8 +162,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 continue;
             }
 
-            link.score = values.get(link);
-            link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(link) + ", " + values.get(link) + ")";
+            link.score = values.get(link) / totalScore;
+            link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(link) + ", " + link.score + ")";
             result.add(link);
         }
         return result;
