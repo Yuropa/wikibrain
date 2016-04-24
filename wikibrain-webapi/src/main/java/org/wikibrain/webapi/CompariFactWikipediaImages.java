@@ -3,6 +3,7 @@ package org.wikibrain.webapi;
 import edu.emory.mathcs.backport.java.util.Collections;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.eclipse.jetty.util.ConcurrentHashSet;
+import org.jooq.util.derby.sys.Sys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
@@ -49,15 +50,25 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
     }
 
-    private List<InternalImage> createImageFromId(Language lang, int localId, String method, double score) throws DaoException {
+    private List<InternalImage> createImageFromId(String text, Language lang, int localId, String method, double score) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
+        SRMetric sr = srMetrics.get(method);
         LocalPage lp = lpDao.getById(lang, localId);
 
         for (RawImage image : riDao.getImages(lang, localId)) {
-            images.add(new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
+            InternalImage internalImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
                     image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
-                    image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle()));
+                    image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle());
+
+
+            // Use sr with the image title to determine if the image matches
+            String title = internalImage.getTitle().toLowerCase().replace("file:", "").replace("_", " ");
+            double titleSrScore = sr.similarity(title, text, false).getScore();
+            System.out.println("Image " + title + " " + titleSrScore);
+            if (titleSrScore > 0.5) {
+                images.add(internalImage);
+            }
         }
 
         System.out.println("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
@@ -208,7 +219,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return new ArrayList<ScoredLink>(foundLinks);
     }
 
-    public List<InternalImage> generateimages(String text, final String method) throws DaoException {
+    public List<InternalImage> generateimages(final String text, final String method) throws DaoException {
         final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
 
         System.out.println("Generating Wikipedia Images");
@@ -225,7 +236,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             @Override
             public void call(ScoredLink link) throws Exception {
                 try {
-                    for (InternalImage image : createImageFromId(link.lang, link.localId, method, link.score)) {
+                    for (InternalImage image : createImageFromId(text, link.lang, link.localId, method, link.score)) {
                         if (method.startsWith("wikify")) {
                             image.addDebugData("wikify resolve", link.anchorText);
                         }
