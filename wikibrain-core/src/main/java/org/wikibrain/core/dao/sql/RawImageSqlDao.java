@@ -163,6 +163,8 @@ public class RawImageSqlDao implements RawImageDao {
                     }
 
                     boolean categoriesIndicatePhoto = false;
+                    boolean isCoatOfArms = false;
+                    boolean isRoadSign = false;
                     JsonArray categories = page.getAsJsonArray("categories");
                     if (categories != null) {
                         for (int i = 0; i < categories.size(); i++) {
@@ -173,12 +175,16 @@ public class RawImageSqlDao implements RawImageDao {
                                     || title.contains("photo") || title.contains("portrait")) {
                                 categoriesIndicatePhoto = true;
                                 break;
+                            } else if (title.contains("coat of arm")) {
+                                isCoatOfArms = true;
+                                break;
                             }
                         }
                     }
 
                     boolean hasLargeAmountOfMetadata = metadata.size() >= 5;
-                    boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto;
+                    boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto
+                                || isCoatOfArms;
 
                     // Get caption
                     String context = l.getContext();
