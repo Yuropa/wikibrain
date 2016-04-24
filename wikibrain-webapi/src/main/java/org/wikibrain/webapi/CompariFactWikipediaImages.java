@@ -190,6 +190,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     public void call(ScoredLink link) throws Exception {
                         LocalPage page = lpDao.getById(link.lang, link.localId);
                         int numberOfImages = (int) (srLinksCount * link.score);
+                        
+                        System.out.println("Getting " + numberOfImages + " esa image for term " + page.getTitle().getCanonicalTitle());
                         for (ScoredLink l : getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages)) {
                             l.debugText = srMethod + " from (" + link.debugText + ") " + l.debugText;
                             foundLinks.add(l);
