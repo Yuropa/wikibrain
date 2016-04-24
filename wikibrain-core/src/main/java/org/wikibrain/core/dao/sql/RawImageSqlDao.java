@@ -175,8 +175,11 @@ public class RawImageSqlDao implements RawImageDao {
                                     || title.contains("photo") || title.contains("portrait")) {
                                 categoriesIndicatePhoto = true;
                                 break;
-                            } else if (title.contains("coat of arm")) {
+                            } else if (title.contains("coat") && title.contains("arm")) {
                                 isCoatOfArms = true;
+                                break;
+                            } else if (title.contains("road") && title.contains("sign")) {
+                                isRoadSign = true;
                                 break;
                             }
                         }
@@ -184,7 +187,7 @@ public class RawImageSqlDao implements RawImageDao {
 
                     boolean hasLargeAmountOfMetadata = metadata.size() >= 5;
                     boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto
-                                || isCoatOfArms;
+                                || isCoatOfArms || isRoadSign;
 
                     // Get caption
                     String context = l.getContext();

@@ -148,10 +148,10 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
         List<ScoredLink> result = new ArrayList<ScoredLink>();
         for (ScoredLink link : values.keySet()) {
-            /*if (counts.get(l) <= 1) {
+            if (counts.get(link) <= 1 && values.get(link) < 0.3) {
                 // Link should be mentioned more than once
                 continue;
-            }*/
+            }
 
             link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(link) + ", " + values.get(link) + ")";
             result.add(link);
