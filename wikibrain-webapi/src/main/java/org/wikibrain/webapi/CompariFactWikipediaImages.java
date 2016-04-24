@@ -1,14 +1,10 @@
 package org.wikibrain.webapi;
 
-import cern.jet.random.StudentT;
-import com.mchange.v2.lang.ThreadUtils;
 import edu.emory.mathcs.backport.java.util.Collections;
-import net.sf.cglib.core.Local;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.eclipse.jetty.util.ConcurrentHashSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.wikibrain.conf.Configuration;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.cmd.Env;
@@ -21,16 +17,12 @@ import org.wikibrain.core.model.LocalLink;
 import org.wikibrain.core.model.LocalPage;
 import org.wikibrain.core.model.RawImage;
 import org.wikibrain.sr.SRMetric;
-import org.wikibrain.sr.SRResult;
 import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
-import org.wikibrain.utils.WpThreadUtils;
 
 import java.util.*;
-import java.util.function.ToDoubleFunction;
-import java.util.stream.DoubleStream;
 
 /**
  * Created by Josh on 4/6/16.
