@@ -148,12 +148,10 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             counts.put(scoredLink, count);
         }
 
-        double totalScore = values.values().stream().mapToDouble(new ToDoubleFunction<Double>() {
-            @Override
-            public double applyAsDouble(Double value) {
-                return value;
-            }
-        }).sum();
+        double totalScore = 0.0;
+        for (double d : values.values()) {
+            totalScore += d;
+        }
 
         List<ScoredLink> result = new ArrayList<ScoredLink>();
         for (ScoredLink link : values.keySet()) {
@@ -170,7 +168,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     }
 
     public List<ScoredLink> getLinksForMethod(String text, String method) throws DaoException {
-        int MAX_SR_LINKS = 20;
+        int MAX_SR_LINKS = 30;
         return getLinksForMethod(text, method, MAX_SR_LINKS);
     }
 
