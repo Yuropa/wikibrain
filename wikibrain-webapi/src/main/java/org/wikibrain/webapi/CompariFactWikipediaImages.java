@@ -147,7 +147,11 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         final Set<ScoredLink> foundLinks = new ConcurrentHashSet<ScoredLink>();
 
         if (method.equals("esa") || method.equals("ensemble")) {
-            foundLinks .addAll(srImages(text, srLinksCount, method));
+            if (srLinksCount == 0) {
+                return java.util.Collections.emptyList();
+            }
+
+            foundLinks.addAll(srImages(text, srLinksCount, method));
         } else if (method.startsWith("wikify")) {
             int index = method.lastIndexOf("-");
             final String srMethod;
