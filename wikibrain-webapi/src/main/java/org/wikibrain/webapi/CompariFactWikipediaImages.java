@@ -106,37 +106,54 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         public double score;
         public String anchorText = "";
         public String debugText = "";
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ScoredLink) {
+                ScoredLink l = (ScoredLink)obj;
+                return l.lang.equals(lang) && l.localId == localId;
+            }
+
+            return super.equals(obj);
+        }
+
+        @Override
+        public int hashCode() {
+            return this.lang.hashCode() ^ (this.localId * 31);
+        }
     }
 
     private List<ScoredLink> wikifyText(String text) throws DaoException{
-        Map<LocalLink, Double> values = new HashMap<LocalLink, Double>();
-        Map<LocalLink, Integer> counts = new HashMap<LocalLink, Integer>();
+        Map<ScoredLink, Double> values = new HashMap<ScoredLink, Double>();
+        Map<ScoredLink, Integer> counts = new HashMap<ScoredLink, Integer>();
         for (LocalLink ll : wikifier.wikify(text)) {
             Double value = 1.0 - (double) ll.getLocation() / (double) text.length();
             int count = 1;
 
-            if (values.containsKey(ll)) {
-                value += values.get(ll);
+            ScoredLink scoredLink = new ScoredLink(ll.getLanguage(), ll.getLocalId(), 0.0);
+            scoredLink.anchorText = ll.getAnchorText();
+
+            if (values.containsKey(scoredLink)) {
+                value += values.get(scoredLink);
             }
 
-            if (counts.containsKey(ll)) {
-                count += counts.get(ll);
+            if (counts.containsKey(scoredLink)) {
+                count += counts.get(scoredLink);
             }
 
-            values.put(ll, value);
-            counts.put(ll, count);
+
+            values.put(scoredLink, value);
+            counts.put(scoredLink, count);
         }
 
         List<ScoredLink> result = new ArrayList<ScoredLink>();
-        for (LocalLink l : values.keySet()) {
+        for (ScoredLink link : values.keySet()) {
             /*if (counts.get(l) <= 1) {
                 // Link should be mentioned more than once
                 continue;
             }*/
 
-            ScoredLink link = new ScoredLink(l.getLanguage(), l.getLocalId(), values.get(l));
-            link.anchorText = l.getAnchorText();
-            link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(l) + ", " + values.get(l) + ")";
+            link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(link) + ", " + values.get(link) + ")";
             result.add(link);
         }
         return result;
