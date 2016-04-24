@@ -188,7 +188,14 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         System.out.println("Generating Wikipedia Images");
         System.out.println("Using method " + method);
 
-        ParallelForEach.loop(getLinksForMethod(text, method), new Procedure<ScoredLink>() {
+        List<ScoredLink> links = getLinksForMethod(text, method);
+        System.out.println("Found possible pages:");
+        for (ScoredLink l : links) {
+            LocalPage lp = lpDao.getById(l.lang, l.localId);
+            System.out.println("\t" + lp.getTitle().getCanonicalTitle());
+        }
+
+        ParallelForEach.loop(links, new Procedure<ScoredLink>() {
             @Override
             public void call(ScoredLink link) throws Exception {
                 try {
