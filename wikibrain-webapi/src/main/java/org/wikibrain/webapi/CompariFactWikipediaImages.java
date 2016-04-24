@@ -192,6 +192,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                         int numberOfImages = (int) (srLinksCount * link.score);
                         for (ScoredLink l : getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages)) {
                             l.debugText = srMethod + " from (" + link.debugText + ") " + l.debugText;
+                            foundLinks.add(l);
                         }
                     }
                 });
