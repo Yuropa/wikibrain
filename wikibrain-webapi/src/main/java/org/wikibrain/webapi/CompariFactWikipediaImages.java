@@ -53,7 +53,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     private List<InternalImage> createImageFromId(String text, Language lang, int localId, String method, double score) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
-        SRMetric sr = srMetrics.get(method);
+        SRMetric sr = srMetrics.get("esa");
         LocalPage lp = lpDao.getById(lang, localId);
 
         for (RawImage image : riDao.getImages(lang, localId)) {
