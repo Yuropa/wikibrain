@@ -234,7 +234,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
                     System.out.println("Page title score " + score + " : " + lp.getTitle().getCanonicalTitle());
 
-                    if (score < 0.5) {
+                    if (score < 0.8) {
                         return;
                     }
 
