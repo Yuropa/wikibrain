@@ -50,25 +50,16 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
     }
 
-    private List<InternalImage> createImageFromId(String text, Language lang, int localId, String method, double score) throws DaoException {
+    private List<InternalImage> createImageFromId(Language lang, int localId, String method, double score) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
-        SRMetric sr = srMetrics.get("esa");
         LocalPage lp = lpDao.getById(lang, localId);
-
         for (RawImage image : riDao.getImages(lang, localId)) {
             InternalImage internalImage = new InternalImage(image.getLanguage(), image.getSourceId(), image.getName(),
                     image.getPageLocation(), image.getImageLocation(), image.getCaption(), image.isPhotograph(),
                     image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle());
 
-
-            // Use sr with the image title to determine if the image matches
-            String title = internalImage.getTitle().toLowerCase().replace("file:", "").replace("_", " ");
-            double titleSrScore = sr.similarity(title, text, false).getScore();
-            System.out.println("Image " + title + " " + titleSrScore);
-            if (titleSrScore > 0.5) {
-                images.add(internalImage);
-            }
+            images.add(internalImage);
         }
 
         System.out.println("Found page " + lp.getTitle().getCanonicalTitle() + " with " + images.size() + " images");
@@ -232,11 +223,22 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             System.out.println("\t" + lp.getTitle().getCanonicalTitle() + " : " + l.debugText);
         }
 
+        final SRMetric srMetric = srMetrics.get("esa");
+
         ParallelForEach.loop(links, new Procedure<ScoredLink>() {
             @Override
             public void call(ScoredLink link) throws Exception {
                 try {
-                    for (InternalImage image : createImageFromId(text, link.lang, link.localId, method, link.score)) {
+                    LocalPage lp = lpDao.getById(link.lang, link.localId);
+                    double score = srMetric.similarity(lp.getTitle().getCanonicalTitle(), text, false).getScore();
+
+                    System.out.println("Page title score " + score + " : " + lp.getTitle().getCanonicalTitle());
+
+                    if (score < 0.5) {
+                        return;
+                    }
+
+                    for (InternalImage image : createImageFromId(link.lang, link.localId, method, link.score)) {
                         if (method.startsWith("wikify")) {
                             image.addDebugData("wikify resolve", link.anchorText);
                         }
