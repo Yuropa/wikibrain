@@ -257,7 +257,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     System.out.println("End Error\n\n");
                 }
             }
-        });
+        }, 1);
 
         System.out.println("Generated " + result.size() + " Wikipedia Images");
 
