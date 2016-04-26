@@ -230,7 +230,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
         final SRMetric srMetric = srMetrics.get("esa");
 
-        ParallelForEach.loop(links, new Procedure<ScoredLink>() {
+        ParallelForEach.loop(links, 1, new Procedure<ScoredLink>() {
             @Override
             public void call(ScoredLink link) throws Exception {
                 try {
@@ -252,8 +252,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 } catch (Exception e) {
                     System.out.println("\n\n\nBegin Error");
                     e.printStackTrace();
-                    LOG.error(e.getLocalizedMessage());
-                    LOG.error(ExceptionUtils.getFullStackTrace(e));
+                    LOG.info(e.getLocalizedMessage());
+                    LOG.info(ExceptionUtils.getFullStackTrace(e));
                     System.out.println("End Error\n\n");
                 }
             }

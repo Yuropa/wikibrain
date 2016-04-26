@@ -313,8 +313,9 @@ public class RawImageSqlDao implements RawImageDao {
                     JsonObject page = entry.getValue().getAsJsonObject();
 
                     RawImage i = parseImage(page);
-                    if (i == null)
+                    if (i == null) {
                         continue;
+                    }
 
                     String name = i.getName().toLowerCase();
                     RawLink l = titleLinkMap.get(name);
