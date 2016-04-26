@@ -63,65 +63,71 @@ public class RawImageSqlDao implements RawImageDao {
     }
 
     private RawImage parseImage(JsonObject page) {
-        String name = page.get("title").getAsString();
+        try {
+            String name = page.get("title").getAsString();
 
-        JsonObject properties;
-        if (page.has("imageinfo")) {
-            properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
-        } else  {
-            properties = page;
-        }
+            JsonObject properties;
+            if (page.has("imageinfo")) {
+                properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
+            } else {
+                properties = page;
+            }
 
-        String image = properties.get("url").getAsString();
-        int width = properties.get("width").getAsInt();
-        int height = properties.get("height").getAsInt();
+            String image = properties.get("url").getAsString();
+            int width = properties.get("width").getAsInt();
+            int height = properties.get("height").getAsInt();
 
-        boolean hasMake = false;
-        boolean hasModel = false;
-        boolean categoriesIndicatePhoto = false;
-        boolean isCoatOfArms = false;
-        boolean isRoadSign = false;
-        boolean hasLargeAmountOfMetadata = false;
+            boolean hasMake = false;
+            boolean hasModel = false;
+            boolean categoriesIndicatePhoto = false;
+            boolean isCoatOfArms = false;
+            boolean isRoadSign = false;
+            boolean hasLargeAmountOfMetadata = false;
 
-        if (properties.has("commonmetadata")) {
-            JsonArray metadata = properties.getAsJsonArray("commonmetadata");
-            for (int i = 0; i < metadata.size(); i++) {
-                JsonObject data = metadata.get(i).getAsJsonObject();
+            if (properties.has("commonmetadata")) {
+                JsonArray metadata = properties.getAsJsonArray("commonmetadata");
+                for (int i = 0; i < metadata.size(); i++) {
+                    JsonObject data = metadata.get(i).getAsJsonObject();
 
-                if (data.get("name").getAsString().equals("Make")) {
-                    hasMake = true;
-                } else if (data.get("name").getAsString().equals("Model")) {
-                    hasModel = true;
+                    if (data.get("name").getAsString().equals("Make")) {
+                        hasMake = true;
+                    } else if (data.get("name").getAsString().equals("Model")) {
+                        hasModel = true;
+                    }
+                }
+                hasLargeAmountOfMetadata = metadata.size() >= 5;
+            }
+
+            if (page.has("categories")) {
+                JsonArray categories = page.getAsJsonArray("categories");
+                for (int i = 0; i < categories.size(); i++) {
+                    JsonObject category = categories.get(i).getAsJsonObject();
+                    String title = category.get("title").getAsString().toLowerCase();
+
+                    if (title.contains("image") || (title.contains("picture") && !title.contains("featured"))
+                            || title.contains("photo") || title.contains("portrait")) {
+                        categoriesIndicatePhoto = true;
+                        break;
+                    } else if (title.contains("coat") && title.contains("arm")) {
+                        isCoatOfArms = true;
+                        break;
+                    } else if (title.contains("road") && title.contains("sign")) {
+                        isRoadSign = true;
+                        break;
+                    }
                 }
             }
-            hasLargeAmountOfMetadata = metadata.size() >= 5;
+
+            boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto
+                    || isCoatOfArms || isRoadSign;
+
+            RawImage i = new RawImage(name, image, "", isPhotograph, width, height);
+            return i;
+        } catch (Exception e) {
+            LOG.info(e.getLocalizedMessage());
         }
 
-        if (page.has("categories")) {
-            JsonArray categories = page.getAsJsonArray("categories");
-            for (int i = 0; i < categories.size(); i++) {
-                JsonObject category = categories.get(i).getAsJsonObject();
-                String title = category.get("title").getAsString().toLowerCase();
-
-                if (title.contains("image") || (title.contains("picture") && !title.contains("featured"))
-                        || title.contains("photo") || title.contains("portrait")) {
-                    categoriesIndicatePhoto = true;
-                    break;
-                } else if (title.contains("coat") && title.contains("arm")) {
-                    isCoatOfArms = true;
-                    break;
-                } else if (title.contains("road") && title.contains("sign")) {
-                    isRoadSign = true;
-                    break;
-                }
-            }
-        }
-
-        boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto
-                || isCoatOfArms || isRoadSign;
-
-        RawImage i = new RawImage(name, image, "", isPhotograph, width, height);
-        return i;
+        return null;
     }
 
     private class AllImageIterator extends CommonsNetworkIterator<RawImage> {
@@ -303,6 +309,8 @@ public class RawImageSqlDao implements RawImageDao {
                     JsonObject page = entry.getValue().getAsJsonObject();
 
                     RawImage i = parseImage(page);
+                    if (i == null)
+                        continue;
 
                     String name = i.getName().toLowerCase();
                     RawLink l = titleLinkMap.get(name);
