@@ -94,4 +94,9 @@ public abstract class CommonsNetworkIterator<T> implements Iterator<T> {
 
         return true;
     }
+
+    @Override
+    public void remove() {
+        objects.remove();
+    }
 }
