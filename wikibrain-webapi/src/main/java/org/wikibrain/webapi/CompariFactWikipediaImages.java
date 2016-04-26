@@ -218,9 +218,14 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
         List<ScoredLink> links = getLinksForMethod(text, method);
         System.out.println("Found possible pages:");
-        for (ScoredLink l : links) {
+        for (ScoredLink l : new ArrayList<ScoredLink>(links)) {
             LocalPage lp = lpDao.getById(l.lang, l.localId);
-            System.out.println("\t" + lp.getTitle().getCanonicalTitle() + " : " + l.debugText);
+
+            if (lp == null) {
+                links.remove(l);
+            } else  {
+                System.out.println("\t" + lp.getTitle().getCanonicalTitle() + " : " + l.debugText);
+            }
         }
 
         final SRMetric srMetric = srMetrics.get("esa");
