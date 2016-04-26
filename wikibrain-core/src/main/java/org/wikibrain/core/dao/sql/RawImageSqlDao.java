@@ -21,8 +21,7 @@ import org.wikibrain.conf.Configurator;
 import org.wikibrain.core.dao.*;
 import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.lang.LanguageSet;
-import org.wikibrain.core.model.RawImage;
-import org.wikibrain.core.model.RawLink;
+import org.wikibrain.core.model.*;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -30,10 +29,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Josh on 3/30/16.
@@ -42,11 +38,13 @@ import java.util.Map;
 public class RawImageSqlDao implements RawImageDao {
     private static final Logger LOG = LoggerFactory.getLogger(RawLinkSqlDao.class);
 
+    private final LocalPageDao lpDao;
     private final RawLinkDao rawLinkDao;
     private MediaWikiParser parser;
 
-    public RawImageSqlDao(RawLinkDao rawLinkDao, MediaWikiParser parser) throws DaoException {
+    public RawImageSqlDao(RawLinkDao rawLinkDao, LocalPageDao lpDao, MediaWikiParser parser) throws DaoException {
         this.rawLinkDao = rawLinkDao;
+        this.lpDao = lpDao;
         this.parser = parser;
     }
 
@@ -62,6 +60,187 @@ public class RawImageSqlDao implements RawImageDao {
         }
 
         return s;
+    }
+
+    private RawImage parseImage(JsonObject page) {
+        String name = page.get("title").getAsString();
+
+        JsonObject properties;
+        if (page.has("imageinfo")) {
+            properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
+        } else  {
+            properties = page;
+        }
+
+        String image = properties.get("url").getAsString();
+        int width = properties.get("width").getAsInt();
+        int height = properties.get("height").getAsInt();
+
+        boolean hasMake = false;
+        boolean hasModel = false;
+        boolean categoriesIndicatePhoto = false;
+        boolean isCoatOfArms = false;
+        boolean isRoadSign = false;
+        boolean hasLargeAmountOfMetadata = false;
+
+        if (properties.has("commonmetadata")) {
+            JsonArray metadata = properties.getAsJsonArray("commonmetadata");
+            for (int i = 0; i < metadata.size(); i++) {
+                JsonObject data = metadata.get(i).getAsJsonObject();
+
+                if (data.get("name").getAsString().equals("Make")) {
+                    hasMake = true;
+                } else if (data.get("name").getAsString().equals("Model")) {
+                    hasModel = true;
+                }
+            }
+            hasLargeAmountOfMetadata = metadata.size() >= 5;
+        }
+
+        if (page.has("categories")) {
+            JsonArray categories = page.getAsJsonArray("categories");
+            for (int i = 0; i < categories.size(); i++) {
+                JsonObject category = categories.get(i).getAsJsonObject();
+                String title = category.get("title").getAsString().toLowerCase();
+
+                if (title.contains("image") || (title.contains("picture") && !title.contains("featured"))
+                        || title.contains("photo") || title.contains("portrait")) {
+                    categoriesIndicatePhoto = true;
+                    break;
+                } else if (title.contains("coat") && title.contains("arm")) {
+                    isCoatOfArms = true;
+                    break;
+                } else if (title.contains("road") && title.contains("sign")) {
+                    isRoadSign = true;
+                    break;
+                }
+            }
+        }
+
+        boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto
+                || isCoatOfArms || isRoadSign;
+
+        RawImage i = new RawImage(name, image, "", isPhotograph, width, height);
+        return i;
+    }
+
+    private class AllImageIterator extends CommonsNetworkIterator<RawImage> {
+        AllImageIterator(String start, String end) throws Exception {
+            super(start, end);
+            performDownload();
+        }
+
+        @Override
+        String buildSearchURL(String start, String end) {
+            String format = "&format=json";
+            String limit = "&ailimit=" + 20;
+            String from = start.length() > 0 ? "&aifrom=" + start : "";
+            String to = end.length() > 0 ? "&aito=" + end : "";
+
+            return "https://en.wikipedia.org/w/api.php?action=query&list=allimages"
+                        + format
+                        + limit
+                        + from
+                        + to
+                        + "&aiprop=timestamp|parsedcomment|url|dimensions|mediatype|commonmetadata|bitdepth"
+                        + "|extmetadata|canonicaltitle|commonmetadata";
+        }
+
+        @Override
+        String continueSearchKey() {
+            return "aicontinue";
+        }
+
+        @Override
+        JsonArray getQueryResult(JsonObject json) {
+            return json.getAsJsonArray("allimages");
+        }
+
+        @Override
+        RawImage buildObject(JsonObject json) {
+            return parseImage(json);
+        }
+    }
+    public RawImage getImage(String title) throws DaoException {
+        Iterator<RawImage> images = getImages(title, title);
+        if (images.hasNext()) {
+            return images.next();
+        }
+
+        return null;
+    }
+
+    public Iterator<RawImage> getImages(String startingTitle, String endingTitle) throws DaoException {
+        try {
+            return new AllImageIterator(startingTitle, endingTitle);
+        } catch (Exception e) {
+            throw new DaoException(e.getLocalizedMessage());
+        }
+    }
+
+
+    private class ImagePageIterator extends CommonsNetworkIterator<LocalPage> {
+        private String page;
+        private LocalPageDao dao;
+
+        ImagePageIterator(String page, LocalPageDao dao) throws Exception {
+            super("", "");
+            this.page = page;
+            this.dao = dao;
+
+            performDownload();
+        }
+
+        @Override
+        String buildSearchURL(String start, String end) {
+            String format = "&format=json";
+            String from = start.length() > 0 ? "&fucontinue=" + start : "";
+
+            return "https://en.wikipedia.org/w/api.php?action=query&titles="
+                    + page
+                    + format
+                    + from
+                    + "&funamespace=0"
+                    + "&prop=fileusage";
+        }
+
+        @Override
+        String continueSearchKey() {
+            return "fucontinue";
+        }
+
+        @Override
+        JsonArray getQueryResult(JsonObject json) {
+            JsonObject pages = json.getAsJsonObject("pages");
+            for (Map.Entry<String, JsonElement> entry : pages.entrySet()) {
+                return entry.getValue().getAsJsonObject().getAsJsonArray("fileusage");
+            }
+
+            return null;
+        }
+
+        @Override
+        LocalPage buildObject(JsonObject json) {
+            int pageId = json.get("pageid").getAsInt();
+            int ns = json.get("ns").getAsInt();
+            String title = json.get("title").getAsString();
+
+            try {
+                return dao.getByTitle(Language.SIMPLE, NameSpace.getNameSpaceByValue(ns), title);
+            } catch (DaoException e) {
+                LOG.info(e.getLocalizedMessage());
+            }
+
+            return null;
+        }
+
+    }
+    public Iterator<LocalPage> pagesWithImage(RawImage image) throws DaoException {
+        try {
+            return new ImagePageIterator(image.getName().replace(" ", "_"), lpDao);
+        } catch (Exception e) {
+            throw new DaoException(e.getLocalizedMessage());
+        }
     }
 
 
@@ -94,7 +273,7 @@ public class RawImageSqlDao implements RawImageDao {
                             titles += "|";
                         }
                         titles += name;
-                        titleLinkMap.put(name.toLowerCase(), l);
+                        titleLinkMap.put(name.toLowerCase().replace("_", " "), l);
                     }
                 }
             }
@@ -122,8 +301,11 @@ public class RawImageSqlDao implements RawImageDao {
             for (Map.Entry<String, JsonElement> entry : pages.entrySet()) {
                 try {
                     JsonObject page = entry.getValue().getAsJsonObject();
-                    String name = page.get("title").getAsString().replace(" ", "_");
-                    RawLink l = titleLinkMap.get(name.toLowerCase());
+
+                    RawImage i = parseImage(page);
+
+                    String name = i.getName().toLowerCase();
+                    RawLink l = titleLinkMap.get(name);
                     if (l == null) {
                         String debugString = "Unable to find link for " + name + "\n";
 
@@ -136,64 +318,11 @@ public class RawImageSqlDao implements RawImageDao {
                         continue;
                     }
 
-                    String pageLocation = "https://commons.wikimedia.org/wiki/" + name;
-
-                    if (!page.has("imageinfo")) {
-                        // Error loading this page
-                        LOG.warn("Unable to load data for image " + name);
-                        continue;
-                    }
-
-                    JsonObject properties = page.getAsJsonArray("imageinfo").get(0).getAsJsonObject();
-                    String image = properties.get("url").getAsString();
-                    int width = properties.get("width").getAsInt();
-                    int height = properties.get("height").getAsInt();
-
-                    JsonArray metadata = properties.getAsJsonArray("commonmetadata");
-                    boolean hasMake = false;
-                    boolean hasModel = false;
-                    for (int i = 0; i < metadata.size(); i++) {
-                        JsonObject data = metadata.get(i).getAsJsonObject();
-
-                        if (data.get("name").getAsString().equals("Make")) {
-                            hasMake = true;
-                        } else if (data.get("name").getAsString().equals("Model")) {
-                            hasModel = true;
-                        }
-                    }
-
-                    boolean categoriesIndicatePhoto = false;
-                    boolean isCoatOfArms = false;
-                    boolean isRoadSign = false;
-                    JsonArray categories = page.getAsJsonArray("categories");
-                    if (categories != null) {
-                        for (int i = 0; i < categories.size(); i++) {
-                            JsonObject category = categories.get(i).getAsJsonObject();
-                            String title = category.get("title").getAsString().toLowerCase();
-
-                            if (title.contains("image") || (title.contains("picture") && !title.contains("featured"))
-                                    || title.contains("photo") || title.contains("portrait")) {
-                                categoriesIndicatePhoto = true;
-                                break;
-                            } else if (title.contains("coat") && title.contains("arm")) {
-                                isCoatOfArms = true;
-                                break;
-                            } else if (title.contains("road") && title.contains("sign")) {
-                                isRoadSign = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    boolean hasLargeAmountOfMetadata = metadata.size() >= 5;
-                    boolean isPhotograph = hasMake || hasModel || hasLargeAmountOfMetadata || categoriesIndicatePhoto
-                                || isCoatOfArms || isRoadSign;
-
                     // Get caption
                     String context = l.getContext();
                     String captionText = generateCaptionFromWikiText(context);
+                    i.caption = captionText;
 
-                    RawImage i = new RawImage(l.getLanguage(), l.getSourceId(), name, pageLocation, image, captionText, isPhotograph, width, height);
                     int localId = l.getSourceId();
 
                     if (!result.containsKey(localId)) {
@@ -225,6 +354,8 @@ public class RawImageSqlDao implements RawImageDao {
 
         return result;
     }
+
+
 
     private String generateCaptionFromWikiText(String context) {
         String[] components = context.split("\\|");
@@ -356,7 +487,8 @@ public class RawImageSqlDao implements RawImageDao {
 
                 MediaWikiParser parser = pf.createParser();
                 RawLinkDao rawLinkDao = getConfigurator().get(RawLinkDao.class);
-                return new RawImageSqlDao(rawLinkDao, parser);
+                LocalPageDao localPageDao = getConfigurator().get(LocalPageDao.class);
+                return new RawImageSqlDao(rawLinkDao, localPageDao, parser);
             } catch (DaoException e) {
                 throw new ConfigurationException(e);
             }

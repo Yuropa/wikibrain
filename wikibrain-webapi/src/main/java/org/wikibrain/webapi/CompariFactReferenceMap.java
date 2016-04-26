@@ -223,18 +223,18 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
         final public boolean hasImage;
         final public String mapJSON;
 
-        ReferenceImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
-                      String caption, String method, boolean isPhotograph, int width, int height, double score, String title, BufferedImage image) {
-            super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height, method, score, title);
+        ReferenceImage(String name, String imageLocation, String caption, String method,
+                       boolean isPhotograph, int width, int height, double score, String title, BufferedImage image) {
+            super(name, imageLocation, caption, isPhotograph, width, height, method, score, title);
             this.image = image;
             hasImage = true;
             mapJSON = null;
         }
 
-        ReferenceImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
-                       String caption, String method, boolean isPhotograph, int width, int height, double score, String title,
+        ReferenceImage(String name, String imageLocation, String caption, String method,
+                       boolean isPhotograph, int width, int height, double score, String title,
                        MapConstructionData data) {
-            super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height, method, score, title);
+            super(name, imageLocation, caption, isPhotograph, width, height, method, score, title);
             this.image = null;
             hasImage = false;
 
@@ -352,7 +352,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
 
         ReferenceImage refImage;
         if (GENERATE_JSON) {
-            refImage = new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, mapConstruction);
+            refImage = new ReferenceImage("", null, caption, "ref-map", false, width, height, score, title, mapConstruction);
         } else {
             String bounds = "[[" + mapConstruction.southWestLat + "," + mapConstruction.southWestLng + "],[" +
                     mapConstruction.northEastLat + "," + mapConstruction.northEastLng + "]]";
@@ -400,7 +400,7 @@ public class CompariFactReferenceMap implements CompariFactDataSource {
             tempHTMLFile.delete();
             scrFile.delete();
 
-            refImage = new ReferenceImage(Language.EN, -1, "", "", null, caption, "ref-map", false, width, height, score, title, image);
+            refImage = new ReferenceImage("", null, caption, "ref-map", false, width, height, score, title, image);
         }
 
         refImage.addDebugData("style", "[" + styleString + "]");

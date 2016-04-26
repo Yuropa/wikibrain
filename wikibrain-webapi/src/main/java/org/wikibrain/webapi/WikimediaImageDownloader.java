@@ -5,6 +5,8 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
 import org.wikibrain.conf.Configurator;
 import org.wikibrain.conf.DefaultOptionBuilder;
@@ -17,13 +19,19 @@ import org.wikibrain.core.dao.RawImageDao;
 import org.wikibrain.core.lang.Language;
 import org.wikibrain.core.model.LocalLink;
 import org.wikibrain.core.model.LocalPage;
+import org.wikibrain.core.model.RawImage;
+import sun.rmi.runtime.Log;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Iterator;
 
 /**
  * Created by Josh on 4/22/16.
  */
 public class WikimediaImageDownloader {
+    private static final Logger LOG = LoggerFactory.getLogger(WikimediaImageDownloader.class);
+
     final RawImageDao riDao;
     final LocalPageDao lpDao;
     final Language lang;
@@ -36,18 +44,37 @@ public class WikimediaImageDownloader {
         riDao = conf.get(RawImageDao.class);
     }
 
-    private void downloadImagesForPage(int localId) throws DaoException {
-
+    private void downloadImage(RawImage image) throws DaoException {
+        LOG.info("Found image: " + image.getName());
     }
 
-    private void downloadImages(int offset, int count) throws DaoException {
-        DaoFilter filter = new DaoFilter();
-        filter.setLanguages(lang);
-        Iterator<LocalPage> pages = lpDao.get(filter).iterator();
+    private void downloadImages(String start, String end) throws DaoException {
+        RawImage image = riDao.getImage("Castle_Himeji_sakura02.jpg");
+        LOG.info(image.toString());
+        LOG.info("Image has the following pages: ");
+        Iterator<LocalPage> pages = riDao.pagesWithImage(image);
 
+
+        while (pages.hasNext()) {
+            LocalPage page = pages.next();
+            if (page != null) {
+                // Not all of the pages returned are local pages, some talk pages etc...
+                LOG.info(page.toString());
+            }
+        }
+
+
+/*
+        Iterator<RawImage> images = riDao.getImages(start, end);
+
+        while (images.hasNext()) {
+            downloadImage(images.next());
+        }
+
+        */
     }
 
-    void main(String[] args) throws ConfigurationException, DaoException {
+    public static void main(String args[]) throws ConfigurationException, DaoException {
         Options options = new Options();
         options.addOption(
                 new DefaultOptionBuilder()
@@ -63,13 +90,13 @@ public class WikimediaImageDownloader {
         options.addOption(
                 new DefaultOptionBuilder()
                         .withLongOpt("start")
-                        .withDescription("Starting offset in the list of page ids")
+                        .withDescription("Starting image title, does not need to exist")
                         .create("s"));
         options.addOption(
                 new DefaultOptionBuilder()
-                        .withLongOpt("count")
-                        .withDescription("The number of pages to process")
-                        .create("c"));
+                        .withLongOpt("end")
+                        .withDescription("Ending image title, does not need to exist")
+                        .create("e"));
 
         EnvBuilder.addStandardOptions(options);
 
@@ -89,8 +116,8 @@ public class WikimediaImageDownloader {
         downloader.outputDirectory = cmd.getOptionValue("o", "./output");
         downloader.maxImageWidth = Integer.parseInt(cmd.getOptionValue("m", "-1"));
 
-        int start = Integer.parseInt(cmd.getOptionValue("s", "0"));
-        int end   = Integer.parseInt(cmd.getOptionValue("e", Integer.toString(Integer.MAX_VALUE)));
+        String start = cmd.getOptionValue("s", "a");
+        String end   = cmd.getOptionValue("e", "a1");
 
         downloader.downloadImages(start, end);
     }

@@ -172,8 +172,6 @@ public class CompariFactServer extends AbstractHandler {
 
                 Map obj = new HashMap();
                 obj.put("title", i.getTitle());
-                obj.put("articleId", i.getSourceId());
-                obj.put("lang", i.getLanguage().getLangCode());
                 obj.put("images", imageURLS);
                 jsonConcepts.add(obj);
             } catch (Exception e) {

@@ -13,9 +13,9 @@ public class InternalImage extends RawImage implements Comparable<InternalImage>
     final private String title;
     private JSONObject json;
 
-    InternalImage(Language language, int sourceId, String name, String pageLocation, String imageLocation,
-                  String caption, boolean isPhotograph, int width, int height, String method, double score, String title) {
-        super(language, sourceId, name, pageLocation, imageLocation, caption, isPhotograph, width, height);
+    InternalImage(String name, String imageLocation, String caption, boolean isPhotograph, int width, int height,
+                  String method, double score, String title) {
+        super(name, imageLocation, caption, isPhotograph, width, height);
         this.method = method;
         this.score = score;
         this.title = title;

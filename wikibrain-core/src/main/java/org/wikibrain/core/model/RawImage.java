@@ -14,6 +14,8 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.*;
+import java.util.List;
 
 import org.apache.batik.transcoder.*;
 
@@ -24,23 +26,17 @@ import org.apache.commons.codec.binary.Base64;
  */
 public class RawImage {
     private static final Logger LOG = LoggerFactory.getLogger(RawImage.class);
-    private final Language language;
-    private final int sourceId;
     private final String name;
-    private final String pageLocation;
     private final String imageLocation;
-    private final String caption;
+    public  String caption;
     private final boolean isPhotograph;
     private final int width;
     private final int height;
     private static int DEFAULT_IMAGE_WIDTH = -1;
 
-    public RawImage(Language language, int sourceId, String name, String pageLocation, String imageLocation, String caption,
+    public RawImage(String name, String imageLocation, String caption,
                     boolean isPhotograph, int width, int height) {
-        this.language = language;
-        this.sourceId = sourceId;
         this.name = name;
-        this.pageLocation = pageLocation;
         this.imageLocation = imageLocation;
         this.caption = caption;
         this.isPhotograph = isPhotograph;
@@ -48,17 +44,7 @@ public class RawImage {
         this.height = height;
     }
 
-    public Language getLanguage() {
-        return language;
-    }
-
-    public int getSourceId(){
-        return sourceId;
-    }
-
     public String getName() { return name; }
-
-    public String getPageLocation() { return pageLocation; }
 
     public String getImageLocation() { return imageLocation; }
 
@@ -69,6 +55,10 @@ public class RawImage {
     public int getWidth() { return width; }
 
     public int getHeight() { return height; }
+
+    public String imagePageLocation() {
+        return "https://commons.wikimedia.org/wiki/" + name.replace(" " , "_");
+    }
 
     // This will probably require downloading a file, so use sparingly
     // Set width to -1 to indicate to use the original size of the image
@@ -208,11 +198,7 @@ public class RawImage {
 
     @Override
     public String toString() {
-        return "RawLink{" +
-                "language=" + language +
-                ", sourceId=" + sourceId +
-                ", name=" + name +
-                ", pageLocation=" + pageLocation +
+        return "RawImage{name=" + name +
                 ", imageLocation=" + imageLocation +
                 ", caption=" + caption +
                 "}";
@@ -221,9 +207,9 @@ public class RawImage {
     @Override
     public int hashCode() {
         if (imageLocation != null) {
-            return language.hashCode() ^ sourceId;
+            return name.hashCode();
         } else {
-            return language.hashCode() ^ sourceId ^ imageLocation.hashCode();
+            return name.hashCode() ^ imageLocation.hashCode();
         }
     }
 
@@ -231,8 +217,8 @@ public class RawImage {
     public boolean equals(Object obj) {
         if (obj instanceof RawImage) {
             RawImage r = (RawImage)obj;
-            return r.language.equals(language) && r.sourceId == sourceId && r.name.equals(name) && r.pageLocation.equals(pageLocation)
-                    && r.caption.equals(caption) && (r.imageLocation == null || imageLocation == null || r.imageLocation.equals(imageLocation));
+            return r.name.equals(name) && r.caption.equals(caption)
+                    && (r.imageLocation == null || imageLocation == null || r.imageLocation.equals(imageLocation));
         }
 
         return super.equals(obj);
