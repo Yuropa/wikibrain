@@ -8,13 +8,6 @@
         <version>0.7.4</version>
     </parent>
 
-    <repositories>
-        <repository>
-            <id>tc-maven-repo</id>
-            <url>http://github.com/tc/tc-maven-repo/raw/master/releases</url>
-        </repository>
-    </repositories>
-
     <artifactId>wikibrain-webapi</artifactId>
 
     <properties>
@@ -82,11 +75,6 @@
             <artifactId>httpclient</artifactId>
             <version>4.3</version>
             <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.amazon</groupId>
-            <artifactId>java-aws-mturk</artifactId>
-            <version>1.2.2</version>
         </dependency>
     </dependencies>
 </project>
