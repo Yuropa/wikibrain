@@ -237,6 +237,11 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     LocalPage lp = lpDao.getById(link.lang, link.localId);
                     double score = srMetric.similarity(lp.getTitle().getCanonicalTitle(), text, false).getScore();
 
+                    // Server hangs if we hit this page...
+                    if ("United States presidential election, 2016".toLowerCase().equals(lp.getTitle().getCanonicalTitle().toLowerCase().trim())) {
+                        return;
+                    }
+
                     System.out.println("Page title score " + score + " : " + lp.getTitle().getCanonicalTitle());
 
                     if (score < 0.8) {
