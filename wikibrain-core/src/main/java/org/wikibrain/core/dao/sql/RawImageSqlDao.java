@@ -124,6 +124,8 @@ public class RawImageSqlDao implements RawImageDao {
             RawImage i = new RawImage(name, image, "", isPhotograph, width, height);
             return i;
         } catch (Exception e) {
+            LOG.info("parseImage");
+            e.printStackTrace();
             LOG.info(e.getLocalizedMessage());
         }
 
@@ -234,6 +236,8 @@ public class RawImageSqlDao implements RawImageDao {
             try {
                 return dao.getByTitle(Language.SIMPLE, NameSpace.getNameSpaceByValue(ns), title);
             } catch (DaoException e) {
+                LOG.info("Build obj");
+                e.printStackTrace();
                 LOG.info(e.getLocalizedMessage());
             }
 
