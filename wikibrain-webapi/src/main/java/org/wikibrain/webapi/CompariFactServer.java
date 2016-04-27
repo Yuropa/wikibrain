@@ -150,7 +150,7 @@ public class CompariFactServer extends AbstractHandler {
                 Map image = new HashMap();
 
                 // Skip the photos
-                if (i.isPhotograph()) {
+                if (!i.isPhotograph()) {
                     continue;
                 }
 
