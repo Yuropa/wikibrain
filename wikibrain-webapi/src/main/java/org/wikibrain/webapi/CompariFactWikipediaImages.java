@@ -230,15 +230,15 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
         final SRMetric srMetric = srMetrics.get("esa");
 
-        ParallelForEach.loop(links, 1, new Procedure<ScoredLink>() {
+        ParallelForEach.loop(links, new Procedure<ScoredLink>() {
             @Override
             public void call(ScoredLink link) throws Exception {
                 try {
                     LocalPage lp = lpDao.getById(link.lang, link.localId);
                     double score = srMetric.similarity(lp.getTitle().getCanonicalTitle(), text, false).getScore();
 
-                    // Server hangs if we hit this page...
-                    if ("United States presidential election, 2016".toLowerCase().equals(lp.getTitle().getCanonicalTitle().toLowerCase().trim())) {
+                    // Server hangs if we hit these pages...
+                    if (lp.getTitle().getCanonicalTitle().toLowerCase().trim().startsWith("united states presidential election")) {
                         return;
                     }
 
@@ -262,7 +262,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     System.out.println("End Error\n\n");
                 }
             }
-        }, 1);
+        });
 
         System.out.println("Generated " + result.size() + " Wikipedia Images");
 
