@@ -16,7 +16,7 @@ public interface RawImageDao {
     public RawImage getImage(String title) throws DaoException;
     public Iterator<RawImage> getImages(String startingTitle, String endingTitle) throws DaoException;
 
-    public Iterator<LocalPage> pagesWithImage(RawImage image) throws DaoException;
+    public Iterator<LocalPage> pagesWithImage(RawImage image, Language language) throws DaoException;
 
     public Iterable<RawImage> getImages(Language language, int localId) throws DaoException;
     public Map<Integer, List<RawImage>> getImages(Language language, List<Integer> localIds) throws DaoException;

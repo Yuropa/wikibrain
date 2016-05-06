@@ -49,10 +49,18 @@ public class WikimediaImageDownloader {
     }
 
     private void downloadImages(String start, String end) throws DaoException {
-        RawImage image = riDao.getImage("Castle_Himeji_sakura02.jpg");
+        Iterator<RawImage> images = riDao.getImages(start, end);
+
+        while (images.hasNext()) {
+            downloadImage(images.next());
+        }
+    }
+
+    private void pagesWithImage(String imageTitle, Language language) throws DaoException {
+        RawImage image = riDao.getImage(imageTitle);
         LOG.info(image.toString());
         LOG.info("Image has the following pages: ");
-        Iterator<LocalPage> pages = riDao.pagesWithImage(image);
+        Iterator<LocalPage> pages = riDao.pagesWithImage(image, language);
 
 
         while (pages.hasNext()) {
@@ -62,16 +70,6 @@ public class WikimediaImageDownloader {
                 LOG.info(page.toString());
             }
         }
-
-
-/*
-        Iterator<RawImage> images = riDao.getImages(start, end);
-
-        while (images.hasNext()) {
-            downloadImage(images.next());
-        }
-
-        */
     }
 
     public static void main(String args[]) throws ConfigurationException, DaoException {
@@ -117,8 +115,9 @@ public class WikimediaImageDownloader {
         downloader.maxImageWidth = Integer.parseInt(cmd.getOptionValue("m", "-1"));
 
         String start = cmd.getOptionValue("s", "a");
-        String end   = cmd.getOptionValue("e", "a1");
+        String end   = cmd.getOptionValue("e", "A&SHighlandersGrangegorman.jpg");
 
         downloader.downloadImages(start, end);
+        downloader.pagesWithImage("Castle_Himeji_sakura02.jpg", env.getDefaultLanguage());
     }
 }

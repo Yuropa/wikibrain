@@ -37,6 +37,7 @@ import java.util.*;
  */
 public class RawImageSqlDao implements RawImageDao {
     private static final Logger LOG = LoggerFactory.getLogger(RawLinkSqlDao.class);
+    private final String commonsEndpoint = "https://commons.wikimedia.org/w/api.php";
 
     private final LocalPageDao lpDao;
     private final RawLinkDao rawLinkDao;
@@ -145,7 +146,8 @@ public class RawImageSqlDao implements RawImageDao {
             String from = start.length() > 0 ? "&aifrom=" + start : "";
             String to = end.length() > 0 ? "&aito=" + end : "";
 
-            return "https://en.wikipedia.org/w/api.php?action=query&list=allimages"
+            return commonsEndpoint
+                        +"?action=query&list=allimages"
                         + format
                         + limit
                         + from
@@ -190,11 +192,13 @@ public class RawImageSqlDao implements RawImageDao {
     private class ImagePageIterator extends CommonsNetworkIterator<LocalPage> {
         private String page;
         private LocalPageDao dao;
+        private Language language;
 
-        ImagePageIterator(String page, LocalPageDao dao) throws Exception {
+        ImagePageIterator(String page, LocalPageDao dao, Language language) throws Exception {
             super("", "");
             this.page = page;
             this.dao = dao;
+            this.language = language;
 
             performDownload();
         }
@@ -204,7 +208,8 @@ public class RawImageSqlDao implements RawImageDao {
             String format = "&format=json";
             String from = start.length() > 0 ? "&fucontinue=" + start : "";
 
-            return "https://en.wikipedia.org/w/api.php?action=query&titles="
+            return "https://" + language.getLangCode() + ".wikipedia.org/w/api.php"
+                    + "?action=query&titles="
                     + page
                     + format
                     + from
@@ -221,7 +226,12 @@ public class RawImageSqlDao implements RawImageDao {
         JsonArray getQueryResult(JsonObject json) {
             JsonObject pages = json.getAsJsonObject("pages");
             for (Map.Entry<String, JsonElement> entry : pages.entrySet()) {
-                return entry.getValue().getAsJsonObject().getAsJsonArray("fileusage");
+                JsonObject value = entry.getValue().getAsJsonObject();
+                if (value.has("fileusage")) {
+                    return value.getAsJsonArray("fileusage");
+                } else {
+                    return new JsonArray();
+                }
             }
 
             return null;
@@ -234,7 +244,7 @@ public class RawImageSqlDao implements RawImageDao {
             String title = json.get("title").getAsString();
 
             try {
-                return dao.getByTitle(Language.SIMPLE, NameSpace.getNameSpaceByValue(ns), title);
+                return dao.getByTitle(language, NameSpace.getNameSpaceByValue(ns), title);
             } catch (DaoException e) {
                 LOG.info("Build obj");
                 e.printStackTrace();
@@ -245,9 +255,9 @@ public class RawImageSqlDao implements RawImageDao {
         }
 
     }
-    public Iterator<LocalPage> pagesWithImage(RawImage image) throws DaoException {
+    public Iterator<LocalPage> pagesWithImage(RawImage image, Language language) throws DaoException {
         try {
-            return new ImagePageIterator(image.getName().replace(" ", "_"), lpDao);
+            return new ImagePageIterator(image.getName().replace(" ", "_"), lpDao, language);
         } catch (Exception e) {
             throw new DaoException(e.getLocalizedMessage());
         }
@@ -297,7 +307,7 @@ public class RawImageSqlDao implements RawImageDao {
         int response = 0;
         InputStream in = null;
         try {
-            String download = "https://commons.wikimedia.org/w/api.php?action=query&titles=" + titles + "&prop=imageinfo|categories&format=json&iiprop=commonmetadata|url|timestamp|user|size";
+            String download = commonsEndpoint + "?action=query&titles=" + titles + "&prop=imageinfo|categories&format=json&iiprop=commonmetadata|url|timestamp|user|size";
 
             URL url = new URL(download);
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
