@@ -53,7 +53,7 @@ public class CompariFactServer extends AbstractHandler {
             LOG.info("warming up components for language: " + l);
             env.getConfigurator().get(Wikifier.class, "websail", "language", l.getLangCode());
             env.getConfigurator().get(SRMetric.class,"ESA", "language", l.getLangCode());
-            env.getConfigurator().get(SRMetric.class,"ensemble", "language", l.getLangCode());
+            env.getConfigurator().get(SRMetric.class,"simple-ensemble", "language", l.getLangCode());
         }
 
         this.sources = new ArrayList<CompariFactDataSource>();
@@ -74,6 +74,8 @@ public class CompariFactServer extends AbstractHandler {
                 doImages(req);
             } else if (target.equals("/similarity")) {
                 doSimilarity(req);
+            } else if (target.equals("/esa")) {
+                doESA(req);
             }
         } catch (WikiBrainWebException e) {
             req.writeError(e);
@@ -186,7 +188,7 @@ public class CompariFactServer extends AbstractHandler {
     }
 
     private SRMetric getSr(Language lang) throws ConfigurationException {
-        return env.getConfigurator().get(SRMetric.class, "esa", "language", lang.getLangCode());
+        return env.getConfigurator().get(SRMetric.class, "simple-ensemble", "language", lang.getLangCode());
     }
 
     private void doSimilarity(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
@@ -199,6 +201,35 @@ public class CompariFactServer extends AbstractHandler {
         WebEntity entity1 = entities.get(0);
         WebEntity entity2 = entities.get(1);
         SRMetric sr = getSr(lang);
+        SRResult r = null;
+        switch (entity1.getType()) {
+            case ARTICLE_ID: case TITLE:
+                r = sr.similarity(entity1.getArticleId(), entity2.getArticleId(), false);
+                break;
+            case PHRASE:
+                r = sr.similarity(entity1.getPhrase(), entity2.getPhrase(), false);
+                break;
+            default:
+                throw new WikiBrainWebException("Unsupported entity type: " + entity1.getType());
+        }
+        Double sim = (r != null && r.isValid()) ? r.getScore() : null;
+        req.writeJsonResponse("score", sim, "entity1", entity1.toJson(), "entity2", entity2.toJson());
+    }
+
+    private SRMetric getESA(Language lang) throws ConfigurationException {
+        return env.getConfigurator().get(SRMetric.class, "ESA", "language", lang.getLangCode());
+    }
+
+    private void doESA(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
+        // TODO: support explanations
+        Language lang = req.getLanguage();
+        List<WebEntity> entities = entityParser.extractEntityList(req);
+        if (entities.size() != 2) {
+            throw new WikiBrainWebException("Similarity requires exactly two entities");
+        }
+        WebEntity entity1 = entities.get(0);
+        WebEntity entity2 = entities.get(1);
+        SRMetric sr = getESA(lang);
         SRResult r = null;
         switch (entity1.getType()) {
             case ARTICLE_ID: case TITLE:
