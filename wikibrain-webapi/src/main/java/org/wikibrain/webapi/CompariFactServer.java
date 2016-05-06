@@ -186,7 +186,7 @@ public class CompariFactServer extends AbstractHandler {
     }
 
     private SRMetric getSr(Language lang) throws ConfigurationException {
-        return env.getConfigurator().get(SRMetric.class, "simple-ensemble", "language", lang.getLangCode());
+        return env.getConfigurator().get(SRMetric.class, "esa", "language", lang.getLangCode());
     }
 
     private void doSimilarity(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
