@@ -224,32 +224,42 @@ public class CompariFactServer extends AbstractHandler {
     private void doESA(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
         // TODO: support explanations
         try {
+            System.out.println("\t1");
             Language lang = req.getLanguage();
             List<WebEntity> entities = entityParser.extractEntityList(req);
             if (entities.size() != 2) {
                 throw new WikiBrainWebException("Similarity requires exactly two entities");
             }
+            System.out.println("\t2");
             WebEntity entity1 = entities.get(0);
             WebEntity entity2 = entities.get(1);
+            System.out.println("\t3");
             SRMetric sr = getESA(lang);
+            System.out.println("\t4");
             SRResult r = null;
             switch (entity1.getType()) {
                 case ARTICLE_ID:
                 case TITLE:
+                    System.out.println("\t5");
                     r = sr.similarity(entity1.getArticleId(), entity2.getArticleId(), false);
                     break;
                 case PHRASE:
+                    System.out.println("\t6");
                     r = sr.similarity(entity1.getPhrase(), entity2.getPhrase(), false);
                     break;
                 default:
                     throw new WikiBrainWebException("Unsupported entity type: " + entity1.getType());
             }
+            System.out.println("\t7");
             Double sim = (r != null && r.isValid()) ? r.getScore() : null;
+            System.out.println("\t8 " + sim);
             req.writeJsonResponse("score", sim, "entity1", entity1.toJson(), "entity2", entity2.toJson());
+            System.out.println("\t9");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getLocalizedMessage());
         }
+        System.out.println("\t10");
     }
 
     public static void main(String args[]) throws Exception {
