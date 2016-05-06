@@ -52,7 +52,7 @@ public class CompariFactServer extends AbstractHandler {
         for (Language l : env.getLanguages()) {
             LOG.info("warming up components for language: " + l);
             env.getConfigurator().get(Wikifier.class, "websail", "language", l.getLangCode());
-            env.getConfigurator().get(SRMetric.class,"ESA", "language", l.getLangCode());
+            env.getConfigurator().get(SRMetric.class,"esa", "language", l.getLangCode());
             env.getConfigurator().get(SRMetric.class,"simple-ensemble", "language", l.getLangCode());
         }
 
@@ -217,7 +217,7 @@ public class CompariFactServer extends AbstractHandler {
     }
 
     private SRMetric getESA(Language lang) throws ConfigurationException {
-        return env.getConfigurator().get(SRMetric.class, "ESA", "language", lang.getLangCode());
+        return env.getConfigurator().get(SRMetric.class, "esa", "language", lang.getLangCode());
     }
 
     private void doESA(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
