@@ -20,6 +20,7 @@ import org.wikibrain.core.model.LocalLink;
 import org.wikibrain.core.model.LocalPage;
 import org.wikibrain.core.model.RawImage;
 import org.wikibrain.sr.SRMetric;
+import org.wikibrain.sr.SRResult;
 import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
 import org.wikibrain.utils.ParallelForEach;
@@ -71,6 +72,8 @@ public class CompariFactServer extends AbstractHandler {
                 doLanguages(req);
             } else if (target.equals("/images")) {
                 doImages(req);
+            } else if (target.equals("/similarity")) {
+                doSimilarity(req);
             }
         } catch (WikiBrainWebException e) {
             req.writeError(e);
@@ -182,7 +185,34 @@ public class CompariFactServer extends AbstractHandler {
         req.writeJsonResponse("text", text, "articles", jsonConcepts);
     }
 
+    private SRMetric getSr(Language lang) throws ConfigurationException {
+        return env.getConfigurator().get(SRMetric.class, "simple-ensemble", "language", lang.getLangCode());
+    }
 
+    private void doSimilarity(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
+        // TODO: support explanations
+        Language lang = req.getLanguage();
+        List<WebEntity> entities = entityParser.extractEntityList(req);
+        if (entities.size() != 2) {
+            throw new WikiBrainWebException("Similarity requires exactly two entities");
+        }
+        WebEntity entity1 = entities.get(0);
+        WebEntity entity2 = entities.get(1);
+        SRMetric sr = getSr(lang);
+        SRResult r = null;
+        switch (entity1.getType()) {
+            case ARTICLE_ID: case TITLE:
+                r = sr.similarity(entity1.getArticleId(), entity2.getArticleId(), false);
+                break;
+            case PHRASE:
+                r = sr.similarity(entity1.getPhrase(), entity2.getPhrase(), false);
+                break;
+            default:
+                throw new WikiBrainWebException("Unsupported entity type: " + entity1.getType());
+        }
+        Double sim = (r != null && r.isValid()) ? r.getScore() : null;
+        req.writeJsonResponse("score", sim, "entity1", entity1.toJson(), "entity2", entity2.toJson());
+    }
 
     public static void main(String args[]) throws Exception {
         Options options = new Options();
