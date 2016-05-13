@@ -223,7 +223,8 @@ public class LogConverter {
 
             for (String id : foundLogs.keySet()) {
                 List<LogItem> items = foundLogs.get(id);
-                items.sort(new Comparator<LogItem>() {
+
+                Collections.sort(items, new Comparator<LogItem>() {
                     public int compare(LogItem o1, LogItem o2) {
                         return o1.date.compareTo(o2.date);
                     }
