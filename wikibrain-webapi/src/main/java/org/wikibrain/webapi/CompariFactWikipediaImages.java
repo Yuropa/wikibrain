@@ -3,7 +3,6 @@ package org.wikibrain.webapi;
 import edu.emory.mathcs.backport.java.util.Collections;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.eclipse.jetty.util.ConcurrentHashSet;
-import org.jooq.util.derby.sys.Sys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
@@ -27,6 +26,7 @@ import java.util.*;
 
 /**
  * Created by Josh on 4/6/16.
+ * This will find images from Wikipedia from a piece of text
  */
 public class CompariFactWikipediaImages implements CompariFactDataSource {
     public static final Logger LOG = LoggerFactory.getLogger(CompariFactWikipediaImages.class);
@@ -50,10 +50,14 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         wikifier = conf.get(Wikifier.class, "websail", "language", lang.getLangCode());
     }
 
-    private List<InternalImage> createImageFromId(Language lang, int localId, String method, double score) throws DaoException {
+    // Gets all the images from a particular Wikipedia page
+    private List<InternalImage> createImagesFromId(Language lang, int localId, String method, double score) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
+        // Resolve the id to a local page
         LocalPage lp = lpDao.getById(lang, localId);
+
+        // Add the images on the local page to the images array
         for (RawImage image : riDao.getImages(lang, localId)) {
             InternalImage internalImage = new InternalImage(image.getName(), image.getImageLocation(),
                     image.getCaption(), image.isPhotograph(),
@@ -67,6 +71,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return images;
     }
 
+    // Finds the links from a piece of text using a particular SR metric's most similar
+    // method can be "esa" or "ensemble", but you should probably just use ESA
     private List<ScoredLink> srImages(String text, int count, final String method) throws DaoException {
         final List<ScoredLink> result = new ArrayList<ScoredLink>();
 
@@ -75,9 +81,12 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             return result;
         }
 
+        // Get the particular SR metric (we store them in a dictionary to cache them)
         final SRMetric sr = srMetrics.get(method);
+        // Perform most similar search
         final SRResultList mostSimilar = sr.mostSimilar(text, count);
 
+        // Convert the SRResultList to ScoredLinks
         for (int i = 0; i < mostSimilar.numDocs(); i++) {
             int id = mostSimilar.getId(i);
             double score = mostSimilar.getScoreForId(id);
@@ -90,6 +99,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return result;
     }
 
+    // A simple class used internally to hold candidate links with an associated score
+    // This allows us to sort the links as needed
     private class ScoredLink {
         ScoredLink(Language lang, int localId, double score) {
             this.lang = lang;
@@ -119,40 +130,55 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         }
     }
 
+    // Performs wikification on a piece of text. This results a list of links
+    // with scores calcaulted by summing the position of the entities in the text
+    // Links which appear at the beginning have a higher score than those which appear at the end
     private List<ScoredLink> wikifyText(String text) throws DaoException{
         Map<ScoredLink, Double> values = new HashMap<ScoredLink, Double>();
         Map<ScoredLink, Integer> counts = new HashMap<ScoredLink, Integer>();
+
+        // Run the wikifier to get a set of local links (probably with duplicates)
         for (LocalLink ll : wikifier.wikify(text)) {
+            // Calculate the "score" of this link based on location in the text
             Double value = 1.0 - (double) ll.getLocation() / (double) text.length();
+            // The number of times this link appears
             int count = 1;
 
+            // Construct a new scored link
             ScoredLink scoredLink = new ScoredLink(ll.getLanguage(), ll.getLocalId(), 0.0);
             scoredLink.anchorText = ll.getAnchorText();
 
+            // If the link was already found, we will want to add out current score to the old score
             if (values.containsKey(scoredLink)) {
                 value += values.get(scoredLink);
             }
 
+            // If the link was already found, we will want to add in the previous number of times the link was seen
             if (counts.containsKey(scoredLink)) {
                 count += counts.get(scoredLink);
             }
 
-
+            // Store all the data in maps
             values.put(scoredLink, value);
             counts.put(scoredLink, count);
         }
 
+        // Get the total score, this will be used to normalize the score for different pieces of text
         double totalScore = 0.0;
         for (double d : values.values()) {
             totalScore += d;
         }
 
+        // Add debugging information and normalize the scores
         List<ScoredLink> result = new ArrayList<ScoredLink>();
         for (ScoredLink link : values.keySet()) {
+            /*
             if (counts.get(link) <= 1 && values.get(link) < 0.3) {
-                // Link should be mentioned more than once
+                // Links should be mentioned more than once
+                // And they should have a resonable score
                 continue;
             }
+            */
 
             link.score = values.get(link) / totalScore;
             link.debugText = "=> " + link.anchorText + " " + "wiki(" + counts.get(link) + ", " + link.score + ")";
@@ -161,21 +187,23 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return result;
     }
 
+    // Specifies a default value for the number of sr links in getLinksForMethod()
     public List<ScoredLink> getLinksForMethod(String text, String method) throws DaoException {
         int MAX_SR_LINKS = 30;
         return getLinksForMethod(text, method, MAX_SR_LINKS);
     }
 
+    // Extracts a list of links from a piece of text using the speicified method
+    // The srLinksCount is only used in the situation when using an SR most similar search
     public List<ScoredLink> getLinksForMethod(String text, final String method, final int srLinksCount) throws DaoException {
         final Set<ScoredLink> foundLinks = new ConcurrentHashSet<ScoredLink>();
 
         if (method.equals("esa") || method.equals("ensemble")) {
-            if (srLinksCount == 0) {
-                return java.util.Collections.emptyList();
-            }
-
+            // This is a vanilla SR search
+            // Get all the images using the SR searching wrapper
             foundLinks.addAll(srImages(text, srLinksCount, method));
         } else if (method.startsWith("wikify")) {
+            // Determine if there is a second-order search (like esa) store it in srMethod
             int index = method.lastIndexOf("-");
             final String srMethod;
             if (index >= 0) {
@@ -184,16 +212,21 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                 srMethod = null;
             }
 
+            // Wikifiy the text
             foundLinks.addAll(wikifyText(text));
 
             if (srMethod != null) {
+                // We should perform a secondary search on all the found links (we do it in parallel to help make it faster)
                 ParallelForEach.loop(new ArrayList<ScoredLink>(foundLinks), new Procedure<ScoredLink>() {
                     @Override
                     public void call(ScoredLink link) throws Exception {
+                        // Find the particular page we found a link fof
                         LocalPage page = lpDao.getById(link.lang, link.localId);
                         int numberOfImages = (int) (srLinksCount * link.score);
 
                         System.out.println("Getting " + numberOfImages + " esa image for term " + page.getTitle().getCanonicalTitle());
+
+                        // Perform a most similar search on the page title (this should find similar topics to the link)
                         for (ScoredLink l : getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages)) {
                             l.debugText = srMethod + " from (" + link.debugText + ") " + l.debugText;
                             foundLinks.add(l);
@@ -210,13 +243,24 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         return new ArrayList<ScoredLink>(foundLinks);
     }
 
+    // Generates a list of images from a peice of text (there might be duplicate images)
+    // The method can be:
+    //  - esa
+    //  - ensemble
+    //  - wikify
+    //  - wikify-esa (in addition to wikfication performs ESA on the found pages)
+    //  - wikify-ensemble (in addition to wikfication performs ESA on the found pages)
+    //  - all (alias for both esa and wikify-esa)
     public List<InternalImage> generateimages(final String text, final String method) throws DaoException {
         final List<InternalImage> result = Collections.synchronizedList(new ArrayList<InternalImage>());
 
         System.out.println("Generating Wikipedia Images");
         System.out.println("Using method " + method);
 
+        // Search for all the links from the text
         List<ScoredLink> links = getLinksForMethod(text, method);
+
+        // Print out the pages and remove any null links
         System.out.println("Found possible pages:");
         for (ScoredLink l : new ArrayList<ScoredLink>(links)) {
             LocalPage lp = lpDao.getById(l.lang, l.localId);
@@ -228,27 +272,34 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             }
         }
 
+        // Get ESA metric
         final SRMetric srMetric = srMetrics.get("esa");
 
+        // We will perform SR with the article title to try to remove extraneous titles
         ParallelForEach.loop(links, new Procedure<ScoredLink>() {
             @Override
             public void call(ScoredLink link) throws Exception {
                 try {
+                    // Resolve the link to a local page
                     LocalPage lp = lpDao.getById(link.lang, link.localId);
-                    double score = srMetric.similarity(lp.getTitle().getCanonicalTitle(), text, false).getScore();
 
                     // Server hangs if we hit these pages...
                     if (lp.getTitle().getCanonicalTitle().toLowerCase().trim().startsWith("united states presidential election")) {
                         return;
                     }
 
+                    // Get the similarity between the page and the original text
+                    double score = srMetric.similarity(lp.getTitle().getCanonicalTitle(), text, false).getScore();
+
                     System.out.println("Page title score " + score + " : " + lp.getTitle().getCanonicalTitle());
 
+                    // Make sure the similiarity is high enough
                     if (score < 0.8) {
                         return;
                     }
 
-                    for (InternalImage image : createImageFromId(link.lang, link.localId, method, link.score)) {
+                    // Get all the images on the found Wikipeida pages
+                    for (InternalImage image : createImagesFromId(link.lang, link.localId, method, link.score)) {
                         if (method.startsWith("wikify")) {
                             image.addDebugData("wikify resolve", link.anchorText);
                         }

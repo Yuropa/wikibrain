@@ -7,6 +7,7 @@ import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 import org.jooq.util.derby.sys.Sys;
 import org.slf4j.Logger;
@@ -38,6 +39,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Shilad Sen
+ * This is based on the WikiBrain Server Shilad wrote. I removed some of the features I don't need and added some features
+ * that we needed
  */
 public class CompariFactServer extends AbstractHandler {
     private static final Logger LOG = LoggerFactory.getLogger(CompariFactServer.class);
@@ -57,6 +60,7 @@ public class CompariFactServer extends AbstractHandler {
             env.getConfigurator().get(SRMetric.class,"simple-ensemble", "language", l.getLangCode());
         }
 
+        // Create and add all the image sources
         this.sources = new ArrayList<CompariFactDataSource>();
         sources.add(new CompariFactWikipediaImages(env));
         sources.add(new CompariFactReferenceMap(env));
@@ -98,7 +102,9 @@ public class CompariFactServer extends AbstractHandler {
         req.writeJsonResponse("languages", langs);
     }
 
+    // The main method. This will find images from Wikipedia from text
     private void doImages(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
+        // Get search infomration
         Language lang = req.getLanguage();
         String type = req.getParamOrDie("method");
         String text = URLDecoder.decode(req.getParamOrDie("text"));
@@ -107,6 +113,8 @@ public class CompariFactServer extends AbstractHandler {
 
         ArrayList<InternalImage> images = new ArrayList<InternalImage>();
 
+        // Iterator overall the image sources we have and add all their generated iamges
+        // These are configured in the constructor
         for (CompariFactDataSource source : sources) {
             images.addAll(source.generateimages(text, type));
         }
@@ -114,6 +122,7 @@ public class CompariFactServer extends AbstractHandler {
         Set<String> imageLocations = new HashSet<String>();
 
         // Remove duplicate images by looking at image URLs
+        // This won't remove duplicate Reference Maps
         for (int i = 0; i < images.size(); i++) {
             RawImage image = images.get(i);
 
@@ -151,6 +160,7 @@ public class CompariFactServer extends AbstractHandler {
         }, 4);
         */
 
+        // Convert all the iamges to JSON
         List jsonConcepts = new ArrayList();
         for (InternalImage i : images) {
             try {
@@ -162,6 +172,7 @@ public class CompariFactServer extends AbstractHandler {
                     continue;
                 }
 
+                // We need to handle images and reference maps seperatly
                 String imageURL = i.getImageLocation();
                 if (imageURL != null && imageURL.length() > 0) {
                     image.put("url", imageURL);
@@ -223,6 +234,7 @@ public class CompariFactServer extends AbstractHandler {
         return env.getConfigurator().get(SRMetric.class, "ESA", "language", lang.getLangCode());
     }
 
+    // This performs ESA between two terms
     private void doESA(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
         // TODO: support explanations
         Language lang = req.getLanguage();
@@ -230,12 +242,13 @@ public class CompariFactServer extends AbstractHandler {
         if (entities.size() != 2) {
             throw new WikiBrainWebException("Similarity requires exactly two entities");
         }
+        // Get the terms
         WebEntity entity1 = entities.get(0);
         WebEntity entity2 = entities.get(1);
-        System.out.println("\t3");
         SRMetric sr = getESA(lang);
-        System.out.println("\t4");
         SRResult r = null;
+
+        // Perform the SR calculation based on type
         switch (entity1.getType()) {
             case ARTICLE_ID:
             case TITLE:
@@ -247,11 +260,15 @@ public class CompariFactServer extends AbstractHandler {
             default:
                 throw new WikiBrainWebException("Unsupported entity type: " + entity1.getType());
         }
+
+        // Return the result
         Double sim = (r != null && r.isValid()) ? r.getScore() : null;
         req.writeJsonResponse("score", sim, "entity1", entity1.toJson(), "entity2", entity2.toJson());
     }
 
+    // This performs reverse image search, so given an image with a title
     private void doImagePages(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
+        // Process the request and get the text and language
         Language lang = req.getLanguage();
         List<WebEntity> entities = entityParser.extractEntityList(req);
         if (entities.size() != 1) {
@@ -259,14 +276,17 @@ public class CompariFactServer extends AbstractHandler {
         }
         WebEntity entity1 = entities.get(0);
 
+        // Look up the image by title
         RawImageDao riDao = env.getConfigurator().get(RawImageDao.class);
         RawImage image = riDao.getImage(entity1.getTitle());
         List<Map<String, String>> pages = new ArrayList<Map<String, String>>();
 
+        // Find all the wikipedia pages which contain the image
         Iterator<LocalPage> imagePages = riDao.pagesWithImage(image, lang);
         while (imagePages.hasNext()) {
             LocalPage lp = imagePages.next();
 
+            // Add the page to the result
             Map<String, String> data = new HashMap<String, String>();
             data.put("title", lp.getTitle().getCanonicalTitle());
             data.put("id", lp.getLocalId() + "");
@@ -307,7 +327,12 @@ public class CompariFactServer extends AbstractHandler {
         int port = Integer.valueOf(cmd.getOptionValue("p", "9000"));
         int queueSize = Integer.valueOf(cmd.getOptionValue("q", "100"));
         Server server = new Server(new QueuedThreadPool(queueSize, 20));
-        server.setHandler(new CompariFactServer(env));
+
+        ContextHandler context = new ContextHandler();
+        context.setContextPath("/comparifact");
+        context.setHandler(new CompariFactServer(env));
+        server.setHandler( context );
+
         ServerConnector sc = new ServerConnector(server);
         sc.setPort(port);
         server.setConnectors(new Connector[]{sc});

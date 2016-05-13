@@ -8,6 +8,13 @@
         <version>0.7.4</version>
     </parent>
 
+    <repositories>
+        <repository>
+            <id>javaopencvbook</id>
+            <url>https://raw.github.com/JavaOpenCVBook/code/maven2/</url>
+        </repository>
+    </repositories>
+
     <artifactId>wikibrain-webapi</artifactId>
 
     <properties>
@@ -76,5 +83,14 @@
             <version>4.3</version>
             <type>jar</type>
         </dependency>
+
+
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.2</version>
+        </dependency>
+
     </dependencies>
 </project>
