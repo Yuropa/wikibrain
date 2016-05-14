@@ -117,6 +117,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         public String method;
         public String anchorText = "";
         public String debugText = "";
+        public String esaWikifiyAnchorText = "";
 
         @Override
         public boolean equals(Object obj) {
@@ -233,6 +234,8 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                         // Perform a most similar search on the page title (this should find similar topics to the link)
                         for (ScoredLink l : getLinksForMethod(page.getTitle().getCanonicalTitle(), srMethod, numberOfImages)) {
                             l.debugText = srMethod + " from (" + link.debugText + ") " + l.debugText;
+                            l.esaWikifiyAnchorText = page.getTitle().getCanonicalTitle();
+                            l.method = method;
                             foundLinks.add(l);
                         }
                     }
