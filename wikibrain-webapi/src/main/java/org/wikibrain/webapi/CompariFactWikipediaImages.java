@@ -65,6 +65,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
             internalImage.addDebugData("debug", link.debugText);
             internalImage.addDebugData("link-anchor-text", link.anchorText);
+            internalImage.addDebugData("esa-wikify-anchor-text", link.esaWikifiyAnchorText);
             images.add(internalImage);
         }
 
