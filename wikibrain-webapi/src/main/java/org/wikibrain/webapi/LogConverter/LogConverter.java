@@ -371,24 +371,25 @@ public class LogConverter {
 
         Env env = new EnvBuilder(cmd).build();
 
-        if (!options.hasOption("input")) {
+        if (!cmd.hasOption("input")) {
             LOG.error("No input file");
             return;
         }
 
-        if (!options.hasOption("output")) {
+        if (!cmd.hasOption("output")) {
             LOG.error("No output directory");
             return;
         }
 
-        if (!options.hasOption("directory")) {
+        if (!cmd.hasOption("directory")) {
             LOG.error("No article directory");
             return;
         }
 
-        LogConverter converter = new LogConverter(env, "/Users/Josh/Desktop/logs/turk.csv",
-                "/Users/Josh/Desktop/output",
-                "/Users/Josh/Documents/NewsViews/newsviews/articles");
+        LogConverter converter = new LogConverter(env,
+                cmd.getOptionValue("input"),
+                cmd.getOptionValue("output"),
+                cmd.getOptionValue("directory"));
         converter.parseArticle();
     }
 }

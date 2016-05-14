@@ -51,18 +51,20 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     }
 
     // Gets all the images from a particular Wikipedia page
-    private List<InternalImage> createImagesFromId(Language lang, int localId, String method, double score) throws DaoException {
+    private List<InternalImage> createImagesFromId(ScoredLink link) throws DaoException {
         List<InternalImage> images = new ArrayList<InternalImage>();
 
         // Resolve the id to a local page
-        LocalPage lp = lpDao.getById(lang, localId);
+        LocalPage lp = lpDao.getById(link.lang, link.localId);
 
         // Add the images on the local page to the images array
-        for (RawImage image : riDao.getImages(lang, localId)) {
+        for (RawImage image : riDao.getImages(link.lang, link.localId)) {
             InternalImage internalImage = new InternalImage(image.getName(), image.getImageLocation(),
                     image.getCaption(), image.isPhotograph(),
-                    image.getWidth(), image.getHeight(), method, score, lp.getTitle().getCanonicalTitle());
+                    image.getWidth(), image.getHeight(), link.method, link.score, lp.getTitle().getCanonicalTitle());
 
+            internalImage.addDebugData("debug", link.debugText);
+            internalImage.addDebugData("link-anchor-text", link.anchorText);
             images.add(internalImage);
         }
 
@@ -91,7 +93,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             int id = mostSimilar.getId(i);
             double score = mostSimilar.getScoreForId(id);
 
-            ScoredLink link = new ScoredLink(sr.getLanguage(), id, score);
+            ScoredLink link = new ScoredLink(sr.getLanguage(), id, score, method);
             link.debugText = method + " (" + score + ")";
             result.add(link);
         }
@@ -102,15 +104,17 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     // A simple class used internally to hold candidate links with an associated score
     // This allows us to sort the links as needed
     private class ScoredLink {
-        ScoredLink(Language lang, int localId, double score) {
+        ScoredLink(Language lang, int localId, double score, String method) {
             this.lang = lang;
             this.localId = localId;
             this.score = score;
+            this.method = method;
         }
 
         public Language lang;
         public int localId;
         public double score;
+        public String method;
         public String anchorText = "";
         public String debugText = "";
 
@@ -145,7 +149,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             int count = 1;
 
             // Construct a new scored link
-            ScoredLink scoredLink = new ScoredLink(ll.getLanguage(), ll.getLocalId(), 0.0);
+            ScoredLink scoredLink = new ScoredLink(ll.getLanguage(), ll.getLocalId(), 0.0, "wikify");
             scoredLink.anchorText = ll.getAnchorText();
 
             // If the link was already found, we will want to add out current score to the old score
@@ -299,7 +303,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     }
 
                     // Get all the images on the found Wikipeida pages
-                    for (InternalImage image : createImagesFromId(link.lang, link.localId, method, link.score)) {
+                    for (InternalImage image : createImagesFromId(link)) {
                         if (method.startsWith("wikify")) {
                             image.addDebugData("wikify resolve", link.anchorText);
                         }
