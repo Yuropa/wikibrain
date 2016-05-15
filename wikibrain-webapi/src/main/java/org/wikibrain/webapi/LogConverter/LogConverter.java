@@ -1,6 +1,7 @@
 package org.wikibrain.webapi.LogConverter;
 
 
+import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.cli.*;
 import org.apache.commons.csv.CSVFormat;
@@ -45,9 +46,9 @@ public class LogConverter {
         this.outputDirectory = outputDirectory;
         this.directory = directory;
 
-        riDao = env.getConfigurator().get(RawImageDao.class);
+        //riDao = env.getConfigurator().get(RawImageDao.class);
         foundLogs = new HashMap<String, List<LogItem>>();
-        esaMetric = env.getConfigurator().get(SRMetric.class, "ESA", "language", env.getDefaultLanguage().getLangCode());
+        //esaMetric = env.getConfigurator().get(SRMetric.class, "ESA", "language", env.getDefaultLanguage().getLangCode());
     }
 
     class LogItem {
@@ -198,6 +199,95 @@ public class LogConverter {
             return false;
 
         return correctAnswer.trim().equals(userAnswer.trim());
+    }
+
+    void fixingParse() throws IOException {
+        File inputFile = new File(this.outputDirectory + "/images.csv");
+        Reader fileReader = new FileReader(inputFile);
+        CSVReader reader = new CSVReader(fileReader);
+
+        // Write all data to CSV file
+        File outputFile = new File(this.outputDirectory + "/images-updated.csv");
+        Writer fileWriter = new FileWriter(outputFile);
+        CSVWriter writer = new CSVWriter(fileWriter);
+
+        List<String> header = ImageData.headerData();
+        writer.writeNext(header.toArray(new String[header.size()]));
+        writer.flush();
+
+        reader.readNext();
+
+
+        String line[];
+        while ((line = reader.readNext()) != null) {
+            List<String> output = new ArrayList<String>();
+
+            output.add(line[0]);
+            output.add(line[1]);
+            output.add(line[2]);
+            output.add(line[3]);
+            output.add(line[4]);
+            output.add(line[5]);
+            output.add(line[6]);
+            output.add(line[7]);
+            output.add(line[8]);
+            output.add(line[9]);
+            output.add(line[10]);
+            output.add(line[11]);
+
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[12]), ImageData.MAX_MAP_STYLES);
+            // Stats.writeJSONListWithPadding(output, Stats.createArray(line[13]), ImageData.MAX_MAP_LOCATIONS);
+            output.add(line[14]);
+
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[15]), ImageData.MAX_RATERS);
+            Stats.writeJSONListWithPadding(output, Stats.convertToBoolean(new JSONArray(line[16])), ImageData.MAX_RATERS);
+            Stats.writeJSONListWithPadding(output, Stats.convertToBooleanForced(new JSONArray(line[17])), ImageData.MAX_RATERS);
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[18]), ImageData.MAX_RATERS);
+            Stats.writeJSONListWithPadding(output, Stats.convertToBoolean(new JSONArray(line[19])), ImageData.MAX_RATERS);
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[20]), ImageData.MAX_RATERS);
+
+            output.add(line[21]);
+            output.add(line[22]);
+            output.add(line[23]);
+            output.add(line[24]);
+            output.add(line[25]);
+
+            output.add(line[26]);
+
+            output.add(line[27]);
+            output.add(line[28]);
+            output.add(line[29]);
+            output.add(line[30]);
+
+            JSONArray images = readImages(Integer.parseInt(line[0]));
+            int index = line[1].lastIndexOf("-");
+            int imageIndex = Integer.parseInt(line[1].substring(index + 1));
+            JSONObject imageData = images.getJSONObject(imageIndex);
+
+            output.add(new JSONObject(imageData.getJSONArray("images").getJSONObject(0).getString("debug")).getString("method"));
+            output.add(line[32]);
+            output.add(Double.parseDouble(line[33]) < 0 ? "" : line[33]);
+            output.add(line[34]);
+
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[35]), ImageData.MAX_MAP_LOCATIONS);
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[36]), ImageData.MAX_MAP_LOCATIONS);
+            output.add(line[37]);
+            output.add(line[38]);
+            output.add(line[39]);
+
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[40]), ImageData.MAX_OTHER_ARTICLES);
+            Stats.writeJSONListWithPadding(output, Stats.createArray(line[41]), ImageData.MAX_OTHER_ARTICLES);
+            output.add(line[42]);
+            output.add(line[43]);
+            output.add(line[44]);
+
+            String[] outputLine = output.toArray(new String[output.size()]);
+            writer.writeNext(outputLine);
+            writer.flush();
+        }
+
+        reader.close();
+        writer.close();
     }
 
     void parseArticle() {
@@ -387,10 +477,12 @@ public class LogConverter {
             LOG.error("No article directory");
             return;
         }
+
         LogConverter converter = new LogConverter(env,
                 "/export/scratch/comparifact/wikibrain/turk-logs/turk.csv",
-                "/export/scratch/comparifact/wikibrain/output",
-                "/export/scratch/comparifact/wikibrain/articles");
+                "/export/scratch/comparifact/wikibrain/output", // "/Users/Josh/Desktop/output",
+                "/export/scratch/comparifact/wikibrain/articles"); // "/Users/Josh/Documents/NewsViews/wikibrain/articles");
         converter.parseArticle();
+        // converter.fixingParse();
     }
 }

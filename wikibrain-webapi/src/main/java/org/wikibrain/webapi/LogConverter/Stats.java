@@ -3,6 +3,8 @@ package org.wikibrain.webapi.LogConverter;
 
 import org.apache.commons.math3.linear.RealMatrix;
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -40,12 +42,42 @@ public class Stats {
 
     static void writeJSONListWithPadding(List<String> destination, JSONArray source, int maxLength) {
         for (int i = 0; i < maxLength; i++) {
-            if (source != null && source.length() > i) {
+            if (source != null && source.length() > i && source.get(i) != null && source.get(i) != JSONObject.NULL) {
                 destination.add(source.get(i).toString());
             } else {
                 destination.add("");
             }
         }
+    }
+
+    static JSONArray createArray(String line) {
+        if (line.length() == 0) {
+            return new JSONArray();
+        }
+
+        return new JSONArray(line);
+    }
+
+    static JSONArray convertToBooleanForced(JSONArray array) {
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                array.put(i, array.getInt(i) == 1 ? "true" : "false");
+            } catch (JSONException e) {
+                array.put(i, "false");
+            }
+        }
+        return array;
+    }
+
+    static JSONArray convertToBoolean(JSONArray array) {
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                array.put(i, array.getInt(i) == 1 ? "true" : "false");
+            } catch (JSONException e) {
+                array.put(i, "");
+            }
+        }
+        return array;
     }
 
     // TODO: Figure out a better way to do this...

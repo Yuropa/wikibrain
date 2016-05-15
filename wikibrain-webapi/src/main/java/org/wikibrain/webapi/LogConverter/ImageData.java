@@ -45,12 +45,12 @@ public class ImageData {
             return experimentId * 31 + imageIndex;
         }
     }
-    static int MAX_RATERS = 4;
+    static public int MAX_RATERS = 4;
 
-    static int MAX_MAP_STYLES = 4;
-    static int MAX_MAP_LOCATIONS = 10;
+    static public int MAX_MAP_STYLES = 4;
+    static public int MAX_MAP_LOCATIONS = 10;
 
-    static int MAX_OTHER_ARTICLES = 8;
+    static public int MAX_OTHER_ARTICLES = 20;
 
     public SRMetric srMetric;
     public RawImageDao riDao;
