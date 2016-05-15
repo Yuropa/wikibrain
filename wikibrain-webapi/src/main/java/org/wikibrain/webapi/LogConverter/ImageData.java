@@ -244,11 +244,17 @@ public class ImageData {
             int index = url.lastIndexOf("/");
             if (index >= 0) {
                 String title = url.substring(index + 1);
-                Iterator<LocalPage> pages = riDao.pagesWithImage(riDao.getImage(title), srMetric.getLanguage());
-                while (pages.hasNext()) {
-                    String page = pages.next().getTitle().getCanonicalTitle();
-                    pageTitles.add(page);
-                    pageSr.add(srMetric.similarity(articleText, page, false).getScore());
+                try {
+                    Iterator<LocalPage> pages = riDao.pagesWithImage(riDao.getImage(title), srMetric.getLanguage());
+                    while (pages.hasNext()) {
+                        String page = pages.next().getTitle().getCanonicalTitle();
+                        pageTitles.add(page);
+                        pageSr.add(srMetric.similarity(articleText, page, false).getScore());
+                    }
+                } catch (Exception e) {
+                    LOG.error(e.getLocalizedMessage());
+                    e.printStackTrace();
+                    LOG.error("Unable to get pages for image " + title);
                 }
             }
             if (pageSr.size() > 0) {
