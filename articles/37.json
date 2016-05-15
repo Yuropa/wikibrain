@@ -1,0 +1,125 @@
+{
+    "message": "",
+    "text": "US Republican presidential hopeful Ted Cruz has won all 14 delegates in contention at a state party convention in Wyoming.\nThe delegates were chosen by party members rather than ordinary voters.\nDonald Trump - who did not actively campaign in the state - remains the Republican front-runner overall.\nHowever, the billionaire could fall short of the number of delegates needed to secure the Republican nomination for the November presidential election.\nThat would mean a contested convention where voting for candidates starts again from scratch.\nMr Trump is concentrating on New York, which holds a key primary on Tuesday.\nA number of senior Republican leaders have backed Mr Cruz, a Conservative Texas senator, fearing that Mr Trump's controversial comments make him a weak candidate in the November election.\nThe result from the Wyoming contest brings Mr Cruz's tally from 545 to 559 delegates. Mr Trump has 743.\nIn his victory speech on Saturday, Mr Cruz said: \"If you don't want to see Donald Trump as the nominee, if you don't want to hand the general (election) to Hillary Clinton, which is what a Trump nomination does, then I ask you to please support the men and women on this slate.\"\nIn the Democratic race, Mrs Clinton is still ahead of her only remaining rival, Vermont Senator Bernie Sanders.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-72}",
+            "caption": "Map of Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-111.05138554061016,\"styles\":[],\"ne-lat\":45.00010174400026,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":38.88541667}",
+            "caption": "Map of Wyoming, and Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Wyoming,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Wyoming, and Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-111.05138554061016,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":38.88541667}",
+            "caption": "Map of Wyoming, New York, and Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Wyoming,New York,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Wyoming, New York, and Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-111.05138554061016,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":38.88541667}",
+            "caption": "Map of Wyoming, New York, Republican Party (United States), Texas Senate, Vermont, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Wyoming,New York,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Wyoming, New York, Republican Party (United States), Texas Senate, Vermont, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-72}",
+            "caption": "Map of Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-111.05138554061016,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.00010174400026,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":38.88541667}",
+            "caption": "Map of Wyoming, and Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Wyoming,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Wyoming, and Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-111.05138554061016,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":38.88541667}",
+            "caption": "Map of Wyoming, New York, and Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Wyoming,New York,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Wyoming, New York, and Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-111.05138554061016,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":38.88541667}",
+            "caption": "Map of Wyoming, New York, Republican Party (United States), Texas Senate, Vermont, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Wyoming,New York,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Wyoming, New York, Republican Party (United States), Texas Senate, Vermont, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+      "title": "Ronald Reagan presidential campaign, 1980",
+      "images": [
+        {
+          "caption": "Interest rate crisis of 1980.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Ronald Reagan presidential campaign, 1980\",\"link-anchor-text\":\"\",\"score\":\"0.7115649012235055\",\"caption\":\"Interest rate crisis of 1980.\",\"method\":\"esa\",\"debug\":\"esa (0.7115649012235055)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Federal_Funds_Rate_%28effective%29.svg"
+        }
+      ]
+    },
+    {
+      "title": "John McCain presidential campaign, 2000",
+      "images": [
+        {
+          "caption": "The results of the Republican primaries and caucuses. Red: states won by Bush / Yellow: states won by McCain",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"John McCain presidential campaign, 2000\",\"link-anchor-text\":\"\",\"score\":\"0.6534661098609109\",\"caption\":\"The results of the Republican primaries and caucuses. Red: states won by Bush / Yellow: states won by McCain\",\"method\":\"esa\",\"debug\":\"esa (0.6534661098609109)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/2000_Republican_Primary_Results.svg"
+        }
+      ]
+    },
+    {
+      "title": "Ross Perot presidential campaign, 1992",
+      "images": [
+        {
+          "caption": "Perot winning counties and states by percentage",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Ross Perot presidential campaign, 1992\",\"link-anchor-text\":\"\",\"score\":\"0.6264132002367152\",\"caption\":\"\",\"method\":\"esa\",\"debug\":\"esa (0.6264132002367152)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Perot_92.png",
+          "legend": "39.png"
+        }
+      ]
+    },
+    {
+      "title": "Virgil Goode presidential campaign, 2012",
+      "images": [
+        {
+          "caption": "Ballot access of Virgil Goode in the 2012 US presidential election",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Virgil Goode presidential campaign, 2012\",\"link-anchor-text\":\"\",\"score\":\"0.6144652826246124\",\"caption\":\"\",\"method\":\"esa\",\"debug\":\"esa (0.6144652826246124)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Ballot_access_of_Virgil_Goode_in_the_2012_US_presidential_election.svg",
+          "legend": "40.png"
+        }
+      ]
+    },
+    {
+      "title": "Republican Party (United States)",
+      "images": [
+        {
+          "caption": "This map shows the vote in the 2004 presidential election by county. All major Republican geographic constituencies are visible: red dominates the map, showing Republican strength in the rural areas, while the denser areas (i.e., cities) are blue. Notable exceptions include the Pacific coast, New England, the Black Belt, areas with high Native American populations, and the heavily Hispanic parts of the Southwest.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Republican Party (United States)\",\"link-anchor-text\":\"Republican\",\"score\":\"0.33395840436413227\",\"caption\":\"This map shows the vote in the 2004 presidential election by county. All major Republican geographic constituencies are visible: red dominates the map, showing Republican strength in the rural areas, while the denser areas (i.e., cities) are blue. Notable exceptions include the Pacific coast, New England, the Black Belt, areas with high Native American populations, and the heavily Hispanic parts of the Southwest.\",\"method\":\"wikify\",\"debug\":\"=> Republican wiki(4, 0.33395840436413227)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/2004prescountymap2.PNG"
+        }
+      ]
+    }],
+    "diagnostics": {
+        "userTime": 12.62,
+        "cpuTime": 13.054310836
+    },
+    "success": true
+}

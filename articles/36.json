@@ -1,0 +1,211 @@
+{
+    "message": "",
+    "text": "Apple harvested almost $40 million worth of gold from recycled gadgets last year, and is now deploying robots to take iPhones apart in a major environmental push.\nIn its latest annual environmental responsibility report, which was published last week, Apple explained that it gathered 2,204 pounds of recycled gold during its fiscal year 2015. The gold, which weighs more than a ton , is worth $39.6 million.\nApple recovered more than 63 million pounds of various materials via its \u201Ctake-back\u201D recycling initiatives in 2015, according to the company\u2019s environmental report. The tech giant gathered over 23 million pounds of steel, making it the most recycled material, and more than 13 million pounds of plastics. Other recycled materials include glass, aluminum, copper, cobalt, nickel, lead, zinc, tin and silver.\nRelated: Apple unveils new iPhone SE and 9.7-inch iPad Pro\nGold and copper are present in iPhone camera technology, while cobalt and lithium are used in batteries. Silver is deployed in motherboards.\nEarlier this year Apple consolidated a number of customer recycling programs into its Renew initiative, which lets customers return old devices to the company. Depending on the device, some products are eligible for credit from Apple.\nThe Cupertino, Calif.-based firm is also harnessing sophisticated technology to boost its recycling efforts. \u201CExisting recycling techniques, like shredding, only recover a few kinds of materials and often diminish their quality,\u201D it explained, in its annual report. \u201CSo we invented Liam, a line of robots designed to disassemble 1.2 million phones a year, sorting all their high-quality components and reducing the need to mine more resources from the earth.\u201D\nRelated: FBI reportedly paid hackers for tool that cracked San Bernardino gunman's iPhone\nThe Liam prototypes, which disassemble the iPhone 6, are now operating in California and Holland. \u201CWe hope this kind of thinking will inspire others in our industry,\u201D Apple added.\nSpeaking during Apple\u2019s iPhone SE launch event last month, Lisa Jackson, the company\u2019s vice president for Environment, Policy and Social Initiatives, said the robots help save natural resources. \u201CTungsten from the iPhone alert module can be used to make a precision cutting tool and the silver from the motherboard can be used in a solar panel,\u201D she said. \u201CUltimately our goal is to create breakthroughs that allow us to use high-quality materials in our own products.\u201D\nEnvironmental group Greenpeace welcomed Apple\u2019s high-tech recycling move.\nRelated: Should you buy an iPhone SE?\n\u201CIt\u2019s definitely a model that we would like to see grow,\u201D Gary Cook, senior IT analyst at Greenpeace, told FoxNews.com. \u201CWhat they are trying to be is a catalyst in the [tech] sector \u2013 if you look at the sector at the moment, most of the e-waste ends up just going into shredders, so you\u2019re giving up on the components in the product.\u201D\nCook added that people working in the electronics recycling industry also need better guidance from tech manufacturers on how to recover valuable components. \u201CWe would like to see Apple and others provide information on how to disassemble these products,\u201D he said. \u201CIf you can\u2019t easily break down the product in a way that lets you harvest what is inside, it could end up in a shredder.\u201D",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"labels\",\"roads\",\"water\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Greenpeace\",\"lng\":4.83238889,\"lat\":52.35022222}],\"sw-lat\":-72}",
+            "caption": "Map of Greenpeace",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels, roads, water]\",\"locations\":\"[Greenpeace]\",\"score\":\"1.0\",\"caption\":\"Map of Greenpeace\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.024503,\"sw-lng\":-124.4092019709999,\"styles\":[\"labels\",\"roads\",\"water\"],\"ne-lat\":41.99954022140413,\"annotations\":[{\"title\":\"Federal Bureau of Investigation\",\"lng\":-77.024503,\"lat\":38.894465}],\"sw-lat\":32.531669490003665}",
+            "caption": "Map of California, Federal Bureau of Investigation, and Greenpeace",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels, roads, water]\",\"locations\":\"[California,Federal Bureau of Investigation]\",\"score\":\"1.0\",\"caption\":\"Map of California, Federal Bureau of Investigation, and Greenpeace\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.024503,\"sw-lng\":-124.4092019709999,\"styles\":[\"labels\",\"roads\",\"water\"],\"ne-lat\":41.99954022140413,\"annotations\":[{\"title\":\"Federal Bureau of Investigation\",\"lng\":-77.024503,\"lat\":38.894465}],\"sw-lat\":32.531669490003665}",
+            "caption": "Map of California, Federal Bureau of Investigation, Greenpeace, and Cupertino, California",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels, roads, water]\",\"locations\":\"[California,Federal Bureau of Investigation]\",\"score\":\"1.0\",\"caption\":\"Map of California, Federal Bureau of Investigation, Greenpeace, and Cupertino, California\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Greenpeace\",\"lng\":4.83238889,\"lat\":52.35022222}],\"sw-lat\":-72}",
+            "caption": "Map of Greenpeace",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Greenpeace]\",\"score\":\"1.0\",\"caption\":\"Map of Greenpeace\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.024503,\"sw-lng\":-124.4092019709999,\"styles\":[],\"ne-lat\":41.99954022140413,\"annotations\":[{\"title\":\"Federal Bureau of Investigation\",\"lng\":-77.024503,\"lat\":38.894465}],\"sw-lat\":32.531669490003665}",
+            "caption": "Map of California, Federal Bureau of Investigation, and Greenpeace",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[California,Federal Bureau of Investigation]\",\"score\":\"1.0\",\"caption\":\"Map of California, Federal Bureau of Investigation, and Greenpeace\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.024503,\"sw-lng\":-124.4092019709999,\"styles\":[],\"ne-lat\":41.99954022140413,\"annotations\":[{\"title\":\"Federal Bureau of Investigation\",\"lng\":-77.024503,\"lat\":38.894465}],\"sw-lat\":32.531669490003665}",
+            "caption": "Map of California, Federal Bureau of Investigation, Greenpeace, and Cupertino, California",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[California,Federal Bureau of Investigation]\",\"score\":\"1.0\",\"caption\":\"Map of California, Federal Bureau of Investigation, Greenpeace, and Cupertino, California\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+      "title": "History of Apple Inc.",
+      "images": [
+        {
+          "caption": "Created by Rob Janoff in 1977, the Apple logo with the rainbow scheme was used from April of that yearDesigner asserts that his rainbow-striped Apple logo was introduced at West Coast Computer Fair until August 26, 1999. Steve Jobs has asserted the apple logo was inspired by the story of his childhood.",
+          "debug": "{\"esa-wikify-anchor-text\":\"Apple Inc.\",\"title\":\"History of Apple Inc.\",\"link-anchor-text\":\"\",\"score\":\"0.7968688554966329\",\"caption\":\"Created by Rob Janoff in 1977, the Apple logo with the rainbow scheme was used from April of that yearDesigner asserts that his rainbow-striped Apple logo was introduced at West Coast Computer Fair until August 26, 1999. Steve Jobs has asserted the apple logo was inspired by the story of his childhood.\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Apple wiki(9, 0.17478488346953774)) esa (0.7968688554966329)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Apple_Computer_Logo_rainbow.svg"
+        }
+      ]
+    },
+    {
+      "title": "History of Apple Inc.",
+      "images": [
+        {
+          "caption": "The very first Apple Computer logo, drawn by Ronald Wayne, depicts Isaac Newton under an apple tree.",
+          "debug": "{\"esa-wikify-anchor-text\":\"Apple Inc.\",\"title\":\"History of Apple Inc.\",\"link-anchor-text\":\"\",\"score\":\"0.7968688554966329\",\"caption\":\"The very first Apple Computer logo, drawn by Ronald Wayne, depicts Isaac Newton under an apple tree.\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Apple wiki(9, 0.17478488346953774)) esa (0.7968688554966329)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_first_logo.png"
+        }
+      ]
+    },
+    {
+      "title": "History of Apple Inc.",
+      "images": [
+        {
+          "caption": "Current Apple logo introduced August 27, 1999 and remains in use today.",
+          "debug": "{\"esa-wikify-anchor-text\":\"Apple Inc.\",\"title\":\"History of Apple Inc.\",\"link-anchor-text\":\"\",\"score\":\"0.7968688554966329\",\"caption\":\"\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Apple wiki(9, 0.17478488346953774)) esa (0.7968688554966329)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+        }
+      ]
+    },
+    {
+      "title": "Aluminium recycling",
+      "images": [
+        {
+          "caption": "The European Committee for Standardization logo for aluminium",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Aluminium recycling\",\"link-anchor-text\":\"\",\"score\":\"0.7394314878257651\",\"caption\":\"The European Committee for Standardization logo for aluminium\",\"method\":\"esa\",\"debug\":\"esa (0.7394314878257651)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CEN_recycling_aluminium.svg"
+        }
+      ]
+    },
+    {
+      "title": "Aluminium recycling",
+      "images": [
+        {
+          "caption": "An aluminium recycling symbol.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Aluminium recycling\",\"link-anchor-text\":\"\",\"score\":\"0.7394314878257651\",\"caption\":\"An aluminium recycling symbol.\",\"method\":\"esa\",\"debug\":\"esa (0.7394314878257651)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Recycling-Code-41.svg"
+        }
+      ]
+    },
+    {
+      "title": "Recycling",
+      "images": [
+        {
+          "caption": "The 3 chasing arrows of the international recycling logo",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Recycling\",\"link-anchor-text\":\"\",\"score\":\"0.5727554510326062\",\"caption\":\"The 3 chasing arrows of the international recycling logo\",\"method\":\"esa\",\"debug\":\"esa (0.5727554510326062)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Recycling_symbol.svg"
+        }
+      ]
+    },
+    {
+      "title": "Ferrous metal recycling",
+      "images": [
+        {
+          "caption": "The CEN Symbol for Recyclable Steel",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Ferrous metal recycling\",\"link-anchor-text\":\"\",\"score\":\"0.5582760619745442\",\"caption\":\"The CEN Symbol for Recyclable Steel\",\"method\":\"esa\",\"debug\":\"esa (0.5582760619745442)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CEN_recycling_steel.svg"
+        }
+      ]
+    },
+    {
+      "title": "Ferrous metal recycling",
+      "images": [
+        {
+          "caption": "The Universal Symbol for Recyclable Steel",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Ferrous metal recycling\",\"link-anchor-text\":\"\",\"score\":\"0.5582760619745442\",\"caption\":\"The Universal Symbol for Recyclable Steel\",\"method\":\"esa\",\"debug\":\"esa (0.5582760619745442)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Recycling-Code-40.svg"
+        }
+      ]
+    },
+    {
+      "title": "Radioactive scrap metal",
+      "images": [
+        {
+          "caption": "The fates of different elements present in aluminium scrap which is melted in a furnace. The average of the two extremes is shown and the error bars indicate the possible limits",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Radioactive scrap metal\",\"link-anchor-text\":\"\",\"score\":\"0.5409333808869399\",\"caption\":\"The fates of different elements present in aluminium scrap which is melted in a furnace. The average of the two extremes is shown and the error bars indicate the possible limits\",\"method\":\"esa\",\"debug\":\"esa (0.5409333808869399)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Dirtyaluminiumscrap.png"
+        }
+      ]
+    },
+    {
+      "title": "Radioactive scrap metal",
+      "images": [
+        {
+          "caption": "The fates of different elements present in copper scrap which is melted in a furnace. The average of the two extremes is shown and the error bars indicate the possible limits. The elements present in the scrap end up in different proportions in the impure metal, the slag, the bag-house dust or the exhaust gases that leave the plant via the stack",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Radioactive scrap metal\",\"link-anchor-text\":\"\",\"score\":\"0.5409333808869399\",\"caption\":\"The fates of different elements present in copper scrap which is melted in a furnace. The average of the two extremes is shown and the error bars indicate the possible limits. The elements present in the scrap end up in different proportions in the impure metal, the slag, the bag-house dust or the exhaust gases that leave the plant via the stack\",\"method\":\"esa\",\"debug\":\"esa (0.5409333808869399)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Dirtycopperscrap.png"
+        }
+      ]
+    },
+    {
+      "title": "Radioactive scrap metal",
+      "images": [
+        {
+          "caption": "The fates of different elements present in copper scrap which is melted in a furnace and then electrorefined. The average of the two extremes is shown and the error bars indicate the possible limits. The elements in the scrap end up in different proportions in the refined copper metal, the slag, the bag-house dust, the exhaust gases that leave the plant via the stack, or the anode slime",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Radioactive scrap metal\",\"link-anchor-text\":\"\",\"score\":\"0.5409333808869399\",\"caption\":\"The fates of different elements present in copper scrap which is melted in a furnace and then electrorefined. The average of the two extremes is shown and the error bars indicate the possible limits. The elements in the scrap end up in different proportions in the refined copper metal, the slag, the bag-house dust, the exhaust gases that leave the plant via the stack, or the anode slime\",\"method\":\"esa\",\"debug\":\"esa (0.5409333808869399)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Dirtycopperwholescrap.png"
+        }
+      ]
+    },
+    {
+      "title": "Radioactive scrap metal",
+      "images": [
+        {
+          "caption": "The fates of different elements present in ferrous scrap which is melted in an electric arc furnace. The average of the two extremes is shown and the error bars indicate the possible limits",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Radioactive scrap metal\",\"link-anchor-text\":\"\",\"score\":\"0.5409333808869399\",\"caption\":\"The fates of different elements present in ferrous scrap which is melted in an electric arc furnace. The average of the two extremes is shown and the error bars indicate the possible limits\",\"method\":\"esa\",\"debug\":\"esa (0.5409333808869399)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Dirtyferrousscrap.png"
+        }
+      ]
+    },
+    {
+      "title": "Electronic waste",
+      "images": [
+        {
+          "caption": "Several sizes of button and coin cell with 2 9v batteries as a size comparison. They are all recycled in many countries since they contain lead, mercury and cadmium.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Electronic waste\",\"link-anchor-text\":\"\",\"score\":\"0.5058056648361255\",\"caption\":\"Several sizes of button and coin cell with 2 9v batteries as a size comparison. They are all recycled in many countries since they contain lead, mercury and cadmium.\",\"method\":\"esa\",\"debug\":\"esa (0.5058056648361255)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Button_cells_and_9v_cells_%283%29.png"
+        }
+      ]
+    },
+    {
+      "title": "Aluminium dross recycling",
+      "images": [
+        {
+          "caption": "Aluminium dross",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Aluminium dross recycling\",\"link-anchor-text\":\"\",\"score\":\"0.44052117599894225\",\"caption\":\"Aluminium dross\",\"method\":\"esa\",\"debug\":\"esa (0.44052117599894225)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Aluminium_dross2.png"
+        }
+      ]
+    },
+    {
+      "title": "Motherboard",
+      "images": [
+        {
+          "caption": "Motherboard for an Acer desktop personal computer, showing the typical components and interfaces that are found on a motherboard. This model was made by Foxconn in 2007, and follows the ATX layout (known as the \"form factor\") usually employed for desktop computers. It is designed to work with AMD's Athlon 64 processor",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Motherboard\",\"link-anchor-text\":\"motherboards\",\"score\":\"0.03372681281618887\",\"caption\":\"Motherboard for an Acer desktop personal computer, showing the typical components and interfaces that are found on a motherboard. This model was made by Foxconn in 2007, and follows the ATX layout (known as the \\\"form factor\\\") usually employed for desktop computers. It is designed to work with AMD's Athlon 64 processor\",\"method\":\"wikify\",\"debug\":\"=> motherboards wiki(2, 0.03372681281618887)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Acer_E360_Socket_939_motherboard_by_Foxconn.svg"
+        }
+      ]
+    },
+    {
+      "title": "Motherboard",
+      "images": [
+        {
+          "caption": "Block diagram of a modern motherboard, which supports many on-board peripheral functions as well as several expansion slots",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Motherboard\",\"link-anchor-text\":\"motherboards\",\"score\":\"0.03372681281618887\",\"caption\":\"Block diagram of a modern motherboard, which supports many on-board peripheral functions as well as several expansion slots\",\"method\":\"wikify\",\"debug\":\"=> motherboards wiki(2, 0.03372681281618887)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Motherboard_diagram.svg"
+        }
+      ]
+    }],
+    "diagnostics": {
+        "userTime": 7.85,
+        "cpuTime": 8.364017055
+    },
+    "success": true
+}

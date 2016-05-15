@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <script>
+            function loadArticle(i) {
+                if (i > 40) {
+                    return;
+                }
+                
+                window.open('debug-data-fixer.html?id=' + i,'_blank');
+                setTimeout(function(i) {
+                    return function() {
+                        loadArticle(i);
+                    }
+                }(i + 1), 2 * 60 * 1000);
+            }
+            
+            loadArticle(1);
+        </script>
+    </body>
+</html>

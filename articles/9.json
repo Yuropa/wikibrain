@@ -1,0 +1,75 @@
+{
+    "message": "",
+    "text": "FRIDAY HARBOR, Wash. \u2014 Here in the San Juan Islands of northwest Washington State, where a severe shortage of affordable housing threatens the economy and the community, a small nonprofit group has found an unlikely way to help anchor families that are struggling to stay \u2014 by lifting up unloved houses in Canada, hoisting them onto barges and hauling them to where they are needed.\nThe houses are small by modern standards and old, built in the early to mid-20th century in a booming suburb of Victoria, British Columbia, where eager buyers are now clearing the land to make way for new construction. But the structures had what builders call good bones, and the group, the San Juan Community HomeTrust, discovered that the cost of transporting them across the Haro Strait from Canada and restoring them here was comparable to the cost of building from scratch.\nThe project met a rapidly growing need: A surge of tourism and vacation home buyers in San Juan County \u2014 an archipelago of islands about 70 miles from Seattle, reachable only by air, boat or ferry \u2014 has gone hand-in-hand in recent years with a decline in fishing, shipping and agriculture jobs that once supported a middle-class island life. The number of people living in poverty in the county has risen about 17 percent since the end of the recession in 2009, according to census figures, even as the economic recovery in Washington and around the nation gained steam.\n\u201CIt\u2019s kind life or death to keep our working families here,\u201D said Peter Kilpatrick, the project manager in refitting the houses to be imported by the San Juan Community HomeTrust. When the rewiring, painting and structural repairs are finished in June, buyers who have already met income and residency requirements can take possession.\nThrough a combination of donated land, government and foundation grants and local fund-raising, the homes will cost the buyers \u2014 a hospital worker, several teachers and a massage therapist among them \u2014 from $160,000 to $210,000. The median market price here was almost $500,000 at the end of last year, nearly the same as in Seattle, which made San Juan the least affordable county in the state for first-time buyers, according to the Runstad Center for Real Estate Studies at the University of Washington.\nNational housing experts said the house relocation project here and another on a nearby island might be the first of their kind. But examples of the innovation that inspired the effort, they said, are easy to find \u2014 fueled in many spots around the nation by desperation as homelessness has risen and working-class families have struggled with rising prices and rents, or an inability to find homes at all.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-52.61660722599996,\"sw-lng\":-141.0055486371089,\"styles\":[],\"ne-lat\":83.11652252800009,\"annotations\":[{\"title\":\"San Juan Islands\",\"lng\":-123.029251,\"lat\":48.532066}],\"sw-lat\":41.669085592000116}",
+            "caption": "Map of San Juan Islands, and Canada",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[San Juan Islands,Canada]\",\"score\":\"1.0\",\"caption\":\"Map of San Juan Islands, and Canada\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"San Juan, Puerto Rico\",\"lng\":121.04811512736634,\"lat\":14.595872085207054}],\"sw-lat\":-72}",
+            "caption": "Map of San Juan, Puerto Rico",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[San Juan, Puerto Rico]\",\"score\":\"1.0\",\"caption\":\"Map of San Juan, Puerto Rico\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-52.61660722599996,\"sw-lng\":-141.0055486371089,\"styles\":[],\"ne-lat\":83.11652252800009,\"annotations\":[{\"title\":\"Seattle\",\"lng\":-122.31666666667,\"lat\":47.6}],\"sw-lat\":41.669085592000116}",
+            "caption": "Map of Canada, Seattle, and San Juan, Puerto Rico",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Canada,Seattle]\",\"score\":\"1.0\",\"caption\":\"Map of Canada, Seattle, and San Juan, Puerto Rico\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-52.61660722599996,\"sw-lng\":-141.0055486371089,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":83.11652252800009,\"annotations\":[{\"title\":\"San Juan Islands\",\"lng\":-123.029251,\"lat\":48.532066}],\"sw-lat\":41.669085592000116}",
+            "caption": "Map of San Juan Islands, and Canada",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[San Juan Islands,Canada]\",\"score\":\"1.0\",\"caption\":\"Map of San Juan Islands, and Canada\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"San Juan, Puerto Rico\",\"lng\":121.04811512736634,\"lat\":14.595872085207054}],\"sw-lat\":-72}",
+            "caption": "Map of San Juan, Puerto Rico",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[San Juan, Puerto Rico]\",\"score\":\"1.0\",\"caption\":\"Map of San Juan, Puerto Rico\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-52.61660722599996,\"sw-lng\":-141.0055486371089,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":83.11652252800009,\"annotations\":[{\"title\":\"Seattle\",\"lng\":-122.31666666667,\"lat\":47.6}],\"sw-lat\":41.669085592000116}",
+            "caption": "Map of Canada, Seattle, and San Juan, Puerto Rico",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Canada,Seattle]\",\"score\":\"1.0\",\"caption\":\"Map of Canada, Seattle, and San Juan, Puerto Rico\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+      "title": "San Juan Islands",
+      "images": [
+        {
+          "caption": "San Juan Islands (highlighted) and surrounding region.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"San Juan Islands\",\"link-anchor-text\":\"San Juan Islands\",\"score\":\"0.07184539804033328\",\"caption\":\"San Juan Islands (highlighted) and surrounding region.\",\"method\":\"wikify\",\"debug\":\"=> San Juan Islands wiki(1, 0.07184539804033328)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/San_Juan_Islands_map.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 36728
+    }],
+    "diagnostics": {
+        "userTime": 2.96,
+        "cpuTime": 3.113794367
+    },
+    "success": true
+}

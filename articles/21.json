@@ -1,0 +1,174 @@
+{
+    "message": "",
+    "text": "MONTPELIER, Vt. \u2014 First came Colorado and Washington. Then Alaska, Oregon and Washington, D.C. Now advocates for legal marijuana are looking to New England, hoping this part of the country will open a new front in their efforts to expand legalization nationwide.\nBut this largely liberal region is struggling with the devastating effect of opiate abuse, which is disrupting families, taxing law enforcement agencies and taking lives. And many lawmakers and public officials are balking at the idea of legalizing a banned substance, citing potential social costs.\n\u201CThe shadow of the heroin epidemic is something that people think about when they think about the legalization, and they ask themselves, \u2018Are we sending the right message about legalization?\u2019 \u201D said Shap Smith, the speaker of the House in Vermont, who is open to legalizing marijuana. \u201CI think in the public\u2019s mind, it\u2019s making passage of this bill more difficult.\u201D\nA Vermont bill supported by Gov. Peter Shumlin, a Democrat, and approved by the State Senate in February would create a regulated market for recreational marijuana in this deeply progressive state \u2014 the cradle of Phish and New England\u2019s proud hippie haven.\nBut the bill is hobbling through the House, where it was stripped this month of the parts that would allow legalization. As of Friday, it contains only a cautious provision to allow home-growing and legalized possession of small amounts of marijuana \u2014 well short of the regulated market that Mr. Shumlin has called for.\nLawmakers\u2019 largest concerns are those that have emerged in state after state as the legalization movement has taken off: use and abuse by young people, impaired driving and commercialization.\nBut the opiate crisis, in which heroin, fentanyl and other drugs have killed more than 2,000 people in New England in the last year, is a substantial stumbling block, complicating efforts throughout the region and figuring into anti-legalization political alliances.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[],\"sw-lat\":-72}",
+            "caption": "Map of England",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[England]\",\"score\":\"1.0\",\"caption\":\"Map of England\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-0.11666666666667,\"sw-lng\":-77.11978099719525,\"styles\":[],\"ne-lat\":51.5,\"annotations\":[{\"title\":\"Washington, D.C.\",\"lng\":-77.01424216116817,\"lat\":38.9097215249098}],\"sw-lat\":38.802767530378816}",
+            "caption": "Map of Washington, D.C., England, and Vermont",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Washington, D.C.,England]\",\"score\":\"1.0\",\"caption\":\"Map of Washington, D.C., England, and Vermont\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-0.11666666666667,\"sw-lng\":-124.56676184799996,\"styles\":[],\"ne-lat\":51.5,\"annotations\":[{\"title\":\"Washington, D.C.\",\"lng\":-77.01424216116817,\"lat\":38.9097215249098}],\"sw-lat\":38.802767530378816}",
+            "caption": "Map of Oregon, Washington, D.C., England, Alaska, Colorado, Vermont, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Oregon,Washington, D.C.,England]\",\"score\":\"1.0\",\"caption\":\"Map of Oregon, Washington, D.C., England, Alaska, Colorado, Vermont, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-0.11666666666667,\"sw-lng\":-124.56676184799996,\"styles\":[],\"ne-lat\":51.5,\"annotations\":[{\"title\":\"Washington, D.C.\",\"lng\":-77.01424216116817,\"lat\":38.9097215249098}],\"sw-lat\":38.802767530378816}",
+            "caption": "Map of Oregon, Washington, D.C., England, Alaska, and Colorado",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Oregon,Washington, D.C.,England]\",\"score\":\"1.0\",\"caption\":\"Map of Oregon, Washington, D.C., England, Alaska, and Colorado\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"relief\"],\"ne-lat\":72,\"annotations\":[],\"sw-lat\":-72}",
+            "caption": "Map of England",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[England]\",\"score\":\"1.0\",\"caption\":\"Map of England\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-0.11666666666667,\"sw-lng\":-77.11978099719525,\"styles\":[\"relief\"],\"ne-lat\":51.5,\"annotations\":[{\"title\":\"Washington, D.C.\",\"lng\":-77.01424216116817,\"lat\":38.9097215249098}],\"sw-lat\":38.802767530378816}",
+            "caption": "Map of Washington, D.C., England, and Vermont",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Washington, D.C.,England]\",\"score\":\"1.0\",\"caption\":\"Map of Washington, D.C., England, and Vermont\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-0.11666666666667,\"sw-lng\":-124.56676184799996,\"styles\":[\"relief\"],\"ne-lat\":51.5,\"annotations\":[{\"title\":\"Washington, D.C.\",\"lng\":-77.01424216116817,\"lat\":38.9097215249098}],\"sw-lat\":38.802767530378816}",
+            "caption": "Map of Oregon, Washington, D.C., England, Alaska, Colorado, Vermont, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Oregon,Washington, D.C.,England]\",\"score\":\"1.0\",\"caption\":\"Map of Oregon, Washington, D.C., England, Alaska, Colorado, Vermont, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-0.11666666666667,\"sw-lng\":-124.56676184799996,\"styles\":[\"relief\"],\"ne-lat\":51.5,\"annotations\":[{\"title\":\"Washington, D.C.\",\"lng\":-77.01424216116817,\"lat\":38.9097215249098}],\"sw-lat\":38.802767530378816}",
+            "caption": "Map of Oregon, Washington, D.C., England, Alaska, and Colorado",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Oregon,Washington, D.C.,England]\",\"score\":\"1.0\",\"caption\":\"Map of Oregon, Washington, D.C., England, Alaska, and Colorado\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+      "title": "Effects of cannabis",
+      "images": [
+        {
+          "caption": "Cannabinol",
+          "debug": "{\"esa-wikify-anchor-text\":\"Cannabis (drug)\",\"title\":\"Effects of cannabis\",\"link-anchor-text\":\"\",\"score\":\"0.7965353873194715\",\"caption\":\"Cannabinol\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> marijuana wiki(4, 0.14025617274092053)) esa (0.7965353873194715)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/CBN_structure.png"
+        }
+      ]
+    },
+    {
+      "title": "Effects of cannabis",
+      "images": [
+        {
+          "caption": "Cannabidivarin",
+          "debug": "{\"esa-wikify-anchor-text\":\"Cannabis (drug)\",\"title\":\"Effects of cannabis\",\"link-anchor-text\":\"\",\"score\":\"0.7965353873194715\",\"caption\":\"Cannabidivarin\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> marijuana wiki(4, 0.14025617274092053)) esa (0.7965353873194715)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Cannabidivarin.png"
+        }
+      ]
+    },
+    {
+      "title": "Effects of cannabis",
+      "images": [
+        {
+          "caption": "Cannabivarin",
+          "debug": "{\"esa-wikify-anchor-text\":\"Cannabis (drug)\",\"title\":\"Effects of cannabis\",\"link-anchor-text\":\"\",\"score\":\"0.7965353873194715\",\"caption\":\"Cannabivarin\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> marijuana wiki(4, 0.14025617274092053)) esa (0.7965353873194715)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Cannabivarin.png"
+        }
+      ]
+    },
+    {
+      "title": "Effects of cannabis",
+      "images": [
+        {
+          "caption": "The structural formula of tetrahydrocannabinol",
+          "debug": "{\"esa-wikify-anchor-text\":\"Cannabis (drug)\",\"title\":\"Effects of cannabis\",\"link-anchor-text\":\"\",\"score\":\"0.7965353873194715\",\"caption\":\"The structural formula of tetrahydrocannabinol\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> marijuana wiki(4, 0.14025617274092053)) esa (0.7965353873194715)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/THC-skeletal.png"
+        }
+      ]
+    },
+    {
+      "title": "Effects of cannabis",
+      "images": [
+        {
+          "caption": "Tetrahydrocannabivarin",
+          "debug": "{\"esa-wikify-anchor-text\":\"Cannabis (drug)\",\"title\":\"Effects of cannabis\",\"link-anchor-text\":\"\",\"score\":\"0.7965353873194715\",\"caption\":\"Tetrahydrocannabivarin\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> marijuana wiki(4, 0.14025617274092053)) esa (0.7965353873194715)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/THV_structure.png"
+        }
+      ]
+    },
+    {
+      "title": "Cannabis consumption",
+      "images": [
+        {
+          "caption": "A vaporization pipe with flame filter. 28. Insert cannabis, other herbs or essential oils here 36. Flame filter prevents flame from igniting herb which instead is heated to vaporization temperature.",
+          "debug": "{\"esa-wikify-anchor-text\":\"Cannabis (drug)\",\"title\":\"Cannabis consumption\",\"link-anchor-text\":\"\",\"score\":\"0.787574887270548\",\"caption\":\"A vaporization pipe with flame filter. 28. Insert cannabis, other herbs or essential oils here 36. Flame filter prevents flame from igniting herb which instead is heated to vaporization temperature.\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> marijuana wiki(4, 0.14025617274092053)) esa (0.787574887270548)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Vaporization-pipe-w-flame-filter2.png"
+        }
+      ]
+    },
+    {
+      "title": "Cannabis (drug)",
+      "images": [
+        {
+          "caption": "In a 2011 survey of 292 clinical experts in Scotland, Cannabis ranked last in personal harm and 18th in social harm out of 19 common recreational drugs.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Cannabis (drug)\",\"link-anchor-text\":\"marijuana\",\"score\":\"0.14025617274092053\",\"caption\":\"In a 2011 survey of 292 clinical experts in Scotland, Cannabis ranked last in personal harm and 18th in social harm out of 19 common recreational drugs.\",\"method\":\"wikify\",\"debug\":\"=> marijuana wiki(4, 0.14025617274092053)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/2011_Drug_Harms_Rankings.svg"
+        }
+      ]
+    },
+    {
+      "title": "Cannabis (drug)",
+      "images": [
+        {
+          "caption": "Main short-term physical effects of cannabis",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Cannabis (drug)\",\"link-anchor-text\":\"marijuana\",\"score\":\"0.14025617274092053\",\"caption\":\"Main short-term physical effects of cannabis\",\"method\":\"wikify\",\"debug\":\"=> marijuana wiki(4, 0.14025617274092053)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Bodily_effects_of_cannabis.svg"
+        }
+      ]
+    },
+    {
+      "title": "Cannabis (drug)",
+      "images": [
+        {
+          "caption": "Types of cannabis",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Cannabis (drug)\",\"link-anchor-text\":\"marijuana\",\"score\":\"0.14025617274092053\",\"caption\":\"Types of cannabis\",\"method\":\"wikify\",\"debug\":\"=> marijuana wiki(4, 0.14025617274092053)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Cannab2_new.png"
+        }
+      ]
+    },
+    {
+      "title": "Cannabis (drug)",
+      "images": [
+        {
+          "caption": "The Chinese character for hemp (麻 or má) depicts two plants under a shelter. Cannabis cultivation dates back at least 3000 years in Taiwan.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Cannabis (drug)\",\"link-anchor-text\":\"marijuana\",\"score\":\"0.14025617274092053\",\"caption\":\"The Chinese character for hemp (麻 or má) depicts two plants under a shelter. Cannabis cultivation dates back at least 3000 years in Taiwan.\",\"method\":\"wikify\",\"debug\":\"=> marijuana wiki(4, 0.14025617274092053)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/%E9%BA%BB-order.gif"
+        }
+      ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 11.32,
+        "cpuTime": 11.897494617
+    },
+    "success": true
+}

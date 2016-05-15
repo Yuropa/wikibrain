@@ -1,0 +1,100 @@
+{
+    "message": "",
+    "text": "PHOENIX \u2014 When lawmakers in the Arizona House of Representatives went looking for a new speaker in late 2014, they turned to David M. Gowan, an unassuming Republican legislator whom colleagues on both sides of the aisle saw as someone they could work with.\nBut Mr. Gowan has proved to be anything but. He has angered lawmakers from the right and left since assuming the post in January 2015, putting his own stamp on a legislative body that has garnered its share of attention for its far-right leanings on issues like immigration and abortion.\nRight after approving a budget last year that forced state agencies to make another round of cuts, Mr. Gowan, a conservative who makes his home in a rural border county in southeastern Arizona, embarked on a redecorating spree.\nThe House floor got an elegant carpet. Lawmakers got reupholstered chairs. His leadership team got cherry wood office furniture. He also planned for showers and a multiuse room in the basement, but shelved the project after half of his Republican caucus chided his \u201Cexcessive spending\u201D in a letter.\nIn January, Mr. Gowan repaid the state for travel reimbursements and daily allowances he had improperly claimed, a matter that remains under investigation by the state\u2019s attorney general. He began this month by abruptly revoking reporters\u2019 access to the House floor unless they agreed to an extensive background check.\nNone of them did.\nFourteen journalists regularly assigned to cover the Capitol retreated to the second-floor gallery that morning, taking pictures and writing stories as a group of visiting elementary school students giggled and gawked. State Representative Ken Clark, a Democrat from Phoenix, warned, \u201CThis is a slippery slope.\u201D\nIn an op-ed column, Amanda Ventura, the president of the local chapter of the Society of Professional Journalists, wrote, \u201CReporters pose no security threat \u2014 unless truth hurts.\u201D\nFrom the floor, Mr. Gowan told his colleagues, by way of explanation, \u201CI want to make sure you\u2019re protected.\u201D But the ensuing debate promptly stirred another controversy, about guns in the chamber.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"labels\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-72}",
+            "caption": "Map of Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"labels\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556}],\"sw-lat\":-72}",
+            "caption": "Map of Arizona House of Representatives",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Arizona House of Representatives]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-112.09583333,\"styles\":[\"labels\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556},{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":33.44805556}",
+            "caption": "Map of Arizona House of Representatives, and Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Arizona House of Representatives,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives, and Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-114.82210811499999,\"styles\":[\"labels\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556},{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":31.327184550000112}",
+            "caption": "Map of Arizona House of Representatives, Republican Party (United States), and Arizona",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Arizona House of Representatives,Republican Party (United States),Arizona]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives, Republican Party (United States), and Arizona\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-114.82210811499999,\"styles\":[\"labels\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556},{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":31.327184550000112}",
+            "caption": "Map of Arizona House of Representatives, Republican Party (United States), Arizona, Capitol Records, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Arizona House of Representatives,Republican Party (United States),Arizona]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives, Republican Party (United States), Arizona, Capitol Records, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-72}",
+            "caption": "Map of Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556}],\"sw-lat\":-72}",
+            "caption": "Map of Arizona House of Representatives",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Arizona House of Representatives]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-112.09583333,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556},{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":33.44805556}",
+            "caption": "Map of Arizona House of Representatives, and Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Arizona House of Representatives,Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives, and Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-114.82210811499999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556},{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":31.327184550000112}",
+            "caption": "Map of Arizona House of Representatives, Republican Party (United States), and Arizona",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Arizona House of Representatives,Republican Party (United States),Arizona]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives, Republican Party (United States), and Arizona\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-114.82210811499999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Arizona House of Representatives\",\"lng\":-112.09583333,\"lat\":33.44805556},{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":31.327184550000112}",
+            "caption": "Map of Arizona House of Representatives, Republican Party (United States), Arizona, Capitol Records, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Arizona House of Representatives,Republican Party (United States),Arizona]\",\"score\":\"1.0\",\"caption\":\"Map of Arizona House of Representatives, Republican Party (United States), Arizona, Capitol Records, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }],
+    "diagnostics": {
+        "userTime": 7.81,
+        "cpuTime": 8.214359255
+    },
+    "success": true
+}

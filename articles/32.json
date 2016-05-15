@@ -1,0 +1,57 @@
+{
+    "message": "",
+    "text": "Intel Corp said it would cut 12,000 jobs globally, or 11 percent of its workforce, as the company moves away from its traditional business of selling chips used in personal computers.\nThe company also said on Tuesday Chief Financial Officer Stacy Smith will move to a new role leading sales, manufacturing and operations. Intel said it would begin a formal search process for a successor.\nIntel's shares were down 2.5 percent in extended trading.\nThe company said it would record a pretax restructuring charge of $1.2 billion in the second quarter. (http:\/\/bit.ly\/1WDPfBm)\nOn a per share basis, the company earned 42 cents per share, in the first quarter, up from 41 cents a year earlier.\nNet revenue rose to $13.70 billion from $12.78 billion.\n(Reporting by Narottam Medhora in Bengaluru; Editing by Sriraj Kalluvila)\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"labels\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Bangalore\",\"lng\":77.597963,\"lat\":12.969907}],\"sw-lat\":-72}",
+            "caption": "Map of Bangalore",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Bangalore]\",\"score\":\"1.0\",\"caption\":\"Map of Bangalore\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Bangalore\",\"lng\":77.597963,\"lat\":12.969907}],\"sw-lat\":-72}",
+            "caption": "Map of Bangalore",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Bangalore]\",\"score\":\"1.0\",\"caption\":\"Map of Bangalore\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+      "title": "Intel",
+      "images": [
+        {
+          "caption": "The Intel Inside logo from 1991 to 2006",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Intel\",\"link-anchor-text\":\"Intel\",\"score\":\"0.25701088749587603\",\"caption\":\"The Intel Inside logo from 1991 to 2006\",\"method\":\"wikify\",\"debug\":\"=> Intel wiki(2, 0.25701088749587603)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Intel_Inside_Logo.svg"
+        }
+      ]
+    },
+    {
+      "title": "Personal computer",
+      "images": [
+        {
+          "caption": "An exploded view of a modern personal computer and peripherals: ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Personal computer\",\"link-anchor-text\":\"personal computers\",\"score\":\"0.19168591224018477\",\"caption\":\"An exploded view of a modern personal computer and peripherals: \",\"method\":\"wikify\",\"debug\":\"=> personal computers wiki(1, 0.19168591224018477)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Personal_computer%2C_exploded_6.svg"
+        }
+      ]
+    },
+    {
+      "title": "Personal computer",
+      "images": [
+        {
+          "caption": "Personal computers worldwide in million distinguished by developed and developing world",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Personal computer\",\"link-anchor-text\":\"personal computers\",\"score\":\"0.19168591224018477\",\"caption\":\"Personal computers worldwide in million distinguished by developed and developing world\",\"method\":\"wikify\",\"debug\":\"=> personal computers wiki(1, 0.19168591224018477)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Personal_computers_%28million%29_ITU.png"
+        }
+      ]
+    }],
+    "diagnostics": {
+        "userTime": 6.54,
+        "cpuTime": 6.928185396
+    },
+    "success": true
+}
+
+

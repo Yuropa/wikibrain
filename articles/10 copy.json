@@ -1,0 +1,100 @@
+{
+    "message": "",
+    "text": "At least 44 people have been killed and dozens hurt in Syrian government air strikes on markets in two rebel-held towns in Idlib province, activists say.\nThe Syrian Observatory for Human Rights said 37 died in Maarat al-Numan and another seven in nearby Kafranbel.\nThe monitoring group added that three children were among the victims and the death toll was expected to rise.\nEscalating violence in the north-west in recent days has left a seven-week partial truce on the verge of collapse.\nEarlier, the head of the main Syrian opposition umbrella group said it had suspended formal participation in UN-led peace talks in Geneva in protest at alleged government violations.\nRiad Hijab declared that the High Negotiations Committee could not take part while people were dying. The process, he said, was only increasing their suffering.\nThe Syrian government has accused rebel forces of violating the truce.\n'Massacres'\nThe Syrian Observatory described Tuesday's air strikes in Idlib as \"massacres\".\nThe attack on Maarat al-Numan was believed to be the deadliest since the cessation of hostilities - brokered by the US and Russia to make way for the peace talks - took effect on 27 February, the UK-based group said.\nImage copyright AFP\nImage caption The Syrian Observatory for Human Rights said many of the wounded were in a serious condition\nImage copyright AFP\nImage caption The strikes were among the deadliest since a partial truce took effect at the end of February\nAhmed Sheikho, a volunteer emergency response worker from the Syrian Civil Defence, told Reuters news agency that the central vegetable market in Maarat al-Numan was bombed at about noon. The market in Kafranbel, about 10km (six miles) away, was hit at the same time, he said.\n\"We have more than 20 cars that have been moving dead and injured to hospitals in the area,\" he added.\nMr Sheikho said 38 people were killed in Maarat al-Numan and 10 in Kafranbel. The Local Co-ordination Committees (LCC), an opposition activist network, put the death tolls at 45 and nine respectively.\nThere was no immediate comment from the Syrian military, and the official Sana news agency made no mention of the air strikes in Idlib.\nGovernment warplanes and helicopters also bombed several other rebel-held towns and villages in Idlib province on Tuesday, according to the LCC.\nClashes between rebels and government forces were also reported in northern Homs province, and in the coastal province of Latakia, where rebel groups launched assaults on government positions on Monday in retaliation for what they said was an increase in attacks on residential areas and displaced people.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Maarrat al-Nu'man\",\"lng\":36.668333333333,\"lat\":35.643333333333}],\"sw-lat\":-72}",
+            "caption": "Map of Maarrat al-Nu'man",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Maarrat al-Nu'man]\",\"score\":\"1.0\",\"caption\":\"Map of Maarrat al-Nu'man\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Council of Ministers (Syria)\",\"lng\":36.26961667,\"lat\":33.5025}],\"sw-lat\":-72}",
+            "caption": "Map of Council of Ministers (Syria)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Council of Ministers (Syria)]\",\"score\":\"1.0\",\"caption\":\"Map of Council of Ministers (Syria)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":36.668333333333,\"sw-lng\":6.15,\"styles\":[],\"ne-lat\":46.2,\"annotations\":[{\"title\":\"Geneva\",\"lng\":6.15,\"lat\":46.2},{\"title\":\"Maarrat al-Nu'man\",\"lng\":36.668333333333,\"lat\":35.643333333333},{\"title\":\"Kafr Nabl\",\"lng\":36.55,\"lat\":35.6}],\"sw-lat\":35.6}",
+            "caption": "Map of Geneva, Maarrat al-Nu'man, and Kafr Nabl",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Geneva,Maarrat al-Nu'man,Kafr Nabl]\",\"score\":\"1.0\",\"caption\":\"Map of Geneva, Maarrat al-Nu'man, and Kafr Nabl\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":180.0000000000002,\"sw-lng\":-179.9999999999999,\"styles\":[],\"ne-lat\":81.85871002800009,\"annotations\":[{\"title\":\"Geneva\",\"lng\":6.15,\"lat\":46.2},{\"title\":\"Maarrat al-Nu'man\",\"lng\":36.668333333333,\"lat\":35.643333333333},{\"title\":\"Latakia\",\"lng\":35.791666666667,\"lat\":35.523611111111},{\"title\":\"Russia\",\"lng\":96.69376067311973,\"lat\":61.98455533770967}],\"sw-lat\":35.523611111111}",
+            "caption": "Map of Geneva, Maarrat al-Nu'man, Latakia, Russia, Kafr Nabl, and Homs",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Geneva,Maarrat al-Nu'man,Latakia,Russia]\",\"score\":\"1.0\",\"caption\":\"Map of Geneva, Maarrat al-Nu'man, Latakia, Russia, Kafr Nabl, and Homs\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Maarrat al-Nu'man\",\"lng\":36.668333333333,\"lat\":35.643333333333}],\"sw-lat\":-72}",
+            "caption": "Map of Maarrat al-Nu'man",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Maarrat al-Nu'man]\",\"score\":\"1.0\",\"caption\":\"Map of Maarrat al-Nu'man\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Council of Ministers (Syria)\",\"lng\":36.26961667,\"lat\":33.5025}],\"sw-lat\":-72}",
+            "caption": "Map of Council of Ministers (Syria)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Council of Ministers (Syria)]\",\"score\":\"1.0\",\"caption\":\"Map of Council of Ministers (Syria)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":36.668333333333,\"sw-lng\":6.15,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":46.2,\"annotations\":[{\"title\":\"Geneva\",\"lng\":6.15,\"lat\":46.2},{\"title\":\"Maarrat al-Nu'man\",\"lng\":36.668333333333,\"lat\":35.643333333333},{\"title\":\"Kafr Nabl\",\"lng\":36.55,\"lat\":35.6}],\"sw-lat\":35.6}",
+            "caption": "Map of Geneva, Maarrat al-Nu'man, and Kafr Nabl",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Geneva,Maarrat al-Nu'man,Kafr Nabl]\",\"score\":\"1.0\",\"caption\":\"Map of Geneva, Maarrat al-Nu'man, and Kafr Nabl\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":180.0000000000002,\"sw-lng\":-179.9999999999999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":81.85871002800009,\"annotations\":[{\"title\":\"Geneva\",\"lng\":6.15,\"lat\":46.2},{\"title\":\"Maarrat al-Nu'man\",\"lng\":36.668333333333,\"lat\":35.643333333333},{\"title\":\"Latakia\",\"lng\":35.791666666667,\"lat\":35.523611111111},{\"title\":\"Russia\",\"lng\":96.69376067311973,\"lat\":61.98455533770967}],\"sw-lat\":35.523611111111}",
+            "caption": "Map of Geneva, Maarrat al-Nu'man, Latakia, Russia, Kafr Nabl, and Homs",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Geneva,Maarrat al-Nu'man,Latakia,Russia]\",\"score\":\"1.0\",\"caption\":\"Map of Geneva, Maarrat al-Nu'man, Latakia, Russia, Kafr Nabl, and Homs\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Syrian opposition",
+        "images": [{
+            "caption": "The Kurdish flag flies over cities in the Kurdish statelet that has emerged in north-eastern Syria.",
+            "debug": "{\"title\":\"Syrian opposition\",\"score\":\"0.06011130671815548\",\"caption\":\"The Kurdish flag flies over cities in the Kurdish statelet that has emerged in north-eastern Syria.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/35\/Flag_of_Kurdistan.svg"
+        }],
+        "lang": "en",
+        "articleId": 33975261
+    }, {
+        "title": "Syrian opposition",
+        "images": [{
+            "caption": "Official logo of the National Coalition for Syrian Revolutionary and Opposition Forces.",
+            "debug": "{\"title\":\"Syrian opposition\",\"score\":\"0.06011130671815548\",\"caption\":\"right\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/54\/SyrianNationalCoalitionOfficialLogo.svg"
+        }],
+        "lang": "en",
+        "articleId": 33975261
+    }],
+    "diagnostics": {
+        "userTime": 5.6,
+        "cpuTime": 5.867686898
+    },
+    "success": true
+}

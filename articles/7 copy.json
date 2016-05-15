@@ -1,0 +1,118 @@
+{
+    "message": "",
+    "text": "FAIRFAX, Va. \u2014 Jerry Pinto, an immigrant from Bolivia, has visions of opening a spacious carpentry workshop in this suburban city, with his name in bold letters over the door.\n\u201CI want a place where I can be visible,\u201D he says wistfully. But for now he knows he has to lie low, because he is in the country illegally. He runs his carpentry business almost surreptitiously from the cramped garage behind his house.\nMr. Pinto is among more than four million unauthorized immigrants whose lives could be transformed by the Supreme Court. On Monday, the justices will hear oral arguments in a challenge brought by 26 states, led by Texas, to President Obama\u2019s effort through executive action to give the immigrants legal work permits and protection from deportation.\nDepending on the outcome, people like Mr. Pinto will have a chance to come out into the open or will remain, perhaps for years, in a twilight underground. And the stakes are high in this election year, since the two leading candidates for the Republican presidential nomination, Donald J. Trump and Senator Ted Cruz of Texas, have both said they would deport all 11 million foreigners in the country illegally.\nThe larger of the president\u2019s programs before the Supreme Court would benefit immigrants who are parents of United States citizens and legal permanent residents, if they pass background checks and have no serious criminal records.\nMost of those parents have families like Mr. Pinto\u2019s: an immigration mix that leads to differing opportunities and limits, and to openness, secrecy and fear all within one family.\nHis wife, Elvira, 47, is from Mexico, and also here illegally. His daughter, Ambar, 22, and son Jerry Rodrigo, 15, were born in Bolivia but have grown up like American children in Virginia, although without legal residency. His youngest son, Christian, 8, is the American-born citizen who makes his parents eligible for Mr. Obama\u2019s program, should it be affirmed.\nMr. Pinto was the first in the family to come. He and his wife, whom he met while they were studying in Mexico to be economists, were middle-class professionals in Bolivia before the economy collapsed in the 1990s. They returned to Mexico, and in 2004 he joined a tide of Mexicans running the border into the United States. He recalls being lost for four days without water in the Arizona desert in the heat of high summer, his feet so blistered he had to crawl.\nHe made his way to Virginia where he had relatives, and he quickly discovered the work available to him without legal papers or a Social Security number was in construction \u2014 outdoors. He soon added a second trade, learning plumbing to work two jobs at once. Then he learned another skill, making exterior moldings. Several years ago he purchased an industrial saw that he installed in his garage and started his own company.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-57.465660766999946,\"sw-lng\":-69.6664922699999,\"styles\":[\"labels\"],\"ne-lat\":-9.679821471999972,\"annotations\":[],\"sw-lat\":-22.897257587999945}",
+            "caption": "Map of Bolivia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Bolivia]\",\"score\":\"1.0\",\"caption\":\"Map of Bolivia\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-86.7005916009999,\"sw-lng\":-118.3688042289999,\"styles\":[\"labels\"],\"ne-lat\":32.71283640500015,\"annotations\":[],\"sw-lat\":14.546282924364334}",
+            "caption": "Map of Mexico",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Mexico]\",\"score\":\"1.0\",\"caption\":\"Map of Mexico\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"labels\"],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":-22.897257587999945}",
+            "caption": "Map of United States, Mexico, and Bolivia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[United States,Mexico,Bolivia]\",\"score\":\"1.0\",\"caption\":\"Map of United States, Mexico, and Bolivia\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"labels\"],\"ne-lat\":71.4125023460001,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-22.897257587999945}",
+            "caption": "Map of United States, Republican Party (United States), Mexico, Virginia, Arizona, Texas, and Bolivia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[United States,Republican Party (United States),Mexico,Virginia,Arizona,Texas,Bolivia]\",\"score\":\"1.0\",\"caption\":\"Map of United States, Republican Party (United States), Mexico, Virginia, Arizona, Texas, and Bolivia\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-57.465660766999946,\"sw-lng\":-69.6664922699999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":-9.679821471999972,\"annotations\":[],\"sw-lat\":-22.897257587999945}",
+            "caption": "Map of Bolivia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Bolivia]\",\"score\":\"1.0\",\"caption\":\"Map of Bolivia\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-86.7005916009999,\"sw-lng\":-118.3688042289999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":32.71283640500015,\"annotations\":[],\"sw-lat\":14.546282924364334}",
+            "caption": "Map of Mexico",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Mexico]\",\"score\":\"1.0\",\"caption\":\"Map of Mexico\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":-22.897257587999945}",
+            "caption": "Map of United States, Mexico, and Bolivia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[United States,Mexico,Bolivia]\",\"score\":\"1.0\",\"caption\":\"Map of United States, Mexico, and Bolivia\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-22.897257587999945}",
+            "caption": "Map of United States, Republican Party (United States), Mexico, Virginia, Arizona, Texas, and Bolivia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[United States,Republican Party (United States),Mexico,Virginia,Arizona,Texas,Bolivia]\",\"score\":\"1.0\",\"caption\":\"Map of United States, Republican Party (United States), Mexico, Virginia, Arizona, Texas, and Bolivia\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "County results of the 2004 U.S. Senate race in Illinois. Obama won the counties in blue.",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08059278350515464\",\"caption\":\"County results of the 2004 U.S. Senate race in Illinois. Obama won the counties in blue.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/50\/2004_Illinois_Senate_results.svg"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "Maximum Out-of-Pocket Premium as Percentage of Family Income and federal poverty level, under Patient Protection and Affordable Care Act, starting in 2014 (Source: CRS)",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08059278350515464\",\"caption\":\"Maximum Out-of-Pocket Premium as Percentage of Family Income and federal poverty level, under Patient Protection and Affordable Care Act, starting in 2014 (Source: CRS)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/79\/PPACA_Premium_Chart.jpg"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "Deficit and Debt increases 2001\u20132015",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08059278350515464\",\"caption\":\"Deficit and Debt increases 2001\\u20132015\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fc\/U.S._Total_Deficits_vs._National_Debt_Increases_2001-2010.png"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "Employment statistics (changes in unemployment rate and net jobs per month) during Obama's tenure as U.S. President",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08059278350515464\",\"caption\":\"Employment statistics (changes in unemployment rate and net jobs per month) during Obama's tenure as U.S. President\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/25\/US_Employment_Statistics.svg"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }],
+    "diagnostics": {
+        "userTime": 8.03,
+        "cpuTime": 8.484581604
+    },
+    "success": true
+}

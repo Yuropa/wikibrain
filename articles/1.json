@@ -1,0 +1,228 @@
+{
+    "message": "",
+    "text": "More than 150 countries have begun switching to a different polio vaccine - an important milestone towards polio eradication, health campaigners say.\nThe new vaccine will target the two remaining strains of the virus under a switchover 18 months in the planning.\nThere were just 74 cases of the paralysing disease in 2015 and there have been 10 so far this year.\nAll of the cases were in Afghanistan and Pakistan. Africa has been free of polio for more than a year.\nSwitching the vaccine from one successfully used to fight polio for more than 30 years is a huge logistical exercise.\nThousands of monitors\nThousands of people will monitor the changeover in 155 countries during the next fortnight.\nIt is taking effect mainly in developing countries, but also in richer ones such as Russia and Mexico.\nThe new vaccine will still be given as drops in the mouth, so healthcare workers will not need fresh training.\nIt will no longer include a weakened version of type 2 polio virus, which was eradicated in 1999.\n'Rare mutations'\nDr Stephen Cochi, from the US-based Centers for Disease Control (CDC), said: \"The current vaccine contains live weakened virus relating to three types of polio.\n\"But we don't need the type 2 component, as it's not in the world any longer.\n\"And in very rare cases it can mutate and lead to polio, through what's called circulating vaccine-derived virus.\n\"So removing type 2 from the vaccine takes away that risk - and ensures we have a vaccine which will work better dose by dose.\"\nWhat is polio?\nPolio, or poliomyelitis, mainly affects children aged under five\nIt is a highly infectious disease caused by a virus. It invades the nervous system and can cause total paralysis in a matter of hours\nInitial symptoms include fever, fatigue, headache, vomiting, stiffness of the neck and pains in the limbs\nOne in 200 infections leads to irreversible paralysis. Among those paralysed, 5% to 10% die when their breathing muscles become immobilised\nToday, only two countries - Afghanistan and Pakistan - remain polio-endemic, down from more than 125 in 1988\nThe history of polio\nGlobal stockpile\nThe planning involved in the switchover has included dealing with a global stockpile of 100 million doses of vaccine targeting just type 2, built up as an insurance policy in case of any outbreak.\nThe World Health Organization denied some media reports that \"millions\" of doses of the old vaccine would need to be destroyed, by incineration or other approved means.\nIts director of polio eradication, Michel Zaffran, said: \"Some will need to be destroyed - but this will be a few vials, not trucks full of vaccine.\n\"This has been carefully planned because of the huge amount of resources, so countries have been using up the old vaccine, to minimise leftover quantities.\n\"We're closer than ever to ending polio worldwide, which is why we are able to move forward with the largest and fastest globally synchronised vaccine switchover.\"\nPolio progress\nImage caption By 1988, polio had disappeared from the US, UK, Australia and much of Europe but remained prevalent in more than 125 countries. The same year, the World Health Assembly adopted a resolution to eradicate the disease completely by the year 2000.\nImage caption In 2015, polio remained endemic in only two countries - Pakistan and Afghanistan. There have been only 10 cases reported so far in 2016, all of which were in Pakistan and Afghanistan. Africa has been free of polio for more than a year.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":77.0489709880002,\"sw-lng\":-84.325598,\"styles\":[],\"ne-lat\":37.054483541000096,\"annotations\":[{\"title\":\"Centers for Disease Control and Prevention\",\"lng\":-84.325598,\"lat\":33.798817}],\"sw-lat\":23.694525458000058}",
+            "caption": "Map of Centers for Disease Control and Prevention, Pakistan, and Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Centers for Disease Control and Prevention,Pakistan]\",\"score\":\"1.0\",\"caption\":\"Map of Centers for Disease Control and Prevention, Pakistan, and Afghanistan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":77.0489709880002,\"sw-lng\":-84.325598,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":37.054483541000096,\"annotations\":[{\"title\":\"Centers for Disease Control and Prevention\",\"lng\":-84.325598,\"lat\":33.798817}],\"sw-lat\":23.694525458000058}",
+            "caption": "Map of Centers for Disease Control and Prevention, Pakistan, and Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Centers for Disease Control and Prevention,Pakistan]\",\"score\":\"1.0\",\"caption\":\"Map of Centers for Disease Control and Prevention, Pakistan, and Afghanistan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "OPV AIDS hypothesis",
+        "images": [{
+            "caption": "The Laboratoire Médical de Stanleyville was sited at the city now known as Kisangani",
+            "debug": "{\"title\":\"OPV AIDS hypothesis\",\"score\":\"0.8036735413091066\",\"caption\":\"The Laboratoire Médical de Stanleyville was sited at the city now known as Kisangani\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b4\/Cg-map.png"
+        }],
+        "lang": "en",
+        "articleId": 877353
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Countries with polio cases in 2005",
+            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"Countries with polio cases in 2005\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f5\/Polio_worldwide_2005.svg",
+            "legend" : "8.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Reported Polio Cases in 2012",
+            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/63\/Polio_worldwide_2012.svg",
+            "legend" : "2.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Reported polio cases in 2013",
+            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/ca\/Polio_worldwide_2013.svg",
+            "legend" : "3.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Reported polio cases in 2014",
+            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0c\/Polio_worldwide_2014.svg",
+            "legend" : "4.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Reported polio cases in 2015",
+            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/39\/Polio_worldwide_2015.svg",
+            "legend" : "5.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Reported polio cases in 2016",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/e2\/Polio_worldwide_2016.svg",
+            "legend" : "6.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis eradication",
+        "images": [{
+            "caption": "Disability-adjusted life year for poliomyelitis per 100,000&nbsp;inhabitants in 2004                ",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"Disability-adjusted life year for poliomyelitis per 100,000&nbsp;inhabitants in 2004                \",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/31\/Poliomyelitis_world_map_-_DALY_-_WHO2004.svg",
+            "legend" : "7.png"
+        }],
+        "lang": "en",
+        "articleId": 9901652
+    }, {
+        "title": "Poliomyelitis",
+        "images": [{
+            "caption": "The location and anatomy of the bulbar region (in orange)",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis\",\"link-anchor-text\":\"\",\"score\":\"0.601648053164132\",\"caption\":\"The location and anatomy of the bulbar region (in orange)\",\"method\":\"esa\",\"debug\":\"esa (0.601648053164132)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/7d\/Brain_bulbar_region.svg"
+        }],
+        "lang": "en",
+        "articleId": 25107
+    }, {
+        "title": "Poliomyelitis",
+        "images": [{
+            "caption": "The location of motor neurons in the anterior horn cells of the spinal column",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis\",\"link-anchor-text\":\"\",\"score\":\"0.601648053164132\",\"caption\":\"The location of motor neurons in the anterior horn cells of the spinal column\",\"method\":\"esa\",\"debug\":\"esa (0.601648053164132)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/3a\/Polio_spinal_diagram.PNG"
+        }],
+        "lang": "en",
+        "articleId": 25107
+    }, {
+        "title": "Vaccine",
+        "images": [{
+            "caption": "Avian flu vaccine development by reverse genetics techniques.",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Vaccine\",\"link-anchor-text\":\"vaccine\",\"score\":\"0.22401140604688222\",\"caption\":\"Avian flu vaccine development by reverse genetics techniques.\",\"method\":\"wikify\",\"debug\":\"=> vaccine wiki(6, 0.22401140604688222)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/05\/ReverseGeneticsFlu.svg"
+        }],
+        "lang": "en",
+        "articleId": 32653
+    }, {
+        "title": "Vaccine",
+        "images": [{
+            "caption": "Vaccine",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Vaccine\",\"link-anchor-text\":\"vaccine\",\"score\":\"0.22401140604688222\",\"caption\":\"Vaccine\",\"method\":\"wikify\",\"debug\":\"=> vaccine wiki(6, 0.22401140604688222)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/81\/Vaccine.png"
+        }],
+        "lang": "en",
+        "articleId": 32653
+    }, {
+        "title": "Vaccine",
+        "images": [{
+            "caption": "Vaccine timeline",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Vaccine\",\"link-anchor-text\":\"vaccine\",\"score\":\"0.22401140604688222\",\"caption\":\"Vaccine timeline\",\"method\":\"wikify\",\"debug\":\"=> vaccine wiki(6, 0.22401140604688222)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/82\/%D8%A7%D9%84%D9%84%D9%82%D8%A7%D8%AD.png"
+        }],
+        "lang": "en",
+        "articleId": 32653
+    }, {
+        "title": "Developing country",
+        "images": [{
+            "caption": "World map by quartiles of Human Development Index in 2014.     ",
+            "debug": "{\"title\":\"Developing country\",\"score\":\"0.02750087662175024\",\"caption\":\"World map by quartiles of Human Development Index in 2014.     \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/34\/2014_UN_Human_Development_Report_Quartiles.svg",
+            "legend" : "9.png"
+        }],
+        "lang": "en",
+        "articleId": 78449
+    }, {
+        "title": "Developing country",
+        "images": [{
+            "caption": "Countries described as Advanced Economies by the IMF.",
+            "debug": "{\"title\":\"Developing country\",\"score\":\"0.02750087662175024\",\"caption\":\"\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/75\/IMF_advanced_economies_2008.svg",
+            "legend" : "10.png"
+        }],
+        "lang": "en",
+        "articleId": 78449
+    }, {
+        "title": "Developing country",
+        "images": [{
+            "caption": "Newly industrialized countries .",
+            "debug": "{\"title\":\"Developing country\",\"score\":\"0.02750087662175024\",\"caption\":\"Newly industrialized countries .\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/7f\/Newly_industrialized_countries_2013.svg"
+        }],
+        "lang": "en",
+        "articleId": 78449
+    }, {
+        "title": "Infection",
+        "images": [{
+            "caption": "Disability-adjusted life year for infectious and parasitic diseases per 100,000 inhabitants in 2004.               ",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Infection\",\"link-anchor-text\":\"infectious disease\",\"score\":\"0.00939321507946492\",\"caption\":\"Disability-adjusted life year for infectious and parasitic diseases per 100,000 inhabitants in 2004.               \",\"method\":\"wikify\",\"debug\":\"=> infectious disease wiki(1, 0.00939321507946492)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/af\/Infectious_and_parasitic_diseases_world_map_-_DALY_-_WHO2004.svg",
+            "legend" : "11.png"
+        }],
+        "lang": "en",
+        "articleId": 37220
+    }, {
+        "title": "Fever",
+        "images": [{
+            "caption": "Performance of the various types of fever a) Fever continues b) Fever continues to abrupt onset and remission c) Fever remittent d) Intermittent fever e) Undulant fever f) Relapsing fever",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Fever\",\"link-anchor-text\":\"fever\",\"score\":\"0.0033547196712374696\",\"caption\":\"Performance of the various types of fever a) Fever continues b) Fever continues to abrupt onset and remission c) Fever remittent d) Intermittent fever e) Undulant fever f) Relapsing fever\",\"method\":\"wikify\",\"debug\":\"=> fever wiki(1, 0.0033547196712374696)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/50\/Febbre.gif"
+        }],
+        "lang": "en",
+        "articleId": 46253
+    }, {
+        "title": "Fever",
+        "images": [{
+            "caption": "Hyperthermia: Characterized on the left. Normal body temperature (thermoregulatory set point) is shown in green, while the hyperthermic temperature is shown in red. As can be seen, hyperthermia can be conceptualized as an increase above the thermoregulatory set point.Hypothermia: Characterized in the center: Normal body temperature is shown in green, while the hypothermic temperature is shown in blue. As can be seen, hypothermia can be conceptualized as a decrease below the thermoregulatory set point.Fever: Characterized on the right: Normal body temperature is shown in green. It reads \"New Normal\" because the thermoregulatory set point has risen. This has caused what was the normal body temperature (in blue) to be considered hypothermic.",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Fever\",\"link-anchor-text\":\"fever\",\"score\":\"0.0033547196712374696\",\"caption\":\"Hyperthermia: Characterized on the left. Normal body temperature (thermoregulatory set point) is shown in green, while the hyperthermic temperature is shown in red. As can be seen, hyperthermia can be conceptualized as an increase above the thermoregulatory set point.Hypothermia: Characterized in the center: Normal body temperature is shown in green, while the hypothermic temperature is shown in blue. As can be seen, hypothermia can be conceptualized as a decrease below the thermoregulatory set point.Fever: Characterized on the right: Normal body temperature is shown in green. It reads \\\"New Normal\\\" because the thermoregulatory set point has risen. This has caused what was the normal body temperature (in blue) to be considered hypothermic.\",\"method\":\"wikify\",\"debug\":\"=> fever wiki(1, 0.0033547196712374696)\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f7\/Fever-conceptual.svg"
+        }],
+        "lang": "en",
+        "articleId": 46253
+    }, {
+        "title": "World Health Organization",
+        "images": [{
+            "caption": "Regional offices and regions of the WHO:      ",
+            "debug": "{\"title\":\"World Health Organization\",\"score\":\"0.011591444171717678\",\"caption\":\"Regional offices and regions of the WHO:      \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b3\/World_Health_Organisation_regional_offices.svg",
+            "legend" : "12.png"
+        }],
+        "lang": "en",
+        "articleId": 33583
+    }, {
+        "title": "World Health Organization",
+        "images": [{
+            "caption": "Countries by World Health Organization membership status",
+            "debug": "{\"title\":\"World Health Organization\",\"score\":\"0.011591444171717678\",\"caption\":\"Countries by World Health Organization membership status\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/67\/World_Health_Organization_membership_status_map.png"
+        }],
+        "lang": "en",
+        "articleId": 33583
+    }],
+    "diagnostics": {
+        "userTime": 12.46,
+        "cpuTime": 13.010578724
+    },
+    "success": true
+}

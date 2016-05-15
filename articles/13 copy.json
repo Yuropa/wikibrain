@@ -1,0 +1,136 @@
+{
+    "message": "",
+    "text": "Weeks after President Barack Obama\u2019s historic trip to Cuba, officials from the Communist island have ramped up their attacks on the U.S.\nOn Monday, Foreign Minister Bruno Rodriguez called Obama's visit \"an attack on the foundation of our history, our culture and our symbols.\"\n\"Obama came here to dazzle the non-state sector, as if he wasn't the representative of big corporations but the defender of hot dog vendors, of small businesses in the United States, which he isn't,\" Rodriguez said.\nThe foreign minister\u2019s response came days after Cuba President Raul Castro said that the United States is \"the enemy\" and warned Cubans to be vigilant about the United States' efforts to undermine the Communist revolution, according to Reuters.\nThe remarks came at the Cuban Communist Party's twice-a-decade congress, held over the weekend, where some of Cuba's most powerful officials criticized the creaking inefficiency of its state-controlled economy, tarred its vibrant private sector as a potential source of U.S. subversion.\nThe comments illustrated the conundrum faced by a Cuban government simultaneously trying to modernize and maintain control in a new era of detente with Washington.\nRene Gonzalez, a former intelligence agent held in the United States in a case resolved by the declaration of detente with Washington, made an unusual call for the consideration of political reform in Cuba.\nSaying the party had focused excessively on the economy for 10 years, he said, \"Let the party call for a broad public discussion that goes beyond concepts of economic development.\"\n\"Let's arrive at the eighth party congress for the first time in human history with a consensus on that human aspiration that some call democracy, and that's possible through socialism,\" Gonzalez said.\nState media did not indicate whether his proposal was included in any of the formal documents put up for a vote during the congress.\nAged 55 and 58, respectively, Diaz-Canel and Rodriguez are members of the generation expected to move into the highest ranks of power in Cuba as early as Tuesday when the congress' vote is announced.\nCastro said Saturday that he was proposing an age limit of 60 for election to the Central Committee and 70 for lower-ranking but important posts in the party.\nCastro is 84 and his second secretary, hardliner Jose Ramon Machado Ventura, is 85.\nThe Associated Press contributed to this report.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":18.906117143000117}",
+            "caption": "Map of United States",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[United States]\",\"score\":\"1.0\",\"caption\":\"Map of United States\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-74.13288326699987,\"sw-lng\":-84.9496150379999,\"styles\":[],\"ne-lat\":23.265570380000142,\"annotations\":[],\"sw-lat\":19.827826239000032}",
+            "caption": "Map of Cuba",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Cuba]\",\"score\":\"1.0\",\"caption\":\"Map of Cuba\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":18.906117143000117}",
+            "caption": "Map of United States, and Cuba",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[United States,Cuba]\",\"score\":\"1.0\",\"caption\":\"Map of United States, and Cuba\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":18.906117143000117}",
+            "caption": "Map of United States",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[United States]\",\"score\":\"1.0\",\"caption\":\"Map of United States\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-74.13288326699987,\"sw-lng\":-84.9496150379999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":23.265570380000142,\"annotations\":[],\"sw-lat\":19.827826239000032}",
+            "caption": "Map of Cuba",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Cuba]\",\"score\":\"1.0\",\"caption\":\"Map of Cuba\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":18.906117143000117}",
+            "caption": "Map of United States, and Cuba",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[United States,Cuba]\",\"score\":\"1.0\",\"caption\":\"Map of United States, and Cuba\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Cuba\u2013Mexico relations",
+        "images": [{
+            "caption": "Logo for the Organization of American States",
+            "debug": "{\"title\":\"Cuba\\u2013Mexico relations\",\"score\":\"0.7873870393350243\",\"caption\":\"Logo for the Organization of American States\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/70\/OAS_Seal_ENG_vertical.gif"
+        }],
+        "lang": "en",
+        "articleId": 41351187
+    }, {
+        "title": "Cuba",
+        "images": [{
+            "caption": "A general map of Cuba",
+            "debug": "{\"title\":\"Cuba\",\"score\":\"0.16592894583576004\",\"caption\":\"A general map of Cuba\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/af\/Cuba_rel94.jpg"
+        }],
+        "lang": "en",
+        "articleId": 5042481
+    }, {
+        "title": "Cuba",
+        "images": [{
+            "caption": "Cuban export composition, 2009",
+            "debug": "{\"title\":\"Cuba\",\"score\":\"0.16592894583576004\",\"caption\":\"Cuban export composition, 2009\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/a1\/Tree_map_export_2009_Cuba.jpeg"
+        }],
+        "lang": "en",
+        "articleId": 5042481
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "County results of the 2004 U.S. Senate race in Illinois. Obama won the counties in blue.",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08747815958066395\",\"caption\":\"County results of the 2004 U.S. Senate race in Illinois. Obama won the counties in blue.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/50\/2004_Illinois_Senate_results.svg"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "Maximum Out-of-Pocket Premium as Percentage of Family Income and federal poverty level, under Patient Protection and Affordable Care Act, starting in 2014 (Source: CRS)",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08747815958066395\",\"caption\":\"Maximum Out-of-Pocket Premium as Percentage of Family Income and federal poverty level, under Patient Protection and Affordable Care Act, starting in 2014 (Source: CRS)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/79\/PPACA_Premium_Chart.jpg"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "Deficit and Debt increases 2001\u20132015",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08747815958066395\",\"caption\":\"Deficit and Debt increases 2001\\u20132015\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fc\/U.S._Total_Deficits_vs._National_Debt_Increases_2001-2010.png"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Barack Obama",
+        "images": [{
+            "caption": "Employment statistics (changes in unemployment rate and net jobs per month) during Obama's tenure as U.S. President",
+            "debug": "{\"title\":\"Barack Obama\",\"score\":\"0.08747815958066395\",\"caption\":\"Employment statistics (changes in unemployment rate and net jobs per month) during Obama's tenure as U.S. President\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/25\/US_Employment_Statistics.svg"
+        }],
+        "lang": "en",
+        "articleId": 534366
+    }, {
+        "title": "Raúl Castro",
+        "images": [{
+            "caption": "Family tree of Raúl Castro",
+            "debug": "{\"title\":\"Raúl Castro\",\"score\":\"0.03585711512327703\",\"caption\":\"left\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/95\/Family_Tree_of_Ra%C3%BAl_Castro.jpg"
+        }],
+        "lang": "en",
+        "articleId": 221749
+    }],
+    "diagnostics": {
+        "userTime": 9.28,
+        "cpuTime": 9.547892196
+    },
+    "success": true
+}

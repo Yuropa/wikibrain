@@ -1,0 +1,259 @@
+{
+    "message": "",
+    "text": "Media captionPersian TV's Harun Najafizada reports from Kabul:  The location is a ''strategic place''\nAt least 28 people have been killed and 329 injured in a huge explosion in the centre of the Afghan capital Kabul, police and officials say.\nA suicide attacker detonated a vehicle and a fierce gun battle followed. Officials say the attack is now over and the area has been cleared.\nA Taliban spokesman said the group carried out the attack.\nIt comes a week after it said it was launching its \"spring offensive\", warning of large-scale attacks.\nTuesday's bombing happened during the morning rush hour in Pul-e-Mahmud, a busy neighbourhood where homes, mosques, schools and businesses nestle close to the Ministry of Defence, other ministries and military compounds.\nSoldiers and security officers are reported to be among the casualties, but the majority are civilians.\nThe blast shattered windows up to 1.6km (one mile) away. The Associated Press quoted a police officer as saying it was one of the most powerful explosions he had ever heard, and he could not see or hear anything for 20 minutes after.\nImage copyright Reuters\nImage caption The Taliban said it was behind the attack\nIt appears the initial blast cleared the way for Taliban fighters to enter the area - a commonly used tactic.\n\"One of the suicide attackers blew up an explosives-laden truck in a public parking lot next to a government building,\" Kabul police chief Abdul Rahman Rahimi told AFP news agency.\n\"The second attacker engaged security forces in a gun battle before being gunned down,\" he added.\nHours after the assault was declared over, another blast rocked Kabul. Police told a BBC reporter in Kabul it was caused by an improvised explosive device (IED).\n\"It was as huge as in the morning,\" said Afghan MP Elay Ershad. \"So everyone [is] scared of this situation.\"\nAnalysis: Waheed Massoud, Editor, BBC Afghan Service\nCasualties are high because the assault happened in a densely packed neighbourhood during rush hour.\nUsually the Taliban does not say it is behind such attacks, which cause large numbers of civilian deaths. But today they did because the target was high-profile and it appears that, for them, hitting the target was worth the civilians killed and wounded.\nWhat we hear less of are similar planned attacks that are foiled by the Afghan security forces, and there are plenty. But preventing such attacks altogether is next to impossible.\nThe country has been at war for three decades, explosives are easily available and bomb-making skills are common.\nThe Taliban's \"spring offensive\" is part of a propaganda war. The group fights all year round and so do the Afghan security forces. It is the story of the past 37 years.\nIn a statement on its Pashto-language website, the Taliban said several militants successfully breached the defences of the National Directorate of Security, Afghanistan's main spy agency which protects high-ranking government officials\nIt is unclear precisely how many attackers were involved and the Taliban have been known to exaggerate details.\nThe presidential palace - only a few hundred metres from the blast - condemned the attack \"in the strongest possible terms\".\n\"Such cowardly terrorist attacks will not weaken the will and determination of Afghan security forces to fight against terrorism.\"\nImage copyright Reuters\nImage caption Forensic teams are at the scene of the suicide attack\nA tweet from President Ghani's office's official account suggested the attack \"clearly shows the enemy's defeat in face-to-face battle with ANSDF\" - the Afghan National Security and Defense Forces.\nBut correspondents say that in fact the Taliban has gained in strength since the bulk of British, American and other Nato forces left in 2014.\nIt has also been buoyed by a flood of foreign fighters joining its ranks, and now controls sizeable parts of Afghanistan.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":60.48677779100012,\"styles\":[],\"ne-lat\":38.473673402000145,\"annotations\":[],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Afghanistan\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778}],\"sw-lat\":-72}",
+            "caption": "Map of Kabul",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Kabul]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":60.48677779100012,\"styles\":[],\"ne-lat\":38.473673402000145,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778}],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Kabul, and Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Kabul,Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul, and Afghanistan\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":4.4220111111111,\"styles\":[],\"ne-lat\":50.876155555556,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778},{\"title\":\"NATO\",\"lng\":4.4220111111111,\"lat\":50.876155555556}],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Kabul, NATO, and Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Kabul,NATO,Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul, NATO, and Afghanistan\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":4.4220111111111,\"styles\":[],\"ne-lat\":50.876155555556,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778},{\"title\":\"NATO\",\"lng\":4.4220111111111,\"lat\":50.876155555556}],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Kabul, NATO, Afghanistan, and Ministry of Defence (United Kingdom)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Kabul,NATO,Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul, NATO, Afghanistan, and Ministry of Defence (United Kingdom)\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":60.48677779100012,\"styles\":[\"relief\"],\"ne-lat\":38.473673402000145,\"annotations\":[],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Afghanistan\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"relief\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778}],\"sw-lat\":-72}",
+            "caption": "Map of Kabul",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Kabul]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":60.48677779100012,\"styles\":[\"relief\"],\"ne-lat\":38.473673402000145,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778}],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Kabul, and Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Kabul,Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul, and Afghanistan\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":4.4220111111111,\"styles\":[\"relief\"],\"ne-lat\":50.876155555556,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778},{\"title\":\"NATO\",\"lng\":4.4220111111111,\"lat\":50.876155555556}],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Kabul, NATO, and Afghanistan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Kabul,NATO,Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul, NATO, and Afghanistan\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":74.89230676300014,\"sw-lng\":4.4220111111111,\"styles\":[\"relief\"],\"ne-lat\":50.876155555556,\"annotations\":[{\"title\":\"Kabul\",\"lng\":69.165833333333,\"lat\":34.532777777778},{\"title\":\"NATO\",\"lng\":4.4220111111111,\"lat\":50.876155555556}],\"sw-lat\":29.38660532600005}",
+            "caption": "Map of Kabul, NATO, Afghanistan, and Ministry of Defence (United Kingdom)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[relief]\",\"locations\":\"[Kabul,NATO,Afghanistan]\",\"score\":\"1.0\",\"caption\":\"Map of Kabul, NATO, Afghanistan, and Ministry of Defence (United Kingdom)\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+      "title": "United States invasion of Afghanistan",
+      "images": [
+        {
+          "caption": "ISAF insignia",
+          "debug": "{\"esa-wikify-anchor-text\":\"Taliban\",\"title\":\"United States invasion of Afghanistan\",\"link-anchor-text\":\"\",\"score\":\"0.8082036968300911\",\"caption\":\"ISAF insignia\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Taliban wiki(6, 0.1277724842517601)) esa (0.8082036968300911)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/ISAF-Logo.svg"
+        }
+      ]
+    },
+    {
+      "title": "Afghan Civil War (1996–2001)",
+      "images": [
+        {
+          "caption": "Map of the situation in Afghanistan in August 2001 until Operation Enduring Freedom",
+          "debug": "{\"esa-wikify-anchor-text\":\"Taliban\",\"title\":\"Afghan Civil War (1996\\u20132001)\",\"link-anchor-text\":\"\",\"score\":\"0.8073368547769582\",\"caption\":\"Map of the situation in Afghanistan in August 2001 until Operation Enduring Freedom\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Taliban wiki(6, 0.1277724842517601)) esa (0.8073368547769582)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Guerre_en_Afghanistan_%28octobre_2001%29.PNG"
+        }
+      ]
+    },
+    {
+      "title": "Inter-Services Intelligence activities in Afghanistan",
+      "images": [
+        {
+          "caption": "Flag used by Hezb-e Islami Gulbuddin",
+          "debug": "{\"title\":\"Inter-Services Intelligence activities in Afghanistan\",\"score\":\"0.8048271058504382\",\"caption\":\"Flag used by Hezb-e Islami Gulbuddin\",\"method\":\"all\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Flag_of_Hezbi_Islami_Gulbuddin.svg"
+        }
+      ]
+    },
+    {
+      "title": "Inter-Services Intelligence activities in Afghanistan",
+      "images": [
+        {
+          "caption": "Flag used by the Afghan Taliban, widely believed to receive extensive support by Pakistan's military and its Inter-Services Intelligence.",
+          "debug": "{\"title\":\"Inter-Services Intelligence activities in Afghanistan\",\"score\":\"0.8048271058504382\",\"caption\":\"Flag used by the Afghan Taliban, widely believed to receive extensive support by Pakistan's military and its Inter-Services Intelligence.\",\"method\":\"all\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Flag_of_Taliban.svg"
+        }
+      ]
+    },
+    {
+      "title": "Inter-Services Intelligence activities in Afghanistan",
+      "images": [
+        {
+          "caption": "Development of the Taliban insurgency up until 2006 infiltrating from Pakistan into Afghanistan's Pashtun areas.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"War in Afghanistan (2001\\u201314)\",\"link-anchor-text\":\"\",\"score\":\"0.7846000102861143\",\"caption\":\"Map detailing the spread of the Neotaliban-Insurgency in Afghanistan 2002\\u20132006\",\"method\":\"esa\",\"debug\":\"esa (0.7846000102861143)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Neotaliban_insurgency_2002-2006_en.png"
+        }
+      ]
+    },
+    {
+      "title": "War in Afghanistan (2001–14)",
+      "images": [
+        {
+          "caption": "Development of ISAF troop strength",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"War in Afghanistan (2001\\u201314)\",\"link-anchor-text\":\"\",\"score\":\"0.7846000102861143\",\"caption\":\"Development of ISAF troop strength\",\"method\":\"esa\",\"debug\":\"esa (0.7846000102861143)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Afghanistan_Troop_Strength.svg"
+        }
+      ]
+    },
+    {
+      "title": "Taliban insurgency",
+      "images": [
+        {
+          "caption": "Regional security risks and levels of opium poppy cultivation in 2007–2008.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Taliban insurgency\",\"link-anchor-text\":\"\",\"score\":\"0.8042213671715742\",\"caption\":\"Regional security risks and levels of opium poppy cultivation in 2007\\u20132008.\",\"method\":\"esa\",\"debug\":\"esa (0.8042213671715742)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Afghanistan_map_-_security_by_district_and_opium_poppy_cultivation_by_province_2007_-_2008.png"
+        }
+      ]
+    },
+    {
+      "title": "Kabul",
+      "images": [
+        {
+          "caption": "The Islamic conquest of Afghanistan began from Herat, which was one of the important cities of Khorasan, and made its way to Kabul in the late 600's.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Kabul\",\"link-anchor-text\":\"Kabul\",\"score\":\"0.18230903604891222\",\"caption\":\"The Islamic conquest of Afghanistan began from Herat, which was one of the important cities of Khorasan, and made its way to Kabul in the late 600's.\",\"method\":\"wikify\",\"debug\":\"=> Kabul wiki(5, 0.18230903604891222)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Ancient_Khorasan_highlighted.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Kabul",
+      "images": [
+        {
+          "caption": "Kushan Empire",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Kabul\",\"link-anchor-text\":\"Kabul\",\"score\":\"0.18230903604891222\",\"caption\":\"Kushan Empire\",\"method\":\"wikify\",\"debug\":\"=> Kabul wiki(5, 0.18230903604891222)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Kushanmap.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Taliban",
+      "images": [
+        {
+          "caption": "Map showing political control in Afghanistan in the fall of 1996, following the capture of Kabul by the Taliban.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Taliban\",\"link-anchor-text\":\"Taliban\",\"score\":\"0.1277724842517601\",\"caption\":\"Map showing political control in Afghanistan in the fall of 1996, following the capture of Kabul by the Taliban.\",\"method\":\"wikify\",\"debug\":\"=> Taliban wiki(6, 0.1277724842517601)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Afghanistan_politisch_1996.png"
+        }
+      ]
+    },
+    {
+      "title": "Taliban",
+      "images": [
+        {
+          "caption": "The Islamic Emirate of Afghanistan and the Northern Alliance in the spring of 2000, when the Taliban was at the height of its power.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Taliban\",\"link-anchor-text\":\"Taliban\",\"score\":\"0.1277724842517601\",\"caption\":\"The Islamic Emirate of Afghanistan and the Northern Alliance in the spring of 2000, when the Taliban was at the height of its power.\",\"method\":\"wikify\",\"debug\":\"=> Taliban wiki(6, 0.1277724842517601)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Afghanistan_politisch_2000.png"
+        }
+      ]
+    },
+    {
+      "title": "Afghanistan",
+      "images": [
+        {
+          "caption": "Map of the situation in Afghanistan in late 1996; Massoud (red), Dostum (green) and Taliban (yellow) territories.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Afghanistan\",\"link-anchor-text\":\"Afghan\",\"score\":\"0.14360012704462446\",\"caption\":\"Map of the situation in Afghanistan in late 1996; Massoud (red), Dostum (green) and Taliban (yellow) territories.\",\"method\":\"wikify\",\"debug\":\"=> Afghan wiki(8, 0.14360012704462446)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/1996afghan_%281%29.png"
+        }
+      ]
+    },
+    {
+      "title": "Afghanistan",
+      "images": [
+        {
+          "caption": "Afghanistan, Trends in the Human Development Index, 1970–2010",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Afghanistan\",\"link-anchor-text\":\"Afghan\",\"score\":\"0.14360012704462446\",\"caption\":\"Afghanistan, Trends in the Human Development Index, 1970\\u20132010\",\"method\":\"wikify\",\"debug\":\"=> Afghan wiki(8, 0.14360012704462446)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Afghanistan%2C_Trends_in_the_Human_Development_Index_1970-2010.png"
+        }
+      ]
+    },
+    {
+      "title": "Afghanistan",
+      "images": [
+        {
+          "caption": "Afghanistan map of Köppen climate classification.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Afghanistan\",\"link-anchor-text\":\"Afghan\",\"score\":\"0.14360012704462446\",\"caption\":\"Afghanistan map of Köppen climate classification.\",\"method\":\"wikify\",\"debug\":\"=> Afghan wiki(8, 0.14360012704462446)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Afghanistan_map_of_K%C3%B6ppen_climate_classification.svg"
+        }
+      ]
+    },
+    {
+      "title": "Afghanistan",
+      "images": [
+        {
+          "caption": "Topography",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Afghanistan\",\"link-anchor-text\":\"Afghan\",\"score\":\"0.14360012704462446\",\"caption\":\"Topography\",\"method\":\"wikify\",\"debug\":\"=> Afghan wiki(8, 0.14360012704462446)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Afghanistan_physical_en.png"
+        }
+      ]
+    },
+    {
+      "title": "Afghanistan",
+      "images": [
+        {
+          "caption": "Afghanistan is divided into 34 provinces, and every province is further divided into a number of districts",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Afghanistan\",\"link-anchor-text\":\"Afghan\",\"score\":\"0.14360012704462446\",\"caption\":\"Afghanistan is divided into 34 provinces, and every province is further divided into a number of districts\",\"method\":\"wikify\",\"debug\":\"=> Afghan wiki(8, 0.14360012704462446)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Afghanistan_provinces_numbered.png"
+        }
+      ]
+    },
+    {
+      "title": "Afghanistan",
+      "images": [
+        {
+          "caption": "Current military situation, as of 27 February 2016.  ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Afghanistan\",\"link-anchor-text\":\"Afghan\",\"score\":\"0.14360012704462446\",\"caption\":\"Current military situation, as of 27 February 2016.  \",\"method\":\"wikify\",\"debug\":\"=> Afghan wiki(8, 0.14360012704462446)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Taliban_insurgency_in_Afghanistan_%282015%E2%80%93present%29.svg"
+        }
+      ]
+    },
+    {
+      "title": "Terrorism",
+      "images": [
+        {
+          "caption": "Number of failed, foiled or successful terrorist attacks by year and type within the European Union. Source: Europol. 1 person died in terrorist attacks from separatist groups in 2010.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Terrorism\",\"link-anchor-text\":\"terrorist\",\"score\":\"0.013948441056587792\",\"caption\":\"Number of failed, foiled or successful terrorist attacks by year and type within the European Union. Source: Europol. 1 person died in terrorist attacks from separatist groups in 2010.\",\"method\":\"wikify\",\"debug\":\"=> terrorist wiki(2, 0.013948441056587792)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Terro.jpg"
+        }
+      ]
+    }],
+    "diagnostics": {
+        "userTime": 10.44,
+        "cpuTime": 11.11440174
+    },
+    "success": true
+}

@@ -1,0 +1,148 @@
+{
+    "message": "",
+    "text": "Weeks after a new North Carolina law put transgender bathroom access at the heart of the nation\u2019s culture wars, a federal appeals court in Richmond, Va., ruled on Tuesday in favor of a transgender student who was born female and wishes to use the boys\u2019 restroom at his rural Virginia high school.\nAdvocates for lesbian, gay, bisexual and transgender people note that the ruling from the United States Court of Appeals for the Fourth Circuit applies to North Carolina, where the controversial law approved last month limits transgender people to bathrooms in government buildings, including public schools, that correspond with the gender listed on their birth certificates.\nAs a result of the ruling, those advocates say, that portion of the North Carolina law that applies to public schools now clearly violates Title IX \u2014 the federal law that prohibits gender discrimination in schools.\n\u201COur expectation is that the North Carolina schools reverse course immediately, as in tomorrow,\u201D Sarah Warbelow, the legal director for the Human Rights Campaign, an L.G.B.T. rights group, said Tuesday night.\nThe ruling in favor of Gavin Grimm, a junior at Gloucester High School in southeastern Virginia, does not immediately grant him the right to use the boys\u2019 restrooms; rather, it directs a lower court that had ruled against him to re-evaluate Mr. Grimm\u2019s request for a preliminary injunction to be able to use those restrooms.\nBut it is the first time that a federal appellate court has ruled that Title IX protects the rights of such students to use the bathroom that corresponds with their gender identity.\nThe ruling also comes as some school districts and state governments around the country are grappling with the question of whether transgender people should be allowed to go to the public facilities that correspond with their gender identity, or whether, as many conservatives believe, such access would infringe on the privacy rights of others.\nBoycotts and protests have followed the passage of the North Carolina law, but Gov. Pat McCrory has essentially stood by it. On Tuesday, Joshua Block, a lawyer with the American Civil Liberties Union, which brought the case on Mr. Grimm\u2019s behalf, argued that such state and local legislation violated federal law.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":36.60954998604306,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of North Carolina\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.24333546787884,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":39.450834166563496,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Virginia, and North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Virginia,North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of Virginia, and North Carolina\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-70.6761,\"sw-lng\":-83.6674744083173,\"styles\":[],\"ne-lat\":42.6133,\"annotations\":[{\"title\":\"Gloucester High School (Massachusetts)\",\"lng\":-70.6761,\"lat\":42.6133}],\"sw-lat\":36.53977459582093}",
+            "caption": "Map of Gloucester High School (Massachusetts), Virginia, North Carolina, and United States Court of Appeals for the Fourth Circuit",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Gloucester High School (Massachusetts),Virginia]\",\"score\":\"1.0\",\"caption\":\"Map of Gloucester High School (Massachusetts), Virginia, North Carolina, and United States Court of Appeals for the Fourth Circuit\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":36.60954998604306,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of North Carolina\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.24333546787884,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":39.450834166563496,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Virginia, and North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Virginia,North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of Virginia, and North Carolina\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-70.6761,\"sw-lng\":-83.6674744083173,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":42.6133,\"annotations\":[{\"title\":\"Gloucester High School (Massachusetts)\",\"lng\":-70.6761,\"lat\":42.6133}],\"sw-lat\":36.53977459582093}",
+            "caption": "Map of Gloucester High School (Massachusetts), Virginia, North Carolina, and United States Court of Appeals for the Fourth Circuit",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Gloucester High School (Massachusetts),Virginia]\",\"score\":\"1.0\",\"caption\":\"Map of Gloucester High School (Massachusetts), Virginia, North Carolina, and United States Court of Appeals for the Fourth Circuit\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+      "title": "Transgender",
+      "images": [
+        {
+          "caption": "The Transgender Pride flag was designed by Monica Helms, and was first shown at a pride parade in Phoenix, Arizona, USA in 2000. The flag represents the transgender community and consists of five horizontal stripes, two light blue, two pink, with a white stripe in the center.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Transgender\",\"link-anchor-text\":\"transgender\",\"score\":\"0.19175392670157068\",\"caption\":\"thumb\",\"method\":\"wikify\",\"debug\":\"=> transgender wiki(5, 0.19175392670157068)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Transgender_Pride_flag.svg"
+        }
+      ]
+    },
+    {
+      "title": "Lesbian",
+      "images": [
+        {
+          "caption": "Kinsey's scale of sexual responses, indicating the varying degrees of bisexuality",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Lesbian\",\"link-anchor-text\":\"lesbian\",\"score\":\"0.08794457483300235\",\"caption\":\"Kinsey's scale of sexual responses, indicating the varying degrees of bisexuality\",\"method\":\"wikify\",\"debug\":\"=> lesbian wiki(2, 0.08794457483300235)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Kinsey_Scale.svg"
+        }
+      ]
+    },
+    {
+      "title": "United States courts of appeals",
+      "images": [
+        {
+          "caption": "Map of the boundaries of the United States Courts of Appeals and United States District Courts",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"United States courts of appeals\",\"link-anchor-text\":\"federal appeals court\",\"score\":\"0.04851958837335259\",\"caption\":\"Map of the boundaries of the United States Courts of Appeals and United States District Courts\",\"method\":\"wikify\",\"debug\":\"=> federal appeals court wiki(1, 0.04851958837335259)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/US_Court_of_Appeals_and_District_Court_map.svg"
+        }
+      ]
+    },
+    {
+      "title": "Bisexuality",
+      "images": [
+        {
+          "caption": "The bisexual pride flag.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Bisexuality\",\"link-anchor-text\":\"bisexual\",\"score\":\"0.04375789853764217\",\"caption\":\"The bisexual pride flag.\",\"method\":\"wikify\",\"debug\":\"=> bisexual wiki(1, 0.04375789853764217)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Bi_flag.svg"
+        }
+      ]
+    },
+    {
+      "title": "Bisexuality",
+      "images": [
+        {
+          "caption": "The overlapping triangles",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Bisexuality\",\"link-anchor-text\":\"bisexual\",\"score\":\"0.04375789853764217\",\"caption\":\"The overlapping triangles\",\"method\":\"wikify\",\"debug\":\"=> bisexual wiki(1, 0.04375789853764217)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bi_triangles.svg"
+        }
+      ]
+    },
+    {
+      "title": "Bisexuality",
+      "images": [
+        {
+          "caption": "The double moon",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Bisexuality\",\"link-anchor-text\":\"bisexual\",\"score\":\"0.04375789853764217\",\"caption\":\"The double moon\",\"method\":\"wikify\",\"debug\":\"=> bisexual wiki(1, 0.04375789853764217)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Bisexual-moon-symbol.svg"
+        }
+      ]
+    },
+    {
+      "title": "Sexism",
+      "images": [
+        {
+          "caption": "Gender pay gap in average gross hourly earnings according to Eurostat 2008.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sexism\",\"link-anchor-text\":\"gender discrimination\",\"score\":\"0.0317972558223506\",\"caption\":\"Gender pay gap in average gross hourly earnings according to Eurostat 2008.\",\"method\":\"wikify\",\"debug\":\"=> gender discrimination wiki(1, 0.0317972558223506)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/EU_27_Gender_Pay_Gap.001.png"
+        }
+      ]
+    },
+    {
+      "title": "Sexism",
+      "images": [
+        {
+          "caption": "Median weekly earnings of full-time wage and salary workers, by sex, race, and ethnicity, U.S., 2009.U.S. Bureau of Labor Statistics. Highlights of Women’s Earnings in 2009. Report 1025, June 2010.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sexism\",\"link-anchor-text\":\"gender discrimination\",\"score\":\"0.0317972558223506\",\"caption\":\"Median weekly earnings of full-time wage and salary workers, by sex, race, and ethnicity, U.S., 2009.U.S. Bureau of Labor Statistics. Highlights of Women\\u2019s Earnings in 2009. Report 1025, June 2010.\",\"method\":\"wikify\",\"debug\":\"=> gender discrimination wiki(1, 0.0317972558223506)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/US_gender_pay_gap%2C_by_sex%2C_race-ethnicity-2009.png"
+        }
+      ]
+    },
+    {
+      "title": "Human Rights Campaign",
+      "images": [
+        {
+          "caption": "The HRC equal sign logo reworked in red and pink to show particular support for same-sex marriage.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Human Rights Campaign\",\"link-anchor-text\":\"Human Rights Campaign\",\"score\":\"0.027870554251669975\",\"caption\":\"The HRC equal sign logo reworked in red and pink to show particular support for same-sex marriage.\",\"method\":\"wikify\",\"debug\":\"=> Human Rights Campaign wiki(1, 0.027870554251669975)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Hrc_logo_red.svg"
+        }
+      ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 16.53,
+        "cpuTime": 17.267131893
+    },
+    "success": true
+}

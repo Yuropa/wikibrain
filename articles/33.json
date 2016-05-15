@@ -1,0 +1,204 @@
+{
+    "message": "",
+    "text": "A US appeals courts has ruled that a Virginia school policy that barred a transgender student from using the boys' toilet is discriminatory.\nGavin Grimm filed the lawsuit after the school board adopted a policy that required students to use a private toilet or one that corresponds to the sex listed on their birth certificate.\nGrimm, who identifies as male, said the policy was stigmatizing.\nHow transgender people use public toilets is a divisive issue in the US.\nA number of places in the US - most recently North Carolina - have passed laws requiring transgender people to use a public toilet that corresponds to the sex listed on their birth certificate.\nThe North Carolina law in particular has been sharply criticised as discriminatory and several companies have stopped doing business in the state as a result.\nIn the Grimm case, the three-judge panel found the Gloucester County District policy violated Title IX, a federal law which prohibits gender discrimination at schools that receive federal funding.\nThe Gloucester County District said the policy was meant to respect the privacy of all students.\nImage copyright Reuters\nImage caption Gender-neutral toilets are becoming more common in some parts of the US\nA federal judge had earlier rejected Grimm's sex discrimination claim, saying Title IX only protects students from discrimination based on biological sex, not gender identity.\nOther federal rulings in similar cases have also ruled that Title IX does not apply to transgender students.\nThis federal ruling could have wider implications because it creates a legal precedent in five states including North Carolina. The America Civil Liberties Union (ACLU) and others have already filed a challenge to North Carolina's transgender law.\nSome supporters of these policies said allowing transgender people to choose their restroom could lead to women and children being attacked.\nThey said they feared that predatory men could pose as transgender people and use legal protections as a cover.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":36.60954998604306,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of North Carolina\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.24333546787884,\"sw-lng\":-83.6674744083173,\"styles\":[],\"ne-lat\":39.450834166563496,\"annotations\":[],\"sw-lat\":36.53977459582093}",
+            "caption": "Map of Virginia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Virginia]\",\"score\":\"1.0\",\"caption\":\"Map of Virginia\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.14,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":39.71,\"annotations\":[{\"title\":\"Gloucester County, New Jersey\",\"lng\":-75.14,\"lat\":39.71}],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Virginia, North Carolina, and Gloucester County, New Jersey",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Virginia,North Carolina,Gloucester County, New Jersey]\",\"score\":\"1.0\",\"caption\":\"Map of Virginia, North Carolina, and Gloucester County, New Jersey\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":36.60954998604306,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of North Carolina\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.24333546787884,\"sw-lng\":-83.6674744083173,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":39.450834166563496,\"annotations\":[],\"sw-lat\":36.53977459582093}",
+            "caption": "Map of Virginia",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Virginia]\",\"score\":\"1.0\",\"caption\":\"Map of Virginia\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.14,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":39.71,\"annotations\":[{\"title\":\"Gloucester County, New Jersey\",\"lng\":-75.14,\"lat\":39.71}],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Virginia, North Carolina, and Gloucester County, New Jersey",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Virginia,North Carolina,Gloucester County, New Jersey]\",\"score\":\"1.0\",\"caption\":\"Map of Virginia, North Carolina, and Gloucester County, New Jersey\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+      "title": "Transgender rights in the United States",
+      "images": [
+        {
+          "caption": "The procedure each state uses to alter the sex on one's birth certificate.      ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Transgender rights in the United States\",\"link-anchor-text\":\"\",\"score\":\"0.7146318900414727\",\"caption\":\"The procedure each state uses to alter the sex on one's birth certificate.      \",\"method\":\"esa\",\"debug\":\"esa (0.7146318900414727)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Birth_certificate_sex_altering_regulations_in_the_US.svg",
+          "legend": "33.png"
+        }
+      ]
+    },
+    {
+      "title": "Transgender rights in the United States",
+      "images": [
+        {
+          "caption": "Current U.S. LGBT employment discrimination laws.      ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Transgender rights in the United States\",\"link-anchor-text\":\"\",\"score\":\"0.7146318900414727\",\"caption\":\"Current U.S. LGBT employment discrimination laws.      \",\"method\":\"esa\",\"debug\":\"esa (0.7146318900414727)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/LGBT_employment_discrimination_law_in_the_United_States.svg",
+          "legend": "34.png"
+        }
+      ]
+    },
+    {
+      "title": "Transgender rights in the United States",
+      "images": [
+        {
+          "caption": "Legal requirements each state has for altering the sex on one's birth certificate.    ---- 1Some Texas officials have refused to amend the sex on birth certificates to reflect a sex change after the ruling Littleton v. Prange; however, a judge can order an amendment.  2Illinois does not require genital reconstruction surgery to amend the sex on birth certificates, but it does require proof of an \"operation.\"",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Transgender rights in the United States\",\"link-anchor-text\":\"\",\"score\":\"0.7146318900414727\",\"caption\":\"Legal requirements each state has for altering the sex on one's birth certificate.    ---- 1Some Texas officials have refused to amend the sex on birth certificates to reflect a sex change after the ruling Littleton v. Prange; however, a judge can order an amendment.  2Illinois does not require genital reconstruction surgery to amend the sex on birth certificates, but it does require proof of an \\\"operation.\\\"\",\"method\":\"esa\",\"debug\":\"esa (0.7146318900414727)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Requirements_for_altering_birth_certificate_sex_in_the_US.svg",
+          "legend": "35.png"
+        }
+      ]
+    },
+    {
+      "title": "Transgender rights in the United States",
+      "images": [
+        {
+          "caption": "States that prohibit housing discrimination based on sexual orientation or gender identity. HUD regulations require all housing providers that receive HUD funding not to discriminate against an individual's sexual orientation or gender identity.   ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Transgender rights in the United States\",\"link-anchor-text\":\"\",\"score\":\"0.7146318900414727\",\"caption\":\"States that prohibit housing discrimination based on sexual orientation or gender identity. HUD regulations require all housing providers that receive HUD funding not to discriminate against an individual's sexual orientation or gender identity.   \",\"method\":\"esa\",\"debug\":\"esa (0.7146318900414727)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/US_LGBT_housing_discrimination.svg",
+          "legend": "36.png"
+        }
+      ]
+    },
+    {
+      "title": "Transgender activism",
+      "images": [
+        {
+          "caption": "A gender symbol commonly used to represent transgender people.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Transgender activism\",\"link-anchor-text\":\"\",\"score\":\"0.6608730187284674\",\"caption\":\"A gender symbol commonly used to represent transgender people.\",\"method\":\"esa\",\"debug\":\"esa (0.6608730187284674)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/A_TransGender-Symbol_Plain3.svg"
+        }
+      ]
+    },
+    {
+      "title": "History of transgender people in the United States",
+      "images": [
+        {
+          "caption": "The Transgender Pride flag, created by openly transgender American woman Monica Helms.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"History of transgender people in the United States\",\"link-anchor-text\":\"\",\"score\":\"0.6535684197248812\",\"caption\":\"The Transgender Pride flag, created by openly transgender American woman Monica Helms.\",\"method\":\"esa\",\"debug\":\"esa (0.6535684197248812)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Transgender_Pride_flag.svg"
+        }
+      ]
+    },
+    {
+      "title": "Changing legal gender assignment in Brazil",
+      "images": [
+        {
+          "caption": "Laws concerning gender identity-expression by country or territory   ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Changing legal gender assignment in Brazil\",\"link-anchor-text\":\"\",\"score\":\"0.6124255236140201\",\"caption\":\"Laws concerning gender identity-expression by country or territory   \",\"method\":\"esa\",\"debug\":\"esa (0.6124255236140201)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Laws_concerning_gender_identity-expression_by_country_or_territory.svg",
+          "legend": "37.png"
+        }
+      ]
+    },
+    {
+      "title": "LGBT rights in Georgia (U.S. state)",
+      "images": [
+        {
+          "caption": "Map of Georgia counties, cities, and unincorporated communities that have sexual orientation and/or gender identity anti–employment discrimination ordinances      ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"LGBT rights in Georgia (U.S. state)\",\"link-anchor-text\":\"\",\"score\":\"0.6033899998656027\",\"caption\":\"Map of Georgia counties, cities, and unincorporated communities that have sexual orientation and/or gender identity anti\\u2013employment discrimination ordinances      \",\"method\":\"esa\",\"debug\":\"esa (0.6033899998656027)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Georgia_counties_and_cities_with_sexual_orientation_and_gender_identity_protection.svg",
+          "legend": "38.png"
+        }
+      ]
+    },
+    {
+      "title": "Sexism",
+      "images": [
+        {
+          "caption": "Gender pay gap in average gross hourly earnings according to Eurostat 2008.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sexism\",\"link-anchor-text\":\"gender discrimination\",\"score\":\"0.05959656622036952\",\"caption\":\"Gender pay gap in average gross hourly earnings according to Eurostat 2008.\",\"method\":\"wikify\",\"debug\":\"=> gender discrimination wiki(2, 0.05959656622036952)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/EU_27_Gender_Pay_Gap.001.png"
+        }
+      ]
+    },
+    {
+      "title": "Sexism",
+      "images": [
+        {
+          "caption": "Median weekly earnings of full-time wage and salary workers, by sex, race, and ethnicity, U.S., 2009.U.S. Bureau of Labor Statistics. Highlights of Women’s Earnings in 2009. Report 1025, June 2010.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sexism\",\"link-anchor-text\":\"gender discrimination\",\"score\":\"0.05959656622036952\",\"caption\":\"Median weekly earnings of full-time wage and salary workers, by sex, race, and ethnicity, U.S., 2009.U.S. Bureau of Labor Statistics. Highlights of Women\\u2019s Earnings in 2009. Report 1025, June 2010.\",\"method\":\"wikify\",\"debug\":\"=> gender discrimination wiki(2, 0.05959656622036952)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/US_gender_pay_gap%2C_by_sex%2C_race-ethnicity-2009.png"
+        }
+      ]
+    },
+    {
+      "title": "Sex",
+      "images": [
+        {
+          "caption": "Like humans and other mammals, the common fruit fly has an XY sex-determination system.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sex\",\"link-anchor-text\":\"biological sex\",\"score\":\"0.022856537252269757\",\"caption\":\"Like humans and other mammals, the common fruit fly has an XY sex-determination system.\",\"method\":\"wikify\",\"debug\":\"=> biological sex wiki(1, 0.022856537252269757)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Drosophila_XY_sex-determination.svg"
+        }
+      ]
+    },
+    {
+      "title": "Sex",
+      "images": [
+        {
+          "caption": "Sex helps the spread of advantageous traits through recombination. The diagrams compare evolution of allele frequency in a sexual population (top) and an asexual population (bottom). The vertical axis shows frequency and the horizontal axis shows time. The alleles a/A and b/B occur at random. The advantageous alleles A and B, arising independently, can be rapidly combined by sexual reproduction into the most advantageous combination AB. Asexual reproduction takes longer to achieve this combination, because it can only produce AB if A arises in an individual which already has B, or vice versa.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sex\",\"link-anchor-text\":\"biological sex\",\"score\":\"0.022856537252269757\",\"caption\":\"Sex helps the spread of advantageous traits through recombination. The diagrams compare evolution of allele frequency in a sexual population (top) and an asexual population (bottom). The vertical axis shows frequency and the horizontal axis shows time. The alleles a/A and b/B occur at random. The advantageous alleles A and B, arising independently, can be rapidly combined by sexual reproduction into the most advantageous combination AB. Asexual reproduction takes longer to achieve this combination, because it can only produce AB if A arises in an individual which already has B, or vice versa.\",\"method\":\"wikify\",\"debug\":\"=> biological sex wiki(1, 0.022856537252269757)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Evolsex-dia2a.svg"
+        }
+      ]
+    },
+    {
+      "title": "Sex",
+      "images": [
+        {
+          "caption": "Flowers are the sexual organs of flowering plants, usually containing both male and female parts.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sex\",\"link-anchor-text\":\"biological sex\",\"score\":\"0.022856537252269757\",\"caption\":\"Flowers are the sexual organs of flowering plants, usually containing both male and female parts.\",\"method\":\"wikify\",\"debug\":\"=> biological sex wiki(1, 0.022856537252269757)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Mature_flower_diagram.svg"
+        }
+      ]
+    },
+    {
+      "title": "Sex",
+      "images": [
+        {
+          "caption": "The life cycle of sexually reproducing organisms cycles through haploid and diploid stages",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Sex\",\"link-anchor-text\":\"biological sex\",\"score\":\"0.022856537252269757\",\"caption\":\"The life cycle of sexually reproducing organisms cycles through haploid and diploid stages\",\"method\":\"wikify\",\"debug\":\"=> biological sex wiki(1, 0.022856537252269757)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Sexual_cycle.svg"
+        }
+      ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 9.93,
+        "cpuTime": 10.406284273
+    },
+    "success": true
+}

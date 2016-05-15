@@ -1,0 +1,133 @@
+{
+    "message": "",
+    "text": "JACKSON, Miss. \u2014 It was not that long ago that Victoria Fortenberry figured she would mark her 18th birthday by getting on a bus and getting out of Mississippi. But here she was, blue-haired, tattooed and 19 years old, singing at a party for a new line of craft beer to a crowd that included her girlfriend.\nMs. Fortenberry came here to attend a Christian college and found a place where she could be unashamedly Southern and openly gay in a way not possible in her conservative suburban hometown, or even in the Jackson of a decade ago. And so: \u201CAt some point,\u201D she said, \u201CI decided I won\u2019t just leave.\u201D\nJackson may not register nationally as an outpost of bohemianism or urbane liberalism. But its city government, which is majority black and Democratic, refuses to fly the Confederate-themed state flag at municipal buildings, and this month voted unanimously to oppose a new state law that creates special legal protections for opponents of same-sex marriage. And it has a place for blue-haired singers \u2014 and their girlfriends.\nJackson is among a group of Southern cities from Dallas to Durham, N.C., where the digital commons, economic growth and a rising cohort of millennials have helped remake the culture. Many of these cities have found themselves increasingly at odds with their states, and here in a region that remains the most conservative in the country, the conflicts are growing more frequent and particularly pitched.\nFights are raging over gay rights here and in North Carolina, where a new law limits transgender bathroom access and pre-empts local governments from passing their own anti-discrimination ordinances. The resistance has been fierce in North Carolina, where companies have called off expansion plans and Ringo Starr and Bruce Springsteen have canceled concerts.\nThe potential consequences of these boycotts point up the complications, though: In a South dominated by the politics of rural and suburban conservatives, a canceled rock concert or technology project is likely to punish the places that oppose the legislation, and have little effect on the areas that support it.\u201CWe\u2019ve got this divide,\u201D said Ferrel Guillory, the director of the Program on Public Life at the University of North Carolina at Chapel Hill. \u201CThe divide between the cultural conservatism of older suburbs and older rural areas, and these new, thriving, modern economy, diverse cities.\u201D\nThe skirmishes over gay rights are only part of the growing rift between Southern cities, with their mostly Democratic municipal governments, and Southern state legislatures, which have come to be dominated by Republicans.\nLawmakers in Alabama recently blocked cities from setting their own minimum wages, while Charlotte and Jackson have fought with the states over control of their airports. North Carolina\u2019s Republican legislature has redrawn city council districts and tried to stop municipalities from becoming \u201Csanctuary cities\u201D for immigrants. The Arkansas and Tennessee legislatures have passed laws that, like North Carolina\u2019s, ban local anti-discrimination ordinances that differ from state law.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":36.60954998604306,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of North Carolina\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":149.97207507627584,\"sw-lng\":-91.65734257170229,\"styles\":[],\"ne-lat\":35.00007733030448,\"annotations\":[],\"sw-lat\":-39.144952080999886}",
+            "caption": "Map of Mississippi, and Victoria (Australia)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Mississippi,Victoria (Australia)]\",\"score\":\"1.0\",\"caption\":\"Map of Mississippi, and Victoria (Australia)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Republican Party (United States), North Carolina, Mississippi, Dallas, Tennessee, Victoria (Australia), Alabama, Arkansas, University of North Carolina at Chapel Hill, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Republican Party (United States),North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), North Carolina, Mississippi, Dallas, Tennessee, Victoria (Australia), Alabama, Arkansas, University of North Carolina at Chapel Hill, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Republican Party (United States), North Carolina, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Republican Party (United States),North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), North Carolina, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":36.60954998604306,\"annotations\":[],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of North Carolina",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of North Carolina\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":149.97207507627584,\"sw-lng\":-91.65734257170229,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":35.00007733030448,\"annotations\":[],\"sw-lat\":-39.144952080999886}",
+            "caption": "Map of Mississippi, and Victoria (Australia)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Mississippi,Victoria (Australia)]\",\"score\":\"1.0\",\"caption\":\"Map of Mississippi, and Victoria (Australia)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Republican Party (United States), North Carolina, Mississippi, Dallas, Tennessee, Victoria (Australia), Alabama, Arkansas, University of North Carolina at Chapel Hill, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Republican Party (United States),North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), North Carolina, Mississippi, Dallas, Tennessee, Victoria (Australia), Alabama, Arkansas, University of North Carolina at Chapel Hill, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.45181230399993,\"sw-lng\":-84.3246277278873,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":38.88541667,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":33.84796784100003}",
+            "caption": "Map of Republican Party (United States), North Carolina, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Republican Party (United States),North Carolina]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), North Carolina, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+      "title": "Same-sex marriage",
+      "images": [
+        {
+          "caption": "Recognition of same-sex unions in the Lesser Antilles",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Same-sex marriage\",\"link-anchor-text\":\"same-sex marriage\",\"score\":\"0.041610349488318196\",\"caption\":\"thumb\",\"method\":\"wikify\",\"debug\":\"=> same-sex marriage wiki(1, 0.041610349488318196)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Same-sex_legislation_Lesser_Antilles_%28named%29.svg",
+          "legend": "27.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 92656
+    },
+    {
+      "title": "Same-sex marriage",
+      "images": [
+        {
+          "caption": "Same-sex marriage map Oceania",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Same-sex marriage\",\"link-anchor-text\":\"same-sex marriage\",\"score\":\"0.041610349488318196\",\"caption\":\"   \",\"method\":\"wikify\",\"debug\":\"=> same-sex marriage wiki(1, 0.041610349488318196)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Same-sex_marriage_map_Oceania.svg",
+          "legend": "28.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 92656
+    },
+    {
+      "title": "Same-sex marriage",
+      "images": [
+        {
+          "caption": "       Colors higher in the list override those lower down. rings  individual cases",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Same-sex marriage\",\"link-anchor-text\":\"same-sex marriage\",\"score\":\"0.041610349488318196\",\"caption\":\"       Colors higher in the list override those lower down. rings  individual cases\",\"method\":\"wikify\",\"debug\":\"=> same-sex marriage wiki(1, 0.041610349488318196)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/World_marriage-equality_laws.svg",
+          "legend": "29.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 92656
+    },
+    {
+      "title": "Same-sex marriage",
+      "images": [
+        {
+          "caption": "Legal status of adoption by same-sex couples around the world:    1In Finland a law will come into force in 2017. 2In Estonia a law will come into force in 2016.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Same-sex marriage\",\"link-anchor-text\":\"same-sex marriage\",\"score\":\"0.041610349488318196\",\"caption\":\"Legal status of adoption by same-sex couples around the world:    1In Finland a law will come into force in 2017. 2In Estonia a law will come into force in 2016.\",\"method\":\"wikify\",\"debug\":\"=> same-sex marriage wiki(1, 0.041610349488318196)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/World_same-sex_adoption_laws.svg",
+          "legend": "30.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 92656
+    }],
+    "diagnostics": {
+        "userTime": 5.37,
+        "cpuTime": 5.638292452
+    },
+    "success": true
+}

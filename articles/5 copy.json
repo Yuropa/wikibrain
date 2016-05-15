@@ -1,0 +1,199 @@
+{
+    "message": "",
+    "text": "With more than a foot of rain falling in parts of Houston by Monday afternoon and much of the surrounding areas shut down, Texas Gov. Greg Abbott declared a state of disaster in nine counties.\nAt a late afternoon press conference, Abbott said there had been over 1,000 water rescues. Authorities also were investigating two fatalities to see if they were weather related.\nCrews watching the high water on a Houston freeway service road saw an 18-wheeler truck drive directly into high water, Harris County Precinct 5 Sgt. Herbert Martinez said. Workers later found the driver's body inside the truck.\n\u2014 Miya Shay (@miyashay) April 18, 2016\nOfficials also were trying to determine if the storm was responsible for the death of a contractor working for the city's airport system whose body was found in a submerged vehicle.\nThe floods turned commuting into a nightmare, forced schools in the nation's fourth-largest city to close and knocked out power to thousands of people who were urged to shelter in place.\nMayor Sylvester Turner told people to stay home to fend off a weather system he called \"stubborn.\" More rain was projected over the next two to three days although heavy downpours had subsided somewhat by midday and only another half-inch was expected through Monday night, he said.\nRain gauges in parts of Harris County, which includes most of Houston, showed water levels approaching 20 inches since late Sunday night. Ten-inch and higher rainfall amounts were common, particularly in west and north sections of the Southeast Texas area.\nThe Harris County Flood Control District reported 13 bayous and creeks out of their banks, several of them in Houston.\n\"There is water all over the place, there is flooding all over the place,\" Turner said.\nThe counties where Abbott declared a state of disaster were Austin, Bastrop, Colorado, Fort Bend, Grimes, Harris, Montgomery, Waller and Wharton.\nSeveral shelters were established for people forced from their homes.  At least 100 people taken from apartment complexes in the north part of the city were being sheltered at a shopping mall.\nHarris County Judge Ed Emmett, the county's chief administrator, said more than 1,000 homes were flooded.\n\"This is a rain event that's very significant, no question about it,\" he said. \"Many of those homes haven't flooded before.\"\nAbout 1 million students got the day off, including the Houston Independent School District's 215,000 students, Texas' largest public school district. Most colleges and universities also closed because of the bad weather.\nNo other major injuries were reported.\nDozens of Houston subdivisions flooded. At least two interstates -- I-10, the main east-west freeway, and I-45, the major north-south freeway -- were under water near downtown.\n\"We've seen those go under water before and they're under water again,\" Emmett said.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778}],\"sw-lat\":-72}",
+            "caption": "Map of Houston",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Houston]\",\"score\":\"1.0\",\"caption\":\"Map of Houston\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-93.51476444712156,\"sw-lng\":-106.66217655600326,\"styles\":[],\"ne-lat\":36.50019940038207,\"annotations\":[{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of Houston, and Texas",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Houston,Texas]\",\"score\":\"1.0\",\"caption\":\"Map of Houston, and Texas\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-93.51476444712156,\"sw-lng\":-106.66217655600326,\"styles\":[],\"ne-lat\":36.50019940038207,\"annotations\":[{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778},{\"title\":\"Harris County, Texas\",\"lng\":-95.39,\"lat\":29.86}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of Houston, Harris County, Texas, and Texas",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Houston,Harris County, Texas,Texas]\",\"score\":\"1.0\",\"caption\":\"Map of Houston, Harris County, Texas, and Texas\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-93.51476444712156,\"sw-lng\":-109.04662479899521,\"styles\":[],\"ne-lat\":40.99983318925027,\"annotations\":[{\"title\":\"Bastrop, Texas\",\"lng\":-97.316944444444,\"lat\":30.111944444444},{\"title\":\"Austin, Texas\",\"lng\":-97.733333333333,\"lat\":30.3},{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778},{\"title\":\"Harris County, Texas\",\"lng\":-95.39,\"lat\":29.86},{\"title\":\"Fort Bend County, Texas\",\"lng\":-95.77,\"lat\":29.53},{\"title\":\"Interstate 45\",\"lng\":-95.484409,\"lat\":30.357249}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of Bastrop, Texas, Austin, Texas, Houston, Harris County, Texas, Texas, Colorado, Fort Bend County, Texas, and Interstate 45",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Bastrop, Texas,Austin, Texas,Houston,Harris County, Texas,Texas,Colorado,Fort Bend County, Texas,Interstate 45]\",\"score\":\"1.0\",\"caption\":\"Map of Bastrop, Texas, Austin, Texas, Houston, Harris County, Texas, Texas, Colorado, Fort Bend County, Texas, and Interstate 45\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778}],\"sw-lat\":-72}",
+            "caption": "Map of Houston",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Houston]\",\"score\":\"1.0\",\"caption\":\"Map of Houston\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-93.51476444712156,\"sw-lng\":-106.66217655600326,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":36.50019940038207,\"annotations\":[{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of Houston, and Texas",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Houston,Texas]\",\"score\":\"1.0\",\"caption\":\"Map of Houston, and Texas\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-93.51476444712156,\"sw-lng\":-106.66217655600326,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":36.50019940038207,\"annotations\":[{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778},{\"title\":\"Harris County, Texas\",\"lng\":-95.39,\"lat\":29.86}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of Houston, Harris County, Texas, and Texas",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Houston,Harris County, Texas,Texas]\",\"score\":\"1.0\",\"caption\":\"Map of Houston, Harris County, Texas, and Texas\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-93.51476444712156,\"sw-lng\":-109.04662479899521,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":40.99983318925027,\"annotations\":[{\"title\":\"Bastrop, Texas\",\"lng\":-97.316944444444,\"lat\":30.111944444444},{\"title\":\"Austin, Texas\",\"lng\":-97.733333333333,\"lat\":30.3},{\"title\":\"Houston\",\"lng\":-95.383055555556,\"lat\":29.762777777778},{\"title\":\"Harris County, Texas\",\"lng\":-95.39,\"lat\":29.86},{\"title\":\"Fort Bend County, Texas\",\"lng\":-95.77,\"lat\":29.53},{\"title\":\"Interstate 45\",\"lng\":-95.484409,\"lat\":30.357249}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of Bastrop, Texas, Austin, Texas, Houston, Harris County, Texas, Texas, Colorado, Fort Bend County, Texas, and Interstate 45",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Bastrop, Texas,Austin, Texas,Houston,Harris County, Texas,Texas,Colorado,Fort Bend County, Texas,Interstate 45]\",\"score\":\"1.0\",\"caption\":\"Map of Bastrop, Texas, Austin, Texas, Houston, Harris County, Texas, Texas, Colorado, Fort Bend County, Texas, and Interstate 45\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Greater Houston",
+        "images": [{
+            "caption": "Location in the U.S. (red, though San Jacinto County is incorrectly included)",
+            "debug": "{\"title\":\"Greater Houston\",\"score\":\"0.5717203236488054\",\"caption\":\"Location in the U.S. (red, though San Jacinto County is incorrectly included)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2d\/Map_of_the_USA_highlighting_Greater_Houston.gif"
+        }],
+        "lang": "en",
+        "articleId": 322524
+    }, {
+        "title": "Galveston Bay Area",
+        "images": [{
+            "caption": "Map of the Bay Area",
+            "debug": "{\"title\":\"Galveston Bay Area\",\"score\":\"0.549773487163677\",\"caption\":\"Map of the Bay Area\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f0\/Galveston_bay_area.gif"
+        }],
+        "lang": "en",
+        "articleId": 12593222
+    }, {
+        "title": "Geography of Houston",
+        "images": [{
+            "caption": "Astronaut photograph of Houston at night.",
+            "debug": "{\"title\":\"Geography of Houston\",\"score\":\"0.5389952121649788\",\"caption\":\"Astronaut photograph of Houston at night.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/28\/Houston%2C_Texas_at_Night_2010-02-28.jpg"
+        }],
+        "lang": "en",
+        "articleId": 5928682
+    }, {
+        "title": "Geography of Houston",
+        "images": [{
+            "caption": "Map of the Houston city limits",
+            "debug": "{\"title\":\"Geography of Houston\",\"score\":\"0.5389952121649788\",\"caption\":\"Map of the Houston city limits\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f6\/Houstonmap.gif"
+        }],
+        "lang": "en",
+        "articleId": 5928682
+    }, {
+        "title": "Houston",
+        "images": [{
+            "caption": "Ashburn's Houston City Map (c. 1956)",
+            "debug": "{\"title\":\"Houston\",\"score\":\"0.15651496485252547\",\"caption\":\"Ashburn's Houston City Map (c. 1956)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/72\/Ashburn%27s_Houston_City_Map.jpg"
+        }],
+        "lang": "en",
+        "articleId": 13774
+    }, {
+        "title": "Houston",
+        "images": [{
+            "caption": "Map of racial\/ethnic distribution in the city of Houston, 2010 census. Each dot represents 25 people. Red dots represent White people, orange dots represent Hispanic people, blue dots represent Black people, green dots represent Asian people, and gray dots represent other people.",
+            "debug": "{\"title\":\"Houston\",\"score\":\"0.15651496485252547\",\"caption\":\"Map of racial\/ethnic distribution in the city of Houston, 2010 census. Each dot represents 25 people. Red dots represent White people, orange dots represent Hispanic people, blue dots represent Black people, green dots represent Asian people, and gray dots represent other people.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/8a\/Race_and_ethnicity_2010-_Houston.png"
+        }],
+        "lang": "en",
+        "articleId": 13774
+    }, {
+        "title": "Texas",
+        "images": [{
+            "caption": "Mexico in 1824. Coahuila y Tejas is the northeastern-most state.",
+            "debug": "{\"title\":\"Texas\",\"score\":\"0.05679759402855278\",\"caption\":\"Mexico in 1824. Coahuila y Tejas is the northeastern-most state.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/e6\/Mexico_1824_%28equirectangular_projection%29.png"
+        }],
+        "lang": "en",
+        "articleId": 29810
+    }, {
+        "title": "Texas",
+        "images": [{
+            "caption": "Texas map of Köppen climate classification.",
+            "debug": "{\"title\":\"Texas\",\"score\":\"0.05679759402855278\",\"caption\":\"Texas map of Köppen climate classification.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/68\/Texas_map_of_K%C3%B6ppen_climate_classification.svg"
+        }],
+        "lang": "en",
+        "articleId": 29810
+    }, {
+        "title": "Texas",
+        "images": [{
+            "caption": "Texas population density map.",
+            "debug": "{\"title\":\"Texas\",\"score\":\"0.05679759402855278\",\"caption\":\"Texas population density map.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/cb\/Texas_population_map2.png"
+        }],
+        "lang": "en",
+        "articleId": 29810
+    }, {
+        "title": "Texas",
+        "images": [{
+            "caption": "Proposals of 1850 for Texas northwestern boundary",
+            "debug": "{\"title\":\"Texas\",\"score\":\"0.05679759402855278\",\"caption\":\"Proposals of 1850 for Texas northwestern boundary\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/ac\/Texas_proposed_boundaries.svg"
+        }],
+        "lang": "en",
+        "articleId": 29810
+    }, {
+        "title": "Texas",
+        "images": [{
+            "caption": "Republic of Texas. The present-day outlines of the U.S. states superimposed on the boundaries of 1836\u20131845",
+            "debug": "{\"title\":\"Texas\",\"score\":\"0.05679759402855278\",\"caption\":\"Republic of Texas. The present-day outlines of the U.S. states superimposed on the boundaries of 1836\\u20131845\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/eb\/Wpdms_republic_of_texas.svg"
+        }],
+        "lang": "en",
+        "articleId": 29810
+    }, {
+        "title": "Austin, Texas",
+        "images": [{
+            "caption": "City limits of Austin",
+            "debug": "{\"title\":\"Austin, Texas\",\"score\":\"0.018697007029494887\",\"caption\":\"City limits of Austin\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/88\/AustinTXMap.png"
+        }],
+        "lang": "en",
+        "articleId": 1998
+    }, {
+        "title": "Austin, Texas",
+        "images": [{
+            "caption": "Austin's racial and ethnic geography - Red is Non-Hispanic White, Blue is African-American, Green is Asian-American, Orange is Hispanic\/Latino, Gray is Other. Each dot represents 25 people.",
+            "debug": "{\"title\":\"Austin, Texas\",\"score\":\"0.018697007029494887\",\"caption\":\"Austin's racial and ethnic geography - Red is Non-Hispanic White, Blue is African-American, Green is Asian-American, Orange is Hispanic\/Latino, Gray is Other. Each dot represents 25 people.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/93\/Race_and_ethnicity_Austin_%282000%29.png"
+        }],
+        "lang": "en",
+        "articleId": 1998
+    }],
+    "diagnostics": {
+        "userTime": 3.84,
+        "cpuTime": 4.086533812
+    },
+    "success": true
+}

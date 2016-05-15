@@ -1,0 +1,124 @@
+{
+    "message": "",
+    "text": "The Supreme Court appears to be divided over US President Barack Obama's plan to spare deportation for millions living in the country illegally.\nChief Justice John Roberts suggested in questioning he may side with Obama if the programmes enact some changes.\nThe White House wants to protect about four million people from deportation and give them work status in the US.\nBut 26 US states have objected, saying it will impose extra burdens like the issuing of driver licences.\nPresident Obama announced the plan, known as Deferred Action for Parents of Americans and Lawful Permanent Residents (DAPA), in November 2014. The plan has been put on hold by lower courts.\nImage copyright EPA\nImage caption Supporters of the law argue it keeps families safe and holds them together\nThe four liberal justices appeared to back Mr Obama's policies while the four conservatives, including Mr Roberts, appeared opposed or unsure.\nThere is a strong possibility the court will vote in a 4-4 deadlock, and block the programmes.\nOn the campaign trail on Monday in New York, Democratic front-runner Hillary Clinton said if she were to become president, she would \"go further\" than the Obama plan.\nShe said she will propose comprehensive immigration reform legislation within 100 days of being in office and create a path to citizenship for undocumented people.\nThe states opposed to the plan say it would increase costs for law enforcement, health care and education.\nRepublicans are unhappy that the president has - in their view - overstepped his powers by using executive orders that bypass Congress.\nBut Mr Obama says immigration reform has languished in Congress for too long.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of New York",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York]\",\"score\":\"1.0\",\"caption\":\"Map of New York\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"New York\",\"lng\":-75.6891521001872,\"lat\":42.99024822427344},{\"title\":\"White House\",\"lng\":-77.03655,\"lat\":38.897669444444}],\"sw-lat\":38.897669444444}",
+            "caption": "Map of New York, White House, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York,White House]\",\"score\":\"1.0\",\"caption\":\"Map of New York, White House, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01012196900011,\"annotations\":[],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of New York",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York]\",\"score\":\"1.0\",\"caption\":\"Map of New York\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"White House\",\"lng\":-77.03655,\"lat\":38.897669444444}],\"sw-lat\":38.897669444444}",
+            "caption": "Map of New York, White House, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York,White House]\",\"score\":\"1.0\",\"caption\":\"Map of New York, White House, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+      "title": "Presidency of Barack Obama",
+      "images": [
+        {
+          "caption": "Most Arab states experienced turmoil during the Arab Spring.    ",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Presidency of Barack Obama\",\"link-anchor-text\":\"\",\"score\":\"0.728808844469478\",\"caption\":\"Most Arab states experienced turmoil during the Arab Spring.    \",\"method\":\"esa\",\"debug\":\"esa (0.728808844469478)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Arab_Spring_and_Regional_Conflict_Map.svg",
+          "legend": "16.png"
+        }
+      ]
+    },
+    {
+      "title": "Presidency of Barack Obama",
+      "images": [
+        {
+          "caption": "Obama won re-election with 332 electoral votes and 51.1% of the popular vote.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Presidency of Barack Obama\",\"link-anchor-text\":\"\",\"score\":\"0.728808844469478\",\"caption\":\"Obama won re-election with 332 electoral votes and 51.1% of the popular vote.\",\"method\":\"esa\",\"debug\":\"esa (0.728808844469478)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/ElectoralCollege2012.svg"
+        }
+      ]
+    },
+    {
+      "title": "Presidency of Barack Obama",
+      "images": [
+        {
+          "caption": "Obama's international agreements and air strikes",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Presidency of Barack Obama\",\"link-anchor-text\":\"\",\"score\":\"0.728808844469478\",\"caption\":\"        \",\"method\":\"esa\",\"debug\":\"esa (0.728808844469478)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Obama_international_agreements_and_air_strikes.png",
+          "legend": "17.png"
+        }
+      ]
+    },
+    {
+      "title": "Barack Obama",
+      "images": [
+        {
+          "caption": "County results of the 2004 U.S. Senate race in Illinois. Obama won the counties in blue.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Barack Obama\",\"link-anchor-text\":\"Barack Obama's\",\"score\":\"0.21986683638499951\",\"caption\":\"County results of the 2004 U.S. Senate race in Illinois. Obama won the counties in blue.\",\"method\":\"wikify\",\"debug\":\"=> Barack Obama's wiki(5, 0.21986683638499951)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/2004_Illinois_Senate_results.svg"
+        }
+      ]
+    },
+    {
+      "title": "Barack Obama",
+      "images": [
+        {
+          "caption": "Maximum Out-of-Pocket Premium as Percentage of Family Income and federal poverty level, under Patient Protection and Affordable Care Act, starting in 2014 (Source: CRS)",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Barack Obama\",\"link-anchor-text\":\"Barack Obama's\",\"score\":\"0.21986683638499951\",\"caption\":\"Maximum Out-of-Pocket Premium as Percentage of Family Income and federal poverty level, under Patient Protection and Affordable Care Act, starting in 2014 (Source: CRS)\",\"method\":\"wikify\",\"debug\":\"=> Barack Obama's wiki(5, 0.21986683638499951)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/PPACA_Premium_Chart.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Barack Obama",
+      "images": [
+        {
+          "caption": "Deficit and Debt increases 2001–2015",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Barack Obama\",\"link-anchor-text\":\"Barack Obama's\",\"score\":\"0.21986683638499951\",\"caption\":\"Deficit and Debt increases 2001\\u20132015\",\"method\":\"wikify\",\"debug\":\"=> Barack Obama's wiki(5, 0.21986683638499951)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/U.S._Total_Deficits_vs._National_Debt_Increases_2001-2010.png"
+        }
+      ]
+    },
+    {
+      "title": "Barack Obama",
+      "images": [
+        {
+          "caption": "Employment statistics (changes in unemployment rate and net jobs per month) during Obama's tenure as U.S. President",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Barack Obama\",\"link-anchor-text\":\"Barack Obama's\",\"score\":\"0.21986683638499951\",\"caption\":\"Employment statistics (changes in unemployment rate and net jobs per month) during Obama's tenure as U.S. President\",\"method\":\"wikify\",\"debug\":\"=> Barack Obama's wiki(5, 0.21986683638499951)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/US_Employment_Statistics.svg"
+        }
+      ]
+    },
+    {
+      "title": "Hillary Clinton",
+      "images": [
+        {
+          "caption": "State-by-state popular votes in the Democratic primaries and caucuses, shaded by percentage won: Obama in purple, Clinton in green. (Popular vote winners and delegate winners differed in New Hampshire, Nevada, Missouri, Texas, and Guam.)",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Hillary Clinton\",\"link-anchor-text\":\"Hillary Clinton\",\"score\":\"0.028542054244590227\",\"caption\":\"State-by-state popular votes in the Democratic primaries and caucuses, shaded by percentage won: Obama in purple, Clinton in green. (Popular vote winners and delegate winners differed in New Hampshire, Nevada, Missouri, Texas, and Guam.)\",\"method\":\"wikify\",\"debug\":\"=> Hillary Clinton wiki(1, 0.028542054244590227)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/2008_Democratic_Primaries_Popular_Vote.svg"
+        }
+      ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 10.46,
+        "cpuTime": 10.758537758
+    },
+    "success": true
+}

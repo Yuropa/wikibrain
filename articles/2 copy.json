@@ -1,0 +1,82 @@
+{
+    "message": "",
+    "text": "Close to 63% of Utah's population is Mormon\nThe US state of Utah has become the first to declare pornography a public health risk in a move its governor says is to \"protect our families and our young people\".\nThe bill does not ban pornography in the mainly Mormon state.\nHowever, it calls for greater \"efforts to prevent pornography exposure and addiction\".\nOne group representing the adult entertainment industry attacked what it called \"an old-fashioned morals bill\".\nPornography, the bill says , \"perpetuates a sexually toxic environment\" and \"is contributing to the hypersexualisation of teens, and even prepubescent children, in our society\".\nFurther steps must be taken to change \"education, prevention, research, and policy change at the community and societal level\" against what it calls an epidemic, but it does not suggest how changes should be implemented.\nThe bill was signed by Republican Governor Gary Herbert, who said the volume of pornography in society was \"staggering\".\nOne 2009 study by Harvard Business School said that Utah was the state with the highest percentage of online porn subscribers in the US.\nSome studies have, however, indicated that porn may not be addictive .\n'Avoid stigmatism'\nThe bill was supported by the anti-porn campaign group Fight the New Drug . Reports have pointed out the group's founders are all members of the conservative Church of Jesus Christ of Latter-day Saints, or the Mormon Church.\nClose to 63% of the state's residents are Mormon , but Fight the New Drug's leaders have denied working on behalf of the Mormon Church.\nThe Free Speech Coalition, a porn industry association, called for more dialogue.\n\"We should live in a society where sexuality is spoken about openly, and discussed in nuanced and educated ways, and not stigmatised,\" said Mike Stabile, a spokesman for the group.\n\"We all should work together to prevent non-adults from accessing adult material.\"\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-109.04633182955024,\"sw-lng\":-114.04254764955438,\"styles\":[],\"ne-lat\":42.00007732980495,\"annotations\":[],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Utah\",\"method\":\"ref-map\"}"
+        }
+        ],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.1225,\"sw-lng\":-114.04254764955438,\"styles\":[],\"ne-lat\":42.3672,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667},{\"title\":\"Harvard Business School\",\"lng\":-71.1225,\"lat\":42.3672}],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Republican Party (United States), Harvard Business School, and Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Republican Party (United States),Harvard Business School,Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), Harvard Business School, and Utah\",\"method\":\"ref-map\"}"
+        }
+        ],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-109.04633182955024,\"sw-lng\":-114.04254764955438,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":42.00007732980495,\"annotations\":[],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Utah\",\"method\":\"ref-map\"}"
+        }
+        ],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.1225,\"sw-lng\":-114.04254764955438,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":42.3672,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667},{\"title\":\"Harvard Business School\",\"lng\":-71.1225,\"lat\":42.3672}],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Republican Party (United States), Harvard Business School, and Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Republican Party (United States),Harvard Business School,Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), Harvard Business School, and Utah\",\"method\":\"ref-map\"}"
+        }
+        ],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Pornography",
+        "images": [{
+            "caption": "World map of pornography (18+) laws",
+            "debug": "{\"title\":\"Pornography\",\"score\":\"0.3264228367528992\",\"caption\":\"World map of pornography (18+) laws    \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/63\/Pornography_laws.svg",
+            "legend": "1.png"
+        }
+        ],
+        "lang": "en",
+        "articleId": 5710507
+    }, {
+        "title": "Pornography",
+        "images": [{
+            "caption": "XXX is used to designate pornographic material in the U.S. and other regions around the world",
+            "debug": "{\"title\":\"Pornography\",\"score\":\"0.3264228367528992\",\"caption\":\"XXX is used to designate pornographic material in the U.S. and other regions around the world\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/bc\/XXX_P_icon.png"
+        }
+        ],
+        "lang": "en",
+        "articleId": 5710507
+    }, {
+        "title": "Mormons",
+        "images": [{
+            "caption": "Global distribution of LDS Church members in 2009",
+            "debug": "{\"title\":\"Mormons\",\"score\":\"0.17313113291703838\",\"caption\":\"Global distribution of LDS Church members in 2009\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/05\/LDS_Global_Distribution.svg"
+        }
+        ],
+        "lang": "en",
+        "articleId": 18925
+    }
+    ],
+    "diagnostics": {
+        "userTime": 10.92,
+        "cpuTime": 11.551917504
+    },
+    "success": true
+}

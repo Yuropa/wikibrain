@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <title>Articles</title>
+        <style>
+            pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+            .string { color: green; }
+            .number { color: darkorange; }
+            .boolean { color: blue; }
+            .null { color: magenta; }
+            .key { color: red; }
+        </style>
+        
+    </head>
+    <body>
+        <script>
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            
+            var i = getParameterByName('id');
+            if (i == undefined) {
+                i = 1;
+            }
+            
+            document.title = i;
+            
+            function syntaxHighlight(json) {
+                if (typeof json != 'string') {
+                     json = JSON.stringify(json, undefined, 2);
+                }
+                json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                    var cls = 'number';
+                    if (/^"/.test(match)) {
+                        if (/:$/.test(match)) {
+                            cls = 'key';
+                        } else {
+                            cls = 'string';
+                        }
+                    } else if (/true|false/.test(match)) {
+                        cls = 'boolean';
+                    } else if (/null/.test(match)) {
+                        cls = 'null';
+                    }
+                    return '<span class="' + cls + '">' + match + '</span>';
+                });
+            }
+            
+            
+            
+            $.ajax({url : i + '-text.json', 
+                success: function(x) {
+                    var text = JSON.parse(x).content;
+                    var url = "?lang=en&method=all&text=" + encodeURI(text);
+
+                    $.ajax({
+                        url: "http://spatialization.cs.umn.edu/comparifact" + "/images" + url,
+                        type: 'POST',
+                        contentType: 'text/plain',
+                        success: function(updated) {
+                            updated = updated.articles;
+
+                            $.ajax({url : i + '.json', 
+                                success: function(x) {
+                                    var result = JSON.parse(x);
+                                    
+                                    // Update the result
+                                    for (var i = 0; i < result.articles.length; i++) {
+                                        for (var j = 0; j < result.articles[i].images.length; j++) {
+                                            var origImg = result.articles[i].images[j];
+                                            if ("refMap" in origImg) {
+                                                continue;
+                                            }
+                                            
+                                            for (var k = 0; k < updated.length; k++) {
+                                                for (var l = 0; l < updated[k].images.length; l++) {
+                                                    var newImg = updated[k].images[l];
+                                                    if ("refMap" in newImg) {
+                                                        continue;
+                                                    }
+                                                    
+                                                    if (origImg.url == newImg.url) {
+                                                        origImg.debug = newImg.debug;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            result.articles[i].images[j] = origImg;
+                                        }
+                                    }
+                                    
+                                    document.write('<pre>');
+                                    document.write(syntaxHighlight(result));
+                                    document.writeln('</pre>');
+                                }
+                            });
+                        },
+                        error: function(e) {
+                            document.writeln(e);
+                        }
+                    });
+
+                },
+                error: function(x) {
+                    document.writeln(x);
+                }
+            });
+        </script>
+    </body>
+</html>

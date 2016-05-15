@@ -1,0 +1,203 @@
+{
+    "message": "",
+    "text": "Thanks for staying tuned with us for tonight's New York primary coverage. Keep up with all of our US 2016 election coverage here.\nAP currently projects that he is winning 86 of 95 delegates in New York, and is on track to win at least 92 - Ted Cruz has won none, and John Kasich has won two.\nHillary Clinton is currently projected to have 170 of 291 delegates in New York.\nBernie Sanders apparently flew home to Vermont and left his travelling press corps in State College, Pennsylvania, home of Penn State University.\nA jubilant Hillary Clinton addresses supporters in New York City. To Sanders supporters, she says, there is \"much more that unites us than divides us\".The race for the Democratic nomination is in the home stretch and \"victory is in sight\" she said, to chants of \"Hillary! Hillary!\"\nDonald Trump has a visibly more civil tone since Paul Manafort took charge of his campaign, which New York Magazine outlines here. \n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of New York",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York]\",\"score\":\"1.0\",\"caption\":\"Map of New York\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67}],\"sw-lat\":-72}",
+            "caption": "Map of New York City",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York City]\",\"score\":\"1.0\",\"caption\":\"Map of New York City\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.50570682970636,\"sw-lng\":-77.862777777778,\"styles\":[],\"ne-lat\":45.01373107491463,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"Pennsylvania State University\",\"lng\":-77.862777777778,\"lat\":40.796111111111}],\"sw-lat\":40.67}",
+            "caption": "Map of New York City, Pennsylvania State University, Vermont, State College, Pennsylvania, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York City,Pennsylvania State University,Vermont]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, Pennsylvania State University, Vermont, State College, Pennsylvania, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-73.94,\"sw-lng\":-77.862777777778,\"styles\":[],\"ne-lat\":40.796111111111,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"Pennsylvania State University\",\"lng\":-77.862777777778,\"lat\":40.796111111111},{\"title\":\"State College, Pennsylvania\",\"lng\":-77.858611111111,\"lat\":40.791388888889}],\"sw-lat\":40.67}",
+            "caption": "Map of New York City, Pennsylvania State University, and State College, Pennsylvania",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York City,Pennsylvania State University,State College, Pennsylvania]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, Pennsylvania State University, and State College, Pennsylvania\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01012196900011,\"annotations\":[],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of New York",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York]\",\"score\":\"1.0\",\"caption\":\"Map of New York\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67}],\"sw-lat\":-72}",
+            "caption": "Map of New York City",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York City]\",\"score\":\"1.0\",\"caption\":\"Map of New York City\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.50570682970636,\"sw-lng\":-77.862777777778,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01373107491463,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"Pennsylvania State University\",\"lng\":-77.862777777778,\"lat\":40.796111111111}],\"sw-lat\":40.67}",
+            "caption": "Map of New York City, Pennsylvania State University, Vermont, State College, Pennsylvania, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York City,Pennsylvania State University,Vermont]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, Pennsylvania State University, Vermont, State College, Pennsylvania, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-73.94,\"sw-lng\":-77.862777777778,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":40.796111111111,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"Pennsylvania State University\",\"lng\":-77.862777777778,\"lat\":40.796111111111},{\"title\":\"State College, Pennsylvania\",\"lng\":-77.858611111111,\"lat\":40.791388888889}],\"sw-lat\":40.67}",
+            "caption": "Map of New York City, Pennsylvania State University, and State College, Pennsylvania",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York City,Pennsylvania State University,State College, Pennsylvania]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, Pennsylvania State University, and State College, Pennsylvania\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from New York",
+        "images": [{
+            "caption": "New York's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from New York\",\"score\":\"0.8153845560206033\",\"caption\":\"New York's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/3a\/New_York_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Pennsylvania",
+        "images": [{
+            "caption": "Pennsylvania's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Pennsylvania\",\"score\":\"0.7731829268587254\",\"caption\":\"Pennsylvania's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/20\/Pennsylvania_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Ohio",
+        "images": [{
+            "caption": "Ohio's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Ohio\",\"score\":\"0.7717830009332662\",\"caption\":\"Ohio's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/52\/Ohio_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Maryland",
+        "images": [{
+            "caption": "Maryland's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Maryland\",\"score\":\"0.7497400243405913\",\"caption\":\"Maryland's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/47\/Maryland_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Massachusetts",
+        "images": [{
+            "caption": "Massachusetts's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Massachusetts\",\"score\":\"0.7091288767644152\",\"caption\":\"Massachusetts's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fd\/Massachusetts_congressional_districts_large.pdf"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from North Carolina",
+        "images": [{
+            "caption": "North Carolina's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from North Carolina\",\"score\":\"0.6485371783849749\",\"caption\":\"North Carolina's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/3d\/North_Carolina_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Kentucky",
+        "images": [{
+            "caption": "Kentucky's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Kentucky\",\"score\":\"0.632794472187158\",\"caption\":\"Kentucky's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fd\/Kentucky_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Georgia",
+        "images": [{
+            "caption": "Georgia's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Georgia\",\"score\":\"0.6109585156185796\",\"caption\":\"Georgia's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/84\/Georgia_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "United States congressional delegations from Missouri",
+        "images": [{
+            "caption": "Missouri's congressional districts since 2013",
+            "debug": "{\"title\":\"United States congressional delegations from Missouri\",\"score\":\"0.6044967835916197\",\"caption\":\"Missouri's congressional districts since 2013\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/31\/Missouri_Congressional_Districts%2C_113th_Congress.tif"
+        }
+        ]
+    }, {
+        "title": "Hillary Clinton",
+        "images": [{
+            "caption": "State-by-state popular votes in the Democratic primaries and caucuses, shaded by percentage won: Obama in purple, Clinton in green. (Popular vote winners and delegate winners differed in New Hampshire, Nevada, Missouri, Texas, and Guam.)",
+            "debug": "{\"title\":\"Hillary Clinton\",\"score\":\"0.15156794425087108\",\"caption\":\"State-by-state popular votes in the Democratic primaries and caucuses, shaded by percentage won: Obama in purple, Clinton in green. (Popular vote winners and delegate winners differed in New Hampshire, Nevada, Missouri, Texas, and Guam.)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/5f\/2008_Democratic_Primaries_Popular_Vote.svg"
+        }
+        ]
+    }, {
+        "title": "John Kasich",
+        "images": [{
+            "caption": "Kasich was on the House Budget Committee from 1993-2001 and was the Chairman from 1995-2001 when Republicans retook the House.",
+            "debug": "{\"title\":\"John Kasich\",\"score\":\"0.09668989547038327\",\"caption\":\"Kasich was on the House Budget Committee from 1993-2001 and was the Chairman from 1995-2001 when Republicans retook the House.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/58\/House_Budget_Committee_logo.jpg"
+        }
+        ]
+    }, {
+        "title": "John Kasich",
+        "images": [{
+            "caption": "Campaign logo for Governor John Kasich's 2016 Presidential campaign",
+            "debug": "{\"title\":\"John Kasich\",\"score\":\"0.09668989547038327\",\"caption\":\"right\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/30\/Kasich_2016.png"
+        }
+        ]
+    }, {
+        "title": "John Kasich",
+        "images": [{
+            "caption": "Ohio gubernatorial 2010 election results. Kasich won 63 of the 88 counties.",
+            "debug": "{\"title\":\"John Kasich\",\"score\":\"0.09668989547038327\",\"caption\":\"Ohio gubernatorial 2010 election results. Kasich won 63 of the 88 counties.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/42\/Ohio_Governor_Election_Results_by_County%2C_2010.svg"
+        }
+        ]
+    }, {
+        "title": "John Kasich",
+        "images": [{
+            "caption": "Ohio gubernatorial 2014 election results. Kasich won 86 of the 88 counties.",
+            "debug": "{\"title\":\"John Kasich\",\"score\":\"0.09668989547038327\",\"caption\":\"Ohio gubernatorial 2014 election results. Kasich won 86 of the 88 counties.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f1\/Ohio_Governor_Election_Results_by_County%2C_2014.svg"
+        }
+        ]
+    }, {
+        "title": "New York City",
+        "images": [{
+            "caption": "A map with five insular regions of different colors.",
+            "debug": "{\"title\":\"New York City\",\"score\":\"0.052700348432055746\",\"caption\":\"A map with five insular regions of different colors.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/34\/5_Boroughs_Labels_New_York_City_Map.svg"
+        }
+        ]
+    }, {
+        "title": "New York City",
+        "images": [{
+            "caption": "The I Love New York logo, designed by Milton Glaser in 1977",
+            "debug": "{\"title\":\"New York City\",\"score\":\"0.052700348432055746\",\"caption\":\"The I Love New York logo, designed by Milton Glaser in 1977\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/d\/d5\/I_Love_New_York.svg"
+        }
+        ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 11.29,
+        "cpuTime": 11.89491223
+    },
+    "success": true
+}

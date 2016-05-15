@@ -1,0 +1,90 @@
+{
+    "message": "",
+    "text": "US tech giant Intel is shedding 12,000 jobs as it seeks to cut reliance on the declining personal computer market.\nThe maker of computer chips will take a $1.2bn charge to cover restructuring costs.\nThe job cuts, about 11% of Intel's workforce, will be made over the next 12 months, Intel said in a statement .\nIntel said it wants to \"accelerate evolution from a PC company to one that powers the cloud and billions of smart, connected computing devices\".\nThe company also said on Tuesday chief financial officer Stacy Smith would move to a new role leading sales, manufacturing and operations.\nIntel said it would begin a formal search process for a successor.\nShares in the company were down 2.5% in after-hours trading on Wall Street. Intel's stock price had already fallen 8.4% this year.\n'Uncomfortable bed'\nThe world's largest computer chipmaker also lowered its revenue forecast for the year.\nThe California-based company has been focusing on its higher-margin data centre business as it looks to reduce its dependence on the slowing PC market.\nGlobal personal computer shipments fell 11.5% in the first quarter, research firm IDC said on Monday.\nIntel did not identify where the job cuts would fall. Most of the company's factories are in the US.\nThe cuts were \"not a surprise,\" said NPD analyst Stephen Baker. \"For everybody who has made their bed in old tech, trying to lie in it is pretty uncomfortable right now.\"\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Wall Street\",\"lng\":-74.009444444444,\"lat\":40.706388888889}],\"sw-lat\":-72}",
+            "caption": "Map of Wall Street",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Wall Street]\",\"score\":\"1.0\",\"caption\":\"Map of Wall Street\",\"method\":\"ref-map\"}"
+        }
+        ],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Wall Street\",\"lng\":-74.009444444444,\"lat\":40.706388888889}],\"sw-lat\":-72}",
+            "caption": "Map of Wall Street",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Wall Street]\",\"score\":\"1.0\",\"caption\":\"Map of Wall Street\",\"method\":\"ref-map\"}"
+        }
+        ],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Multi-core processor",
+        "images": [{
+            "caption": "Diagram of a generic dual-core processor with CPU-local level-1 caches and a shared, on-die level-2 cache.",
+            "debug": "{\"title\":\"Multi-core processor\",\"score\":\"0.7609189805330956\",\"caption\":\"Diagram of a generic dual-core processor with CPU-local level-1 caches and a shared, on-die level-2 cache.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ec\/Dual_Core_Generic.svg"
+        }
+        ],
+        "lang": "en",
+        "articleId": 3503207
+    }, {
+        "title": "Transistor count",
+        "images": [{
+            "caption": "Plot of transistor counts against dates of introduction. The curve shows counts doubling every two years.",
+            "debug": "{\"title\":\"Transistor count\",\"score\":\"0.6161353199040499\",\"caption\":\"Plot of transistor counts against dates of introduction. The curve shows counts doubling every two years.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/00\/Transistor_Count_and_Moore%27s_Law_-_2011.svg"
+        }
+        ],
+        "lang": "en",
+        "articleId": 4469365
+    }, {
+        "title": "Intel",
+        "images": [{
+            "caption": "The Intel Inside logo from 1991 to 2006",
+            "debug": "{\"title\":\"Intel\",\"score\":\"0.360054054054054\",\"caption\":\"The Intel Inside logo from 1991 to 2006\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/44\/Intel_Inside_Logo.svg"
+        }
+        ],
+        "lang": "en",
+        "articleId": 14617
+    }, {
+        "title": "Personal computer",
+        "images": [{
+            "caption": "An exploded view of a modern personal computer and peripherals: ",
+            "debug": "{\"title\":\"Personal computer\",\"score\":\"0.2024324324324324\",\"caption\":\"An exploded view of a modern personal computer and peripherals: \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/4e\/Personal_computer%2C_exploded_6.svg"
+        }
+        ],
+        "lang": "en",
+        "articleId": 18457137
+    }, {
+        "title": "Personal computer",
+        "images": [{
+            "caption": "Personal computers worldwide in million distinguished by developed and developing world",
+            "debug": "{\"title\":\"Personal computer\",\"score\":\"0.2024324324324324\",\"caption\":\"Personal computers worldwide in million distinguished by developed and developing world\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/53\/Personal_computers_%28million%29_ITU.png"
+        }
+        ],
+        "lang": "en",
+        "articleId": 18457137
+    }, {
+        "title": "Integrated circuit",
+        "images": [{
+            "caption": "Schematic structure of a CMOS chip, as built in the early 2000s. The graphic shows LDD-MISFET's on an SOI substrate with five metallization layers and solder bump for flip-chip bonding. It also shows the section for FEOL (front-end of line), BEOL (back-end of line) and first parts of back-end process.",
+            "debug": "{\"title\":\"Integrated circuit\",\"score\":\"0.07016216216216216\",\"caption\":\"Schematic structure of a CMOS chip, as built in the early 2000s. The graphic shows LDD-MISFET's on an SOI substrate with five metallization layers and solder bump for flip-chip bonding. It also shows the section for FEOL (front-end of line), BEOL (back-end of line) and first parts of back-end process.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ee\/Cmos-chip_structure_in_2000s_%28en%29.svg"
+        }
+        ],
+        "lang": "en",
+        "articleId": 15150
+    }],
+    "diagnostics": {
+        "userTime": 6.86,
+        "cpuTime": 7.352617882
+    },
+    "success": true
+}

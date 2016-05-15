@@ -1,0 +1,207 @@
+{
+    "message": "",
+    "text": "A university educator who was mauled by a bear while teaching a mountaineering course to a group of students in southeast Alaska was in critical condition Tuesday.\nA sow with two cubs attacked Forest Wagner on Mount Emmerich, where he was leading 11 students and two teaching assistants Monday, University of Alaska Southeast spokeswoman Katie Bausler said. A student hiked down the mountain to get cellphone reception and called for help. No one else was hurt.\nA helicopter flew Wagner off the mountain and took him to an Anchorage hospital, where he is in intensive care, a university statement said. The hospital said Wagner, 35, of Juneau, would not give interviews.\nWagner has been coordinating and teaching in the university's outdoor studies program since 2006, according to his biography. He teaches rock and ice climbing, backcountry navigation, glacier travel and mountaineering.\nHis teaching schedule says he planned to leave the mountain by Tuesday.\nThe Haines Police Department alerted Alaska State Troopers to the attack Monday. After flying Wagner to the hospital, authorities took the students down from the mountain, and they spent the night in the town of Haines with another professor.\nStudents on Tuesday planned to take a ferry back to Juneau, about 90 miles north, Bausler said.\nWagner is the second man attacked by a bear in Alaska within days. A 77-year-old bear hunter is recovering at an Anchorage hospital from injuries he suffered when a grizzly mauled him in interior Alaska on Friday.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":51.215399481000176}",
+            "caption": "Map of Alaska",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Alaska]\",\"score\":\"1.0\",\"caption\":\"Map of Alaska\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[],\"ne-lat\":71.4125023460001,\"annotations\":[{\"title\":\"Juneau, Alaska\",\"lng\":-134.51166666667,\"lat\":58.351388888889}],\"sw-lat\":51.215399481000176}",
+            "caption": "Map of Juneau, Alaska, Alaska, and Anchorage, Alaska",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Juneau, Alaska,Alaska]\",\"score\":\"1.0\",\"caption\":\"Map of Juneau, Alaska, Alaska, and Anchorage, Alaska\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[],\"ne-lat\":71.4125023460001,\"annotations\":[{\"title\":\"University of Alaska Southeast\",\"lng\":-134.63861111111,\"lat\":58.385091666667},{\"title\":\"Juneau, Alaska\",\"lng\":-134.51166666667,\"lat\":58.351388888889}],\"sw-lat\":51.215399481000176}",
+            "caption": "Map of University of Alaska Southeast, Juneau, Alaska, Alaska, and Anchorage, Alaska",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[University of Alaska Southeast,Juneau, Alaska,Alaska]\",\"score\":\"1.0\",\"caption\":\"Map of University of Alaska Southeast, Juneau, Alaska, Alaska, and Anchorage, Alaska\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[],\"sw-lat\":51.215399481000176}",
+            "caption": "Map of Alaska",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Alaska]\",\"score\":\"1.0\",\"caption\":\"Map of Alaska\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[{\"title\":\"Juneau, Alaska\",\"lng\":-134.51166666667,\"lat\":58.351388888889}],\"sw-lat\":51.215399481000176}",
+            "caption": "Map of Juneau, Alaska, Alaska, and Anchorage, Alaska",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Juneau, Alaska,Alaska]\",\"score\":\"1.0\",\"caption\":\"Map of Juneau, Alaska, Alaska, and Anchorage, Alaska\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":179.78093509200014,\"sw-lng\":-179.1435033839999,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":71.4125023460001,\"annotations\":[{\"title\":\"University of Alaska Southeast\",\"lng\":-134.63861111111,\"lat\":58.385091666667},{\"title\":\"Juneau, Alaska\",\"lng\":-134.51166666667,\"lat\":58.351388888889}],\"sw-lat\":51.215399481000176}",
+            "caption": "Map of University of Alaska Southeast, Juneau, Alaska, Alaska, and Anchorage, Alaska",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[University of Alaska Southeast,Juneau, Alaska,Alaska]\",\"score\":\"1.0\",\"caption\":\"Map of University of Alaska Southeast, Juneau, Alaska, Alaska, and Anchorage, Alaska\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+      "title": "History of Alaska",
+      "images": [
+        {
+          "caption": "1860 map of Russian America.",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"History of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6513000819356354\",\"caption\":\"1860 map of Russian America.\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6513000819356354)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/1860-russian-america.jpg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 2534014
+    },
+    {
+      "title": "History of Alaska",
+      "images": [
+        {
+          "caption": "Alaska in 1895 (Rand McNally). The boundary of southeastern Alaska shown is that claimed by the United States prior to the conclusion of the Alaska boundary dispute.",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"History of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6513000819356354\",\"caption\":\"Alaska in 1895 (Rand McNally). The boundary of southeastern Alaska shown is that claimed by the United States prior to the conclusion of the Alaska boundary dispute.\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6513000819356354)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Alaska1895.jpg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 2534014
+    },
+    {
+      "title": "Outline of Alaska",
+      "images": [
+        {
+          "caption": "An enlargeable topographical map of the state of Alaska",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"Outline of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6090674502842537\",\"caption\":\"An enlargeable topographical map of the state of Alaska\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6090674502842537)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/800x598_Carte_Alaska_R3.jpg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 21930072
+    },
+    {
+      "title": "Outline of Alaska",
+      "images": [
+        {
+          "caption": "18px",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"Outline of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6090674502842537\",\"caption\":\"18px\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6090674502842537)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Alaska-StateSeal.svg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 21930072
+    },
+    {
+      "title": "Outline of Alaska",
+      "images": [
+        {
+          "caption": "An enlargeable map of the boroughs and census areas of the state of Alaska",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"Outline of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6090674502842537\",\"caption\":\"An enlargeable map of the boroughs and census areas of the state of Alaska\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6090674502842537)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Alaska_boroughs_and_census_areas_1997-2007.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 21930072
+    },
+    {
+      "title": "Outline of Alaska",
+      "images": [
+        {
+          "caption": "The location of the state of Alaska in relation to the rest of the United States of America",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"Outline of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6090674502842537\",\"caption\":\"The location of the state of Alaska in relation to the rest of the United States of America\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6090674502842537)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Alaska_in_United_States_%28US50%29.svg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 21930072
+    },
+    {
+      "title": "Outline of Alaska",
+      "images": [
+        {
+          "caption": "An enlargeable map of the state of Alaska",
+          "debug": "{\"esa-wikify-anchor-text\":\"Alaska\",\"title\":\"Outline of Alaska\",\"link-anchor-text\":\"\",\"score\":\"0.6090674502842537\",\"caption\":\"An enlargeable map of the state of Alaska\",\"method\":\"wikify-esa\",\"debug\":\"esa from (=> Alaska wiki(3, 0.10292199321680146)) esa (0.6090674502842537)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Map_of_Alaska_NA.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 21930072
+    },
+    {
+      "title": "Alaska",
+      "images": [
+        {
+          "caption": "Alaska's size compared with the 48 contiguous states. (Albers equal-area conic projection)",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Alaska\",\"link-anchor-text\":\"Alaska\",\"score\":\"0.10292199321680146\",\"caption\":\"Alaska's size compared with the 48 contiguous states. (Albers equal-area conic projection)\",\"method\":\"wikify\",\"debug\":\"=> Alaska wiki(3, 0.10292199321680146)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Alaska_area_compared_to_conterminous_US.svg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 624
+    },
+    {
+      "title": "Alaska",
+      "images": [
+        {
+          "caption": "Map depicting the climate zones of Alaska.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Alaska\",\"link-anchor-text\":\"Alaska\",\"score\":\"0.10292199321680146\",\"caption\":\"Map depicting the climate zones of Alaska.\",\"method\":\"wikify\",\"debug\":\"=> Alaska wiki(3, 0.10292199321680146)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Alaska_climate_regions_USGS.gif"
+        }
+      ],
+      "lang": "en",
+      "articleId": 624
+    },
+    {
+      "title": "Alaska",
+      "images": [
+        {
+          "caption": "Alaska map of Köppen climate classification.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Alaska\",\"link-anchor-text\":\"Alaska\",\"score\":\"0.10292199321680146\",\"caption\":\"Alaska map of Köppen climate classification.\",\"method\":\"wikify\",\"debug\":\"=> Alaska wiki(3, 0.10292199321680146)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Alaska_map_of_K%C3%B6ppen_climate_classification.svg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 624
+    },
+    {
+      "title": "Alaska",
+      "images": [
+        {
+          "caption": "Alaska Interstate Highways.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Alaska\",\"link-anchor-text\":\"Alaska\",\"score\":\"0.10292199321680146\",\"caption\":\"Alaska Interstate Highways.\",\"method\":\"wikify\",\"debug\":\"=> Alaska wiki(3, 0.10292199321680146)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Interstate_Alaska_map.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 624
+    },
+    {
+      "title": "Alaska",
+      "images": [
+        {
+          "caption": "Alaska has more public land owned by the federal government than any other state.",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Alaska\",\"link-anchor-text\":\"Alaska\",\"score\":\"0.10292199321680146\",\"caption\":\"Alaska has more public land owned by the federal government than any other state.\",\"method\":\"wikify\",\"debug\":\"=> Alaska wiki(3, 0.10292199321680146)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Public-Lands-Western-US.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 624
+    }],
+    "diagnostics": {
+        "userTime": 6.49,
+        "cpuTime": 6.912350145
+    },
+    "success": true
+}

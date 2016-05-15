@@ -1,0 +1,73 @@
+{
+    "message": "",
+    "text": "When it comes to pandering nobody does it better than Hillary Clinton \u2013 who is desperate to become the nation\u2019s first black female president.\nIn her latest outreach to New York City\u2019s black voters, Mrs. Clinton told hip-hop radio show hosts that she carries a bottle of hot sauce in her purse.\nIt was an apparent homage to a lyric in \u201CFormation,\u201D Beyonce\u2019s latest hit song. Or as Hot Sauce Hillary calls her, \u201CBay-on-say.\u201D But I\u2019ll get to that little faux pas later.\n\u201CI got hot sauce in my bag, swag,\u201D is how the song goes.\nMrs. Clinton\u2019s revelation that she likes it a little spicy came as a surprise to the hosts of Power 105.1\u2019s Breakfast Club.\nHere\u2019s a transcript of the conversation between Hot Sauce Hillary and the hosts of Breakfast Club on Power 105.1:\nAngela: \u201CWhat\u2019s something that you always carry with you?\u201D\nMrs. Clinton: \u201CHot sauce\u2026\u201D\nWell, it turns out that she really does like hot sauce \u2013 a lot.\nThe Clinton campaign confirmed to Time magazine that Mrs. Clinton enjoys an array of spicy foods \u2013 from chili flakes to jalapenos. To be fair her love affair with hot sauce goes back 20 years. Her current favorite is apparently something called \u201CNinja Squirrel.\u201D  \nRegardless, her on-air admission was met with skepticism in the media.\nIt was a \u201Cclear attempt to snag New York\u2019s black vote,\u201D TMZ opined.\nI would\u2019ve demanded that she produce the bottle \u2013 but that\u2019s probably why she refuses to come onto my radio program.\nContinuing with the transcript:\nCharlamagne Tha God: \u201CHot sauce in my bag, swag.\u201D\nMrs. Clinton: \u201CHot sauce.\u201D\nCharlamagne Tha God: \u201CNow, I just want you to know people are going to see this and say, \u2018okay, she\u2019s pandering to black people.\u201D\nMrs. Clinton: \u201CIs it working?\u201D\nNo, it's not working. What in the name of Texas Pete is she thinking?\nLast January, she was named the radio station\u2019s \u201CDonkey of the Day\u201D for being inauthentic and for pandering to black people, the Washington Post reports.\nCharlamagne said Hot Sauce Hillary was trying to reach black voters in a \u201CGrandma trying to be hip kinda way.\u201D\nI\u2019m just glad she didn\u2019t beatbox the theme song to the \u201CFresh Prince of Bel Air.\u201D\nNow \u2013 about that unfortunate incident involving Hot Sauce Hillary butchering Beyonce\u2019s name.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"WWPR-FM\",\"lng\":-73.986,\"lat\":40.748}],\"sw-lat\":-72}",
+            "caption": "Map of WWPR-FM",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[WWPR-FM]\",\"score\":\"1.0\",\"caption\":\"Map of WWPR-FM\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-73.94,\"sw-lng\":-118.440964,\"styles\":[],\"ne-lat\":40.748,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"The Fresh Prince of Bel-Air\",\"lng\":-118.440964,\"lat\":34.086396},{\"title\":\"WWPR-FM\",\"lng\":-73.986,\"lat\":40.748}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of New York City, The Fresh Prince of Bel-Air, WWPR-FM, and Texas",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York City,The Fresh Prince of Bel-Air,WWPR-FM,Texas]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, The Fresh Prince of Bel-Air, WWPR-FM, and Texas\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-73.94,\"sw-lng\":-118.440964,\"styles\":[],\"ne-lat\":40.748,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"The Fresh Prince of Bel-Air\",\"lng\":-118.440964,\"lat\":34.086396},{\"title\":\"WWPR-FM\",\"lng\":-73.986,\"lat\":40.748}],\"sw-lat\":34.086396}",
+            "caption": "Map of New York City, The Fresh Prince of Bel-Air, and WWPR-FM",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York City,The Fresh Prince of Bel-Air,WWPR-FM]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, The Fresh Prince of Bel-Air, and WWPR-FM\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"WWPR-FM\",\"lng\":-73.986,\"lat\":40.748}],\"sw-lat\":-72}",
+            "caption": "Map of WWPR-FM",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[WWPR-FM]\",\"score\":\"1.0\",\"caption\":\"Map of WWPR-FM\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-73.94,\"sw-lng\":-118.440964,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":40.748,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"The Fresh Prince of Bel-Air\",\"lng\":-118.440964,\"lat\":34.086396},{\"title\":\"WWPR-FM\",\"lng\":-73.986,\"lat\":40.748}],\"sw-lat\":25.84390167300002}",
+            "caption": "Map of New York City, The Fresh Prince of Bel-Air, WWPR-FM, and Texas",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York City,The Fresh Prince of Bel-Air,WWPR-FM,Texas]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, The Fresh Prince of Bel-Air, WWPR-FM, and Texas\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-73.94,\"sw-lng\":-118.440964,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":40.748,\"annotations\":[{\"title\":\"New York City\",\"lng\":-73.94,\"lat\":40.67},{\"title\":\"The Fresh Prince of Bel-Air\",\"lng\":-118.440964,\"lat\":34.086396},{\"title\":\"WWPR-FM\",\"lng\":-73.986,\"lat\":40.748}],\"sw-lat\":34.086396}",
+            "caption": "Map of New York City, The Fresh Prince of Bel-Air, and WWPR-FM",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York City,The Fresh Prince of Bel-Air,WWPR-FM]\",\"score\":\"1.0\",\"caption\":\"Map of New York City, The Fresh Prince of Bel-Air, and WWPR-FM\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Hillary Clinton",
+        "images": [{
+            "caption": "State-by-state popular votes in the Democratic primaries and caucuses, shaded by percentage won: Obama in purple, Clinton in green. (Popular vote winners and delegate winners differed in New Hampshire, Nevada, Missouri, Texas, and Guam.)",
+            "debug": "{\"title\":\"Hillary Clinton\",\"score\":\"0.05438150172539736\",\"caption\":\"State-by-state popular votes in the Democratic primaries and caucuses, shaded by percentage won: Obama in purple, Clinton in green. (Popular vote winners and delegate winners differed in New Hampshire, Nevada, Missouri, Texas, and Guam.)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/5f\/2008_Democratic_Primaries_Popular_Vote.svg"
+        }],
+        "lang": "en",
+        "articleId": 5043192
+    }],
+    "diagnostics": {
+        "userTime": 5.79,
+        "cpuTime": 6.080190354
+    },
+    "success": true
+}

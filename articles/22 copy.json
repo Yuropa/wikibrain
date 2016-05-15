@@ -1,0 +1,178 @@
+{
+    "message": "",
+    "text": "For Americans wondering why their health care premiums and deductibles are rising so dramatically, a new study by the Blue Cross Blue Shield Association provides some answers.\nThe study, released on March 30, found that people who enrolled in BCBS after the Affordable Care Act became law had higher rates of disease than those who'd been enrolled before ObamaCare took effect, suggesting insurers indeed are taking on higher-risk and higher-cost patients. Their costs are rising, along with premiums in general.\nThe study claims to represent \"a comprehensive, in-depth study of actual medical claims among those enrolled.\" Blue Cross Blue Shield represents more patients in the health insurance exchanges than any other insurer.\nThe study found:\nNew enrollees in individual health plans in 2014 and 2015 had higher rates of hypertension, diabetes, depression, coronary artery disease, HIV and Hepatitis C than those enrolled before ObamaCare.\nNew enrollees received significantly more medical care, on average, than those with individual or employer-based plans.\nNew enrollees had more inpatient admissions, outpatient visits, prescriptions filled and emergency room visits.\nMedical costs for new members were, on average, 19 percent higher than for employer-based members in 2014, and 22 percent higher last year. Average monthly medical spending for those newly enrolled members also rose at a higher rate in that period.\n\"The findings underscore the need for all of us in the health care system, and newly insured consumers, to work together to make sure that people get the right health care service in the right care setting and at the right time,\" said Alissa Fox, senior vice president for BCBSA, in a press release.\nA report from Freedom Partners earlier this year showed premiums on the individual market are rising by double digits in most states.\nA recent Daily Caller examination of annual reports from insurers also found storm clouds on the horizon of the exchanges. It found that eight of the 11 remaining exchanges may fail this year, despite assurances from the Obama administration.\n\"What we would like to see in general is increased competition, that's exactly what we got,\" White House Press Secretary Josh Earnest said on April 11. \"We also were looking to save money. Over the next ten years we will find ... tens of billions of dollars in deficit reduction as a result of the Affordable Care Act.\"\nEarnest's observation stands in stark contrast to that of Thomas Miller, a resident fellow at  the American Enterprise Institute who specializes in the Affordable Care Act. He told Fox News that the exchanges, \"were artificial,  a hopeful creation propped up by political forces in Congress which wanted to try to use public money to experiment with a different type of health insurance coverage. It never made a whole lot of sense from the start.\"\nThe Affordable Care Act has resulted in historic increases in coverage for workers who've not had health care coverage before, according to  a report Monday in The New York Times, which used census samples provided by the University of Minnesota Population Center. But it's a success that comes with huge costs, in the form of higher insurance premiums and deductibles for many Americans.\nThere may be political costs, too, in this election year, with illegal immigration a hotly contested issue. The Times study found, \"Hispanics, a coveted group of voters this election year, accounted for nearly a third of the increase in adults with insurance.\" It added that health coverage for low-skilled workers \u201Csaw sharp increases,\u201D and many who benefited were not citizens.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"American Enterprise Institute\",\"lng\":-77.0387,\"lat\":38.9053}],\"sw-lat\":-72}",
+            "caption": "Map of American Enterprise Institute",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[American Enterprise Institute]\",\"score\":\"1.0\",\"caption\":\"Map of American Enterprise Institute\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.0387,\"sw-lng\":-93.234166666667,\"styles\":[],\"ne-lat\":44.975277777778,\"annotations\":[{\"title\":\"American Enterprise Institute\",\"lng\":-77.0387,\"lat\":38.9053},{\"title\":\"University of Minnesota\",\"lng\":-93.234166666667,\"lat\":44.975277777778}],\"sw-lat\":38.9053}",
+            "caption": "Map of American Enterprise Institute, and University of Minnesota",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[American Enterprise Institute,University of Minnesota]\",\"score\":\"1.0\",\"caption\":\"Map of American Enterprise Institute, and University of Minnesota\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"American Enterprise Institute\",\"lng\":-77.0387,\"lat\":38.9053}],\"sw-lat\":-72}",
+            "caption": "Map of American Enterprise Institute",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[American Enterprise Institute]\",\"score\":\"1.0\",\"caption\":\"Map of American Enterprise Institute\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.0387,\"sw-lng\":-93.234166666667,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":44.975277777778,\"annotations\":[{\"title\":\"American Enterprise Institute\",\"lng\":-77.0387,\"lat\":38.9053},{\"title\":\"University of Minnesota\",\"lng\":-93.234166666667,\"lat\":44.975277777778}],\"sw-lat\":38.9053}",
+            "caption": "Map of American Enterprise Institute, and University of Minnesota",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[American Enterprise Institute,University of Minnesota]\",\"score\":\"1.0\",\"caption\":\"Map of American Enterprise Institute, and University of Minnesota\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "History of health care reform in the United States",
+        "images": [{
+            "caption": "Senate vote by state.    ",
+            "debug": "{\"title\":\"History of health care reform in the United States\",\"score\":\"0.8001657803771415\",\"caption\":\"Senate vote by state.    \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/92\/111th_Congress_1st_session_Senate_roll_call_396.svg",
+            "legend" : "13.png"
+        }],
+        "lang": "en",
+        "articleId": 23390653
+    }, {
+        "title": "History of health care reform in the United States",
+        "images": [{
+            "caption": "House vote by congressional district.    ",
+            "debug": "{\"title\":\"History of health care reform in the United States\",\"score\":\"0.8001657803771415\",\"caption\":\"House vote by congressional district.    \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/54\/111th_Congress_roll_call_165.svg",
+            "legend" : "14.png"
+        }],
+        "lang": "en",
+        "articleId": 23390653
+    }, {
+        "title": "Health care in France",
+        "images": [{
+            "caption": "Total health spending per capita, in U.S. dollars PPP-adjusted, of France compared amongst various other first world nations.",
+            "debug": "{\"title\":\"Health care in France\",\"score\":\"0.8001007716990404\",\"caption\":\"Total health spending per capita, in U.S. dollars PPP-adjusted, of France compared amongst various other first world nations.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/80\/Total_health_expenditure_per_capita%2C_US_Dollars_PPP.png"
+        }],
+        "lang": "en",
+        "articleId": 20603142
+    }, {
+        "title": "Health insurance marketplace",
+        "images": [{
+            "caption": "Health insurance exchanges by state.   ",
+            "debug": "{\"title\":\"Health insurance marketplace\",\"score\":\"0.37169273387875373\",\"caption\":\"Health insurance exchanges by state.   \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ee\/ACA_health_insurance_exchanges_by_state.svg",
+            "legend" : "22.png"
+        }],
+        "lang": "en",
+        "articleId": 23270522
+    }, {
+        "title": "Provisions of the Patient Protection and Affordable Care Act",
+        "images": [{
+            "caption": "Medicaid expansion by state.   ",
+            "debug": "{\"title\":\"Provisions of the Patient Protection and Affordable Care Act\",\"score\":\"0.30336510299656544\",\"caption\":\"Medicaid expansion by state.   \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ee\/ACA_Medicaid_expansion_by_state.svg",
+            "legend" : "23.png"
+        }],
+        "lang": "en",
+        "articleId": 40426902
+    }, {
+        "title": "Health insurance",
+        "images": [{
+            "caption": "Health Expenditure per capita (in PPP-adjusted US$) among several OECD member nations. Data source: OECD's iLibrary",
+            "debug": "{\"title\":\"Health insurance\",\"score\":\"0.10668109752530273\",\"caption\":\"Health Expenditure per capita (in PPP-adjusted US$) among several OECD member nations. Data source: OECD's iLibrary\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/8c\/Health_Expenditure_per_capita_OECD_2013.png"
+        }],
+        "lang": "en",
+        "articleId": 490201
+    }, {
+        "title": "Health system",
+        "images": [{
+            "caption": "Hospital beds per 1000 vs Health Care Spending in 2008 for OECD Countries. The data source is http:\/\/www.oecd.org",
+            "debug": "{\"title\":\"Health system\",\"score\":\"0.03159187971684315\",\"caption\":\"Hospital beds per 1000 vs Health Care Spending in 2008 for OECD Countries. The data source is http:\/\/www.oecd.org\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2f\/Health_spending_vs_beds_oecd_2008.png"
+        }],
+        "lang": "en",
+        "articleId": 60976
+    }, {
+        "title": "Health system",
+        "images": [{
+            "caption": "Physicians per 1000 vs Health Care Spending in 2008 for OECD Countries. The data source is http:\/\/www.oecd.org",
+            "debug": "{\"title\":\"Health system\",\"score\":\"0.03159187971684315\",\"caption\":\"Physicians per 1000 vs Health Care Spending in 2008 for OECD Countries. The data source is http:\/\/www.oecd.org\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/64\/Health_spending_vs_physicians_oecd_2008.png"
+        }],
+        "lang": "en",
+        "articleId": 60976
+    }, {
+        "title": "Health system",
+        "images": [{
+            "caption": "Chart comparing 2008 health care spending (left) vs. life expectancy (right) in OECD countries.",
+            "debug": "{\"title\":\"Health system\",\"score\":\"0.03159187971684315\",\"caption\":\"Chart comparing 2008 health care spending (left) vs. life expectancy (right) in OECD countries.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/8b\/Health_systems_comparison_OECD_2008.png"
+        }],
+        "lang": "en",
+        "articleId": 60976
+    }, {
+        "title": "Health system",
+        "images": [{
+            "caption": "Percentage of obese population in 2010, Data source: OECD's iLibrary, http:\/\/stats.oecd.org, retrieved 2013-12-13",
+            "debug": "{\"title\":\"Health system\",\"score\":\"0.03159187971684315\",\"caption\":\"Percentage of obese population in 2010, Data source: OECD's iLibrary, http:\/\/stats.oecd.org, retrieved 2013-12-13\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/44\/Obese_population_OECD_2010.png"
+        }],
+        "lang": "en",
+        "articleId": 60976
+    }, {
+        "title": "Health system",
+        "images": [{
+            "caption": "Percentage of overweight or obese population in 2010, Data source: OECD's iLibrary, http:\/\/stats.oecd.org, retrieved 2013-12-12",
+            "debug": "{\"title\":\"Health system\",\"score\":\"0.03159187971684315\",\"caption\":\"Percentage of overweight or obese population in 2010, Data source: OECD's iLibrary, http:\/\/stats.oecd.org, retrieved 2013-12-12\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/27\/Overweight_or_obese_population_OECD_2010.png"
+        }],
+        "lang": "en",
+        "articleId": 60976
+    }, {
+        "title": "Presidency of Barack Obama",
+        "images": [{
+            "caption": "Most Arab states experienced turmoil during the Arab Spring.    ",
+            "debug": "{\"title\":\"Presidency of Barack Obama\",\"score\":\"0.02281635757327561\",\"caption\":\"Most Arab states experienced turmoil during the Arab Spring.    \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/77\/Arab_Spring_and_Regional_Conflict_Map.svg",
+            "legend" : "16.png"
+        }],
+        "lang": "en",
+        "articleId": 20082093
+    }, {
+        "title": "Presidency of Barack Obama",
+        "images": [{
+            "caption": "Obama won re-election with 332 electoral votes and 51.1% of the popular vote.",
+            "debug": "{\"title\":\"Presidency of Barack Obama\",\"score\":\"0.02281635757327561\",\"caption\":\"Obama won re-election with 332 electoral votes and 51.1% of the popular vote.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/44\/ElectoralCollege2012.svg"
+        }],
+        "lang": "en",
+        "articleId": 20082093
+    }, {
+        "title": "Presidency of Barack Obama",
+        "images": [{
+            "caption": "Obama's international agreements and air strikes",
+            "debug": "{\"title\":\"Presidency of Barack Obama\",\"score\":\"0.02281635757327561\",\"caption\":\"        \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/d\/dd\/Obama_international_agreements_and_air_strikes.png",
+            "legend" : "17.png"
+        }],
+        "lang": "en",
+        "articleId": 20082093
+    }],
+    "diagnostics": {
+        "userTime": 7.64,
+        "cpuTime": 7.868358455
+    },
+    "success": true
+}

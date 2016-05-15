@@ -1,0 +1,110 @@
+{
+    "message": "",
+    "text": "Gov. Rick Snyder of Michigan, facing persistent criticism of his handling of the water crisis in Flint, on Monday took home five jugs of filtered tap water from the city and said he planned to drink it and cook with it for at least the next month.\nMr. Snyder said he would restock on Flint water during regular trips to the city, which is reeling from elevated levels of lead and other contaminants after a state-approved switch of drinking water sources in 2014. He said he hoped his decision to drink tap water would \u201Calleviate some of the skepticism and mistrust\u201D that has left many residents scared to drink or even shower.\n\u201CFlint residents made it clear that they would like to see me personally drink the water, so today I am fulfilling that request,\u201D Mr. Snyder said in a statement.\nMr. Snyder, a Republican, is following a familiar playbook for elected officials seeking to make a point. Gov. Hugh L. Carey of New York once offered to drink a glass of PCBs amid concern about pollution in Hudson River water. Mayor Jane M. Byrne of Chicago briefly moved into the Cabrini-Green public housing project in the 1980s during a wave of gun violence there. And more recently, according to The Denver Post, Gov. John Hickenlooper of Colorado boasted in 2013 of having once ingested fracking fluid as he argued for state regulation of natural gas production.\nFor his foray into experiential politics, Mr. Snyder picked up his first batch of filtered Flint water on Monday from a home where tests of untreated water once far exceeded the federal action for lead.\nMichigan officials, who have distributed lead-removing filters to residents in recent months, have insisted that those who have received them can safely drink filtered tap water. But many residents have resisted using any tap water, filtered or not, and experts warn that a drop in water use may slow Flint\u2019s recovery.\nState Senator Jim Ananich, who represents Flint and has criticized the governor\u2019s response to the water problems, said he was happy to hear Mr. Snyder would be drinking the water and hoped it would give \u201Chim a little taste of what people in Flint have been living with.\u201D\nBut Mr. Ananich said the governor\u2019s efforts would be better spent securing more funding from Congress to aid the city\u2019s recovery.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-82.14544632999991,\"sw-lng\":-90.41254276723495,\"styles\":[],\"ne-lat\":48.30511464500012,\"annotations\":[],\"sw-lat\":41.69680550686863}",
+            "caption": "Map of Michigan",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Michigan]\",\"score\":\"1.0\",\"caption\":\"Map of Michigan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-82.14544632999991,\"sw-lng\":-90.41254276723495,\"styles\":[],\"ne-lat\":48.30511464500012,\"annotations\":[{\"title\":\"Flint, Michigan\",\"lng\":-83.69,\"lat\":43.01}],\"sw-lat\":41.69680550686863}",
+            "caption": "Map of Flint, Michigan, and Michigan",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Flint, Michigan,Michigan]\",\"score\":\"1.0\",\"caption\":\"Map of Flint, Michigan, and Michigan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-87.645411111111,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Cabrini\\u2013Green Homes\",\"lng\":-87.645411111111,\"lat\":41.904480555556}],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of Cabrini\u2013Green Homes, New York, and Michigan",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Cabrini\\u2013Green Homes,New York]\",\"score\":\"1.0\",\"caption\":\"Map of Cabrini\\u2013Green Homes, New York, and Michigan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-87.645411111111,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Cabrini\\u2013Green Homes\",\"lng\":-87.645411111111,\"lat\":41.904480555556}],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of Cabrini\u2013Green Homes, New York, Republican Party (United States), Chicago, Michigan, Colorado, and Hudson River",
+            "debug": "{\"title\":\"Map\",\"style\":[],\"locations\":\"[Cabrini\\u2013Green Homes,New York]\",\"score\":\"1.0\",\"caption\":\"Map of Cabrini\\u2013Green Homes, New York, Republican Party (United States), Chicago, Michigan, Colorado, and Hudson River\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-82.14544632999991,\"sw-lng\":-90.41254276723495,\"styles\":[\"terrain\",\"boundaries\",\"roads\",\"water\"],\"ne-lat\":48.30511464500012,\"annotations\":[],\"sw-lat\":41.69680550686863}",
+            "caption": "Map of Michigan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, boundaries, roads, water]\",\"locations\":\"[Michigan]\",\"score\":\"1.0\",\"caption\":\"Map of Michigan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-82.14544632999991,\"sw-lng\":-90.41254276723495,\"styles\":[\"terrain\",\"boundaries\",\"roads\",\"water\"],\"ne-lat\":48.30511464500012,\"annotations\":[{\"title\":\"Flint, Michigan\",\"lng\":-83.69,\"lat\":43.01}],\"sw-lat\":41.69680550686863}",
+            "caption": "Map of Flint, Michigan, and Michigan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, boundaries, roads, water]\",\"locations\":\"[Flint, Michigan,Michigan]\",\"score\":\"1.0\",\"caption\":\"Map of Flint, Michigan, and Michigan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-87.645411111111,\"styles\":[\"terrain\",\"boundaries\",\"roads\",\"water\"],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Cabrini\\u2013Green Homes\",\"lng\":-87.645411111111,\"lat\":41.904480555556}],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of Cabrini\u2013Green Homes, New York, and Michigan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, boundaries, roads, water]\",\"locations\":\"[Cabrini\\u2013Green Homes,New York]\",\"score\":\"1.0\",\"caption\":\"Map of Cabrini\\u2013Green Homes, New York, and Michigan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-87.645411111111,\"styles\":[\"terrain\",\"boundaries\",\"roads\",\"water\"],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"Cabrini\\u2013Green Homes\",\"lng\":-87.645411111111,\"lat\":41.904480555556}],\"sw-lat\":40.499434562000104}",
+            "caption": "Map of Cabrini\u2013Green Homes, New York, Republican Party (United States), Chicago, Michigan, Colorado, and Hudson River",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, boundaries, roads, water]\",\"locations\":\"[Cabrini\\u2013Green Homes,New York]\",\"score\":\"1.0\",\"caption\":\"Map of Cabrini\\u2013Green Homes, New York, Republican Party (United States), Chicago, Michigan, Colorado, and Hudson River\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "United States Environmental Protection Agency",
+        "images": [{
+            "caption": "The administrative regions of the United States Environmental Protection Agency.",
+            "debug": "{\"title\":\"United States Environmental Protection Agency\",\"score\":\"0.45588653912691\",\"caption\":\"The administrative regions of the United States Environmental Protection Agency.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/cf\/Regions_of_the_United_States_EPA.svg",
+            "legend" : "21.png"
+        }],
+        "lang": "en",
+        "articleId": 58666
+    }, {
+        "title": "The Waste Disposal Inc. Superfund site",
+        "images": [{
+            "caption": "Waste Disposal Inc Superfund site",
+            "debug": "{\"title\":\"The Waste Disposal Inc. Superfund site\",\"score\":\"0.39213508478254494\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/1d\/Waste_Disposal_Inc_site.jpg"
+        }],
+        "lang": "en",
+        "articleId": 39262853
+    }, {
+        "title": "Water security",
+        "images": [{
+            "caption": "A 2012 map of the world showing in red the places with least water security.",
+            "debug": "{\"title\":\"Water security\",\"score\":\"0.07028927601086783\",\"caption\":\"A 2012 map of the world showing in red the places with least water security.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fd\/WWDR4_Water_scarcity.PNG"
+        }],
+        "lang": "en",
+        "articleId": 21161137
+    }],
+    "diagnostics": {
+        "userTime": 5.16,
+        "cpuTime": 5.332002642
+    },
+    "success": true
+}

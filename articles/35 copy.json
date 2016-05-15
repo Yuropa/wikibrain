@@ -1,0 +1,102 @@
+{
+    "message": "",
+    "text": "Utah Gov. Gary Herbert reportedly plans to sign a measure on Tuesday that labels pornography as a \u201Cpublic health hazard.\u201D\nThe Republican governor is signing one resolution and one bill relating to what lawmakers describe as a \u201Ccrisis.\u201D\nThe resolution calls porn a health hazard that leads to a \u201Cbroad spectrum of individual and public health impacts and societal harms,\u201D and urges more education and prevention efforts to address the \u201Cepidemic\u201D in the state.\nThe bill is more specific, requiring that computer technicians who find child porn in the course of their work report it to law enforcement.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-109.04633182955024,\"sw-lng\":-114.04254764955438,\"styles\":[],\"ne-lat\":42.00007732980495,\"annotations\":[],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Utah\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-72}",
+            "caption": "Map of Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-114.04254764955438,\"styles\":[],\"ne-lat\":42.00007732980495,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Republican Party (United States), and Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Republican Party (United States),Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), and Utah\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-109.04633182955024,\"sw-lng\":-114.04254764955438,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":42.00007732980495,\"annotations\":[],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Utah\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":-72}",
+            "caption": "Map of Republican Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Republican Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-77.00558333,\"sw-lng\":-114.04254764955438,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":42.00007732980495,\"annotations\":[{\"title\":\"Republican Party (United States)\",\"lng\":-77.00558333,\"lat\":38.88541667}],\"sw-lat\":36.999808775254735}",
+            "caption": "Map of Republican Party (United States), and Utah",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Republican Party (United States),Utah]\",\"score\":\"1.0\",\"caption\":\"Map of Republican Party (United States), and Utah\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Same-sex marriage in New England",
+        "images": [{
+            "caption": "The New England region of the United States is shaded in red, above.",
+            "debug": "{\"title\":\"Same-sex marriage in New England\",\"score\":\"0.49921012345274113\",\"caption\":\"The New England region of the United States is shaded in red, above.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2e\/New_England_USA.svg"
+        }
+        ]
+    }, {
+        "title": "Pornography",
+        "images": [{
+            "caption": "World map of pornography (18+) laws    ",
+            "debug": "{\"title\":\"Pornography\",\"score\":\"0.2439852816303425\",\"caption\":\"World map of pornography (18+) laws    \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/63\/Pornography_laws.svg",
+            "legend" : "1.png"
+        }
+        ]
+    }, {
+        "title": "Pornography",
+        "images": [{
+            "caption": "XXX is used to designate pornographic material in the U.S. and other regions around the world",
+            "debug": "{\"title\":\"Pornography\",\"score\":\"0.2439852816303425\",\"caption\":\"XXX is used to designate pornographic material in the U.S. and other regions around the world\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/bc\/XXX_P_icon.png"
+        }
+        ]
+    }, {
+        "title": "Public health",
+        "images": [{
+            "caption": "Seal of the United States Public Health Service",
+            "debug": "{\"title\":\"Public health\",\"score\":\"0.21879422587036515\",\"caption\":\"Seal of the United States Public Health Service\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/ac\/United_States_Public_Health_Service_%28seal%29.svg"
+        }
+        ]
+    }, {
+        "title": "Public health",
+        "images": [{
+            "caption": "John Snow's dot map, showing the clusters of cholera cases in the London epidemic of 1854.",
+            "debug": "{\"title\":\"Public health\",\"score\":\"0.21879422587036515\",\"caption\":\"John Snow's dot map, showing the clusters of cholera cases in the London epidemic of 1854.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/27\/Snow-cholera-map-1.jpg"
+        }
+        ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 8.71,
+        "cpuTime": 9.171630828
+    },
+    "success": true
+}
+
+

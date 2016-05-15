@@ -1,0 +1,163 @@
+{
+    "message": "",
+    "text": "Relief efforts are continuing in southern Japan amid hundreds of aftershocks after two deadly quakes.\nAt least 100,000 people are still thought to be living in emergency accommodation, some living in their cars enduring cold temperatures.\nThe US military has joined tens of thousands of Japanese troops and emergency services personnel in the relief effort.\nThe two powerful earthquakes hit the south-western island of Kyushu.\nSaturday's magnitude-7.3 quake struck at 01:25 (15:25 GMT on Friday) close to the city of Kumamoto, which had been hit by a magnitude-6.4 quake on Thursday night.\nImage copyright Reuters\nImage caption Another body was recovered from debris in badly hit Minamiaso on Tuesday\nAt least 44 people were killed and more than 1,000 people were injured, authorities said.\nJapan's public broadcaster NHK reports that eight people are still missing in the village of Minamiaso. Another body was recovered there on Tuesday morning.\nThere have been hundreds of aftershocks since then, including a magnitude 5.8 quake on Monday evening, although it was not reported to have caused any more injuries.\nThe Japan Meteorological Agency has cautioned people to take care as further shaking is likely.\nBoth the quakes were shallow, causing huge damage to roads, bridges and tunnels. Major landslides cut off remote villages.\nThousands of homes are still without electricity, water, or gas, and rail services remain disrupted.\nThe number of those displaced by the quakes remains unclear. Aid agencies said more than 250,000 had been told to leave their homes, amid fears of more earthquakes.\nThere have been complaints that some evacuees had not received enough help. Fuji Television reported that thousands of people staying in their cars at an exhibition hall car park had yet to receive emergency supplies as the facility was not a registered shelter.\nThe Mayor of Kumamoto Kazufumi Onishi apologised on Twitter for delays in providing help, asking people to \"be patient,\" he said, promising aid was on its way.\nNaoki Kokawa, advisor to the Japanese Red Cross Society, told the BBC that more medical teams were being dispatched to evacuation centres.\nKumamoto Airport has begun accepting some inbound flights, but outbound flights are still suspended, as damage to the terminal building has prevented security checks being carried out.\nImage copyright AP\nImage caption MV-22 Ospreys do not need a runway to take off or land\nThe US has about 50,000 troops in Japan, and as with the 2011 earthquake and tsunami, its personnel are helping the relief effort, airlifting water, food and other emergency supplies to remote areas.\n\"We're here to support the Japanese defence forces, and so whatever they need and we can provide that support, we're here to help,\" said US Marine Corps Lt Col Tom Chalkley.\nTwo Osprey tilt-rotor aircraft were used in the airlift, in what was seen as a chance for the US to demonstrate the usefulness of the aircraft, which can take off and land vertically. There have been concerns about safety after several crashes.\nThe aid deliveries were \"hugely appreciated,\" 60-year-old evacuee Tatsuyuki Aramaki told Associated Press. \"We have been living on rock-hard biscuits, old rice balls and bread,\" he said. \"I heard Ospreys were coming to deliver supplies for us so I had to come and see. I couldn't wait.\"\nImage copyright Reuters\nImage caption Chairs were set out to read \"SOS\" and the Japanese words for \"(toilet) paper, bread, water\" outside a High School\nImage copyright AP\nImage caption Bullet train services remained suspended while engineers worked to right the train that derailed in Thursday's quake\nThe quakes have had commercial repercussions outside the region too, with Toyota suspending most vehicle production in Japan because of parts shortages.\nNissan and Honda are also among the companies to halt production at some facilities.\nThe earthquakes are the biggest to have hit Japan since 2011 when a 9.0 magnitude quake caused a huge tsunami, leaving more then 19,000 dead and missing.\nJapan is regularly hit by earthquakes but strict building codes mean they usually cause minimal damage.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":153.98560631600017,\"sw-lng\":122.93816165500019,\"styles\":[\"labels\"],\"ne-lat\":45.52041250200013,\"annotations\":[],\"sw-lat\":24.212103583}",
+            "caption": "Map of Japan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Japan]\",\"score\":\"1.0\",\"caption\":\"Map of Japan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":153.98560631600017,\"sw-lng\":122.93816165500019,\"styles\":[\"labels\"],\"ne-lat\":45.52041250200013,\"annotations\":[{\"title\":\"Kumamoto\",\"lng\":130.7,\"lat\":32.8},{\"title\":\"Minamiaso, Kumamoto\",\"lng\":131.03138888889,\"lat\":32.8225}],\"sw-lat\":24.212103583}",
+            "caption": "Map of Kumamoto, Minamiaso, Kumamoto, and Japan",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Kumamoto,Minamiaso, Kumamoto,Japan]\",\"score\":\"1.0\",\"caption\":\"Map of Kumamoto, Minamiaso, Kumamoto, and Japan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":153.98560631600017,\"sw-lng\":122.93816165500019,\"styles\":[\"labels\"],\"ne-lat\":45.52041250200013,\"annotations\":[{\"title\":\"Kyushu\",\"lng\":131,\"lat\":33},{\"title\":\"Kumamoto\",\"lng\":130.7,\"lat\":32.8},{\"title\":\"Kumamoto Airport\",\"lng\":130.85527777778,\"lat\":32.837222222222},{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"lng\":142.369,\"lat\":38.322},{\"title\":\"Kokawa, Wakayama\",\"lng\":135.4077778,\"lat\":34.27},{\"title\":\"Minamiaso, Kumamoto\",\"lng\":131.03138888889,\"lat\":32.8225}],\"sw-lat\":24.212103583}",
+            "caption": "Map of Kyushu, Kumamoto, Kumamoto Airport, 2011 Tōhoku earthquake and tsunami, Kokawa, Wakayama, Minamiaso, Kumamoto, Japan, and Japan Meteorological Agency",
+            "debug": "{\"title\":\"Map\",\"style\":\"[labels]\",\"locations\":\"[Kyushu,Kumamoto,Kumamoto Airport,2011 Tōhoku earthquake and tsunami,Kokawa, Wakayama,Minamiaso, Kumamoto,Japan]\",\"score\":\"1.0\",\"caption\":\"Map of Kyushu, Kumamoto, Kumamoto Airport, 2011 Tōhoku earthquake and tsunami, Kokawa, Wakayama, Minamiaso, Kumamoto, Japan, and Japan Meteorological Agency\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":153.98560631600017,\"sw-lng\":122.93816165500019,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.52041250200013,\"annotations\":[],\"sw-lat\":24.212103583}",
+            "caption": "Map of Japan",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Japan]\",\"score\":\"1.0\",\"caption\":\"Map of Japan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":153.98560631600017,\"sw-lng\":122.93816165500019,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.52041250200013,\"annotations\":[{\"title\":\"Kumamoto\",\"lng\":130.7,\"lat\":32.8},{\"title\":\"Minamiaso, Kumamoto\",\"lng\":131.03138888889,\"lat\":32.8225}],\"sw-lat\":24.212103583}",
+            "caption": "Map of Kumamoto, Minamiaso, Kumamoto, and Japan",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Kumamoto,Minamiaso, Kumamoto,Japan]\",\"score\":\"1.0\",\"caption\":\"Map of Kumamoto, Minamiaso, Kumamoto, and Japan\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":153.98560631600017,\"sw-lng\":122.93816165500019,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.52041250200013,\"annotations\":[{\"title\":\"Kyushu\",\"lng\":131,\"lat\":33},{\"title\":\"Kumamoto\",\"lng\":130.7,\"lat\":32.8},{\"title\":\"Kumamoto Airport\",\"lng\":130.85527777778,\"lat\":32.837222222222},{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"lng\":142.369,\"lat\":38.322},{\"title\":\"Kokawa, Wakayama\",\"lng\":135.4077778,\"lat\":34.27},{\"title\":\"Minamiaso, Kumamoto\",\"lng\":131.03138888889,\"lat\":32.8225}],\"sw-lat\":24.212103583}",
+            "caption": "Map of Kyushu, Kumamoto, Kumamoto Airport, 2011 Tōhoku earthquake and tsunami, Kokawa, Wakayama, Minamiaso, Kumamoto, Japan, and Japan Meteorological Agency",
+            "debug": "{\"title\":\"Map\",\"style\":[\"terrain\", \"labels\", \"boundaries\"],\"locations\":\"[Kyushu,Kumamoto,Kumamoto Airport,2011 Tōhoku earthquake and tsunami,Kokawa, Wakayama,Minamiaso, Kumamoto,Japan]\",\"score\":\"1.0\",\"caption\":\"Map of Kyushu, Kumamoto, Kumamoto Airport, 2011 Tōhoku earthquake and tsunami, Kokawa, Wakayama, Minamiaso, Kumamoto, Japan, and Japan Meteorological Agency\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Japanese Red Cross",
+        "images": [{
+            "caption": "Flag of the Red Cross",
+            "debug": "{\"title\":\"Japanese Red Cross\",\"score\":\"0.02037210573581664\",\"caption\":\"Flag of the Red Cross\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/1a\/Flag_of_the_Red_Cross.svg"
+        }],
+        "lang": "en",
+        "articleId": 1157376
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Water column height on 11 March 2011 at DART Station, 690 NM southeast of Tokyo",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Water column height on 11 March 2011 at DART Station, 690 NM southeast of Tokyo\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f2\/2011-Sendai-Tsunami-DART-21413-AB.png"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Energy map of the tsunami from NOAA",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Energy map of the tsunami from NOAA\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/6a\/2011Sendai-NOAA-Energylhvpd9-05.jpg"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "A visual depiction of the type of faulting that caused the main tremor, low-angle thrusting on a west-dipping fault plane",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"A visual depiction of the type of faulting that caused the main tremor, low-angle thrusting on a west-dipping fault plane\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/96\/C0001xgp_wcmt_smt.png"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Fukushima radiation comparison to other incidents and standards, with graph of recorded radiation levels and specific accident events.(Note: Does not include all radiation readings from Fukushima Daini site)",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Fukushima radiation comparison to other incidents and standards, with graph of recorded radiation levels and specific accident events.(Note: Does not include all radiation readings from Fukushima Daini site)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2f\/Fukushima7.png"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Map of the Tōhoku earthquake and aftershocks on 11\u201314 March",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Map of the Tōhoku earthquake and aftershocks on 11\\u201314 March\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/92\/Map_of_Sendai_Earthquake_2011.jpg"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Position of Japanese nuclear power stations and the spreading of the initial tsunami",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Position of Japanese nuclear power stations and the spreading of the initial tsunami\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/04\/Nuclear_plants_Japan_in_2011.svg"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "A map of Japan's electricity distribution network shows the geographic divide between 50 hertz systems and 60 hertz systems",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"A map of Japan's electricity distribution network shows the geographic divide between 50 hertz systems and 60 hertz systems\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0c\/Power_Grid_of_Japan.svg"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Hypocentral region boundaries (Source: The Japanese Headquarters for Earthquake Research Promotion)",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Hypocentral region boundaries (Source: The Japanese Headquarters for Earthquake Research Promotion)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/78\/SeismicAreas_JapanTrenchEarthquakes.png"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Map of seismic intensity observations resulting from mainshock",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Map of seismic intensity observations resulting from mainshock\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/5a\/Shindomap_2011-03-11_Tohoku_earthquake.png"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }, {
+        "title": "2011 Tōhoku earthquake and tsunami",
+        "images": [{
+            "caption": "Peak tsunami wave height summits, color-coded with red representing most severe",
+            "debug": "{\"title\":\"2011 Tōhoku earthquake and tsunami\",\"score\":\"0.016077076256296122\",\"caption\":\"Peak tsunami wave height summits, color-coded with red representing most severe\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/7a\/Tsunami_map_Tohoku2011.svg"
+        }],
+        "lang": "en",
+        "articleId": 31150160
+    }],
+    "diagnostics": {
+        "userTime": 4.76,
+        "cpuTime": 4.997647249
+    },
+    "success": true
+}

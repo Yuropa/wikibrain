@@ -1,0 +1,454 @@
+{
+    "message": "",
+    "text": "After six hours of talks in Qatar, the country's energy minister Mohammed bin Saleh al-Sada said that the oil producers needed \"more time\".\nMost members of the Opec producers' group, plus other oil exporters including Russia, attended the talks.\nThey wanted a deal that would freeze output and help stem the plunge in crude prices over the past 18 months.\n\"The general conclusion was that we need more time to consult among ourselves in Opec and non-Opec producers,\" Mr Sada said.\nOil prices tumbled in Asian trading as a result, with the price of both US and London crude oil down more than 5%.\nTalks hit difficulties earlier on Sunday as reports emerged of tensions between Iran and Saudi Arabia. Iran did not attend the meeting.\nSaudi Arabia, the world's largest oil exporter, appeared willing to only freeze output if all Opec members agreed, including Iran.\nBut Iran maintained it would continue the increase in oil production it has followed since economic sanctions were lifted earlier this year.\n\"As we're not going to sign anything, and as we're not part of the decision to freeze output, we ultimately decided it was not necessary to send a representative,\" the Iranian government said.\nAnalysis: Andrew Walker, BBC World Service economics correspondent\nThe failure to agree a freeze is not going to help oil exporters desperate to see the price of crude oil rise. They are hurting. Even Saudi Arabia - despite having significant financial buffers - is overhauling its public finances and trying to diversify its economy away from.\nOther major oil producers are finding life even harder. One OPEC member, Angola, has even gone to the International Monetary Fund seeking to negotiate financial assistance.\nThere is, perhaps, some compensation for the countries at the Doha meeting in that their failure to agree to curtail supply increases is likely to renew the pressure on shale oil producers in the US, who were not and never would be represented at a gathering such as this.\nThe rise of the American shale industry in the last decade or so is one of the main reasons why global supplies are so plentiful and why prices are now less than half what they were in mid-2014.\nMr Sada told reporters after the meeting: \"We of course respect [Iran's] position... The freeze could be more effective definitely if major producers, be it from Opec members like Iran and others, as well as non-Opec members, are included in the freeze.\"\n'Mother of all meetings'\nThe next scheduled Opec meeting is in June.\nAbhishek Deshpande, chief oil analyst at Natixis, described it as \"the mother of all Opec meetings\" which showed the nervousness among many oil producers.\nIt was not formally an Opec event, though most of the group's members were represented.\nHowever, Opec has been slow to respond to the sharp fall in oil prices, which are still less than half the peak of $115 ($81) a barrel seen in June 2014.\nThe price of oil has risen in recent weeks largely due to traders considering the possibility that some major exporters will limit supply.\nBrent crude oil, the international benchmark, finished last week at around $43 a barrel, having dipped as low as $27 earlier this year.\nOpec members have been working on the deal since Saudi Arabia, Russia, Qatar and Venezuela agreed to freeze production in February if other countries followed suit.\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":51.61654707100013,\"sw-lng\":50.750987175000034,\"styles\":[\"boundaries\",\"water\"],\"ne-lat\":26.160101630000014,\"annotations\":[],\"sw-lat\":24.559871521000076}",
+            "caption": "Map of Qatar",
+            "debug": "{\"title\":\"Map\",\"style\":\"[boundaries, water]\",\"locations\":\"[Qatar]\",\"score\":\"1.0\",\"caption\":\"Map of Qatar\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"boundaries\",\"water\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"OPEC\",\"lng\":16.3659,\"lat\":48.2143}],\"sw-lat\":-72}",
+            "caption": "Map of OPEC",
+            "debug": "{\"title\":\"Map\",\"style\":\"[boundaries, water]\",\"locations\":\"[OPEC]\",\"score\":\"1.0\",\"caption\":\"Map of OPEC\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":63.319628133000066,\"sw-lng\":16.3659,\"styles\":[\"boundaries\",\"water\"],\"ne-lat\":48.2143,\"annotations\":[{\"title\":\"OPEC\",\"lng\":16.3659,\"lat\":48.2143}],\"sw-lat\":16.37094468406555}",
+            "caption": "Map of Iran, Saudi Arabia, and OPEC",
+            "debug": "{\"title\":\"Map\",\"style\":\"[boundaries, water]\",\"locations\":\"[Iran,Saudi Arabia,OPEC]\",\"score\":\"1.0\",\"caption\":\"Map of Iran, Saudi Arabia, and OPEC\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":63.319628133000066,\"sw-lng\":11.669394143000147,\"styles\":[\"boundaries\",\"water\"],\"ne-lat\":48.2143,\"annotations\":[{\"title\":\"OPEC\",\"lng\":16.3659,\"lat\":48.2143}],\"sw-lat\":-18.031404723999813}",
+            "caption": "Map of Angola, Qatar, Iran, Saudi Arabia, OPEC, Doha, Venezuela, International Monetary Fund, Russia, and London",
+            "debug": "{\"title\":\"Map\",\"style\":\"[boundaries, water]\",\"locations\":\"[Angola,Qatar,Iran,Saudi Arabia,OPEC]\",\"score\":\"1.0\",\"caption\":\"Map of Angola, Qatar, Iran, Saudi Arabia, OPEC, Doha, Venezuela, International Monetary Fund, Russia, and London\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":51.61654707100013,\"sw-lng\":50.750987175000034,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":26.160101630000014,\"annotations\":[],\"sw-lat\":24.559871521000076}",
+            "caption": "Map of Qatar",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Qatar]\",\"score\":\"1.0\",\"caption\":\"Map of Qatar\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"OPEC\",\"lng\":16.3659,\"lat\":48.2143}],\"sw-lat\":-72}",
+            "caption": "Map of OPEC",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[OPEC]\",\"score\":\"1.0\",\"caption\":\"Map of OPEC\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":63.319628133000066,\"sw-lng\":16.3659,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":48.2143,\"annotations\":[{\"title\":\"OPEC\",\"lng\":16.3659,\"lat\":48.2143}],\"sw-lat\":16.37094468406555}",
+            "caption": "Map of Iran, Saudi Arabia, and OPEC",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Iran,Saudi Arabia,OPEC]\",\"score\":\"1.0\",\"caption\":\"Map of Iran, Saudi Arabia, and OPEC\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":63.319628133000066,\"sw-lng\":11.669394143000147,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":48.2143,\"annotations\":[{\"title\":\"OPEC\",\"lng\":16.3659,\"lat\":48.2143}],\"sw-lat\":-18.031404723999813}",
+            "caption": "Map of Angola, Qatar, Iran, Saudi Arabia, OPEC, Doha, Venezuela, International Monetary Fund, Russia, and London",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Angola,Qatar,Iran,Saudi Arabia,OPEC]\",\"score\":\"1.0\",\"caption\":\"Map of Angola, Qatar, Iran, Saudi Arabia, OPEC, Doha, Venezuela, International Monetary Fund, Russia, and London\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "OPEC",
+        "images": [{
+            "caption": "Fluctuations of Brent crude oil price, 1988\u20132015",
+            "debug": "{\"title\":\"OPEC\",\"score\":\"0.8153845571228425\",\"caption\":\"Fluctuations of Brent crude oil price, 1988\\u20132015\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/af\/Brent_crude_oil_price_1988-2015.svg"
+        }]
+    }, {
+        "title": "OPEC",
+        "images": [{
+            "caption": "Countries by oil production (2013)",
+            "debug": "{\"title\":\"OPEC\",\"score\":\"0.8153845571228425\",\"caption\":\"Countries by oil production (2013)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f9\/Countries_by_Oil_Production_in_2013.svg"
+        }]
+    }, {
+        "title": "OPEC",
+        "images": [{
+            "caption": "Sulfur content and API gravity of different types of crude oil",
+            "debug": "{\"title\":\"OPEC\",\"score\":\"0.8153845571228425\",\"caption\":\"Sulfur content and API gravity of different types of crude oil\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/eb\/Crudes.PNG"
+        }]
+    }, {
+        "title": "History of Saudi Arabia",
+        "images": [{
+            "caption": "The Arabian Peninsula in 1914",
+            "debug": "{\"title\":\"History of Saudi Arabia\",\"score\":\"0.8042797732046112\",\"caption\":\"The Arabian Peninsula in 1914\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/31\/Arabia_1914.png"
+        }]
+    }, {
+        "title": "History of Saudi Arabia",
+        "images": [{
+            "caption": "The first Saudi State 1744-1818",
+            "debug": "{\"title\":\"History of Saudi Arabia\",\"score\":\"0.8042797732046112\",\"caption\":\"The first Saudi State 1744-1818\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/4\/4a\/First_Saudi_State_Big.png"
+        }]
+    }, {
+        "title": "History of Saudi Arabia",
+        "images": [{
+            "caption": "The tribes of Arabia at the time of the spread of Islam (expandable map)",
+            "debug": "{\"title\":\"History of Saudi Arabia\",\"score\":\"0.8042797732046112\",\"caption\":\"The tribes of Arabia at the time of the spread of Islam (expandable map)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/35\/Tribes_english.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "The Achaemenid Empire at its greatest extent.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"The Achaemenid Empire at its greatest extent.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/55\/Achaemenid_true_extent.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "Map of the Ilkhanate",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"Map of the Ilkhanate\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/ae\/Ilkhanate_in_1256%E2%80%931353.PNG"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "The Khwarezmid Empire at its zenith.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"The Khwarezmid Empire at its zenith.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/73\/Khwarezmid-empire-1220CE.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "Iran in the 20th century.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"Iran in the 20th century.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/02\/Map_Iran_1900-en.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "The Islamic conquest of Persia.   ",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"The Islamic conquest of Persia.   \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/7\/72\/Map_of_expansion_of_Caliphate.svg",
+            "legend" : "24.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "Parthian Empire at its greatest extent, c.60 BCE.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"Parthian Empire at its greatest extent, c.60 BCE.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f1\/Parthian_Empire_at_it%27s_greatest_extent.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "The Safavid Empire at its greatest extent.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"The Safavid Empire at its greatest extent.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ed\/Safavid_Empire_1501_1722_AD.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "The Sassanid Empire at its greatest extent.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"The Sassanid Empire at its greatest extent.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/06\/SassanidEmpireTrueExtent.png"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "The Great Seljuq Empire in 1092, upon the death of Malik Shah I This map varies from other maps which are slightly different in scope, especially along the Mediterranean and the Black Sea.",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"The Great Seljuq Empire in 1092, upon the death of Malik Shah I This map varies from other maps which are slightly different in scope, especially along the Mediterranean and the Black Sea.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/c3\/Seljuk_Empire_locator_map.svg"
+        }]
+    }, {
+        "title": "Military history of Iran",
+        "images": [{
+            "caption": "Flag of the Timurid Empire",
+            "debug": "{\"title\":\"Military history of Iran\",\"score\":\"0.8007482418659381\",\"caption\":\"Flag of the Timurid Empire\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/6c\/Timurid.svg"
+        }]
+    }, {
+        "title": "Oil shale",
+        "images": [{
+            "caption": "Overview of shale oil extraction.",
+            "debug": "{\"title\":\"Oil shale\",\"score\":\"0.7581499656731793\",\"caption\":\"Overview of shale oil extraction.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2b\/Oil_shale_extraction_overview.png"
+        }]
+    }, {
+        "title": "Oil shale",
+        "images": [{
+            "caption": "Production of oil shale in millions of metric tons, from 1880 to 2010. Source: Pierre Allix, Alan K. Burnham. ",
+            "debug": "{\"title\":\"Oil shale\",\"score\":\"0.7581499656731793\",\"caption\":\"Production of oil shale in millions of metric tons, from 1880 to 2010. Source: Pierre Allix, Alan K. Burnham. \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0a\/Production_of_oil_shale.png"
+        }]
+    }, {
+        "title": "Oil shale",
+        "images": [{
+            "caption": "NYMEX light-sweet crude oil prices 1996\u20132009 (not adjusted for inflation)",
+            "debug": "{\"title\":\"Oil shale\",\"score\":\"0.7581499656731793\",\"caption\":\"NYMEX light-sweet crude oil prices 1996\\u20132009 (not adjusted for inflation)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/1e\/WTI_price_96_09.PNG"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "The location of shale gas compared to other types of gas deposits.",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"The location of shale gas compared to other types of gas deposits.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/bb\/GasDepositDiagram.jpg"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "Trends in the top five natural gas-producing countries (US EIA data)",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"Trends in the top five natural gas-producing countries (US EIA data)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/d\/de\/Gas_Production_Top_5_Countries.png"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "The global natural gas trade in 2013. Numbers are in billion cubic meters per year.",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"The global natural gas trade in 2013. Numbers are in billion cubic meters per year.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/ac\/Global_Gas_trade_both_LNG_and_Pipeline.png"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "Natural gas prices at the Henry Hub in US dollars per million BTUs ($\/mmbtu).",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"Natural gas prices at the Henry Hub in US dollars per million BTUs ($\/mmbtu).\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/d\/dd\/Henry_hub_NG_prices.svg"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "Schematic flow diagram of a typical natural gas processing plant.",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"Schematic flow diagram of a typical natural gas processing plant.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0a\/NatGasProcessing.svg"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "Comparison of natural gas prices in Japan, United Kingdom, and United States, 2007\u20132011",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"Comparison of natural gas prices in Japan, United Kingdom, and United States, 2007\\u20132011\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/6c\/Natural_Gas_Price_Comparison.png"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "U.S. Natural Gas Marketed Production 1900 to 2012, source US EIA",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"U.S. Natural Gas Marketed Production 1900 to 2012, source US EIA\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/9a\/US_Natural_Gas_Production.svg"
+        }]
+    }, {
+        "title": "Natural gas",
+        "images": [{
+            "caption": "Natural gas extraction by countries in cubic meters per year",
+            "debug": "{\"title\":\"Natural gas\",\"score\":\"0.7514754615179627\",\"caption\":\"Natural gas extraction by countries in cubic meters per year\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/23\/World_-_Natural_Gas_Production_of_Countries.png"
+        }]
+    }, {
+        "title": "Oil reserves in Venezuela",
+        "images": [{
+            "caption": "History of Venezuela's claimed reserves (red) in comparison to those of Saudi Arabia (blue)",
+            "debug": "{\"title\":\"Oil reserves in Venezuela\",\"score\":\"0.6281400001447556\",\"caption\":\"History of Venezuela's claimed reserves (red) in comparison to those of Saudi Arabia (blue)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b8\/Venezuela_Oil_Reserves.png"
+        }]
+    }, {
+        "title": "Economy of Saudi Arabia",
+        "images": [{
+            "caption": "Saudi Arabian exports in 2006",
+            "debug": "{\"title\":\"Economy of Saudi Arabia\",\"score\":\"0.6105170606676086\",\"caption\":\"Saudi Arabian exports in 2006\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/c8\/2006SaudiArabian_exports.PNG"
+        }]
+    }, {
+        "title": "1973 oil crisis",
+        "images": [{
+            "caption": "Graph of oil prices from 1861\u20132007, showing a sharp increase in 1973, and again during the 1979 energy crisis. The orange line is adjusted for inflation.",
+            "debug": "{\"title\":\"1973 oil crisis\",\"score\":\"0.6081280055986708\",\"caption\":\"Graph of oil prices from 1861\\u20132007, showing a sharp increase in 1973, and again during the 1979 energy crisis. The orange line is adjusted for inflation.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2f\/Oil_Prices_Since_1861.svg"
+        }]
+    }, {
+        "title": "1973 oil crisis",
+        "images": [{
+            "caption": "The price of oil during the embargo. The graph is based on the nominal, not real, price of oil, and so overstates prices at the end. However, the effects of the Arab Oil Embargo are clear\u2014it effectively doubled the real price of crude oil at the refinery level, and caused massive shortages in the U.S.",
+            "debug": "{\"title\":\"1973 oil crisis\",\"score\":\"0.6081280055986708\",\"caption\":\"The price of oil during the embargo. The graph is based on the nominal, not real, price of oil, and so overstates prices at the end. However, the effects of the Arab Oil Embargo are clear\\u2014it effectively doubled the real price of crude oil at the refinery level, and caused massive shortages in the U.S.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/50\/Oil_price_chronology-june2007.gif"
+        }]
+    }, {
+        "title": "1973 oil crisis",
+        "images": [{
+            "caption": "OPEC net oil export revenues for 1971\u20132007",
+            "debug": "{\"title\":\"1973 oil crisis\",\"score\":\"0.6081280055986708\",\"caption\":\"OPEC net oil export revenues for 1971\\u20132007\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0a\/Opecrev.gif"
+        }]
+    }, {
+        "title": "1973 oil crisis",
+        "images": [{
+            "caption": "USA oil production and imports. As shown the import spike starts from US peak and the so-called \"embargo\" almost has no effect.",
+            "debug": "{\"title\":\"1973 oil crisis\",\"score\":\"0.6081280055986708\",\"caption\":\"USA oil production and imports. As shown the import spike starts from US peak and the so-called \\\"embargo\\\" almost has no effect.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/c5\/US_Oil_Production_and_Imports_1920_to_2005.png"
+        }]
+    }, {
+        "title": "Petroleum",
+        "images": [{
+            "caption": "Octane, a hydrocarbon found in petroleum. Lines represent single bonds; black spheres represent carbon; white spheres represent hydrogen.",
+            "debug": "{\"title\":\"Petroleum\",\"score\":\"0.24220123884091085\",\"caption\":\"Octane, a hydrocarbon found in petroleum. Lines represent single bonds; black spheres represent carbon; white spheres represent hydrogen.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b8\/Octane_molecule_3D_model.png"
+        }]
+    }, {
+        "title": "Petroleum",
+        "images": [{
+            "caption": "Proven world oil reserves, 2013. Unconventional reservoirs such as natural heavy oil and oil sands are included.",
+            "debug": "{\"title\":\"Petroleum\",\"score\":\"0.24220123884091085\",\"caption\":\"Proven world oil reserves, 2013. Unconventional reservoirs such as natural heavy oil and oil sands are included.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/e3\/Oil_Reserves.png"
+        }]
+    }, {
+        "title": "Petroleum",
+        "images": [{
+            "caption": "Most of the world's oils are non-conventional.",
+            "debug": "{\"title\":\"Petroleum\",\"score\":\"0.24220123884091085\",\"caption\":\"Most of the world's oils are non-conventional.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/19\/Total_World_Oil_Reserves.PNG"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Saudi Arabia physical features",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Saudi Arabia physical features\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f9\/Arabia_Saudi_physical.jpg"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Saudi Arabia political map",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Saudi Arabia political map\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/07\/Arabia_Saudi_political.jpg"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Oil and gas pipelines in the Middle-East",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Oil and gas pipelines in the Middle-East\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/83\/Oil_and_Gas_Infrastructure_Persian_Gulf_%28large%29.gif"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Provinces of Saudi Arabia",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Provinces of Saudi Arabia\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b0\/Saudi_Arabia%2C_administrative_divisions_-_Nmbrs_-_colored.svg"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Saudi Arabia topography (Altitude color coded)",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Saudi Arabia topography (Altitude color coded)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b1\/Saudi_Arabia_Topography.png"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Kingdom of Saudi Arabia after unification in 1932",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Kingdom of Saudi Arabia after unification in 1932\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/04\/Saudi_Arabia_map.png"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Saudi Arabia population density (people per km2)",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"Saudi Arabia population density (people per km2)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/1d\/Saudi_Arabia_population_density_2010.png"
+        }]
+    }, {
+        "title": "Saudi Arabia",
+        "images": [{
+            "caption": "Saudi Arabia’s Köppen climate classification map is based on native vegetation, temperature, precipitation and their seasonality.",
+            "debug": "{\"title\":\"Saudi Arabia\",\"score\":\"0.08213761663138323\",\"caption\":\"}\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/a\/ac\/West-Asia_Koppen_Map.png"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Iran's total debt service as percent of exports of goods services and income increased sixfold between 1990 and 1997",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Iran's total debt service as percent of exports of goods services and income increased sixfold between 1990 and 1997\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/14\/Debt_service-Iran.png"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Money flow chart.",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Money flow chart.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/89\/FLOW_CHART_%28IRAN_BUDGET%29.png"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Iran's oil vs non-oil real GDP growth projections.",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Iran's oil vs non-oil real GDP growth projections.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/34\/IRAN-GDP-real-growth.jpg"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Iran's balance of payment (2003-2007)",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Iran's balance of payment (2003-2007)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/30\/IRANbalanceofpayment.jpg"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Government budget deficit has been a chronic problem in Iran in the past. In 2004, about 45 percent of the government's budget came from exports of oil and natural gas revenues and 31 percent came from taxes and fees.",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Government budget deficit has been a chronic problem in Iran in the past. In 2004, about 45 percent of the government's budget came from exports of oil and natural gas revenues and 31 percent came from taxes and fees.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/e1\/Iran-Budget.JPG"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Iran's projected oil and gas projected revenues by the International Monetary Fund",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Iran's projected oil and gas projected revenues by the International Monetary Fund\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/9\/9e\/Iranoilandgas.jpg"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "Military expenditures (% GDP)",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"Military expenditures (% GDP)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/03\/Military_expenditures-Iran.png"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "National Budget Expenditures for Social and Economic Purposes, Fiscal Year 2004. Government spending as percent of total budget was 6% for health care, 16% for education and 8% for the military in the period 1992\u20132000 and contributed to an average annual inflation rate of 14 percent in the period 2000\u20132008.",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"National Budget Expenditures for Social and Economic Purposes, Fiscal Year 2004. Government spending as percent of total budget was 6% for health care, 16% for education and 8% for the military in the period 1992\\u20132000 and contributed to an average annual inflation rate of 14 percent in the period 2000\\u20132008.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/d\/d8\/Socio-eco_expenditures_IRAN.jpg"
+        }]
+    }, {
+        "title": "Politics of Iran",
+        "images": [{
+            "caption": "US dollar\/Iranian rial exchange rate (2003-2014 est.)",
+            "debug": "{\"title\":\"Politics of Iran\",\"score\":\"0.02432877448839007\",\"caption\":\"US dollar\/Iranian rial exchange rate (2003-2014 est.)\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/1b\/USD-IRR_exchange_rate.JPG"
+        }]
+    }, {
+        "title": "International Monetary Fund",
+        "images": [{
+            "caption": "IMF Data Dissemination Systems participants:      ",
+            "debug": "{\"title\":\"International Monetary Fund\",\"score\":\"0.019041858485388176\",\"caption\":\"IMF Data Dissemination Systems participants:      \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/52\/IMF_DDS.svg",
+            "legend" : "25.png"
+        }]
+    }, {
+        "title": "International Monetary Fund",
+        "images": [{
+            "caption": "International Monetary Fund",
+            "debug": "{\"title\":\"International Monetary Fund\",\"score\":\"0.019041858485388176\",\"caption\":\" \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/1e\/International_Monetary_Fund_%28art.VIII%29.png",
+            "legend" : "26.png"
+        }]
+    }],
+    "diagnostics": {
+        "userTime": 9.53,
+        "cpuTime": 10.004175548
+    },
+    "success": true
+}

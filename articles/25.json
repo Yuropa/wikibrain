@@ -1,0 +1,111 @@
+{
+    "message": "",
+    "text": "At least 233 people have been confirmed dead after Ecuador was hit by its most powerful earthquake in decades.\nSome 10,000 troops and 3,500 police are being deployed in the affected areas, as rescue operations got under way.\nThe magnitude-7.8 quake struck early on Saturday evening and was felt as far away as neighbouring Colombia.\nCoastal areas in the north-west were closest to the epicentre and officials say the death toll is likely to rise as information begins to come in.\nEcuador's President Rafael Correa gave the latest death toll on his twitter feed while flying back from a visit to Italy he cut short to deal with the disaster.\nHe has declared a state of emergency and earlier called on his country to be \"calm and united\"\nThe country's Ecuador's Vice-President Jorge Glas, visiting one of the worst hit cities, Manta, met a resident who pleaded for people trapped under rubble.\n\"We have to be quiet so that rescuers can listen [for survivors],\" Mr Glas told him. \"We cannot go in with heavy machinery because it can be tragic for the wounded.\"\nHelicopters and buses are ferrying troops north but have been hampered by landslides.\nIn some areas people are using their bare hands to try to dig out survivors.\nFood and other essentials has been handed out and international aid was also beginning, with the first coming from Venezuela and Mexico.\nAt least 500 people were injured in the quake, which was felt across the country.\nWidespread severe damage is reported, with a bridge destroyed as far south as Guayaquil about 300km (190 miles) away.\nGabriel Alcivar, mayor of Pedernales, close to the epicentre, said the \"entire town\" had been flattened.\n\"We're trying to do the most we can but there's almost nothing we can do,\" he added, warning that looting had broken out.\nImage copyright AP\nImage caption Rescue efforts have begun but there are fears more victims will be found\nImage copyright AFP\nImage caption Some buildings were reduced to rubble by the quake\nImage copyright AFP\nImage caption Others were badly damaged\nImage copyright Reuters\nImage caption Police and army troops have been deployed to help relief efforts\nIn Manta, one woman said: \"The third floor collapsed on top of us.\n\"They are all there, my family, my sister, my children. They are all there, there are a lot of people. My God, may the help arrive.\"\nCristian Ibarra Santillan was in the capital Quito when the quake struck.\n\"There had been some small tremors going on for about two or three months and I thought it was one of those but after about 20, 30 seconds it started to get really strong,\" he told the BBC.\n\"And I grabbed my dog and I hid under the table. But then I realised that it wasn't going away so I just ran with him outside.\"\nMedia captionStephan Kuffner, who lives in Quito, says he felt the vibrations for minutes after the quake struck\nMedia captionA man was killed when his car was crushed beneath a collapsed bridge in Guayaquil\nThe quake is Ecuador's largest since 1979. More than 130 aftershocks have followed.\nThe US Geological Survey said the earthquake struck at a fairly shallow depth of 19.2km (11.9 miles), about 27km from Muisne in a sparsely populated area.\nDavid Rothery, a professor of geosciences at The Open University, said Ecuador's quake was about six times as powerful as the earthquake that struck southern Japan on Saturday .\nThe quake was also felt in Colombia, where patients in a clinic in the city of Cali were evacuated from the building.\nAnalysis: Jonathan Amos, BBC science correspondent\nEcuador is well used to earthquakes. There have been seven magnitude-7.0 or greater events within 250km of this latest tremor since 1900. And some of these have resulted in very considerable loss of life, not just from the shaking but also from tsunami waves.\nThe country sits on the so-called \"Ring of Fire\" - the arc of high seismic activity that extends right around the Pacific basin. At its location, Ecuador fronts the boundary between the Nazca and South American tectonic plates.\nThese are vast slabs of the Earth's surface that grind past each other at a rate of about 65mm per year. The Nazca plate, which makes up the Pacific Ocean floor in this region, is being pulled down (subducted) and under the South American coast.\nIt is a process that has helped build the Andes and Ecuador's many volcanoes, including the mighty Chimborazo.\nModels that try to forecast the likely casualty numbers from the nature of the quake and local building construction methods indicate this event could be very serious, with the number of deaths running into the hundreds.",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.2272639579999,\"sw-lng\":-92.01158606699991,\"styles\":[],\"ne-lat\":1.6643740910001554,\"annotations\":[],\"sw-lat\":-5.011372578999882}",
+            "caption": "Map of Ecuador",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Ecuador]\",\"score\":\"1.0\",\"caption\":\"Map of Ecuador\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.2272639579999,\"sw-lng\":-92.01158606699991,\"styles\":[],\"ne-lat\":1.6643740910001554,\"annotations\":[{\"title\":\"Quito\",\"lng\":-78.509722222222,\"lat\":-0.21861111111111},{\"title\":\"Manta, Ecuador\",\"lng\":-80.7162,\"lat\":-0.95002222222222}],\"sw-lat\":-5.011372578999882}",
+            "caption": "Map of Ecuador, Quito, and Manta, Ecuador",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Ecuador,Quito,Manta, Ecuador]\",\"score\":\"1.0\",\"caption\":\"Map of Ecuador, Quito, and Manta, Ecuador\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-70.01166667,\"sw-lng\":-92.01158606699991,\"styles\":[],\"ne-lat\":3.44,\"annotations\":[{\"title\":\"Andes\",\"lng\":-70.01166667,\"lat\":-32.65333333},{\"title\":\"Cali\",\"lng\":-76.519722222222,\"lat\":3.44},{\"title\":\"Ibarra, Ecuador\",\"lng\":-78.13,\"lat\":0.362778}],\"sw-lat\":-32.65333333}",
+            "caption": "Map of Andes, Cali, Ibarra, Ecuador, Ecuador, Quito, Manta, Ecuador, Colombia, Open University, Italy, Mexico, Chimborazo, Pacific Ocean, United States Geological Survey, Venezuela, Pedernales Province, Guayaquil, Muisne, Japan, and Nazca Plate",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Andes,Cali,Ibarra, Ecuador,Ecuador]\",\"score\":\"1.0\",\"caption\":\"Map of Andes, Cali, Ibarra, Ecuador, Ecuador, Quito, Manta, Ecuador, Colombia, Open University, Italy, Mexico, Chimborazo, Pacific Ocean, United States Geological Survey, Venezuela, Pedernales Province, Guayaquil, Muisne, Japan, and Nazca Plate\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.2272639579999,\"sw-lng\":-92.01158606699991,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":1.6643740910001554,\"annotations\":[],\"sw-lat\":-5.011372578999882}",
+            "caption": "Map of Ecuador",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Ecuador]\",\"score\":\"1.0\",\"caption\":\"Map of Ecuador\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-75.2272639579999,\"sw-lng\":-92.01158606699991,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":1.6643740910001554,\"annotations\":[{\"title\":\"Quito\",\"lng\":-78.509722222222,\"lat\":-0.21861111111111},{\"title\":\"Manta, Ecuador\",\"lng\":-80.7162,\"lat\":-0.95002222222222}],\"sw-lat\":-5.011372578999882}",
+            "caption": "Map of Ecuador, Quito, and Manta, Ecuador",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Ecuador,Quito,Manta, Ecuador]\",\"score\":\"1.0\",\"caption\":\"Map of Ecuador, Quito, and Manta, Ecuador\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-70.01166667,\"sw-lng\":-92.01158606699991,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":3.44,\"annotations\":[{\"title\":\"Andes\",\"lng\":-70.01166667,\"lat\":-32.65333333},{\"title\":\"Cali\",\"lng\":-76.519722222222,\"lat\":3.44},{\"title\":\"Ibarra, Ecuador\",\"lng\":-78.13,\"lat\":0.362778}],\"sw-lat\":-32.65333333}",
+            "caption": "Map of Andes, Cali, Ibarra, Ecuador, Ecuador, Quito, Manta, Ecuador, Colombia, Open University, Italy, Mexico, Chimborazo, Pacific Ocean, United States Geological Survey, Venezuela, Pedernales Province, Guayaquil, Muisne, Japan, and Nazca Plate",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Andes,Cali,Ibarra, Ecuador,Ecuador]\",\"score\":\"1.0\",\"caption\":\"Map of Andes, Cali, Ibarra, Ecuador, Ecuador, Quito, Manta, Ecuador, Colombia, Open University, Italy, Mexico, Chimborazo, Pacific Ocean, United States Geological Survey, Venezuela, Pedernales Province, Guayaquil, Muisne, Japan, and Nazca Plate\",\"method\":\"ref-map\"}"
+        }],
+        "lang": "en",
+        "articleId": -1
+    }, {
+      "title": "Earthquake",
+      "images": [
+        {
+          "caption": "Fault types",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Earthquake\",\"link-anchor-text\":\"earthquake\",\"score\":\"0.07530959525368729\",\"caption\":\"Fault types\",\"method\":\"wikify\",\"debug\":\"=> earthquake wiki(4, 0.07530959525368729)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Fault_types.png"
+        }
+      ],
+      "lang": "en",
+      "articleId": 10106
+    },
+    {
+      "title": "Earthquake",
+      "images": [
+        {
+          "caption": "Global plate tectonic movement",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Earthquake\",\"link-anchor-text\":\"earthquake\",\"score\":\"0.07530959525368729\",\"caption\":\"Global plate tectonic movement\",\"method\":\"wikify\",\"debug\":\"=> earthquake wiki(4, 0.07530959525368729)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Global_plate_motion_2008-04-17.jpg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 10106
+    },
+    {
+      "title": "Earthquake",
+      "images": [
+        {
+          "caption": "An image from a 1557 book",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Earthquake\",\"link-anchor-text\":\"earthquake\",\"score\":\"0.07530959525368729\",\"caption\":\"An image from a 1557 book\",\"method\":\"wikify\",\"debug\":\"=> earthquake wiki(4, 0.07530959525368729)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Lycosth%C3%A8ne.jpg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 10106
+    },
+    {
+      "title": "Earthquake",
+      "images": [
+        {
+          "caption": "Earthquakes of magnitude 8.0 and greater since 1900. The apparent 3D volumes of the bubbles are linearly proportional to their respective fatalities.USGS: Magnitude 8 and Greater Earthquakes Since 1900",
+          "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Earthquake\",\"link-anchor-text\":\"earthquake\",\"score\":\"0.07530959525368729\",\"caption\":\"Earthquakes of magnitude 8.0 and greater since 1900. The apparent 3D volumes of the bubbles are linearly proportional to their respective fatalities.USGS: Magnitude 8 and Greater Earthquakes Since 1900\",\"method\":\"wikify\",\"debug\":\"=> earthquake wiki(4, 0.07530959525368729)\"}",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/USGS_magnitude_8_earthquakes_since_1900.svg"
+        }
+      ],
+      "lang": "en",
+      "articleId": 10106
+    }],
+    "diagnostics": {
+        "userTime": 4.81,
+        "cpuTime": 4.925101654
+    },
+    "success": true
+}

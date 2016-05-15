@@ -1,0 +1,80 @@
+{
+    "message": "",
+    "text": "Apple is consistently more compliant with US requests for access to users' information than with the rest of the world on average, it has emerged.\nIts own figures showed that, in 2015, Apple released data on users' devices to US authorities 80% of the time, compared to 55% when it came to the UK.\nThat compared to a global average of nearly 60%, Apple's data showed.\nA security expert said it was \"deeply frustrating\" for law enforcement agencies.\nApple released its latest transparency report on Monday to complement previous releases going back as far as 2013.\nIt published the numbers of device requests it received - those from law enforcement for contact information and other data.\nSeparately, it released data on account requests - those from government agencies for account details, including iTunes and iCloud account information.\nData release\nThe BBC's analysis has revealed that, similar to in 2015, the UK was below the global average and the US above it for both types of request in each of the previous years for which there were comparable data.\nAmong the five countries that regularly submitted a large number of device requests - more than 2,000 per year - the US was the only country to consistently receive Apple customer information a greater-than-average proportion of the time. Singapore was also below the average in each of the three years.\nApple's figures showed that, on average, it was unable to release data for 33% of account requests from across the world in 2015. In the US, the rate was 18% and, in the UK, 40%. A similar picture emerged in 2014. A comparison of account requests in 2013 was not possible because Apple did not release exact figures for the US for that year.\nThe US and the UK were the only countries to make more than 300 account requests per year.\nImage copyright Getty Images\nImage caption Apple's figures showed a lesser propensity to release information to UK authorities\nThe consistently lower proportion of successful requests from the UK could be because Britain is seen as \"less protective of personal privacy\" than the US, said Prof Alan Woodward of the University of Surrey.\nThe security expert, who advises Europol and who has also advised GCHQ in the past, said: \"Whatever the reason, it is a deeply frustrating situation for law enforcement agencies.\"\nDespite Apple's presence in many countries outside the US, he added that it may also feel less duty bound to comply with requests from foreign governments.\n'Government abuse'\nAccording to Apple's report, the majority of device requests were in cases of lost or stolen phones and the BBC understands that some of the differences between countries were dependent on the differing approaches of national police forces towards phone theft.\nThe BBC also understands that some of the unsuccessful account requests were down to the company not holding any information, rather than resisting law enforcement efforts.\nThe firm declined to comment when contacted by the BBC.\nOn Monday, Blackberry's chief executive John Chen said the firm would comply with law enforcement but would prevent \"government abuse of invading citizen's privacy\".\nHe spoke in response to reports that Canadian police could intercept and read encrypted messages sent using Blackberry phones. Mr Chen said the firm \"stood by [its] lawful access principles\".\n",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"Europol\",\"lng\":4.281111,\"lat\":52.092512}],\"sw-lat\":-72}",
+            "caption": "Map of Europol",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Europol]\",\"score\":\"1.0\",\"caption\":\"Map of Europol\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":104.00342858200003,\"sw-lng\":4.281111,\"styles\":[],\"ne-lat\":52.092512,\"annotations\":[{\"title\":\"Europol\",\"lng\":4.281111,\"lat\":52.092512},{\"title\":\"Singapore\",\"lng\":103.8134676580174,\"lat\":1.358921020243721}],\"sw-lat\":1.2643089860000885}",
+            "caption": "Map of Europol, Singapore, Government Communications Headquarters, and University of Surrey",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Europol,Singapore]\",\"score\":\"1.0\",\"caption\":\"Map of Europol, Singapore, Government Communications Headquarters, and University of Surrey\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":104.00342858200003,\"sw-lng\":4.281111,\"styles\":[],\"ne-lat\":52.092512,\"annotations\":[{\"title\":\"Europol\",\"lng\":4.281111,\"lat\":52.092512},{\"title\":\"Singapore\",\"lng\":103.8134676580174,\"lat\":1.358921020243721}],\"sw-lat\":1.2643089860000885}",
+            "caption": "Map of Europol, Singapore, and Government Communications Headquarters",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[Europol,Singapore]\",\"score\":\"1.0\",\"caption\":\"Map of Europol, Singapore, and Government Communications Headquarters\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"Europol\",\"lng\":4.281111,\"lat\":52.092512}],\"sw-lat\":-72}",
+            "caption": "Map of Europol",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Europol]\",\"score\":\"1.0\",\"caption\":\"Map of Europol\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":104.00342858200003,\"sw-lng\":4.281111,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":52.092512,\"annotations\":[{\"title\":\"Europol\",\"lng\":4.281111,\"lat\":52.092512},{\"title\":\"Singapore\",\"lng\":103.8134676580174,\"lat\":1.358921020243721}],\"sw-lat\":1.2643089860000885}",
+            "caption": "Map of Europol, Singapore, Government Communications Headquarters, and University of Surrey",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Europol,Singapore]\",\"score\":\"1.0\",\"caption\":\"Map of Europol, Singapore, Government Communications Headquarters, and University of Surrey\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":104.00342858200003,\"sw-lng\":4.281111,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":52.092512,\"annotations\":[{\"title\":\"Europol\",\"lng\":4.281111,\"lat\":52.092512},{\"title\":\"Singapore\",\"lng\":103.8134676580174,\"lat\":1.358921020243721}],\"sw-lat\":1.2643089860000885}",
+            "caption": "Map of Europol, Singapore, and Government Communications Headquarters",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[Europol,Singapore]\",\"score\":\"1.0\",\"caption\":\"Map of Europol, Singapore, and Government Communications Headquarters\",\"method\":\"ref-map\"}"
+        }]
+    }, {
+        "title": "History of Apple Inc.",
+        "images": [{
+            "caption": "Created by Rob Janoff in 1977, the Apple logo with the rainbow scheme was used from April of that yearDesigner asserts that his rainbow-striped Apple logo was introduced at West Coast Computer Fair until August 26, 1999. Steve Jobs has asserted the apple logo was inspired by the story of his childhood.",
+            "debug": "{\"title\":\"History of Apple Inc.\",\"score\":\"0.7968688554966329\",\"caption\":\"Created by Rob Janoff in 1977, the Apple logo with the rainbow scheme was used from April of that yearDesigner asserts that his rainbow-striped Apple logo was introduced at West Coast Computer Fair until August 26, 1999. Steve Jobs has asserted the apple logo was inspired by the story of his childhood.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/84\/Apple_Computer_Logo_rainbow.svg"
+        }]
+    }, {
+        "title": "History of Apple Inc.",
+        "images": [{
+            "caption": "The very first Apple Computer logo, drawn by Ronald Wayne, depicts Isaac Newton under an apple tree.",
+            "debug": "{\"title\":\"History of Apple Inc.\",\"score\":\"0.7968688554966329\",\"caption\":\"The very first Apple Computer logo, drawn by Ronald Wayne, depicts Isaac Newton under an apple tree.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fa\/Apple_first_logo.png"
+        }]
+    }, {
+        "title": "History of Apple Inc.",
+        "images": [{
+            "caption": "Current Apple logo introduced August 27, 1999 and remains in use today.",
+            "debug": "{\"title\":\"History of Apple Inc.\",\"score\":\"0.7968688554966329\",\"caption\":\"\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/fa\/Apple_logo_black.svg"
+        }]
+    }, {
+        "title": "Privacy engineering",
+        "images": [{
+            "caption": "Relationship between PbD and Privacy Engineering",
+            "debug": "{\"title\":\"Privacy engineering\",\"score\":\"0.10861239113105434\",\"caption\":\"Relationship between PbD and Privacy Engineering\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/3b\/Pbdmanifestoengineering.png"
+        }]
+    }],
+    "diagnostics": {
+        "userTime": 13.96,
+        "cpuTime": 14.616247602
+    },
+    "success": true
+}

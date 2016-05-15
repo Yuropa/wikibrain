@@ -1,0 +1,173 @@
+{
+    "message": "",
+    "text": "Dec. 21, 2015: The Exxon logo is displayed agove the floor of the New York Stock Exchange (NYSE) shortly after the opening bell in New York. (Reuters)\nState Democratic officials are facing mounting accusations they secretly coordinated with climate activists to investigate whether ExxonMobil hid the truth about global warming, as new documents show the collaboration went deeper than previously thought.\nEmails obtained and released by the Energy ",
+    "articles": [{
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[],\"ne-lat\":72,\"annotations\":[{\"title\":\"New York Stock Exchange\",\"lng\":-74.011389,\"lat\":40.706667}],\"sw-lat\":-72}",
+            "caption": "Map of New York Stock Exchange",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York Stock Exchange]\",\"score\":\"1.0\",\"caption\":\"Map of New York Stock Exchange\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"New York Stock Exchange\",\"lng\":-74.011389,\"lat\":40.706667},{\"title\":\"Democratic Party (United States)\",\"lng\":-77.00844444,\"lat\":38.88416667}],\"sw-lat\":38.88416667}",
+            "caption": "Map of New York, New York Stock Exchange, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[]\",\"locations\":\"[New York,New York Stock Exchange,Democratic Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of New York, New York Stock Exchange, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":160,\"sw-lng\":-160,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":72,\"annotations\":[{\"title\":\"New York Stock Exchange\",\"lng\":-74.011389,\"lat\":40.706667}],\"sw-lat\":-72}",
+            "caption": "Map of New York Stock Exchange",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York Stock Exchange]\",\"score\":\"1.0\",\"caption\":\"Map of New York Stock Exchange\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "Map",
+        "images": [{
+            "refMap": "{\"ne-lng\":-71.85741126199989,\"sw-lng\":-79.76300663544788,\"styles\":[\"terrain\", \"labels\", \"boundaries\"],\"ne-lat\":45.01012196900011,\"annotations\":[{\"title\":\"New York Stock Exchange\",\"lng\":-74.011389,\"lat\":40.706667},{\"title\":\"Democratic Party (United States)\",\"lng\":-77.00844444,\"lat\":38.88416667}],\"sw-lat\":38.88416667}",
+            "caption": "Map of New York, New York Stock Exchange, and Democratic Party (United States)",
+            "debug": "{\"title\":\"Map\",\"style\":\"[terrain, labels, boundaries]\",\"locations\":\"[New York,New York Stock Exchange,Democratic Party (United States)]\",\"score\":\"1.0\",\"caption\":\"Map of New York, New York Stock Exchange, and Democratic Party (United States)\",\"method\":\"ref-map\"}"
+        }
+        ]
+    }, {
+        "title": "NYSE Euronext",
+        "images": [{
+            "caption": "The NYSE Euronext logo from 2007 to 2012.",
+            "debug": "{\"title\":\"NYSE Euronext\",\"score\":\"0.6724557057334413\",\"caption\":\"The NYSE Euronext logo from 2007 to 2012.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/81\/NYSE_Euronext_logo.png"
+        }
+        ]
+    }, {
+        "title": "Dow Jones Industrial Average",
+        "images": [{
+            "caption": "DJIA monthly trading volume in shares from 1929 to 2012",
+            "debug": "{\"title\":\"Dow Jones Industrial Average\",\"score\":\"0.6012908297904886\",\"caption\":\"DJIA monthly trading volume in shares from 1929 to 2012\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/5c\/DJIA_Trading_Volume.png"
+        }
+        ]
+    }, {
+        "title": "Dow Jones Industrial Average",
+        "images": [{
+            "caption": "The Dow fell 14.3% from the mid-9,000 level to the low 8,000 level after the September 11, 2001 attacks. Exchanges were closed between September 11 and 17.",
+            "debug": "{\"title\":\"Dow Jones Industrial Average\",\"score\":\"0.6012908297904886\",\"caption\":\"The Dow fell 14.3% from the mid-9,000 level to the low 8,000 level after the September 11, 2001 attacks. Exchanges were closed between September 11 and 17.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/67\/DJIA_during_911.svg"
+        }
+        ]
+    }, {
+        "title": "Exxon",
+        "images": [{
+            "caption": "Map of Exxon stores in the United States",
+            "debug": "{\"title\":\"Exxon\",\"score\":\"0.17666392769104355\",\"caption\":\"Map of Exxon stores in the United States\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b8\/Exxon_footprint_2012-08.png"
+        }
+        ]
+    }, {
+        "title": "ExxonMobil",
+        "images": [{
+            "caption": "Chart of the major energy companies dubbed \"Big Oil\", sorted by latest published revenue",
+            "debug": "{\"title\":\"ExxonMobil\",\"score\":\"0.06861133935907972\",\"caption\":\"Chart of the major energy companies dubbed \\\"Big Oil\\\", sorted by latest published revenue\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/8\/89\/Big_Oil.svg"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "2015 \u2013 Warmest Global Year on Record (since 1880) \u2013 Colors indicate temperature anomalies (NASA\/NOAA; 20 January 2016).",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"2015 \\u2013 Warmest Global Year on Record (since 1880) \\u2013 Colors indicate temperature anomalies (NASA\/NOAA; 20 January 2016).\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/64\/16-008-NASA-2015RecordWarmGlobalYearSince1880-20160120.png"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Map of the Earth with a six-meter sea level rise represented in red.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Map of the Earth with a six-meter sea level rise represented in red.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/5c\/6m_Sea_Level_Rise.jpg"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Changes in Total Solar Irradiance (TSI) and monthly sunspot numbers since the mid-1970s.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Changes in Total Solar Irradiance (TSI) and monthly sunspot numbers since the mid-1970s.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b4\/Changes_in_total_solar_irradiance_and_monthly_sunspot_numbers%2C_1975-2013.png"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Earth has been in radiative imbalance since at least the 1970s, where less energy leaves the atmosphere than enters it. Most of this extra energy has been absorbed by the oceans. Rhein, M., et al. (June 7, 2013): Box 3.1, in: Chapter 3: Observations: Ocean (final draft accepted by IPCC Working Group I), pp.11-12 (pp.14-15 of PDF chapter), in:   It is very likely that human activities substantially contributed to this increase in ocean heat content. IPCC (November 11, 2013): D.3 Detection and Attribution of Climate Change, in:  Summary for Policymakers (finalized version), p.15, in: ",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Earth has been in radiative imbalance since at least the 1970s, where less energy leaves the atmosphere than enters it. Most of this extra energy has been absorbed by the oceans. Rhein, M., et al. (June 7, 2013): Box 3.1, in: Chapter 3: Observations: Ocean (final draft accepted by IPCC Working Group I), pp.11-12 (pp.14-15 of PDF chapter), in:   It is very likely that human activities substantially contributed to this increase in ocean heat content. IPCC (November 11, 2013): D.3 Detection and Attribution of Climate Change, in:  Summary for Policymakers (finalized version), p.15, in: \",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/2b\/Energy_change_inventory%2C_1971-2010.svg"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "NOAA graph of Global Annual Temperature Anomalies 1950\u20132012, showing the El Niño Southern Oscillation",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"NOAA graph of Global Annual Temperature Anomalies 1950\\u20132012, showing the El Niño Southern Oscillation\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f9\/Enso-global-temp-anomalies.png"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Atmospheric CO2 concentration from 650,000 years ago to near present, using ice core proxy data and direct measurements.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Atmospheric CO2 concentration from 650,000 years ago to near present, using ice core proxy data and direct measurements.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/3c\/Evidence_CO2.jpg"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Sparse records indicate that glaciers have been retreating since the early 1800s. In the 1950s measurements began that allow the monitoring of glacial mass balance, reported to the World Glacier Monitoring Service (WGMS) and the National Snow and Ice Data Center (NSIDC).",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Sparse records indicate that glaciers have been retreating since the early 1800s. In the 1950s measurements began that allow the monitoring of glacial mass balance, reported to the World Glacier Monitoring Service (WGMS) and the National Snow and Ice Data Center (NSIDC).\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/e5\/Glacier_Mass_Balance.png"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "The graph on the right shows three \"pathways\" to meet the UNFCCC's 2&nbsp;°C target, labelled \"global technology\", \"decentralised solutions\", and \"consumption change\". Each pathway shows how various measures (e.g., improved energy efficiency, increased use of renewable energy) could contribute to emissions reductions. Image credit: PBL Netherlands Environmental Assessment Agency. , p.177, Report no: 500062001. Report website.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"The graph on the right shows three \\\"pathways\\\" to meet the UNFCCC's 2&nbsp;°C target, labelled \\\"global technology\\\", \\\"decentralised solutions\\\", and \\\"consumption change\\\". Each pathway shows how various measures (e.g., improved energy efficiency, increased use of renewable energy) could contribute to emissions reductions. Image credit: PBL Netherlands Environmental Assessment Agency. , p.177, Report no: 500062001. Report website.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/d\/d8\/Limiting_global_warming_to_2_degrees_Celsius_-_options_to_reduce_greenhouse_gas_emissions_%28PBL%29.png"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Projections of global mean sea level rise by Parris and others. Probabilities have not been assigned to these projections. Executive Summary, in   Therefore, none of these projections should be interpreted as a \"best estimate\" of future sea level rise. Image credit: NOAA.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Projections of global mean sea level rise by Parris and others. Probabilities have not been assigned to these projections. Executive Summary, in   Therefore, none of these projections should be interpreted as a \\\"best estimate\\\" of future sea level rise. Image credit: NOAA.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/5\/54\/Projections_of_global_mean_sea_level_rise_by_Parris_et_al._%282012%29.png"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Contribution of natural factors and human activities to radiative forcing of climate change.IPCC,  Summary for Policymakers, Human and Natural Drivers of Climate Change, Figure SPM.2, in .  Radiative forcing values are for the year 2005, relative to the pre-industrial era (1750). The contribution of solar irradiance to radiative forcing is 5% the value of the combined radiative forcing due to increases in the atmospheric concentrations of carbon dioxide, methane and nitrous oxide.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Contribution of natural factors and human activities to radiative forcing of climate change.IPCC,  Summary for Policymakers, Human and Natural Drivers of Climate Change, Figure SPM.2, in .  Radiative forcing values are for the year 2005, relative to the pre-industrial era (1750). The contribution of solar irradiance to radiative forcing is 5% the value of the combined radiative forcing due to increases in the atmospheric concentrations of carbon dioxide, methane and nitrous oxide.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/bb\/Radiative-forcings.svg"
+        }
+        ]
+    }, {
+        "title": "Global warming",
+        "images": [{
+            "caption": "Article 2 of the UN Framework Convention refers explicitly to \"stabilization of greenhouse gas concentrations.\"Quoted in , \"Synthesis of Scientific-Technical Information Relevant to Interpreting Article 2 of the UN Framework Convention on Climate Change\", paragraph 4.1, p. 8 (pdf p. 18.)  To stabilize the atmospheric concentration of , emissions worldwide would need to be dramatically reduced from their present level.",
+            "debug": "{\"title\":\"Global warming\",\"score\":\"0.05587510271158586\",\"caption\":\"Article 2 of the UN Framework Convention refers explicitly to \\\"stabilization of greenhouse gas concentrations.\\\"Quoted in , \\\"Synthesis of Scientific-Technical Information Relevant to Interpreting Article 2 of the UN Framework Convention on Climate Change\\\", paragraph 4.1, p. 8 (pdf p. 18.)  To stabilize the atmospheric concentration of , emissions worldwide would need to be dramatically reduced from their present level.\",\"method\":\"all\"}",
+            "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/64\/Stabilizing_the_atmospheric_concentration_of_carbon_dioxide_at_a_constant_level_would_require_emissions_to_be_effectively_eliminated_%28vertical%29.png"
+        }
+        ]
+    }
+    ],
+    "diagnostics": {
+        "userTime": 6.49,
+        "cpuTime": 6.824245046
+    },
+    "success": true
+}
+
+
