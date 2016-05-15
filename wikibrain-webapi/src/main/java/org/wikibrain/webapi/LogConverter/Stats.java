@@ -30,7 +30,7 @@ public class Stats {
     // TODO: This doesn't really belong here...
     static <T> void writeListWithPadding(List<String> destination, List<T> source, int maxLength) {
         for (int i = 0; i < maxLength; i++) {
-            if (source != null && source.size() < i) {
+            if (source != null && source.size() > i) {
                 destination.add(source.get(i) + "");
             } else {
                 destination.add("");
@@ -40,7 +40,7 @@ public class Stats {
 
     static void writeJSONListWithPadding(List<String> destination, JSONArray source, int maxLength) {
         for (int i = 0; i < maxLength; i++) {
-            if (source != null && source.length() < i) {
+            if (source != null && source.length() > i) {
                 destination.add(source.get(i).toString());
             } else {
                 destination.add("");
