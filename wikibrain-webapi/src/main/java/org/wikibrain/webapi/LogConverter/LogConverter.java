@@ -76,7 +76,7 @@ public class LogConverter {
             File file = new File(url);
             return new JSONObject(FileUtils.readFileToString(file)).getString("content");
         } catch (Exception e) {
-            LOG.info(e.getLocalizedMessage());
+            LOG.warn(e.getLocalizedMessage());
         }
 
         return null;
@@ -88,7 +88,7 @@ public class LogConverter {
             File file = new File(url);
             return new JSONObject(FileUtils.readFileToString(file)).getJSONArray("articles");
         } catch (Exception e) {
-            LOG.info(e.getLocalizedMessage());
+            LOG.warn(e.getLocalizedMessage());
         }
 
         return null;
@@ -286,6 +286,7 @@ public class LogConverter {
 
             List<String> header = ImageData.headerData();
             writer.writeNext(header.toArray(new String[header.size()]));
+            writer.flush();
 
             int i = 0;
             for (ImageData data : imageData.values()) {
@@ -293,9 +294,10 @@ public class LogConverter {
                 List<String> lineData = data.csvData(readArticle(id.experimentId), readImages(id.experimentId).getJSONObject(id.imageIndex));
                 String[] line = lineData.toArray(new String[lineData.size()]);
                 writer.writeNext(line);
+                writer.flush();
 
                 i++;
-                LOG.info("Writing entry " + i + " of " + imageData.size());
+                LOG.warn("Writing entry " + i + " of " + imageData.size());
             }
 
             writer.close();
@@ -306,9 +308,12 @@ public class LogConverter {
 
             List<RaterData> allRaters = new ArrayList<RaterData>(raterData.values());
             for (RaterData data : allRaters) {
+                boolean writeHeader = false;
                 File output = new File(this.outputDirectory + "/article-" + data.experimentId + ".csv");
-
-                Writer fw = new FileWriter(output);
+                if (!output.exists()) {
+                    writeHeader = true;
+                }
+                Writer fw = new FileWriter(output, true);
                 CSVWriter raterWriter = new CSVWriter(fw);
 
                 List<RaterData> ratersInSameExperiment = new ArrayList<RaterData>();
@@ -318,15 +323,17 @@ public class LogConverter {
                     }
                 }
 
-                List<String> raterHeader = data.headerData(ratersInSameExperiment);
-                raterWriter.writeNext(raterHeader.toArray(new String[raterHeader.size()]));
+                if (writeHeader) {
+                    List<String> raterHeader = data.headerData(ratersInSameExperiment);
+                    raterWriter.writeNext(raterHeader.toArray(new String[raterHeader.size()]));
+                }
 
                 List<String> line = data.csvData(ratersInSameExperiment);
                 raterWriter.writeNext(line.toArray(new String[line.size()]));
 
                 raterWriter.close();
 
-                LOG.info("Writing experiment " + data.experimentId);
+                LOG.warn("Writing experiment " + data.experimentId);
             }
         } catch (Exception e) {
             LOG.error(e.getLocalizedMessage());
@@ -334,7 +341,7 @@ public class LogConverter {
         }
     }
 
-    public static void main(String[] args) throws ConfigurationException {
+    public static void main(String[] args) throws ConfigurationException, IOException {
         Options options = new Options();
         options.addOption(
                 new DefaultOptionBuilder()
@@ -380,7 +387,6 @@ public class LogConverter {
             LOG.error("No article directory");
             return;
         }
-
         LogConverter converter = new LogConverter(env,
                 "/export/scratch/comparifact/wikibrain/turk-logs/turk.csv",
                 "/export/scratch/comparifact/wikibrain/output",
