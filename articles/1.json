@@ -23,7 +23,7 @@
         "title": "OPV AIDS hypothesis",
         "images": [{
             "caption": "The Laboratoire Médical de Stanleyville was sited at the city now known as Kisangani",
-            "debug": "{\"title\":\"OPV AIDS hypothesis\",\"score\":\"0.8036735413091066\",\"caption\":\"The Laboratoire Médical de Stanleyville was sited at the city now known as Kisangani\",\"method\":\"all\"}",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"OPV AIDS hypothesis\",\"link-anchor-text\":\"\",\"score\":\"0.8036735413091066\",\"caption\":\"The Laboratoire Médical de Stanleyville was sited at the city now known as Kisangani\",\"method\":\"esa\",\"debug\":\"esa (0.8036735413091066)\"}",
             "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/b4\/Cg-map.png"
         }],
         "lang": "en",
@@ -32,7 +32,7 @@
         "title": "Poliomyelitis eradication",
         "images": [{
             "caption": "Countries with polio cases in 2005",
-            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"Countries with polio cases in 2005\",\"method\":\"all\"}",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"Countries with polio cases in 2005\",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
             "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f5\/Polio_worldwide_2005.svg",
             "legend" : "8.png"
         }],
@@ -42,7 +42,7 @@
         "title": "Poliomyelitis eradication",
         "images": [{
             "caption": "Reported Polio Cases in 2012",
-            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
             "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/6\/63\/Polio_worldwide_2012.svg",
             "legend" : "2.png"
         }],
@@ -52,7 +52,7 @@
         "title": "Poliomyelitis eradication",
         "images": [{
             "caption": "Reported polio cases in 2013",
-            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
             "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/ca\/Polio_worldwide_2013.svg",
             "legend" : "3.png"
         }],
@@ -62,7 +62,7 @@
         "title": "Poliomyelitis eradication",
         "images": [{
             "caption": "Reported polio cases in 2014",
-            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
             "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0c\/Polio_worldwide_2014.svg",
             "legend" : "4.png"
         }],
@@ -72,7 +72,7 @@
         "title": "Poliomyelitis eradication",
         "images": [{
             "caption": "Reported polio cases in 2015",
-            "debug": "{\"title\":\"Poliomyelitis eradication\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"all\"}",
+            "debug": "{\"esa-wikify-anchor-text\":\"\",\"title\":\"Poliomyelitis eradication\",\"link-anchor-text\":\"\",\"score\":\"0.7780641648048183\",\"caption\":\"thumb\",\"method\":\"esa\",\"debug\":\"esa (0.7780641648048183)\"}",
             "url": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/39\/Polio_worldwide_2015.svg",
             "legend" : "5.png"
         }],
