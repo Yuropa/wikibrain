@@ -17,12 +17,42 @@ public class Stats {
         return Collections.max(numbers);
     }
 
+    /*
     static <T> String toString(List<T> numbers) {
         JSONArray array = new JSONArray();
         for (T item : numbers) {
             array.put(item);
         }
         return array.toString();
+    }
+    */
+
+    // TODO: This doesn't really belong here...
+    static <T> void writeListWithPadding(List<String> destination, List<T> source, int maxLength) {
+        for (int i = 0; i < maxLength; i++) {
+            if (source != null && source.size() < i) {
+                destination.add(source.get(i) + "");
+            } else {
+                destination.add("");
+            }
+        }
+    }
+
+    static void writeJSONListWithPadding(List<String> destination, JSONArray source, int maxLength) {
+        for (int i = 0; i < maxLength; i++) {
+            if (source != null && source.length() < i) {
+                destination.add(source.get(i).toString());
+            } else {
+                destination.add("");
+            }
+        }
+    }
+
+    // TODO: Figure out a better way to do this...
+    static void writeHeaderWithPadding(List<String> destination, String base, int maxLength) {
+        for (int i = 1; i <= maxLength; i++) {
+            destination.add(base + i);
+        }
     }
 
     static double median(List<Double> numbers) {

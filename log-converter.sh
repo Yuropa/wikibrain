@@ -1,0 +1,1 @@
+./wb-java.sh org.wikibrain.webapi.LogConverter -l en -c ~/customize.conf -d ./articles -i ./turk-logs/turk.csv -o ./output

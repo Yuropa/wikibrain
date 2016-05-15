@@ -1,6 +1,7 @@
 package org.wikibrain.webapi.LogConverter;
 
 
+import com.sleepycat.je.utilint.Stat;
 import org.apache.commons.collections.IteratorUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,7 +45,12 @@ public class ImageData {
             return experimentId * 31 + imageIndex;
         }
     }
+    static int MAX_RATERS = 4;
 
+    static int MAX_MAP_STYLES = 4;
+    static int MAX_MAP_LOCATIONS = 10;
+
+    static int MAX_OTHER_ARTICLES = 8;
 
     public SRMetric srMetric;
     public RawImageDao riDao;
@@ -99,8 +105,8 @@ public class ImageData {
             data.add(refMap.getDouble("ne-lat") + "");
             data.add(refMap.getDouble("sw-lat") + "");
 
-            data.add(refMap.getJSONArray("styles").toString());
-            data.add(refMap.getJSONArray("annotations").toString());
+            Stats.writeJSONListWithPadding(data, refMap.getJSONArray("styles"), MAX_MAP_STYLES);
+            // data.add(refMap.getJSONArray("annotations").toString());
             data.add(refMap.getJSONArray("annotations").length() + "");
 
         } else {
@@ -123,8 +129,7 @@ public class ImageData {
             data.add("");
             data.add("");
 
-            data.add("");
-            data.add("");
+            Stats.writeListWithPadding(data, null, MAX_MAP_STYLES);
             data.add("");
 
         }
@@ -136,20 +141,23 @@ public class ImageData {
         List<Double> validatedRank = new ArrayList<Double>();
         List<Double> validatedNormalizedRank = new ArrayList<Double>();
 
-        JSONArray questionArray = new JSONArray();
-        JSONArray hadValidationImage = new JSONArray();
-        JSONArray validationImageResponse = new JSONArray();
-        JSONArray passedValidationImage = new JSONArray();
-        JSONArray deltaValidationImage = new JSONArray();
+        List<String> questionArray = new ArrayList<String>();
+        List<String> hadValidationImage = new ArrayList<String>();
+        List<Integer> validationImageResponse = new ArrayList<Integer>();
+        List<String> passedValidationImage = new ArrayList<String>();
+        List<Integer> deltaValidationImage = new ArrayList<Integer>();
 
         for (int i = 0; i < this.rank.size(); i++) {
             int imgRank = this.rank.get(i);
             rank.add((double)imgRank);
             normalizedRank.add((double)imgRank / 3.0);
 
-            int passedQuestionValidation = questionValidation.get(i) ? 1 : 0;
-            questionArray.put(passedQuestionValidation);
-            avgQuestion += passedQuestionValidation;
+            if (questionValidation.get(i)) {
+                questionArray.add("true");
+                avgQuestion ++;
+            } else  {
+                questionArray.add("false");
+            }
 
             if (questionValidation.get(i)) {
                 validatedRank.add((double)imgRank);
@@ -158,27 +166,27 @@ public class ImageData {
 
             if (validationResponse.containsKey(rankerId.get(i))) {
                 int answer = validationResponse.get(rankerId.get(i));
-                hadValidationImage.put(1);
-                validationImageResponse.put(answer);
-                passedValidationImage.put(answer == imgRank ? 1 : 0);
-                deltaValidationImage.put(answer - imgRank);
+                hadValidationImage.add("true");
+                validationImageResponse.add(answer);
+                passedValidationImage.add(answer == imgRank ? "true" : "false");
+                deltaValidationImage.add(answer - imgRank);
             } else {
-                hadValidationImage.put("");
-                validationImageResponse.put("");
-                passedValidationImage.put("");
-                deltaValidationImage.put("");
+                hadValidationImage.add("false");
+                validationImageResponse.add(null);
+                passedValidationImage.add(null);
+                deltaValidationImage.add(null);
             }
         }
 
         avgQuestion /= (double)rank.size();
 
-        data.add(Stats.toString(rank));
-        data.add(questionArray.toString());
+        Stats.writeListWithPadding(data, rank, MAX_RATERS);
+        Stats.writeListWithPadding(data, questionArray, MAX_RATERS);
 
-        data.add(hadValidationImage.toString());
-        data.add(validationImageResponse.toString());
-        data.add(passedValidationImage.toString());
-        data.add(deltaValidationImage.toString());
+        Stats.writeListWithPadding(data, hadValidationImage, MAX_RATERS);
+        Stats.writeListWithPadding(data, validationImageResponse, MAX_RATERS);
+        Stats.writeListWithPadding(data, passedValidationImage, MAX_RATERS);
+        Stats.writeListWithPadding(data, deltaValidationImage, MAX_RATERS);
 
         data.add(Stats.mean(rank) + "");
         data.add(Stats.median(rank) + "");
@@ -196,7 +204,7 @@ public class ImageData {
         data.add(debug.has("score") ? debug.getString("score") : "");
 
         if (pageTitle.length() <= 0) {
-            data.add(-1.0 + "");
+            data.add("");
         } else {
             data.add(srMetric.similarity(articleText, pageTitle, false).getScore() + "");
         }
@@ -204,7 +212,7 @@ public class ImageData {
 
         if (debug.has("locations")) {
             JSONArray locations = new JSONArray(debug.getString("locations"));
-            data.add(locations.toString());
+            Stats.writeJSONListWithPadding(data, locations, MAX_MAP_LOCATIONS);
 
             List<Double> srValues = new ArrayList<Double>();
             for (int i = 0; i < locations.length(); i++) {
@@ -212,24 +220,24 @@ public class ImageData {
                 srValues.add(srMetric.similarity(articleText, loc, false).getScore());
             }
 
-            data.add(Stats.toString(srValues));
+            Stats.writeListWithPadding(data, srValues, MAX_MAP_LOCATIONS);
             data.add(Stats.max(srValues) + "");
             data.add(Stats.mean(srValues) + "");
             data.add(Stats.median(srValues) + "");
 
-            data.add("");
-            data.add("");
+            Stats.writeListWithPadding(data, null, MAX_OTHER_ARTICLES);
+            Stats.writeListWithPadding(data, null, MAX_OTHER_ARTICLES);
             data.add("");
             data.add("");
             data.add("");
         } else {
-            data.add("");
-            data.add("");
+            Stats.writeListWithPadding(data, null, MAX_MAP_LOCATIONS);
+            Stats.writeListWithPadding(data, null, MAX_MAP_LOCATIONS);
             data.add("");
             data.add("");
             data.add("");
 
-            JSONArray pageTitles = new JSONArray();
+            List<String> pageTitles = new ArrayList<String>();
             List<Double> pageSr  = new ArrayList<Double>();
 
             String url = imageData.getJSONArray("images").getJSONObject(0).getString("url");
@@ -239,19 +247,19 @@ public class ImageData {
                 Iterator<LocalPage> pages = riDao.pagesWithImage(riDao.getImage(title), srMetric.getLanguage());
                 while (pages.hasNext()) {
                     String page = pages.next().getTitle().getCanonicalTitle();
-                    pageTitles.put(page);
+                    pageTitles.add(page);
                     pageSr.add(srMetric.similarity(articleText, page, false).getScore());
                 }
             }
             if (pageSr.size() > 0) {
-                data.add(pageTitles.toString());
-                data.add(Stats.toString(pageSr));
+                Stats.writeListWithPadding(data, pageTitles, MAX_OTHER_ARTICLES);
+                Stats.writeListWithPadding(data, pageSr, MAX_OTHER_ARTICLES);
                 data.add(Stats.max(pageSr) + "");
                 data.add(Stats.mean(pageSr) + "");
                 data.add(Stats.median(pageSr) + "");
             } else {
-                data.add("");
-                data.add("");
+                Stats.writeListWithPadding(data, null, MAX_OTHER_ARTICLES);
+                Stats.writeListWithPadding(data, null, MAX_OTHER_ARTICLES);
                 data.add("");
                 data.add("");
                 data.add("");
@@ -278,17 +286,17 @@ public class ImageData {
         header.add("map_ne_lat");
         header.add("map_sw_lat");
 
-        header.add("map_styles");
-        header.add("map_annotations");
+        Stats.writeHeaderWithPadding(header, "map_style_", MAX_MAP_STYLES);
+        // header.add("map_annotations");
         header.add("map_annotations_count");
 
-        header.add("rank");
-        header.add("validation_question_correct");
+        Stats.writeHeaderWithPadding(header, "score_", MAX_RATERS);
+        Stats.writeHeaderWithPadding(header, "validation_question_correct_", MAX_RATERS);
 
-        header.add("had_duplicate_image_validation");
-        header.add("duplicate_image_validation_rank");
-        header.add("passed_duplicate_image_validation");
-        header.add("duplicate_image_delta");
+        Stats.writeHeaderWithPadding(header, "has_duplication_image_", MAX_RATERS);
+        Stats.writeHeaderWithPadding(header, "duplicate_image_rank_", MAX_RATERS);
+        Stats.writeHeaderWithPadding(header, "passed_duplicate_validation_", MAX_RATERS);
+        Stats.writeHeaderWithPadding(header, "duplicate_image_delta_", MAX_RATERS);
 
         header.add("avg_rank");
         header.add("median_rank");
@@ -308,14 +316,15 @@ public class ImageData {
         header.add("article_title-text_esa");
         header.add("caption-text_esa");
 
-        header.add("ref_map_locations");
-        header.add("locations-article_text_esa");
+        Stats.writeHeaderWithPadding(header, "map_loc_", MAX_MAP_LOCATIONS);
+        Stats.writeHeaderWithPadding(header, "loc-source_text_esa", MAX_MAP_LOCATIONS);
         header.add("max_locations-article_text_esa");
         header.add("avg_locations-article_text_esa");
         header.add("median_locations-article_text_esa");
 
-        header.add("all_article_title");
-        header.add("article_title-article_text_esa");
+        Stats.writeHeaderWithPadding(header, "source_article_", MAX_OTHER_ARTICLES);
+        Stats.writeHeaderWithPadding(header, "article_title-source_text_esa_", MAX_OTHER_ARTICLES);
+
         header.add("max_article_title-article_text_esa");
         header.add("avg_article_title-article_text_esa");
         header.add("median_article_title-article_text_esa");

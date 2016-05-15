@@ -306,12 +306,9 @@ public class LogConverter {
 
             List<RaterData> allRaters = new ArrayList<RaterData>(raterData.values());
             for (RaterData data : allRaters) {
-                boolean writeHeader = false;
                 File output = new File(this.outputDirectory + "/article-" + data.experimentId + ".csv");
-                if (!output.exists()) {
-                    writeHeader = true;
-                }
-                Writer fw = new FileWriter(output, true);
+
+                Writer fw = new FileWriter(output);
                 CSVWriter raterWriter = new CSVWriter(fw);
 
                 List<RaterData> ratersInSameExperiment = new ArrayList<RaterData>();
@@ -321,10 +318,8 @@ public class LogConverter {
                     }
                 }
 
-                if (writeHeader) {
-                    List<String> raterHeader = RaterData.headerData(ratersInSameExperiment);
-                    raterWriter.writeNext(raterHeader.toArray(new String[raterHeader.size()]));
-                }
+                List<String> raterHeader = data.headerData(ratersInSameExperiment);
+                raterWriter.writeNext(raterHeader.toArray(new String[raterHeader.size()]));
 
                 List<String> line = data.csvData(ratersInSameExperiment);
                 raterWriter.writeNext(line.toArray(new String[line.size()]));

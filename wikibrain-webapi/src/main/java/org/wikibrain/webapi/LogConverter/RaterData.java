@@ -58,17 +58,12 @@ public class RaterData {
 
         List<Double> ranks = new ArrayList<Double>();
 
-        JSONArray imagesArray = new JSONArray();
-        JSONArray ranksArray  = new JSONArray();
-
         for (int i = 0; i < imageIds.size(); i++) {
-            imagesArray.put(imageIds.get(i));
-            ranksArray.put(imageRanks.get(i));
             ranks.add((double)imageRanks.get(i));
         }
 
-        data.add(imagesArray.toString());
-        data.add(ranksArray.toString());
+        Stats.writeListWithPadding(data, imageIds, imageIds.size());
+        Stats.writeListWithPadding(data, ranks, imageIds.size());
 
         data.add(Stats.mean(ranks) + "");
         data.add(Stats.median(ranks) + "");
@@ -76,9 +71,9 @@ public class RaterData {
 
         data.add(passedValidationQuestion ? "1" : "0");
 
-        JSONArray validationImage = new JSONArray();
-        JSONArray validationRank = new JSONArray();
-        JSONArray validationDelta = new JSONArray();
+        List<String> validationImage = new ArrayList<String>();
+        List<Integer> validationRank = new ArrayList<Integer>();
+        List<Integer> validationDelta = new ArrayList<Integer>();
         int incorrectValidation = 0;
 
         for (int i = 0; i < imageIds.size(); i++) {
@@ -86,24 +81,24 @@ public class RaterData {
             int rank = imageRanks.get(i);
 
             if (validationImages.containsKey(id)) {
-                validationImage.put(1);
+                validationImage.add("true");
                 int vRank = validationImages.get(id);
-                validationRank.put(vRank);
-                validationDelta.put(vRank - rank);
+                validationRank.add(vRank);
+                validationDelta.add(vRank - rank);
 
                 if (vRank != rank) {
                     incorrectValidation++;
                 }
             } else {
-                validationImage.put(0);
-                validationRank.put("");
-                validationDelta.put("");
+                validationImage.add("false");
+                validationRank.add(null);
+                validationDelta.add(null);
             }
         }
 
-        data.add(validationImage.toString());
-        data.add(validationRank.toString());
-        data.add(validationDelta.toString());
+        Stats.writeListWithPadding(data, validationImage, imageIds.size());
+        Stats.writeListWithPadding(data, validationRank, imageIds.size());
+        Stats.writeListWithPadding(data, validationDelta, imageIds.size());
         data.add(incorrectValidation + "");
 
         data.add(""); // Padding
@@ -125,23 +120,23 @@ public class RaterData {
         return data;
     }
 
-    static List<String> headerData(List<RaterData> allRaters) {
+    List<String> headerData(List<RaterData> allRaters) {
         List<String> header = new ArrayList<String>();
         header.add("name");
         header.add("id");
-        header.add("images");
-        header.add("image_rank");
+        Stats.writeHeaderWithPadding(header, "img_", imageIds.size());
+        Stats.writeHeaderWithPadding(header, "img_score_", imageIds.size());
 
-        header.add("avg_rank");
-        header.add("median_rank");
-        header.add("rank_var");
+        header.add("avg_score");
+        header.add("median_score");
+        header.add("score_var");
 
         header.add("passed_validation_question");
         // header.add("article_text");
 
-        header.add("duplicate_validation_images");
-        header.add("duplication_validation_images_rank");
-        header.add("duplication_validation_images_delta");
+        Stats.writeHeaderWithPadding(header, "has_duplicate_", imageIds.size());
+        Stats.writeHeaderWithPadding(header, "duplicate_score", imageIds.size());
+        Stats.writeHeaderWithPadding(header, "duplicate_delta", imageIds.size());
         header.add("total_incorrect_duplication_validation_images");
 
         header.add("Rater-Rater Correlation: "); // Padding
