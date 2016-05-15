@@ -382,9 +382,9 @@ public class LogConverter {
         }
 
         LogConverter converter = new LogConverter(env,
-                cmd.getOptionValue("input"),
-                cmd.getOptionValue("output"),
-                cmd.getOptionValue("directory"));
+                "/export/scratch/comparifact/wikibrain/turk-logs/turk.csv",
+                "/export/scratch/comparifact/wikibrain/output",
+                "/export/scratch/comparifact/wikibrain/articles");
         converter.parseArticle();
     }
 }
