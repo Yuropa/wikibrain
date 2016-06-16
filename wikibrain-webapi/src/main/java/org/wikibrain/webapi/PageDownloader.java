@@ -401,9 +401,12 @@ public class PageDownloader {
     }
     private void loadSpreadSheetData(boolean syncTrendingData) throws IOException, ServiceException, InterruptedException  {
         SpreadsheetEntry masterSpreadsheet = null;
+        String errorMessage = "";
         for (SpreadsheetEntry spreadsheet : getSpreadsheetEntries()) {
             if (spreadsheet.getTitle().getPlainText().equals(masterSpreadsheetName)) {
                 masterSpreadsheet = spreadsheet;
+            } else {
+                errorMessage += "\tFound spreadsheet \"" + spreadsheet.getTitle().getPlainText() + "\"\n";
             }
         }
 
@@ -416,7 +419,7 @@ public class PageDownloader {
                 return;
             }
         } else {
-            LOG.error("Could not find master spreadsheet named \"" + masterSpreadsheetName + "\"");
+            LOG.error("Could not find master spreadsheet named \"" + masterSpreadsheetName + "\"\n" + errorMessage);
             return;
         }
 

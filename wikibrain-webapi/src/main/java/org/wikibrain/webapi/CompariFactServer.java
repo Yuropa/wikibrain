@@ -9,6 +9,8 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
@@ -312,21 +314,25 @@ public class CompariFactServer extends AbstractHandler {
     }
 
     private void doFeatureArticles(WikiBrainWebRequest req) {
-        Map<String, List<Map<String, String>>> data = new HashMap<String, List<Map<String, String>>>();
+        JSONArray data = new JSONArray();
 
-        for (PageDownloader.ArticleSection section : pageDownloader.getFeaturedArticles()) {
-            List<Map<String, String>> sectionData = new ArrayList<Map<String, String>>();
-            for (PageDownloader.Article article : section.getArticles()) {
-                Map<String, String> articleData = new HashMap<String, String>();
-                articleData.put("title", article.title);
-                articleData.put("url", article.url);
-                articleData.put("imageURL", article.imageURL);
-                sectionData.add(articleData);
+        for (PageDownloader.ArticleSection s : pageDownloader.getFeaturedArticles()) {
+            JSONArray articles = new JSONArray();
+            for (PageDownloader.Article a : s.getArticles()) {
+                JSONObject article = new JSONObject();
+                article.put("title", a.title);
+                article.put("url", a.url);
+                article.put("imageURL", a.imageURL);
+                articles.put(article);
             }
-            data.put(section.getTitle(), sectionData);
+
+            JSONObject section = new JSONObject();
+            section.put("title", s.getTitle());
+            section.put("articles", articles);
+            data.put(section);
         }
 
-        req.writeJsonResponse(data);
+        req.writeJsonResponse("data", data.toString());
     }
 
     public static void main(String args[]) throws Exception {
