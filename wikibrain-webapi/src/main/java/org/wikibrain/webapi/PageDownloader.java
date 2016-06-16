@@ -434,7 +434,7 @@ public class PageDownloader {
         // Download spreadsheet from Google Drive
         System.out.println("BEGIN loading feature article data");
         featuredArticles = getSheadsheetData(worksheet);
-        System.out.println("RETREIVED data from spreadsheet");
+        System.out.println("RECEIVED data from spreadsheet");
         for (ArticleSection section : featuredArticles) {
             for (Article article : section.getArticles()) {
                 Article data = pageForURL(article.url, false);
