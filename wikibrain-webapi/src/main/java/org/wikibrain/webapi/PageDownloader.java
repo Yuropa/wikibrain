@@ -259,6 +259,14 @@ public class PageDownloader {
             JSONObject jsonObject = new JSONObject(downloadFile(readabilityURL, 0));
             content.content = extractor.getText(jsonObject.getString("content"));
 
+            String newContent = "";
+            for (String line : content.content.split("\n")) {
+                if (!line.startsWith("Image copyright") && !line.startsWith("Image caption")) {
+                    newContent += line + "\n";
+                }
+            }
+            content.content = newContent;
+
             Date publishedDate = new Date();
             if (jsonObject.has("date_published") && !jsonObject.isNull("date_published")) {
                 try {
