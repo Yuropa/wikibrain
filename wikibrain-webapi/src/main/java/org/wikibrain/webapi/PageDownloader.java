@@ -197,12 +197,14 @@ public class PageDownloader {
                     }
 
                     String imageURL = "";
+                    int width = -1;
                     if (article.has("multimedia")) {
                         JSONArray multimedia = article.getJSONArray("multimedia");
                         for (int j = 0; j < multimedia.length(); j++) {
-                            if (multimedia.getJSONObject(j).has("url")) {
-                                imageURL = "http://nytimes.com/" + multimedia.getJSONObject(j).getString("url");
-                                break;
+                            JSONObject image = multimedia.getJSONObject(j);
+                            if (image.has("url") && image.has("width") && image.getInt("width") > width) {
+                                width = image.getInt("width");
+                                imageURL = "http://nytimes.com/" + image.getString("url");
                             }
                         }
                     }
