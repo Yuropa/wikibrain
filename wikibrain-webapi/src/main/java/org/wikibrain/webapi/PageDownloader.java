@@ -1,6 +1,7 @@
 package org.wikibrain.webapi;
 
 import com.google.gdata.util.ServiceException;
+import com.google.gdata.util.common.base.Joiner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -165,7 +166,18 @@ public class PageDownloader {
         List<NYTimesArticle> articles = new ArrayList<NYTimesArticle>();
         String searchURL = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
 
-        searchURL += String.join("+", keywords).replace(" ", "+");
+        String keyword = "";
+        boolean first = true;
+        for (String k : keywords) {
+            if (first) {
+                first = false;
+            } else {
+                keyword += "+";
+            }
+
+            keyword += k;
+        }
+        searchURL += keyword.replace(" ", "+");
         searchURL += "&fl=web_url%2Cmultimedia%2Cheadline%2Cpub_date%2Clead_paragraph%2Cprint_page&api-key=" + NYTimesAPIKey;
 
         String articleJSON = downloadFile(searchURL, 0);
