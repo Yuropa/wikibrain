@@ -61,7 +61,7 @@ public class PageDownloader {
                 .setTransport(httpTransport)
                 .setJsonFactory(JSON_FACTORY)
                 .setServiceAccountId(emailAddress)
-                .setServiceAccountPrivateKeyFromP12File(new File("atlasify/Atlasify-UMN-6e5cbb645a7f.p12"))
+                .setServiceAccountPrivateKeyFromP12File(new File("Atlasify-UMN-6e5cbb645a7f.p12"))
                 .setServiceAccountScopes(scope)
                 .build();
         factory = FeedURLFactory.getDefault();
