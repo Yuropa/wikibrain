@@ -1,7 +1,7 @@
 package org.wikibrain.webapi;
 
+import com.google.gdata.util.ServiceException;
 import org.apache.commons.cli.*;
-import org.apache.commons.codec.language.bm.Lang;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
@@ -9,7 +9,6 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
-import org.jooq.util.derby.sys.Sys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wikibrain.conf.ConfigurationException;
@@ -18,24 +17,19 @@ import org.wikibrain.core.cmd.Env;
 import org.wikibrain.core.cmd.EnvBuilder;
 import org.wikibrain.core.dao.*;
 import org.wikibrain.core.lang.Language;
-import org.wikibrain.core.model.LocalLink;
 import org.wikibrain.core.model.LocalPage;
 import org.wikibrain.core.model.RawImage;
 import org.wikibrain.sr.SRMetric;
 import org.wikibrain.sr.SRResult;
-import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
-import org.wikibrain.utils.ParallelForEach;
-import org.wikibrain.utils.Procedure;
-import org.wikibrain.utils.WpThreadUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.security.GeneralSecurityException;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Shilad Sen
@@ -47,10 +41,13 @@ public class CompariFactServer extends AbstractHandler {
     private final Env env;
     private WebEntityParser entityParser;
     private List<CompariFactDataSource> sources;
+    private PageDownloader pageDownloader;
 
-    public CompariFactServer(Env env) throws ConfigurationException, DaoException {
+    public CompariFactServer(Env env) throws ConfigurationException, DaoException, IOException, GeneralSecurityException, ServiceException, InterruptedException {
         this.env = env;
         this.entityParser = new WebEntityParser(env);
+
+        pageDownloader = new PageDownloader();
 
         // Warm up necessary components
         for (Language l : env.getLanguages()) {
@@ -83,6 +80,10 @@ public class CompariFactServer extends AbstractHandler {
                 doESA(req);
             } else if (target.equals("/imagePages")) {
                 doImagePages(req);
+            } else if (target.equals("/extract")) {
+                doExtractActicle(req);
+            } else if (target.equals("/featured")) {
+                doFeatureArticles(req);
             }
         } catch (WikiBrainWebException e) {
             req.writeError(e);
@@ -295,6 +296,37 @@ public class CompariFactServer extends AbstractHandler {
         }
 
         req.writeJsonResponse("pages", pages, "entity1", entity1.toJson());
+    }
+
+    private void doExtractActicle(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
+        String url = req.getParamOrDie("url");
+        PageDownloader.Article page = pageDownloader.pageForURL(url);
+
+        /*
+        public String content;
+        public String date;
+        public String title;
+        public String imageURL;
+         */
+        req.writeJsonResponse("content", page.content, "date", page.date, "title", page.title, "imageURL", page.imageURL);
+    }
+
+    private void doFeatureArticles(WikiBrainWebRequest req) {
+        Map<String, List<Map<String, String>>> data = new HashMap<String, List<Map<String, String>>>();
+
+        for (PageDownloader.ArticleSection section : pageDownloader.getFeaturedArticles()) {
+            List<Map<String, String>> sectionData = new ArrayList<Map<String, String>>();
+            for (PageDownloader.Article article : section.getArticles()) {
+                Map<String, String> articleData = new HashMap<String, String>();
+                articleData.put("title", article.title);
+                articleData.put("url", article.url);
+                articleData.put("imageURL", article.imageURL);
+                sectionData.add(articleData);
+            }
+            data.put(section.getTitle(), sectionData);
+        }
+
+        req.writeJsonResponse(data);
     }
 
     public static void main(String args[]) throws Exception {
