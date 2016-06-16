@@ -201,7 +201,7 @@ public class PageDownloader {
                         JSONArray multimedia = article.getJSONArray("multimedia");
                         for (int j = 0; j < multimedia.length(); j++) {
                             if (multimedia.getJSONObject(j).has("url")) {
-                                imageURL = multimedia.getJSONObject(j).getString("url");
+                                imageURL = "http://nytimes.com/" + multimedia.getJSONObject(j).getString("url");
                                 break;
                             }
                         }
