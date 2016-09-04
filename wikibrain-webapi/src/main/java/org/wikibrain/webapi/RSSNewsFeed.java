@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.feed.synd.SyndLink;
 import com.rometools.rome.io.FeedException;
@@ -30,8 +31,8 @@ public class RSSNewsFeed {
         SyndFeed feed = input.build(new XmlReader(url));
 
         ArrayList<String> links = new ArrayList<String>();
-        for (SyndLink link : feed.getLinks()) {
-            links.add(link.getHref());
+        for (SyndEntry entry : feed.getEntries()) {
+            links.add(entry.getLink());
         }
         return links;
     }
