@@ -2,6 +2,7 @@ package org.wikibrain.webapi;
 
 import com.google.gdata.util.ServiceException;
 import com.google.gdata.util.common.base.Joiner;
+import com.rometools.rome.io.FeedException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -39,9 +40,24 @@ import java.util.concurrent.*;
  * Created by Josh on 6/15/16.
  */
 public class PageDownloader {
+    interface PageDownloaderCallback {
+        void didUpdateUpdateFeaturedArticles();
+    }
+
+    void registerCallback(PageDownloaderCallback callback) {
+        this.callback = callback;
+    }
+    private PageDownloaderCallback callback;
+
     private static final Logger LOG = LoggerFactory.getLogger(PageDownloader.class);
     private static final int MAX_CACHE_SIZE = 200;
     private static final Date refreshTime = new Date(0, 0, 0, 2, 0);
+
+    private static final String CNN_RSS_URL = "http://rss.cnn.com/rss/cnn_topstories.rss";
+    private final RSSNewsFeed CNNFeed = new RSSNewsFeed(CNN_RSS_URL);
+
+    private static final String FOX_RSS_URL = "http://feeds.foxnews.com/foxnews/latest";
+    private final  RSSNewsFeed FOXFeed = new RSSNewsFeed(FOX_RSS_URL);
 
     static BoilerpipeExtractor extractor = CommonExtractors.ARTICLE_EXTRACTOR;
 
@@ -52,7 +68,7 @@ public class PageDownloader {
 
     final private String masterSpreadsheetName = "Comparifact Featured Articles";
 
-    PageDownloader() throws IOException, GeneralSecurityException, ServiceException, InterruptedException {
+    PageDownloader() throws IOException, GeneralSecurityException, ServiceException, InterruptedException, FeedException {
         String emailAddress = "152281337822-njvo1usnct105ce311asssgvpelfs6ck@developer.gserviceaccount.com";
         JsonFactory JSON_FACTORY = new JacksonFactory();
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
@@ -81,7 +97,7 @@ public class PageDownloader {
             @Override
             public void run() {
                 try {
-                    loadSpreadSheetData();
+                    loadSpreadSheetData(true, true);
                 } catch (Exception e) {
                     System.out.println("Error retrieving new featured article data");
                     e.printStackTrace();
@@ -89,7 +105,7 @@ public class PageDownloader {
             }
         }, (refreshTime.getTime() - current.getTime())/1000, 24*60*60, TimeUnit.SECONDS);
 
-        loadSpreadSheetData(false);
+        loadSpreadSheetData(true, false);
     }
 
     private final String ReadabilityAPIKey = "042e3228d910e85f442d5a00e95268ff71ccdd28";
@@ -406,10 +422,7 @@ public class PageDownloader {
         return sections;
     }
 
-    private void loadSpreadSheetData() throws Exception {
-        loadSpreadSheetData(true);
-    }
-    private void loadSpreadSheetData(boolean syncTrendingData) throws IOException, ServiceException, InterruptedException  {
+    private void loadSpreadSheetData(boolean syncTrendingData, boolean callCallback) throws IOException, ServiceException, InterruptedException, FeedException  {
         SpreadsheetEntry masterSpreadsheet = null;
         String errorMessage = "";
         for (SpreadsheetEntry spreadsheet : getSpreadsheetEntries()) {
@@ -434,32 +447,66 @@ public class PageDownloader {
         }
 
         if (syncTrendingData) {
+            syncRSSFeeds(worksheet);
             syncTrendingData(worksheet);
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         }
         syncFeaturedData(worksheet);
+
+        if (callCallback && callback != null) {
+            callback.didUpdateUpdateFeaturedArticles();;
+        }
     }
 
-    private void syncFeaturedData(WorksheetEntry worksheet) throws IOException, ServiceException  {
+    private void syncFeaturedData(WorksheetEntry worksheet) throws IOException, ServiceException {
         // Download spreadsheet from Google Drive
         System.out.println("BEGIN loading feature article data");
-        featuredArticles = getSheadsheetData(worksheet);
-        System.out.println("RECEIVED data from spreadsheet");
-        for (ArticleSection section : featuredArticles) {
+
+        List<ArticleSection> newSections = new ArrayList<ArticleSection>();
+
+        for (ArticleSection section : getSheadsheetData(worksheet)) {
+            List<Article> newArticles = new ArrayList<Article>();
+
             for (Article article : section.getArticles()) {
                 Article data = pageForURL(article.url, false);
                 article.content = data.content;
                 article.date = data.date;
                 article.imageURL = data.imageURL;
                 article.title = data.title;
+                newArticles.add(article);
             }
+
+            newSections.add(new ArticleSection(section.title, newArticles));
         }
+        System.out.println("RECEIVED data from spreadsheet");
+
+        featuredArticles = newSections;
+
         System.out.println("FINISHED loading feature article data");
     }
     public List<ArticleSection> getFeaturedArticles() {
         return featuredArticles;
     }
 
+    private void syncRSSFeeds(WorksheetEntry worksheet) throws IOException, ServiceException, FeedException {
+        System.out.println("BEGIN Updating RSS Data");
+
+        List<ArticleSection> sections = getSheadsheetData(worksheet);
+
+        List<String> cnnArticle = CNNFeed.getCurrentArticles();
+        if (cnnArticle.size() > MaximumNumberOfTrendingArticles) {
+            cnnArticle = cnnArticle.subList(0, MaximumNumberOfTrendingArticles);
+        }
+        writeArticleToRow(cnnArticle, worksheet, sections.size() - 2);
+
+        List<String> foxArticle = FOXFeed.getCurrentArticles();
+        if (foxArticle.size() > MaximumNumberOfTrendingArticles) {
+            foxArticle = foxArticle.subList(0, MaximumNumberOfTrendingArticles);
+        }
+        writeArticleToRow(foxArticle, worksheet, sections.size() - 1);
+
+        System.out.println("FINISH Updating RSS Data");
+    }
     private void syncTrendingData(WorksheetEntry worksheet) throws IOException, ServiceException  {
         System.out.println("BEGIN Updating Trending Data");
 
@@ -473,7 +520,7 @@ public class PageDownloader {
 
             @Override
             public int compareTo(RankedArticle o) {
-                return Integer.compare(views, o.views);
+                return ((Integer)views).compareTo(o.views);
             }
         }
 
@@ -481,8 +528,6 @@ public class PageDownloader {
         synchronized (pageViewCount) {
             for (String url : pageViewCount.keySet()) {
                 trendingArticles.add(new RankedArticle(url, pageViewCount.get(url)));
-                // Make sure the trending articles are loaded in the cache
-                pageForURL(url, false);
             }
 
             // Clear the previous page counts
@@ -494,6 +539,11 @@ public class PageDownloader {
 
         // Fill in the rending articles to the maximum size with past trending articles if necessary
         List<Article> pastTrendingArticles = new ArrayList<Article>(getSheadsheetData(worksheet).get(0).getArticles());
+
+        if (trendingArticles.size() > MaximumNumberOfTrendingArticles) {
+            trendingArticles = trendingArticles.subList(0, MaximumNumberOfTrendingArticles);
+        }
+
         while (trendingArticles.size() < MaximumNumberOfTrendingArticles && pastTrendingArticles.size() > 0) {
             Article article = pastTrendingArticles.remove(0);
 
@@ -512,14 +562,29 @@ public class PageDownloader {
             }
         }
 
-        URL trendingFeedUrl = worksheet.getCellFeedUrl();
-        CellQuery trendingQuery = new CellQuery(trendingFeedUrl);
-        CellFeed trendingFeed = service.query(trendingQuery, CellFeed.class);
+        List<String> articleURLs = new ArrayList<String>();
+        for (RankedArticle article : trendingArticles) {
+            articleURLs.add(article.url);
+        }
+
+        writeArticleToRow(articleURLs, worksheet, 1);
+
+        System.out.println("FINISH Updating Trending Data");
+    }
+
+    // The row is zero indexed (even though Google uses a 1 based index)
+    private void writeArticleToRow(List<String> data, WorksheetEntry worksheet, int row) throws IOException, ServiceException {
+        row++; // Convert zero based to one based index
+
+        URL feedUrl = worksheet.getCellFeedUrl();
+        CellQuery query = new CellQuery(feedUrl);
+        CellFeed feed = service.query(query, CellFeed.class);
+
         int savedCells = 0;
         // Write the data to the sheet
-        for (CellEntry cellEntry : trendingFeed.getEntries()) {
+        for (CellEntry cellEntry : feed.getEntries()) {
             Cell cell = cellEntry.getCell();
-            if (cell.getRow() != 2) {
+            if (cell.getRow() != row) {
                 // We only need to update the trending row
                 continue;
             }
@@ -530,26 +595,24 @@ public class PageDownloader {
 
             // Indexing Begins from 1 and we are skipping the header
             int index = cell.getCol() - 2;
-            if (index >= trendingArticles.size()) {
+            if (index >= data.size()) {
                 cellEntry.delete();
                 continue;
             }
 
             // Set the appropriate value
-            cellEntry.changeInputValueLocal(trendingArticles.get(index).url);
+            cellEntry.changeInputValueLocal(data.get(index));
             cellEntry.update();
             savedCells++;
         }
 
         // Add in the remaining cells
-        while (savedCells < trendingArticles.size()) {
+        while (savedCells < data.size()) {
             // Indexing Begins from 1 and we are skipping the header
             int index = savedCells + 2;
-            CellEntry cellEntry = new CellEntry(2, index, trendingArticles.get(savedCells).url);
-            trendingFeed.insert(cellEntry);
+            CellEntry cellEntry = new CellEntry(2, index, data.get(savedCells));
+            feed.insert(cellEntry);
             savedCells++;
         }
-
-        System.out.println("FINISH Updating Trending Data");
     }
 }

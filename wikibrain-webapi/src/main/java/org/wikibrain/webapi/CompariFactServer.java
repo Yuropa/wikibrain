@@ -1,6 +1,7 @@
 package org.wikibrain.webapi;
 
 import com.google.gdata.util.ServiceException;
+import com.rometools.rome.io.FeedException;
 import org.apache.commons.cli.*;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Request;
@@ -38,18 +39,52 @@ import java.util.*;
  * This is based on the WikiBrain Server Shilad wrote. I removed some of the features I don't need and added some features
  * that we needed
  */
-public class CompariFactServer extends AbstractHandler {
+public class CompariFactServer extends AbstractHandler implements PageDownloader.PageDownloaderCallback {
     private static final Logger LOG = LoggerFactory.getLogger(CompariFactServer.class);
     private final Env env;
     private WebEntityParser entityParser;
     private List<CompariFactDataSource> sources;
     private PageDownloader pageDownloader;
 
-    public CompariFactServer(Env env) throws ConfigurationException, DaoException, IOException, GeneralSecurityException, ServiceException, InterruptedException {
+    class ImageRequest {
+        final public String method;
+        final public String text;
+
+        ImageRequest(String method, String text) {
+            this.method = method;
+            this.text = text;
+        }
+
+        @Override
+        public int hashCode() {
+            return method.hashCode() ^ text.hashCode();
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ImageRequest) {
+                ImageRequest request = (ImageRequest)obj;
+                return method.equals(request.method) && text.equals(request.text);
+            }
+
+            return super.equals(obj);
+        }
+    }
+
+    private static final int MAX_CACHE_SIZE = 200;
+    private Map<ImageRequest, List> imageCache = new LinkedHashMap<ImageRequest, List>(MAX_CACHE_SIZE*10/7, 0.7f, true) {
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<ImageRequest, List> eldest) {
+            return size() > MAX_CACHE_SIZE;
+        }
+    };
+
+    public CompariFactServer(Env env) throws ConfigurationException, DaoException, IOException, GeneralSecurityException, ServiceException, InterruptedException, FeedException {
         this.env = env;
         this.entityParser = new WebEntityParser(env);
 
         pageDownloader = new PageDownloader();
+        pageDownloader.registerCallback(this);
 
         // Warm up necessary components
         for (Language l : env.getLanguages()) {
@@ -111,97 +146,104 @@ public class CompariFactServer extends AbstractHandler {
         Language lang = req.getLanguage();
         String type = req.getParamOrDie("method");
         String text = URLDecoder.decode(req.getParamOrDie("text"));
+        List jsonConcepts = generateImagesForArticle(type, text);
+        req.writeJsonResponse("text", text, "articles", jsonConcepts);
+    }
 
-        LOG.info("Generating images using method " + type + " for text: " + text);
-
-        ArrayList<InternalImage> images = new ArrayList<InternalImage>();
-
-        // Iterator overall the image sources we have and add all their generated iamges
-        // These are configured in the constructor
-        for (CompariFactDataSource source : sources) {
-            images.addAll(source.generateimages(text, type));
-        }
-
-        Set<String> imageLocations = new HashSet<String>();
-
-        // Remove duplicate images by looking at image URLs
-        // This won't remove duplicate Reference Maps
-        for (int i = 0; i < images.size(); i++) {
-            RawImage image = images.get(i);
-
-            String location = image.getImageLocation();
-            if (location == null) {
-                // This is a reference map
-                continue;
-            }
-
-            if (imageLocations.contains(location)) {
-                LOG.debug("Removing duplicate image: " + images.get(i).toString());
-                images.remove(i);
-                i--;
-            } else {
-                imageLocations.add(image.getImageLocation());
-                LOG.debug("Retaining image: " + images.get(i).toString());
-            }
-        }
-
-        // Sort the images based on the score (We will need to add some kind of ranking here instead)
-        Collections.sort(images, Collections.reverseOrder());
-
-        // Generate all the images
-        /*
-        final Map<InternalImage, String> generatedImages = new ConcurrentHashMap<InternalImage, String>();
-        ParallelForEach.loop(images, WpThreadUtils.getMaxThreads() * 4, new Procedure<InternalImage>() {
-            @Override
-            public void call(InternalImage arg) throws Exception {
-                try {
-                    generatedImages.put(arg, arg.generateBase64String(400));
-                } catch (Exception e) {
-                    // Skip the image
-                }
-            }
-        }, 4);
-        */
-
-        // Convert all the iamges to JSON
+    private List generateImagesForArticle(String method, String text) throws DaoException {
         List jsonConcepts = new ArrayList();
-        for (InternalImage i : images) {
-            try {
-                List imageURLS = new ArrayList();
-                Map image = new HashMap();
+        ImageRequest request = new ImageRequest(method, text);
 
-                // Skip the photos
-                if (i.isPhotograph()) {
+        boolean areImagesCache = false;
+        synchronized (imageCache) {
+            if (imageCache.containsKey(request)) {
+                areImagesCache = true;
+                jsonConcepts = imageCache.get(request);
+                LOG.info("Found cached images for method " + method + " for text: " + text);
+            }
+        }
+
+        if (!areImagesCache) {
+            LOG.info("Generating images using method " + method + " for text: " + text);
+
+            ArrayList<InternalImage> images = new ArrayList<InternalImage>();
+
+            // Iterator overall the image sources we have and add all their generated iamges
+            // These are configured in the constructor
+            for (CompariFactDataSource source : sources) {
+                images.addAll(source.generateimages(text, method));
+            }
+
+            Set<String> imageLocations = new HashSet<String>();
+
+            // Remove duplicate images by looking at image URLs
+            // This won't remove duplicate Reference Maps
+            for (int i = 0; i < images.size(); i++) {
+                RawImage image = images.get(i);
+
+                String location = image.getImageLocation();
+                if (location == null) {
+                    // This is a reference map
                     continue;
                 }
 
-                // We need to handle images and reference maps seperatly
-                String imageURL = i.getImageLocation();
-                if (imageURL != null && imageURL.length() > 0) {
-                    image.put("url", imageURL);
+                if (imageLocations.contains(location)) {
+                    LOG.debug("Removing duplicate image: " + images.get(i).toString());
+                    images.remove(i);
+                    i--;
                 } else {
-                    if (i instanceof CompariFactReferenceMap.ReferenceImage && !((CompariFactReferenceMap.ReferenceImage)i).hasImage) {
-                        image.put("refMap", ((CompariFactReferenceMap.ReferenceImage)i).mapJSON);
-                    } else {
-                        image.put("data", i.generateBase64String());
-                    }
+                    imageLocations.add(image.getImageLocation());
+                    LOG.debug("Retaining image: " + images.get(i).toString());
                 }
-                // image.put("data", generatedImages.get(i));
+            }
 
-                image.put("caption", i.getCaption());
-                image.put("debug", i.generateDebugString());
-                imageURLS.add(image);
+            // Sort the images based on the score (We will need to add some kind of ranking here instead)
+            Collections.sort(images, Collections.reverseOrder());
 
-                Map obj = new HashMap();
-                obj.put("title", i.getTitle());
-                obj.put("images", imageURLS);
-                jsonConcepts.add(obj);
-            } catch (Exception e) {
-                // Unable to generate image file, so we'll skip it
-                continue;
+            // Convert all the images to JSON
+            for (InternalImage i : images) {
+                try {
+                    List imageURLS = new ArrayList();
+                    Map image = new HashMap();
+
+                    // Skip the photos
+                    if (i.isPhotograph()) {
+                        continue;
+                    }
+
+                    // We need to handle images and reference maps seperatly
+                    String imageURL = i.getImageLocation();
+                    if (imageURL != null && imageURL.length() > 0) {
+                        image.put("url", imageURL);
+                    } else {
+                        if (i instanceof CompariFactReferenceMap.ReferenceImage && !((CompariFactReferenceMap.ReferenceImage) i).hasImage) {
+                            image.put("refMap", ((CompariFactReferenceMap.ReferenceImage) i).mapJSON);
+                        } else {
+                            image.put("data", i.generateBase64String());
+                        }
+                    }
+                    // image.put("data", generatedImages.get(i));
+
+                    image.put("caption", i.getCaption());
+                    image.put("debug", i.generateDebugString());
+                    imageURLS.add(image);
+
+                    Map obj = new HashMap();
+                    obj.put("title", i.getTitle());
+                    obj.put("images", imageURLS);
+                    jsonConcepts.add(obj);
+                } catch (Exception e) {
+                    // Unable to generate image file, so we'll skip it
+                    continue;
+                }
+            }
+
+            // Cache the results
+            synchronized (imageCache) {
+                imageCache.put(request, jsonConcepts);
             }
         }
-        req.writeJsonResponse("text", text, "articles", jsonConcepts);
+        return jsonConcepts;
     }
 
     private SRMetric getSr(Language lang) throws ConfigurationException {
@@ -333,6 +375,21 @@ public class CompariFactServer extends AbstractHandler {
         }
 
         req.writeJsonResponse("data", data.toString());
+    }
+
+    @Override
+    public void didUpdateUpdateFeaturedArticles() {
+        // Cache all the featured articles
+        for (PageDownloader.ArticleSection s : pageDownloader.getFeaturedArticles()) {
+            for (PageDownloader.Article a : s.getArticles()) {
+                try {
+                    generateImagesForArticle("all", a.content);
+                } catch (DaoException e) {
+                    LOG.info("Error occurred: " + e);
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public static void main(String args[]) throws Exception {
