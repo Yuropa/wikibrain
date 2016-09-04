@@ -610,7 +610,7 @@ public class PageDownloader {
         while (savedCells < data.size()) {
             // Indexing Begins from 1 and we are skipping the header
             int index = savedCells + 2;
-            CellEntry cellEntry = new CellEntry(2, index, data.get(savedCells));
+            CellEntry cellEntry = new CellEntry(row, index, data.get(savedCells));
             feed.insert(cellEntry);
             savedCells++;
         }
