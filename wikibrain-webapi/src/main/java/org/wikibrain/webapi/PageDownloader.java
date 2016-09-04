@@ -26,12 +26,11 @@ import com.googlecode.concurrentlinkedhashmap.ConcurrentLinkedHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.security.GeneralSecurityException;
 import java.util.*;
 import java.util.concurrent.*;
@@ -497,11 +496,18 @@ public class PageDownloader {
         if (cnnArticle.size() > MaximumNumberOfTrendingArticles) {
             cnnArticle = cnnArticle.subList(0, MaximumNumberOfTrendingArticles);
         }
+        for (int i = 0; i < cnnArticle.size(); i++) {
+            cnnArticle.set(i, redirectedURL(cnnArticle.get(i)));
+        }
+
         writeArticleToRow(cnnArticle, worksheet, sections.size() - 2);
 
         List<String> foxArticle = FOXFeed.getCurrentArticles();
         if (foxArticle.size() > MaximumNumberOfTrendingArticles) {
             foxArticle = foxArticle.subList(0, MaximumNumberOfTrendingArticles);
+        }
+        for (int i = 0; i < foxArticle.size(); i++) {
+            foxArticle.set(i, redirectedURL(foxArticle.get(i)));
         }
         writeArticleToRow(foxArticle, worksheet, sections.size() - 1);
 
@@ -570,6 +576,21 @@ public class PageDownloader {
         writeArticleToRow(articleURLs, worksheet, 0);
 
         System.out.println("FINISH Updating Trending Data");
+    }
+
+    private String redirectedURL(String url) {
+        try {
+            URLConnection connection = new URL(url).openConnection();
+            connection.connect();
+            InputStream stream = connection.getInputStream();
+            String redirectedURL = connection.getURL().toExternalForm();
+            stream.close();
+
+            return redirectedURL;
+        }
+        catch (MalformedURLException e) { }
+        catch (IOException e) { }
+        return url;
     }
 
     // The row is zero indexed (even though Google uses a 1 based index)
