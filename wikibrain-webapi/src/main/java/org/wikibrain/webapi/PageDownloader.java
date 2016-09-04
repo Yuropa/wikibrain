@@ -567,14 +567,14 @@ public class PageDownloader {
             articleURLs.add(article.url);
         }
 
-        writeArticleToRow(articleURLs, worksheet, 1);
+        writeArticleToRow(articleURLs, worksheet, 0);
 
         System.out.println("FINISH Updating Trending Data");
     }
 
     // The row is zero indexed (even though Google uses a 1 based index)
     private void writeArticleToRow(List<String> data, WorksheetEntry worksheet, int row) throws IOException, ServiceException {
-        row++; // Convert zero based to one based index
+        row += 2; // Convert zero based to one based index (and we need to skip the header row
 
         URL feedUrl = worksheet.getCellFeedUrl();
         CellQuery query = new CellQuery(feedUrl);
