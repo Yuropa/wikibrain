@@ -36,6 +36,49 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     final private Map<String, SRMetric> srMetrics;
     final private Wikifier wikifier;
 
+    class SRImageKey {
+        final public String text;
+        final public int count;
+        final public String method;
+
+        SRImageKey(String text, int count, String method) {
+            this.text = text;
+            this.count = count;
+            this.method = method;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SRImageKey) {
+                SRImageKey key = (SRImageKey)obj;
+                return count == key.count && method == key.method && text == key.text;
+            }
+
+            return super.equals(obj);
+        }
+
+        @Override
+        public int hashCode() {
+            return text.hashCode() ^ (count << 2 * method.hashCode());
+        }
+    }
+
+    private static final int MAX_SR_IMAGE_CACHE_SIZE = 50;
+    private Map<SRImageKey, List<ScoredLink>> srImageCache = new LinkedHashMap<SRImageKey, List<ScoredLink>>(MAX_SR_IMAGE_CACHE_SIZE*10/7, 0.7f, true) {
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<SRImageKey, List<ScoredLink>> eldest) {
+            return size() > MAX_SR_IMAGE_CACHE_SIZE;
+        }
+    };
+
+    private static final int MAX_SIMILARITY_TEXT_CACHE_SIZE = 10;
+    private Map<String, Map<String, Double>> similarityCache = new LinkedHashMap<String, Map<String, Double>>(MAX_SIMILARITY_TEXT_CACHE_SIZE*10/7, 0.7f, true) {
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<String, Map<String, Double>> eldest) {
+            return size() > MAX_SIMILARITY_TEXT_CACHE_SIZE;
+        }
+    };
+
     CompariFactWikipediaImages(Env env) throws ConfigurationException {
         Configurator conf = env.getConfigurator();
         riDao = conf.get(RawImageDao.class);
@@ -77,26 +120,41 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
     // Finds the links from a piece of text using a particular SR metric's most similar
     // method can be "esa" or "ensemble", but you should probably just use ESA
     private List<ScoredLink> srImages(String text, int count, final String method) throws DaoException {
-        final List<ScoredLink> result = new ArrayList<ScoredLink>();
+        List<ScoredLink> result = new ArrayList<ScoredLink>();
 
         if (count <= 0) {
             // No need to search
             return result;
         }
 
-        // Get the particular SR metric (we store them in a dictionary to cache them)
-        final SRMetric sr = srMetrics.get(method);
-        // Perform most similar search
-        final SRResultList mostSimilar = sr.mostSimilar(text, count);
+        SRImageKey key = new SRImageKey(text, count, method);
+        Boolean foundImagesInCache = false;
+        synchronized (srImageCache) {
+            if (srImageCache.containsKey(key)) {
+                result = srImageCache.get(key);
+                foundImagesInCache = true;
+            }
+        }
 
-        // Convert the SRResultList to ScoredLinks
-        for (int i = 0; i < mostSimilar.numDocs(); i++) {
-            int id = mostSimilar.getId(i);
-            double score = mostSimilar.getScoreForId(id);
+        if (!foundImagesInCache) {
+            // Get the particular SR metric (we store them in a dictionary to cache them)
+            final SRMetric sr = srMetrics.get(method);
+            // Perform most similar search
+            final SRResultList mostSimilar = sr.mostSimilar(text, count);
 
-            ScoredLink link = new ScoredLink(sr.getLanguage(), id, score, method);
-            link.debugText = method + " (" + score + ")";
-            result.add(link);
+            // Convert the SRResultList to ScoredLinks
+            for (int i = 0; i < mostSimilar.numDocs(); i++) {
+                int id = mostSimilar.getId(i);
+                double score = mostSimilar.getScoreForId(id);
+
+                ScoredLink link = new ScoredLink(sr.getLanguage(), id, score, method);
+                link.debugText = method + " (" + score + ")";
+                result.add(link);
+            }
+
+            synchronized (srImageCache) {
+                srImageCache.put(key, result);
+            }
         }
 
         return result;
@@ -280,9 +338,6 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
             }
         }
 
-        // Get ESA metric
-        final SRMetric srMetric = srMetrics.get("esa");
-
         // We will perform SR with the article title to try to remove extraneous titles
         ParallelForEach.loop(links, new Procedure<ScoredLink>() {
             @Override
@@ -297,11 +352,11 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     }
 
                     // Get the similarity between the page and the original text
-                    double score = srMetric.similarity(lp.getTitle().getCanonicalTitle(), text, false).getScore();
+                    double score = similarity(text, lp.getTitle().getCanonicalTitle());
 
                     System.out.println("Page title score " + score + " : " + lp.getTitle().getCanonicalTitle());
 
-                    // Make sure the similiarity is high enough
+                    // Make sure the similarity is high enough
                     if (score < 0.8) {
                         return;
                     }
@@ -326,5 +381,30 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         System.out.println("Generated " + result.size() + " Wikipedia Images");
 
         return result;
+    }
+
+    double similarity(String text, String link) throws DaoException {
+        Map<String, Double> similarityMap;
+        synchronized (similarityCache) {
+            if (!similarityCache.containsKey(text)) {
+                similarityCache.put(text, new HashMap<String, Double>());
+            }
+
+            similarityMap = similarityCache.get(text);
+        }
+
+        if (similarityMap.containsKey(link)) {
+            return similarityMap.get(link);
+        } else {
+            SRMetric metric = srMetrics.get("esa");
+            double score = metric.similarity(text, link, false).getScore();
+            similarityMap.put(link, score);
+
+            synchronized (similarityCache) {
+                similarityCache.put(text, similarityMap);
+            }
+
+            return score;
+        }
     }
 }

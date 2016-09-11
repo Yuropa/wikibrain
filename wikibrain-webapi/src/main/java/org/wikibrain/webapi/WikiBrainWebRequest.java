@@ -115,7 +115,7 @@ public class WikiBrainWebRequest {
         resources.put("cpuTime", elapsedCpuTime / 1.0E9);
         resources.put("userTime", elapsedUserTime / 1.0E9);
         object.put("diagnostics", resources);
-        
+
         httpServletResponse.addHeader("Access-Control-Allow-Origin", "*");
         httpServletResponse.setContentType("application/json;charset=utf-8");
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
