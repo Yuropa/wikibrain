@@ -143,11 +143,17 @@ public class CompariFactServer extends AbstractHandler implements PageDownloader
     // The main method. This will find images from Wikipedia from text
     private void doImages(WikiBrainWebRequest req) throws ConfigurationException, DaoException {
         // Get search infomration
-        Language lang = req.getLanguage();
-        String type = req.getParamOrDie("method");
-        String text = URLDecoder.decode(req.getParamOrDie("text"));
-        List jsonConcepts = generateImagesForArticle(type, text);
-        req.writeJsonResponse("text", text, "articles", jsonConcepts);
+        try {
+            String jsonString = req.getRequestBody();
+            JSONObject json = new JSONObject(jsonString);
+            String type = json.getString("method");
+            String text = URLDecoder.decode(json.getString("text"));
+            List jsonConcepts = generateImagesForArticle(type, text);
+            req.writeJsonResponse("text", text, "articles", jsonConcepts);
+        } catch (IOException e) {
+            LOG.info("Unable to read request: " + e.toString());
+        }
+
     }
 
     private List generateImagesForArticle(String method, String text) throws DaoException {

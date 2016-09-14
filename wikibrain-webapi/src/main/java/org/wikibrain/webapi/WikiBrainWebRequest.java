@@ -84,6 +84,15 @@ public class WikiBrainWebRequest {
         return "";    // TODO: this should return a unique token describing the user.
     }
 
+    public String getRequestBody() throws IOException {
+        StringBuilder sb = new StringBuilder();
+        String line = null;
+        while ((line = request.getReader().readLine()) != null){
+            sb.append(line);
+        }
+        return sb.toString();
+    }
+
     /**
      * Writes a new json response whose results hashmap contains one key and one value.
      * @param keysAndValues key1, value1, key2, value2, ...
