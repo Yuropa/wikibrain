@@ -29,6 +29,7 @@ import org.wikibrain.sr.wikify.Wikifier;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.security.GeneralSecurityException;
@@ -216,6 +217,9 @@ public class CompariFactServer extends AbstractHandler implements PageDownloader
                     if (i.isPhotograph()) {
                         continue;
                     }
+                    if (referencesImageData(i)) {
+                        continue;
+                    }
 
                     // We need to handle images and reference maps seperatly
                     String imageURL = i.getImageLocation();
@@ -250,6 +254,46 @@ public class CompariFactServer extends AbstractHandler implements PageDownloader
             }
         }
         return jsonConcepts;
+    }
+
+    private Boolean referencesImageData(InternalImage image) throws IOException {
+        BufferedImage imageData = image.generateImage();
+        int[] histogram = new int[256];
+        for (int i = 0; i < histogram.length; i++) {
+            histogram[i] = 0;
+        }
+
+        for (int i = 0; i < imageData.getWidth(); i++) {
+            for (int j = 0; j < imageData.getHeight(); j++) {
+                int color = imageData.getRGB(i, j);
+                char gray = (char)(0.3f * ((color & 0xFF0000) >> 16) + 0.6f * ((color & 0xFF00) >> 8) + 0.1f * (color & 0xFF));
+                histogram[gray]++;
+            }
+        }
+
+        // Find the 5 largests elements of the histogram
+        int[] largest = new int[5];
+        int max = 0, index, i;
+        for (int j = 0; j < largest.length; j++) {
+            max = histogram[0];
+            index = 0;
+            for (i = 1; i < histogram.length; i++) {
+                if (max < histogram[i]) {
+                    max = histogram[i];
+                    index = i;
+                }
+            }
+            largest[j] = max;
+            histogram[index] = Integer.MIN_VALUE;
+        }
+
+        // Sum the largest
+        int total = 0;
+        for (int j = 0; j < largest.length; j++) {
+            total += largest[j];
+        }
+
+        return (float)total < 0.85f * imageData.getHeight() * imageData.getWidth();
     }
 
     private SRMetric getSr(Language lang) throws ConfigurationException {
