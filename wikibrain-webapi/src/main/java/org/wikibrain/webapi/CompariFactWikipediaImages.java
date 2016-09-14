@@ -21,6 +21,7 @@ import org.wikibrain.sr.SRResultList;
 import org.wikibrain.sr.wikify.Wikifier;
 import org.wikibrain.utils.ParallelForEach;
 import org.wikibrain.utils.Procedure;
+import org.wikibrain.utils.WpThreadUtils;
 
 import java.util.*;
 
@@ -339,16 +340,14 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
         }
 
         // We will perform SR with the article title to try to remove extraneous titles
-        ParallelForEach.loop(links, new Procedure<ScoredLink>() {
-            @Override
-            public void call(ScoredLink link) throws Exception {
+        for (ScoredLink link : links) {
                 try {
                     // Resolve the link to a local page
                     LocalPage lp = lpDao.getById(link.lang, link.localId);
 
                     // Server hangs if we hit these pages...
                     if (lp.getTitle().getCanonicalTitle().toLowerCase().trim().startsWith("united states presidential election")) {
-                        return;
+                        continue;
                     }
 
                     // Get the similarity between the page and the original text
@@ -358,7 +357,7 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
 
                     // Make sure the similarity is high enough
                     if (score < 0.8) {
-                        return;
+                        continue;
                     }
 
                     // Get all the images on the found Wikipeida pages
@@ -376,7 +375,6 @@ public class CompariFactWikipediaImages implements CompariFactDataSource {
                     System.out.println("End Error\n\n");
                 }
             }
-        });
 
         System.out.println("Generated " + result.size() + " Wikipedia Images");
 
