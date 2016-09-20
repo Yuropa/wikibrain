@@ -272,8 +272,8 @@ public class CompariFactServer extends AbstractHandler implements PageDownloader
         }
 
         // Find the 5 largests elements of the histogram
-        int[] largest = new int[5];
-        int max = 0, index, i;
+        int[] largest = new int[15];
+        int max, index, i;
         for (int j = 0; j < largest.length; j++) {
             max = histogram[0];
             index = 0;
@@ -293,7 +293,7 @@ public class CompariFactServer extends AbstractHandler implements PageDownloader
             total += largest[j];
         }
 
-        return (float)total < 0.85f * imageData.getHeight() * imageData.getWidth();
+        return (float)total < 0.9f * imageData.getHeight() * imageData.getWidth();
     }
 
     private SRMetric getSr(Language lang) throws ConfigurationException {
